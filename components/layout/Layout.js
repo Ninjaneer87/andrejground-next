@@ -13,6 +13,7 @@ import useDarkMode from 'use-dark-mode';
 
 const useStyles = makeStyles(theme => ({
   root: {
+    minHeight: '100vh',
   },
   page: {
     // display: 'flex',
@@ -21,7 +22,6 @@ const useStyles = makeStyles(theme => ({
     '-ms-transform': 'translate3d(0, 0, 0)',
     '-webkit-transform': 'translate3d(0, 0, 0)',
     'transform': 'translate3d(0, 0, 0)',
-    // minHeight: '100vh',
   },
 }));
 

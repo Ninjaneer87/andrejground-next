@@ -2,15 +2,15 @@ import connectDB from '../../../../middleware/mongodb';
 import Project from '../../../../models/Project';
 
 const handler = async (req, res) => {
-  if(req.method !== 'PUT') {
-    res.status(500).json({message: 'Sorry, only PUT requests please!'})
+  if (req.method !== 'PUT') {
+    res.status(500).json({ message: 'Sorry, only PUT requests please!' })
   }
-  
-  const isAdmin = true; //change to jwt later
+
+  const { adminId } = req.body; 
   const { id } = req.query
   try {
     const project = await Project.findById(id);
-    if(isAdmin) {
+    if (adminId === process.env.ADMIN_ID) {
       await project.deleteOne()
       res.status(200).json("Project has been deleted!");
     } else {

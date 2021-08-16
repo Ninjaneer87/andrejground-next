@@ -6,9 +6,9 @@ const handler = async (req, res) => {
     res.status(500).json({ message: 'Sorry, only POST requests please!' })
   }
 
-  const isAdmin = true; //change to jwt later
+  const { adminId } = req.body; 
   try {
-    if (isAdmin) {
+    if (adminId === process.env.ADMIN_ID) {
       const newProject = new Project(req.body);
       const savedProject = await newProject.save();
       res.status(200).json(savedProject);

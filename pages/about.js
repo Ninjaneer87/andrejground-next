@@ -35,9 +35,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
 }));
-const scrollTo = ref => {
 
-}
 const About = () => {
   const classes = useStyles();
   const ref = useRef(null);

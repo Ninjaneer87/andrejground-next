@@ -6,11 +6,11 @@ const handler = async (req, res) => {
     res.status(500).json({message: 'Sorry, only PUT requests please!'})
   }
   
-  const isAdmin = true; //change to jwt later
+  const { adminId } = req.body; 
   const { id } = req.query
   try {
     const project = await Project.findById(id);
-    if(isAdmin) {
+    if (adminId === process.env.ADMIN_ID) {
       await project.updateOne({$set: req.body})
       res.status(200).json("Project has been updated!");
     } else {

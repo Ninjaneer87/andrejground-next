@@ -22,10 +22,10 @@ async function sendEmail(req, res) {
     <div>${addLineBreaks(req.body.message)}</div>
   `;
 
-  const emailHost = 'apaone.mysafeservers.com';
-  const emailPort = 587;
-  const emailUser = 'contact@andrejground.com';
-  const emailPass = 'uncOsfclR4';
+  const emailHost = process.env.EMAIL_HOST;
+  const emailPort = process.env.EMAIL_PORT;
+  const emailUser = process.env.EMAIL_USER;
+  const emailPass = process.env.EMAIL_PASS;
 
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({

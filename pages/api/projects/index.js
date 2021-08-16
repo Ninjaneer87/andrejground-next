@@ -3,7 +3,7 @@ import Project from '../../../models/Project';
 
 const handler = async (req, res) => {
   if(req.method !== 'GET') {
-    res.status(500).json({message: 'Sorry, only GET requests please!'})
+    res.status(500).json({message: 'Only GET requests accepted here!'})
   }
   
   try {

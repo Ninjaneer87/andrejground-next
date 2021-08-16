@@ -267,7 +267,7 @@ div, h1, h2, h3, h4, span, p , button{
     transform: translate(-50%, -50%);
     background-color: var(--backgroundColor);
     z-index: -1;
-    transition:800ms ease-in-out;
+    /* transition:800ms ease-in-out; */
     content: '';
 }
 

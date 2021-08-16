@@ -40,8 +40,6 @@ export async function getStaticPaths() { // ONLY when using getStaticProps in DY
   const projects = await projectsCollection.find({}, { projection: { slug: 1, _id: 0 } }).toArray();
   client.close();
 
-  console.log(projects)
-
   return {
     fallback: 'blocking',
     paths: projects.map(project => ({
@@ -55,13 +53,10 @@ export async function getStaticPaths() { // ONLY when using getStaticProps in DY
 export async function getStaticProps(context) {
   const { slug } = context.params;
 
-  console.log('context.params: ', context.params)
-
   const client = await MongoClient.connect(process.env.MONGO_URL);
   const db = client.db();
   const projectsCollection = db.collection('projects');
 
-  console.log('slug: ', typeof slug)
   if (slug !== '[object Object]') {
     const project = await projectsCollection.findOne({ slug });
     client.close();
