@@ -6,7 +6,7 @@ import { Button } from '@material-ui/core';
 import { useRouter } from 'next/dist/client/router';
 import { makeStyles } from '@material-ui/core';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 const patternImage2 = '/img/pattern2.png';
 
@@ -57,14 +57,15 @@ const NotFound = () => {
     }, 1000);
   }, [])
 
+  const goHome = useCallback(() => {
+    router.replace('/')
+  }, [router])
+
   useEffect(() => {
     if (counter === 0)
       goHome()
-  }, [counter])
+  }, [counter, goHome])
 
-  const goHome = () => {
-    router.replace('/')
-  }
   return (
     <>
       <Head>

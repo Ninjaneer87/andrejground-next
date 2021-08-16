@@ -131,7 +131,7 @@ const Intro = React.forwardRef((props, ref) => {
   const goToAndrej = useCallback(() => {
     if (ref.current)
       ref.current.scrollIntoView({ behavior: 'smooth' });
-  }, [])
+  }, [ref])
 
   return (
     <Container maxWidth='xl' className={`${classes.intro} fadeIn`}>
