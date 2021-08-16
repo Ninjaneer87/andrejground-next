@@ -1,0 +1,73 @@
+.Modal {
+    position: fixed;
+    /* position: absolute; */
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: fit-content;
+    max-height: 85vh;
+    margin: auto;
+    z-index: 1501;
+    background-color: #fff;
+    width: 90%;
+    /* border: var(--border-separator); */
+    box-shadow: 0px 1px 1rem 0px rgba(0,0,0,0.5);
+    padding: 1rem;
+    box-sizing: border-box;
+    transition: all 150ms ease-out;
+    transition-property: transform, opacity;
+    /* border-radius: 0.6rem 0 0.6rem 0.6rem; */
+    border-radius: 0.6rem;
+    opacity: 0;
+    pointer-events: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transform: scale(1.15);
+}
+.Modal.Show {
+    /* top: 0; */
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+.Overlay {
+    position: fixed;
+    z-index: 1501;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition: background 300ms ease-out;
+    background-color: transparent;
+    pointer-events: none;
+    transform: translate3d(0, 0, 0);
+}
+.Overlay.Show {
+    background-color: rgba(0, 0, 0, 0.75);
+    pointer-events: all;
+}
+.CloseButton {
+    position: fixed;
+    top: 0;
+    right: 0;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1501;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 300ms ease-out;
+}
+.CloseButton.Show {
+    pointer-events: all;
+    opacity: 1;
+}
+
+
+
+@media (min-width: 600px) {
+    .Modal {
+        width: 500px;
+        max-height: 90vh;
+    }
+}
