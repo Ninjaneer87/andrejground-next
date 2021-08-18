@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     '&::after': {
       content: '""',
-      backgroundImage: `url('${patternImage2}')`,
+      backgroundImage: `url('${patternImage2.src}')`,
       backgroundPosition: 'center',
       opacity: .35,
       filter: 'drop-shadow(0px 0px 1px #fff)',
@@ -127,8 +127,8 @@ const SingleProjectContent = (props) => {
   const { darkMode } = useContext(ThemeContext)
 
   return (
-    <div className={`${classes.bgOverlay} fadeIn`}>
-      <Container maxWidth='xl' className={classes.root}>
+    <div className={classes.bgOverlay} >
+      <Container maxWidth='xl' className={classes.root + ' fadeIn'}>
         <Heading text={props.title} />
         <Grid container alignItems='flex-start' justifyContent='center' spacing={3}>
           <Grid item xs={12} sm={10} md={6} lg={5}  >

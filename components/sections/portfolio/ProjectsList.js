@@ -49,8 +49,8 @@ const ProjectsList = ({ projects }) => {
   const classes = useStyles();
 
   return (
-    <div className={`${classes.bgOverlay} fadeIn`}>
-      <section className={classes.projectsListRoot}>
+    <div className={classes.bgOverlay}>
+      <section className={classes.projectsListRoot + ' fadeIn'}>
         <Box width='100%' padding='30px 0'>
           <Heading text="Projects" />
           <Grid container spacing={5} >

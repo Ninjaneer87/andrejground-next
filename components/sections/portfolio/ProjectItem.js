@@ -13,7 +13,7 @@ import { useContext } from 'react';
 
 const useStyles = makeStyles(theme => ({
   image: {
-    backgroundImage: ({ image }) => image && `url("/images/${image}")`,
+    backgroundImage: ({ image }) => image && `url("/thumbs/${image}")`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     backgroundSize: 'contain',

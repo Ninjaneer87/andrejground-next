@@ -12,14 +12,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background: radial-gradient(circle, rgba(38, 50, 56,1) 0%, rgba(96,125,139,1) 100%); */
-  background: #212121;
+  background: #fff;
   opacity: 0;
   transition: opacity 100ms ease-in-out;
 }
 body.dark-mode {
   --backgroundColor: #212121;
   --text-color: #fff;
-  /* background: #212121; */
+  background: #212121;
 }
 body.visible {
   opacity: 1;
