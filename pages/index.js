@@ -1,5 +1,4 @@
 import React, { useCallback } from 'react';
-import Starfall from "../components/UI/Starfall"
 import Hero from "../components/sections/home/Hero"
 import Mission from "../components/sections/home/Mission"
 import Toolbox from "../components/sections/home/Toolbox"
@@ -58,8 +57,6 @@ const Home = () => {
   
   return (
     <div className={classes.root}>
-      <Starfall />
-
       <Hero
         setRefs={setRefs}
         setActiveSection={setActiveSection}

@@ -1,5 +1,4 @@
 import React from 'react';
-import Starfall from "../components/UI/Starfall";
 import PageTitle from "../components/UI/PageTitle";
 import { makeStyles } from '@material-ui/core';
 import SendMessage from '../components/sections/contact/SendMessage';
@@ -45,7 +44,6 @@ const Contact = () => {
       </Head>
       <div className={classes.bgOverlay}>
         <div className={classes.root}>
-          <Starfall />
           <PageTitle pageTitle='Contact' />
           <Info />
           <SendMessage />

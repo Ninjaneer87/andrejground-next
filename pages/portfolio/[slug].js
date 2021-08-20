@@ -1,5 +1,4 @@
 import React from 'react';
-import Starfall from "../../components/UI/Starfall";
 import PageTitle from "../../components/UI/PageTitle";
 import makeStyles from '@material-ui/styles/makeStyles';
 import SingleProjectContent from '../../components/sections/portfolio/SingleProjectContent';
@@ -23,7 +22,6 @@ const SingleProject = ({ project }) => {
         <meta name='description' content={project.description} />
       </Head>
       <div className={classes.root}>
-        <Starfall />
         <PageTitle pageTitle='Project' />
         <SingleProjectContent {...project} />
       </div>

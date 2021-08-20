@@ -1,6 +1,5 @@
 import ThemedTypography from '../components/UI/ThemedTypography';
 import Head from 'next/head';
-import Starfall from '../components/UI/Starfall';
 import PageTitle from '../components/UI/PageTitle';
 import { Button } from '@material-ui/core';
 import { useRouter } from 'next/dist/client/router';
@@ -75,7 +74,6 @@ const NotFound = () => {
       </Head>
       <div className={classes.bgOverlay}>
         <div className={classes.root}>
-          <Starfall />
           <PageTitle pageTitle='Bad Request!' />
           <div className={classes.content}>
 

@@ -9,6 +9,7 @@ import Modal from '../UI/Modal';
 import Footer from './Footer';
 import ThemeContext from '../../context/themeContext';
 import useDarkMode from 'use-dark-mode';
+import Starfall from '../UI/Starfall';
 
 
 const useStyles = makeStyles(theme => ({
@@ -39,6 +40,7 @@ const Layout = (props) => {
       <MyLoader />
       <MyAppBar />
       <MyDrawer />
+      <Starfall />
       <div className={classes.page}>
         {props.children}
       </div>

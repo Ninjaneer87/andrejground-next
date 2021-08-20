@@ -1,5 +1,4 @@
 import React from 'react';
-import Starfall from "../components/UI/Starfall"
 import PageTitle from "../components/UI/PageTitle";
 import { makeStyles } from '@material-ui/core';
 import Intro from '../components/sections/about/Intro';
@@ -48,7 +47,6 @@ const About = () => {
       </Head>
       <div className={classes.bgOverlay}>
         <div className={classes.root}>
-          <Starfall />
           <PageTitle pageTitle='About' />
           <Intro ref={ref} />
           <AboutMe ref={ref} />
