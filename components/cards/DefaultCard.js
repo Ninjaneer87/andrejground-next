@@ -41,6 +41,7 @@ const DefaultCard = (props) => {
         maxWidth: props.maxWidth || '100%', 
         height: props.height || '100%',
         width: props.width || 'auto',
+        padding: props.padding || '',
       }}
     >
       <div className={classes.content}>

@@ -65,8 +65,8 @@ const useStyles = makeStyles(theme => ({
   listItem: ({ isScrolled, darkMode }) => {
     const styles = {
       width: 'fit-content',
-      paddingLeft: theme.spacing(6),
-      paddingRight: theme.spacing(6),
+      paddingLeft: theme.spacing(5),
+      paddingRight: theme.spacing(5),
       transition: `color ${theme.transitions.duration.short}ms ease-in-out`,
       color: '#fff',
       '&:hover': {

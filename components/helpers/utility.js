@@ -55,3 +55,16 @@ export const sendMail = async (data, setLoading) => {
     notify('Network error!', 'Danger');
   }
 }
+
+export const formatDate = (date) => {
+    const formattedDate = new Date(date);
+    const mL = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    // const mS = ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Avg', 'Sep', 'Okt', 'Nov', 'Dec'];
+
+    const currentYear = new Date().getFullYear();
+
+    const day = formattedDate.getDate();
+    const month = formattedDate.getMonth();
+    const year = formattedDate.getFullYear();
+    return `${mL[month]} ${day}${year === currentYear ? '' : `, ${year}`}`;
+}

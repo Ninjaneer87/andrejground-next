@@ -39,6 +39,10 @@ code {
 .cyan {
   color: #00e5ff;
 }
+
+.grey {
+  color: grey;
+}
 .white {
   color: #fff;
 }

@@ -22,11 +22,16 @@ export const menuItems = [
   },
   {
     id: 3,
+    text: 'BLOG',
+    path: '/blog',
+  },
+  {
+    id: 4,
     text: 'ABOUT',
     path: '/about',
   },
   {
-    id: 4,
+    id: 5,
     text: 'CONTACT',
     path: '/contact',
   }

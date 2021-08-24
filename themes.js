@@ -4,6 +4,16 @@ import { blueGrey, cyan, grey } from '@material-ui/core/colors';
 import { responsiveFontSizes } from '@material-ui/core/styles';
 
 export const defaultTheme = responsiveFontSizes(createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+      sm2: 800,
+    },
+  },
   palette: {
     primary: blueGrey,
     secondary: cyan,
@@ -32,6 +42,16 @@ export const defaultTheme = responsiveFontSizes(createTheme({
 }));
 
 export const lightTheme = responsiveFontSizes(createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+      sm2: 800,
+    },
+  },
   palette: {
     primary: blueGrey,
     secondary: cyan,
@@ -59,6 +79,16 @@ export const lightTheme = responsiveFontSizes(createTheme({
 }));
 
 export const darkTheme = responsiveFontSizes(createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+      sm2: 800,
+    },
+  },
   palette: {
     primary: blueGrey,
     secondary: cyan,
