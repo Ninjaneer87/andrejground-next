@@ -73,26 +73,6 @@ const useStyles = makeStyles(theme => ({
     cursor: 'zoom-in',
     marginBottom: 40,
   },
-  zoomedImage: {
-    width: '80vw',
-    height: '80vh',
-    boxSizing: 'border-box',
-    cursor: 'zoom-out'
-  },
-  zoomedImageBg: {
-    backgroundImage: ({ image }) => image && `url('/images/${image}')`,
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundSize: 'contain',
-    height: '100%',
-    width: '100%',
-    boxSizing: 'border-box',
-    filter: `drop-shadow(0px 10px 10px #0000004e)`,
-    overflow: 'hidden',
-    borderRadius: 10,
-    cursor: 'zoom-in',
-    // marginBottom: 40,
-  },
   stickyInfo: {
     position: 'sticky',
     top: '20%',
@@ -175,14 +155,14 @@ const SingleBlogContent = (props) => {
     setShowSticky(scrollInView)
   }, [scrollInView])
 
-  const openImage = useCallback(() => {
+  const openImage = () => {
     const imageContent = <div className={styles.zoomedImage} onClick={() => hideModal()}>
       {/* <Image src={`/images/${props.image}`} layout="fill" objectFit='contain' /> */}
       <div className={styles.zoomedImageBg} style={{backgroundImage: `url('/images/${props.image}')`}}/>
     </div>;
 
     showModal(imageContent);
-  }, [])
+  }
 
   return (
     <div className={classes.bgOverlay} >

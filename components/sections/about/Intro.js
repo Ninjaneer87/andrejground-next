@@ -111,12 +111,12 @@ const useStyles = makeStyles(theme => ({
 const stats = [
   {
     icon: <LocalLibraryOutlinedIcon fontSize='large' />,
-    number: '2+',
+    number: '3+',
     desc: 'years into frontend development'
   },
   {
     icon: <ImportantDevicesOutlinedIcon fontSize='large' />,
-    number: '1+',
+    number: '2+',
     desc: 'years of building projects'
   },
   {

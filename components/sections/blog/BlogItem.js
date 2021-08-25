@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
+import { ButtonBase, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 import { Divider } from '@material-ui/core';
 import Link from 'next/link';
@@ -13,9 +13,10 @@ const useStyles = makeStyles(theme => ({
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-    margin: '20px 0',
+    // margin: '20px 0',
     minHeight: '50vh',
-    width: '90%',
+    width: '100%',
+    maxWidth: 800,
     maxHeight: '90vw',
     filter: `drop-shadow(0px 10px 10px #0000004e)`,
     borderRadius: 20,
@@ -91,15 +92,24 @@ const ProjectItem = ({ image, title, content, createdAt, slug, updatedAt }) => {
       href={`/blog/${slug}`}
       passHref
     >
-      <div className={classes.image}>
-        <Divider classes={{ root: classes.divider }} />
-        <div className={classes.content}>
-          <Typography component='h3' variant='h5' className={classes.subtitle}>
-            {title}
-          </Typography>
-          <Typography className={classes.date}>{formatDate(createdAt)}</Typography>
+      <ButtonBase
+        component='a'
+        style={{
+          width: '100%',
+          maxWidth: 800,
+          borderRadius: 20,
+        }}
+      >
+        <div className={classes.image}>
+          <Divider classes={{ root: classes.divider }} />
+          <div className={classes.content}>
+            <Typography component='h3' variant='h5' className={classes.subtitle}>
+              {title}
+            </Typography>
+            <Typography className={classes.date}>{formatDate(createdAt)}</Typography>
+          </div>
         </div>
-      </div>
+      </ButtonBase>
     </Link>
   );
 };

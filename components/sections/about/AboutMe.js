@@ -86,11 +86,11 @@ const AboutMe = React.forwardRef((props, ref) => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Typography className={classes.text} >
-              Andrej has been into front-end development only for a couple of years now. Beside a few projects, he has developed a strong interest in JavaScript and its ecosystem, with a focus on React.js.
+              Andrej has been into front-end development for a couple of years now. Beside a few projects, he has developed a strong interest in JavaScript and its ecosystem, with a focus on React.js.
               <br /><br />
               He enjoys learning, coding, and seeing his code getting leaner and cleaner after each project.
               <br /><br />
-              Now, he is in the quest for finding the right environment for professional growth and improvement.
+              Now, he is on a quest for finding the right environment for professional growth and improvement.
               <br /><br />
             </Typography>
             <Divider classes={{ root: classes.divider }} />
