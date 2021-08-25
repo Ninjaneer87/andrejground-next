@@ -1,0 +1,19 @@
+
+  .zoomedImage {
+    width: 80vw;
+    height: 80vh;
+    box-sizing: border-box;
+    cursor: zoom-out;
+  }
+  .zoomedImageBg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 10px 10px #0000004e);
+    overflow: hidden;
+    border-radius: 10;
+    cursor: zoom-in;
+  }

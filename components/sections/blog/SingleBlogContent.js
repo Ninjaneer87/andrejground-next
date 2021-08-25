@@ -10,6 +10,7 @@ import ScheduleIcon from '@material-ui/icons/Schedule';
 import { formatDate } from './../../helpers/utility';
 import StickyInfo from './StickyInfo';
 import { useInView } from 'react-intersection-observer';
+import styles from './SingleBlogContent.module.css';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -73,10 +74,24 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 40,
   },
   zoomedImage: {
-    width: '90vw',
+    width: '80vw',
     height: '80vh',
     boxSizing: 'border-box',
     cursor: 'zoom-out'
+  },
+  zoomedImageBg: {
+    backgroundImage: ({ image }) => image && `url('/images/${image}')`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: 'contain',
+    height: '100%',
+    width: '100%',
+    boxSizing: 'border-box',
+    filter: `drop-shadow(0px 10px 10px #0000004e)`,
+    overflow: 'hidden',
+    borderRadius: 10,
+    cursor: 'zoom-in',
+    // marginBottom: 40,
   },
   stickyInfo: {
     position: 'sticky',
@@ -161,11 +176,12 @@ const SingleBlogContent = (props) => {
   }, [scrollInView])
 
   const openImage = useCallback(() => {
-    const image = <div className={classes.zoomedImage} onClick={() => hideModal()}>
-      <Image src={`/images/${props.image}`} layout="fill" objectFit='contain' priority />
+    const imageContent = <div className={styles.zoomedImage} onClick={() => hideModal()}>
+      {/* <Image src={`/images/${props.image}`} layout="fill" objectFit='contain' /> */}
+      <div className={styles.zoomedImageBg} style={{backgroundImage: `url('/images/${props.image}')`}}/>
     </div>;
 
-    showModal(image);
+    showModal(imageContent);
   }, [])
 
   return (
