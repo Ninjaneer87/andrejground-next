@@ -74,7 +74,7 @@ const useStyles = makeStyles(theme => ({
         border: `1px solid ${darkMode ? theme.palette.custom.accent : 'transparent'} `,
         width: 'var(--width)',
         left: 0,
-        bottom: 10,
+        bottom: -4,
         // height: 'var(--height)',
         height: 4,
         backgroundColor: `${darkMode ? 'transparent' : theme.palette.custom.accent} `,
@@ -178,6 +178,7 @@ const MyAppBar = (props) => {
         <List
           component='nav'
           className={classes.navbar}
+          disablePadding
         >
           {isSmallScreen ?
             <IconButton
@@ -191,6 +192,7 @@ const MyAppBar = (props) => {
             </IconButton>
             :
             <List
+              disablePadding
               component='nav'
               className={classes.navbarInner}
               style={{
