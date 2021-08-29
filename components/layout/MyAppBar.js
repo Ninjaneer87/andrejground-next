@@ -58,9 +58,32 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexFlow: 'row',
     marginRight: 8,
-    [theme.breakpoints.up(600)]: {
-      marginRight: theme.spacing(5),
-    },
+  },
+  navbarInner: ({ darkMode }) => {
+    return {
+      width: 'fit-content',
+      display: 'flex',
+      flexFlow: 'row',
+      marginRight: 8,
+      [theme.breakpoints.up(600)]: {
+        marginRight: theme.spacing(5),
+      },
+      '&::after': {
+        content: '""',
+        position: 'absolute',
+        border: `1px solid ${darkMode ? theme.palette.custom.accent : 'transparent'} `,
+        width: 'var(--width)',
+        left: 0,
+        bottom: 10,
+        // height: 'var(--height)',
+        height: 4,
+        backgroundColor: `${darkMode ? 'transparent' : theme.palette.custom.accent} `,
+        zIndex: -1,
+        borderRadius: '6px',
+        transition: `all ${theme.transitions.duration.short}ms ease 0s`,
+        transform: 'translateX(var(--left))'
+      }
+    }
   },
   listItem: ({ isScrolled, darkMode }) => {
     const styles = {
@@ -92,11 +115,43 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+const initialBox = {
+  width: 0,
+  left: 0,
+  top: 0,
+  height: 0,
+}
+
 const MyAppBar = (props) => {
   const { toggleExpanded, setIsScrolled } = useContext(NavContext);
   const { asPath } = useRouter();
   const { darkMode } = useContext(ThemeContext)
   const { toggle } = useDarkMode();
+
+  const activeRef = useRef(null);
+  const [mounting, setMounting] = useState(true);
+  const [box, setBox] = useState(initialBox);
+
+  const setBoxToActiveRef = useCallback(() => {
+    const newBox = {
+      width: activeRef.current?.offsetWidth,
+      left: activeRef.current?.offsetLeft,
+      top: activeRef.current?.offsetTop,
+      height: activeRef.current?.offsetHeight,
+    };
+    setBox(newBox);
+  }, [])
+
+  useEffect(() => {
+    if (activeRef.current && mounting) {
+      setBoxToActiveRef();
+      setMounting(false);
+    }
+  }, [box, mounting, setBoxToActiveRef]);
+
+  useEffect(() => {
+    setBoxToActiveRef();
+  }, [asPath, setBoxToActiveRef]);
 
   const { ref: toolbarScrollRef, inView: toolbarInView } = useInView({
     threshold: 1
@@ -135,25 +190,41 @@ const MyAppBar = (props) => {
               <MenuIcon fontSize='large' className={classes.navIcon} />
             </IconButton>
             :
-            menuItems.map(item =>
-              <Link
-                href={item.path}
-                passHref
-                key={item.id}
-              >
-                <ListItem
-                  className={`${(
-                    (asPath.startsWith(item.path) && item.path.length > 1) ||
-                    (asPath === '/' && asPath === item.path)
-                  ) && classes.active} 
-                 ${classes.listItem}`}
-                  button
-                  component='a'
+            <List
+              component='nav'
+              className={classes.navbarInner}
+              style={{
+                '--width': Math.round(box.width) - 4 + 'px',
+                '--left': Math.round(box.left) + 2 + 'px',
+                '--top': Math.round(box.top) + 2 + 'px',
+                '--height': Math.round(box.height) - 8 + 'px',
+              }}
+            >
+              {menuItems.map(item =>
+                <Link
+                  href={item.path}
+                  passHref
+                  key={item.id}
                 >
-                  <ListItemText primary={item.text} />
-                </ListItem>
-              </Link>
-            )
+                  <ListItem
+                    ref={(
+                      (asPath.startsWith(item.path) && item.path.length > 1) ||
+                      (asPath === '/' && asPath === item.path)
+                    ) ? activeRef : null}
+                    className={`${(
+                      (asPath.startsWith(item.path) && item.path.length > 1) ||
+                      (asPath === '/' && asPath === item.path)
+                    ) && classes.active} 
+                 ${classes.listItem}`}
+                    button
+                    component='a'
+                    onClick={setBoxToActiveRef}
+                  >
+                    <ListItemText primary={item.text} />
+                  </ListItem>
+                </Link>
+              )}
+            </List>
           }
 
           <IconButton

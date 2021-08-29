@@ -58,7 +58,7 @@ const SectionNav = ({ sections, activeSection, activateSection }) => {
   const activeRef = useRef(null);
   const [mounting, setMounting] = useState(true);
   const [box, setBox] = useState(initialBox);
-  const {darkMode} = useContext(ThemeContext)
+  const { darkMode } = useContext(ThemeContext)
   const classes = useStyles({ darkMode });
 
   const setBoxToActiveRef = useCallback(() => {
@@ -104,12 +104,15 @@ const SectionNav = ({ sections, activeSection, activateSection }) => {
 
   return (
     <ClientOnlyPortal>
-      <div className={`${classes.sectionNavRoot} fadeIn`} style={{
-        '--width': Math.round(box.width) - 4 + 'px',
-        '--left': Math.round(box.left) + 2 + 'px',
-        '--top': Math.round(box.top) + 2 + 'px',
-        '--height': Math.round(box.height) - 8 + 'px',
-      }}>
+      <div
+        className={`${classes.sectionNavRoot} fadeIn`}
+        style={{
+          '--width': Math.round(box.width) - 4 + 'px',
+          '--left': Math.round(box.left) + 2 + 'px',
+          '--top': Math.round(box.top) + 2 + 'px',
+          '--height': Math.round(box.height) - 8 + 'px',
+        }}
+      >
         {sections.map(section =>
           <ButtonBase
             ref={section.name === activeSection ? activeRef : null}
