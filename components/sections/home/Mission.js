@@ -5,8 +5,9 @@ import DefaultCard from "../../cards/DefaultCard";
 import Heading from "../../UI/Heading";
 import Link from "next/link";
 import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import Image from 'next/image';
+import ThemeContext from '../../../context/themeContext';
 // import { scrollTopClick } from './../../helpers/utility';
 
 const aboutImage = '/img/aboutme.svg';
@@ -83,6 +84,7 @@ const useStyles = makeStyles(theme => ({
 
 const Mission = ({ setActiveSection, setRefs }) => {
   const classes = useStyles();
+  const { darkMode } = useContext(ThemeContext);
 
   const { ref: scrollRef, inView: scrollInView, entry } = useInView({
     rootMargin: '-50%'
@@ -120,7 +122,8 @@ const Mission = ({ setActiveSection, setRefs }) => {
                   <Image className={classes.image} layout='fill' src={uiUxImage} alt='icon' />
                 </div>
                 <div className={classes.text}>
-                  To attract and retain user attention, there is a need for catchy UI and smooth UX, which will lead to engagement and interaction.
+                  {/* To attract and retain user attention, there is a need for catchy UI and smooth UX, which will lead to engagement and interaction. */}
+                  Two key components to make any modern web application stand out and secure user engagement are: <br />catchy <strong className={`${darkMode ? '' : 'grey'}`}>UI</strong> & smooth <strong className={`${darkMode ? '' : 'grey'}`}>UX</strong>.
                 </div>
               </DefaultCard>
             </Grid>
@@ -130,7 +133,8 @@ const Mission = ({ setActiveSection, setRefs }) => {
                   <Image className={classes.image} layout='fill' src={goalImage} alt='icon' />
                 </div>
                 <div className={classes.text}>
-                  The mission here is to create performant, modern, user friendly web applications, with the latest technologies, and to make sure they achieve the desired effect.
+                  {/* The mission here is to create performant, modern, user friendly web applications, with the latest technologies, and to make sure they achieve the desired effect. */}
+                  Building the fast, pretty and straightforward web experience, that&apos;s what AndrejGround is all about.
                 </div>
               </DefaultCard>
             </Grid>
