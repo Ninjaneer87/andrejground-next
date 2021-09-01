@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import { ButtonBase } from '@material-ui/core';
+import { ButtonBase, Tooltip } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 import ClientOnlyPortal from '../../helpers/ClientOnlyPortal';
 import ThemeContext from '../../../context/themeContext';
@@ -114,16 +114,22 @@ const SectionNav = ({ sections, activeSection, activateSection }) => {
         }}
       >
         {sections.map(section =>
-          <ButtonBase
-            ref={section.name === activeSection ? activeRef : null}
+          <Tooltip
             key={section.name}
-            onClick={() => activateSection(section.name)}
-            className={classes.item}
-          // onMouseEnter={mouseEnterHandler}
-          // onMouseLeave={mouseLeaveHandler}
+            title={section.name.toUpperCase()}
+            arrow
+            placement="left"
           >
-            {section.icon}
-          </ButtonBase>
+            <ButtonBase
+              ref={section.name === activeSection ? activeRef : null}
+              onClick={() => activateSection(section.name)}
+              className={classes.item}
+            // onMouseEnter={mouseEnterHandler}
+            // onMouseLeave={mouseLeaveHandler}
+            >
+              {section.icon}
+            </ButtonBase>
+          </Tooltip>
         )}
       </div>
     </ClientOnlyPortal>
