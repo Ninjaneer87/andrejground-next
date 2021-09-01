@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Grid } from '@material-ui/core';
-import {makeStyles} from '@material-ui/core';
+import { Box, Container, Grid } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import Heading from '../../UI/Heading';
 import ProjectItem from './ProjectItem';
 
@@ -51,23 +51,25 @@ const ProjectsList = ({ projects }) => {
   return (
     <div className={classes.bgOverlay}>
       <section className={classes.projectsListRoot + ' fadeIn'}>
-        <Box width='100%' padding='30px 0'>
-          <Heading text="Projects" />
-          <Grid container spacing={5} >
-            {projects.map(project =>
-              <Grid item xs={12} md={6} className={classes.contentHolder} key={project._id}>
-                <ProjectItem
-                  id={project._id}
-                  slug={project.slug}
-                  title={project.title}
-                  siteLink={project.siteLink}
-                  codeLink={project.codeLink}
-                  image={project.image}
-                  projectType={project.projectType}
-                />
-              </Grid>)}
-          </Grid>
-        </Box>
+        <Container maxWidth='xl'>
+          <Box width='100%' padding='30px 0'>
+            <Heading text="Projects" />
+            <Grid container spacing={5} >
+              {projects.map(project =>
+                <Grid item xs={12} md={6} className={classes.contentHolder} key={project._id}>
+                  <ProjectItem
+                    id={project._id}
+                    slug={project.slug}
+                    title={project.title}
+                    siteLink={project.siteLink}
+                    codeLink={project.codeLink}
+                    image={project.image}
+                    projectType={project.projectType}
+                  />
+                </Grid>)}
+            </Grid>
+          </Box>
+        </Container>
       </section>
     </div>
   );

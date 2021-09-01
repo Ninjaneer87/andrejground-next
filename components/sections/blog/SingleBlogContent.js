@@ -173,7 +173,7 @@ const SingleBlogContent = (props) => {
           title={props.title}
         />
       </div>
-      <Container className={classes.root + ' fadeIn'}>
+      <Container maxWidth='xl' className={classes.root + ' fadeIn'}>
         <Heading align='start' text={props.title} />
         <Typography
           className={classes.subtitle}

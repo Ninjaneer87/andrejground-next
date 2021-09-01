@@ -37,6 +37,9 @@ const useStyles = makeStyles(theme => ({
         transform: 'scale(1.2)',
         backgroundAttachment: 'fixed',
       },
+      [theme.breakpoints.up(2000)]: {
+        backgroundSize: 'cover',
+      },
     },
   },
   welcomeIntro: {
@@ -59,6 +62,11 @@ const useStyles = makeStyles(theme => ({
       width: '20vw',
       fontSize: '1.7vw',
     },
+    [theme.breakpoints.up(2000)]: {
+      textAlign: 'start',
+      width: 500,
+      fontSize: 40,
+    },
   },
   welcomeTitle: {
     color: '#fff',
@@ -78,6 +86,11 @@ const useStyles = makeStyles(theme => ({
       textAlign: 'start',
       width: '65vw',
       fontSize: '4.2vw',
+    },
+    [theme.breakpoints.up(2000)]: {
+      textAlign: 'start',
+      width: 800,
+      fontSize: 80,
     },
     '&::after': {
       content: 'attr(data-text)',

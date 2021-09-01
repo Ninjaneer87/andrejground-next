@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 
 const heroImage = '/img/bg.jpg';
@@ -35,6 +35,9 @@ const useStyles = makeStyles(theme => ({
         transform: 'scale(1.2)',
         // backgroundAttachment: 'fixed',
       },
+      [theme.breakpoints.up(2000)]: {
+        backgroundSize: 'cover',
+      },
     }
   },
   pageTitle: {
@@ -55,11 +58,13 @@ const useStyles = makeStyles(theme => ({
 const PageTitle = (props) => {
   const classes = useStyles();
   return (
-      <div className={classes.pagetitleRoot}>
-          <Typography component='h1' variant='h2' className={`${classes.pageTitle} fadeIn`}>
-            {props.pageTitle}
-          </Typography>
-      </div>
+    <div className={classes.pagetitleRoot}>
+      <Container maxWidth='xl'>
+        <Typography component='h1' variant='h2' className={`${classes.pageTitle} fadeIn`}>
+          {props.pageTitle}
+        </Typography>
+      </Container>
+    </div>
   );
 };
 

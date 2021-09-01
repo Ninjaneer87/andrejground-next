@@ -1,6 +1,6 @@
 import React from 'react';
-import { Grid, Box } from "@material-ui/core";
-import {makeStyles} from '@material-ui/core';
+import { Grid, Box, Container } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core';
 // import { Parallax } from 'react-parallax';
 import Heading from "../../UI/Heading";
 import { List, ListItem, ListItemIcon } from '@material-ui/core';
@@ -42,6 +42,9 @@ const useStyles = makeStyles(theme => ({
         backgroundSize: 'auto',
         transform: 'scale(1.2)',
         backgroundAttachment: 'fixed',
+      },
+      [theme.breakpoints.up(2000)]: {
+        backgroundSize: 'cover',
       },
     },
   },
@@ -155,62 +158,64 @@ const Toolbox = ({ setActiveSection, setRefs }) => {
   return (
     <div className={classes.bgOverlay}>
       <section className={classes.toolboxRoot} ref={scrollRef}>
-        <Box width='100%' padding='30px 0' className='fadeIn'>
-          <Heading text="Toolbox" inverse />
-          <Grid container justifyContent='center' spacing={5}>
+        <Container maxWidth='xl'>
+          <Box width='100%' padding='30px 0' className='fadeIn'>
+            <Heading text="Toolbox" inverse />
+            <Grid container justifyContent='center' spacing={5}>
 
-            <Grid item xs={12} md={6} className={classes.gridItem}>
-              <div className={classes.toolboxItem} style={{ maxWidth: 400 }}>
-                Main tools:
-                <List>
-                  <ListItem className={classes.listItem}>
-                    <ListItemIcon>
-                      <i className="fab fa-js-square fa-2x"></i>
-                    </ListItemIcon>
-                    <ListItemText>
-                      JavaScript (ES5, ES6+)
-                    </ListItemText>
-                  </ListItem>
-                  <ListItem className={classes.listItem}>
-                    <ListItemIcon>
-                      <i className="fab fa-html5 fa-2x"></i>
-                    </ListItemIcon>
-                    <ListItemText>
-                      HTML
-                    </ListItemText>
-                  </ListItem>
-                  <ListItem className={classes.listItem}>
-                    <ListItemIcon>
-                      <i className="fab fa-css3-alt fa-2x"></i>
-                    </ListItemIcon>
-                    <ListItemText>
-                      CSS
-                    </ListItemText>
-                  </ListItem>
-                </List>
-              </div>
+              <Grid item xs={12} md={6} className={classes.gridItem}>
+                <div className={classes.toolboxItem} style={{ maxWidth: 400 }}>
+                  Main tools:
+                  <List>
+                    <ListItem className={classes.listItem}>
+                      <ListItemIcon>
+                        <i className="fab fa-js-square fa-2x"></i>
+                      </ListItemIcon>
+                      <ListItemText>
+                        JavaScript (ES5, ES6+)
+                      </ListItemText>
+                    </ListItem>
+                    <ListItem className={classes.listItem}>
+                      <ListItemIcon>
+                        <i className="fab fa-html5 fa-2x"></i>
+                      </ListItemIcon>
+                      <ListItemText>
+                        HTML
+                      </ListItemText>
+                    </ListItem>
+                    <ListItem className={classes.listItem}>
+                      <ListItemIcon>
+                        <i className="fab fa-css3-alt fa-2x"></i>
+                      </ListItemIcon>
+                      <ListItemText>
+                        CSS
+                      </ListItemText>
+                    </ListItem>
+                  </List>
+                </div>
+              </Grid>
+
+              <Grid item xs={12} md={6} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <div className={classes.toolboxImageHolder} >
+                  <Image src={toolboxImage} alt='toolbox' layout='fill' className={classes.toolboxImage} />
+                </div>
+              </Grid>
+
+              <Grid item xs={12} md={6} className={classes.gridItem}>
+                <div className={classes.toolboxItem}>
+                  Catching up - tools & helpers:
+                  <List className={classes.moreTools}>
+                    {moreTools.map(tool =>
+                      <ListItem key={tool} className={classes.moreToolsItem}>
+                        {tool}
+                      </ListItem>)}
+                  </List>
+                </div>
+              </Grid>
+
             </Grid>
-
-            <Grid item xs={12} md={6} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <div className={classes.toolboxImageHolder} >
-                <Image src={toolboxImage} alt='toolbox' layout='fill' className={classes.toolboxImage} />
-              </div>
-            </Grid>
-
-            <Grid item xs={12} md={6} className={classes.gridItem}>
-              <div className={classes.toolboxItem}>
-                Catching up - tools & helpers:
-                <List className={classes.moreTools}>
-                  {moreTools.map(tool =>
-                    <ListItem key={tool} className={classes.moreToolsItem}>
-                      {tool}
-                    </ListItem>)}
-                </List>
-              </div>
-            </Grid>
-
-          </Grid>
-        </Box>
+          </Box>
+        </Container>
       </section>
     </div>
   );

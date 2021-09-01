@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
-import { AppBar, useMediaQuery, useTheme } from "@material-ui/core";
+import { AppBar, Container, useMediaQuery, useTheme } from "@material-ui/core";
 // import makeStyles from '@material-ui/styles/makeStyles';
 import { makeStyles } from '@material-ui/core';
 import Logo from "../UI/Logo";
@@ -49,8 +49,10 @@ const useStyles = makeStyles(theme => ({
     return isScrolled ? { ...styles, ...scrolled } : styles;
   },
   logo: {
+    display: 'flex',
+    alignItems: 'center',
     transition: `all 250ms ease-in-out`,
-    transform: ({ isScrolled }) => isScrolled ? 'translateX(30%)' : 'translateX(60%)',
+    transform: ({ isScrolled }) => isScrolled ? 'translateX(20%)' : 'translateX(40%)',
     width: 'fit-content'
   },
   navbar: {
@@ -172,74 +174,76 @@ const MyAppBar = (props) => {
         <div />
       </div>
       <AppBar className={classes.appBar} elevation={0}>
-        <div className={classes.logo}>
-          <Logo header />
-        </div>
-        <List
-          component='nav'
-          className={classes.navbar}
-          disablePadding
-        >
-          {isSmallScreen ?
+        <Container maxWidth='xl' style={{display: 'flex', justifyContent: 'space-between'}}>
+          <div className={classes.logo}>
+            <Logo header />
+          </div>
+          <List
+            component='nav'
+            className={classes.navbar}
+            disablePadding
+          >
+            {isSmallScreen ?
+              <IconButton
+                edge="start"
+                className={classes.menuButton}
+                color="inherit"
+                aria-label="menu"
+                onClick={toggleExpanded}
+                size="medium">
+                <MenuIcon fontSize='large' className={classes.navIcon} />
+              </IconButton>
+              :
+              <List
+                disablePadding
+                component='nav'
+                className={classes.navbarInner}
+                style={{
+                  '--width': Math.round(box.width) - 4 + 'px',
+                  '--left': Math.round(box.left) + 2 + 'px',
+                  '--top': Math.round(box.top) + 2 + 'px',
+                  '--height': Math.round(box.height) - 8 + 'px',
+                }}
+              >
+                {menuItems.map(item =>
+                  <Link
+                    href={item.path}
+                    passHref
+                    key={item.id}
+                  >
+                    <ListItem
+                      ref={(
+                        (asPath.startsWith(item.path) && item.path.length > 1) ||
+                        (asPath === '/' && asPath === item.path)
+                      ) ? activeRef : null}
+                      className={`${(
+                        (asPath.startsWith(item.path) && item.path.length > 1) ||
+                        (asPath === '/' && asPath === item.path)
+                      ) && classes.active} 
+                 ${classes.listItem}`}
+                      button
+                      component='a'
+                      onClick={setBoxToActiveRef}
+                    >
+                      <ListItemText primary={item.text} />
+                    </ListItem>
+                  </Link>
+                )}
+              </List>
+            }
+
             <IconButton
               edge="start"
               className={classes.menuButton}
               color="inherit"
               aria-label="menu"
-              onClick={toggleExpanded}
-              size="medium">
-              <MenuIcon fontSize='large' className={classes.navIcon} />
-            </IconButton>
-            :
-            <List
-              disablePadding
-              component='nav'
-              className={classes.navbarInner}
-              style={{
-                '--width': Math.round(box.width) - 4 + 'px',
-                '--left': Math.round(box.left) + 2 + 'px',
-                '--top': Math.round(box.top) + 2 + 'px',
-                '--height': Math.round(box.height) - 8 + 'px',
-              }}
+              onClick={toggle}
+              size="medium"
             >
-              {menuItems.map(item =>
-                <Link
-                  href={item.path}
-                  passHref
-                  key={item.id}
-                >
-                  <ListItem
-                    ref={(
-                      (asPath.startsWith(item.path) && item.path.length > 1) ||
-                      (asPath === '/' && asPath === item.path)
-                    ) ? activeRef : null}
-                    className={`${(
-                      (asPath.startsWith(item.path) && item.path.length > 1) ||
-                      (asPath === '/' && asPath === item.path)
-                    ) && classes.active} 
-                 ${classes.listItem}`}
-                    button
-                    component='a'
-                    onClick={setBoxToActiveRef}
-                  >
-                    <ListItemText primary={item.text} />
-                  </ListItem>
-                </Link>
-              )}
-            </List>
-          }
-
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-            onClick={toggle}
-            size="medium"
-          >
-            {darkMode ? <Brightness2Icon className={classes.navIcon} /> : <WbSunnyIcon className={classes.navIcon} />}
-          </IconButton>
-        </List>
+              {darkMode ? <Brightness2Icon className={classes.navIcon} /> : <WbSunnyIcon className={classes.navIcon} />}
+            </IconButton>
+          </List>
+        </Container>
       </AppBar>
     </div>
   );

@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, Divider } from '@material-ui/core';
+import { Box, Grid, Typography, Divider, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
@@ -129,76 +129,77 @@ const Projects = ({ setActiveSection, setRefs }) => {
   return (
     <div className={classes.bgOverlay}>
       <section className={classes.projectsRoot} ref={scrollRef}>
-        <Box width='100%' padding='30px 0' className='fadeIn'>
-          <Heading text="Projects" />
-          <Grid container spacing={5} justifyContent='flex-end'>
-            <Grid item xs={12} md={6} className={classes.contentHolder}>
-              <DefaultCard
-                maxWidth={600}
-                height='fit-content'
-              >
-                <Typography component='h3' variant='h5' className={classes.subtitle}>
-                  COINLAND
-                </Typography>
-                <Typography className={classes.text}>
-                  This practice project was intended to connect custom built client side app to an external API. All the data comes from <a target="_blank" rel="noopener noreferrer" href='https://coinmarketcap.com/' className='cyan'>coinmarketcap.com</a>.
-                  <br />
-                  <br />
-                  <small>* AndrejGround&apos;s first ever project</small>
-                </Typography>
-                <ButtonGroup
-                  aria-label="outlined primary button group"
-                  fullWidth
+        <Container maxWidth='xl'>
+          <Box width='100%' padding='30px 0' className='fadeIn'>
+            <Heading text="Projects" />
+            <Grid container spacing={5} justifyContent='flex-end'>
+              <Grid item xs={12} md={6} className={classes.contentHolder}>
+                <DefaultCard
+                  maxWidth={600}
+                  height='fit-content'
                 >
-                  <Button
-                    variant='text'
-                    component='a'
-                    target='_blank'
-                    rel="noopener noreferrer"
-                    href='https://ninjaneer87.github.io/coinland/'
-                    endIcon={<LinkIcon />}
-                    color={`${darkMode ? 'secondary' : 'primary'}`}
-                  >
-                    Live site
-                  </Button>
-                  <Button
-                    variant='text'
-                    component='a'
-                    target='_blank'
-                    rel="noopener noreferrer"
-                    href='https://github.com/Ninjaneer87/coinland/'
-                    endIcon={<CodeIcon />}
-                    color={`${darkMode ? 'secondary' : 'primary'}`}
-                  >
-                    Code
-                  </Button>
-                </ButtonGroup>
-
-                <Divider classes={{ root: classes.divider }} />
-
-                <Link
-                  href='/portfolio'
-                  passHref
-                >
-                  <Button
-                    variant='text'
+                  <Typography component='h3' variant='h5' className={classes.subtitle}>
+                    COINLAND
+                  </Typography>
+                  <Typography className={classes.text}>
+                    This practice project was intended to connect custom built client side app to an external API. All the data comes from <a target="_blank" rel="noopener noreferrer" href='https://coinmarketcap.com/' className='cyan'>coinmarketcap.com</a>.
+                    <br />
+                    <br />
+                    <small>* AndrejGround&apos;s first ever project</small>
+                  </Typography>
+                  <ButtonGroup
+                    aria-label="outlined primary button group"
                     fullWidth
-                    size="large"
-                    component='a'
-                    color={`${darkMode ? 'secondary' : 'primary'}`}
-                    endIcon={<ArrowRightAltIcon />}
                   >
-                    More projects
-                  </Button>
-                </Link>
-              </DefaultCard>
-            </Grid>
-            <Grid item xs={12} md={6} >
-              <div className={classes.image} />
-            </Grid>
-          </Grid>
-        </Box>
+                    <Button
+                      variant='text'
+                      component='a'
+                      target='_blank'
+                      rel="noopener noreferrer"
+                      href='https://ninjaneer87.github.io/coinland/'
+                      endIcon={<LinkIcon />}
+                      color={`${darkMode ? 'secondary' : 'primary'}`}
+                    >
+                      Live site
+                    </Button>
+                    <Button
+                      variant='text'
+                      component='a'
+                      target='_blank'
+                      rel="noopener noreferrer"
+                      href='https://github.com/Ninjaneer87/coinland/'
+                      endIcon={<CodeIcon />}
+                      color={`${darkMode ? 'secondary' : 'primary'}`}
+                    >
+                      Code
+                    </Button>
+                  </ButtonGroup>
 
+                  <Divider classes={{ root: classes.divider }} />
+
+                  <Link
+                    href='/portfolio'
+                    passHref
+                  >
+                    <Button
+                      variant='text'
+                      fullWidth
+                      size="large"
+                      component='a'
+                      color={`${darkMode ? 'secondary' : 'primary'}`}
+                      endIcon={<ArrowRightAltIcon />}
+                    >
+                      More projects
+                    </Button>
+                  </Link>
+                </DefaultCard>
+              </Grid>
+              <Grid item xs={12} md={6} >
+                <div className={classes.image} />
+              </Grid>
+            </Grid>
+          </Box>
+        </Container>
       </section>
     </div>
   );

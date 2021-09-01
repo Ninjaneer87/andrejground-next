@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Box } from "@material-ui/core";
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Container } from '@material-ui/core';
 import DefaultCard from "../../cards/DefaultCard";
 import Heading from "../../UI/Heading";
 import Link from "next/link";
@@ -26,10 +26,12 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(3),
     paddingBottom: 100,
     zIndex: 1,
+    justifyContent: 'center'
   },
   bgOverlay: {
     overflow: 'hidden',
     position: 'relative',
+    // margin: '0 auto',
     '&::after': {
       content: '""',
       backgroundImage: `url('${patternImage}')`,
@@ -103,43 +105,45 @@ const Mission = ({ setActiveSection, setRefs }) => {
   return (
     <div className={classes.bgOverlay}>
       <section className={classes.missionRoot} ref={scrollRef}>
-        <Box width='100%' padding='30px 0' className='fadeIn'>
-          <Heading text='Mission' />
-          <Grid container spacing={5} justifyContent='center'>
-            <Grid item className={`${classes.gridItem} ${classes.translateMinusXl}`} xs={12} md={6} lg={4}>
-              <DefaultCard maxWidth={400}>
-                <div className={classes.imageContainer}>
-                  <Image className={classes.image} layout='fill' src={aboutImage} alt='icon' />
-                </div>
-                <div className={classes.text}>
-                  This is the place where ideas get converted into code. If you are into any of those two,<br /> let&apos;s <span className='cyan' ><Link href='/contact'  >get in touch</Link></span> and build.
-                </div>
-              </DefaultCard>
+        <Container maxWidth='xl'>
+          <Box width='100%' padding='30px 0' className='fadeIn'>
+            <Heading text='Mission' />
+            <Grid container spacing={5} justifyContent='center'>
+              <Grid item className={`${classes.gridItem} ${classes.translateMinusXl}`} xs={12} md={6} lg={4}>
+                <DefaultCard maxWidth={400}>
+                  <div className={classes.imageContainer}>
+                    <Image className={classes.image} layout='fill' src={aboutImage} alt='icon' />
+                  </div>
+                  <div className={classes.text}>
+                    This is the place where ideas get converted into code. If you are into any of those two,<br /> let&apos;s <span className='cyan' ><Link href='/contact'  >get in touch</Link></span> and build.
+                  </div>
+                </DefaultCard>
+              </Grid>
+              <Grid item className={classes.gridItem} xs={12} md={6} lg={4}>
+                <DefaultCard maxWidth={400}>
+                  <div className={classes.imageContainer}>
+                    <Image className={classes.image} layout='fill' src={uiUxImage} alt='icon' />
+                  </div>
+                  <div className={classes.text}>
+                    {/* To attract and retain user attention, there is a need for catchy UI and smooth UX, which will lead to engagement and interaction. */}
+                    Two key components to make any modern web application stand out and secure user engagement are: <br />catchy <strong className={`${darkMode ? '' : 'grey'}`}>UI</strong> & smooth <strong className={`${darkMode ? '' : 'grey'}`}>UX</strong>.
+                  </div>
+                </DefaultCard>
+              </Grid>
+              <Grid item className={`${classes.gridItem} ${classes.translatePlusXl}`} xs={12} md={6} lg={4}>
+                <DefaultCard maxWidth={400}>
+                  <div className={classes.imageContainer}>
+                    <Image className={classes.image} layout='fill' src={goalImage} alt='icon' />
+                  </div>
+                  <div className={classes.text}>
+                    {/* The mission here is to create performant, modern, user friendly web applications, with the latest technologies, and to make sure they achieve the desired effect. */}
+                    Building the fast, pretty and straightforward web experience, that&apos;s what AndrejGround is all about.
+                  </div>
+                </DefaultCard>
+              </Grid>
             </Grid>
-            <Grid item className={classes.gridItem} xs={12} md={6} lg={4}>
-              <DefaultCard maxWidth={400}>
-                <div className={classes.imageContainer}>
-                  <Image className={classes.image} layout='fill' src={uiUxImage} alt='icon' />
-                </div>
-                <div className={classes.text}>
-                  {/* To attract and retain user attention, there is a need for catchy UI and smooth UX, which will lead to engagement and interaction. */}
-                  Two key components to make any modern web application stand out and secure user engagement are: <br />catchy <strong className={`${darkMode ? '' : 'grey'}`}>UI</strong> & smooth <strong className={`${darkMode ? '' : 'grey'}`}>UX</strong>.
-                </div>
-              </DefaultCard>
-            </Grid>
-            <Grid item className={`${classes.gridItem} ${classes.translatePlusXl}`} xs={12} md={6} lg={4}>
-              <DefaultCard maxWidth={400}>
-                <div className={classes.imageContainer}>
-                  <Image className={classes.image} layout='fill' src={goalImage} alt='icon' />
-                </div>
-                <div className={classes.text}>
-                  {/* The mission here is to create performant, modern, user friendly web applications, with the latest technologies, and to make sure they achieve the desired effect. */}
-                  Building the fast, pretty and straightforward web experience, that&apos;s what AndrejGround is all about.
-                </div>
-              </DefaultCard>
-            </Grid>
-          </Grid>
-        </Box>
+          </Box>
+        </Container>
       </section>
     </div>
   );

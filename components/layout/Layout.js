@@ -19,6 +19,7 @@ const useStyles = makeStyles(theme => ({
   page: {
     // display: 'flex',
     // flexFlow: 'column',
+    // justifyContent:'center',
     // paddingBottom: theme.spacing(3),
     '-ms-transform': 'translate3d(0, 0, 0)',
     '-webkit-transform': 'translate3d(0, 0, 0)',

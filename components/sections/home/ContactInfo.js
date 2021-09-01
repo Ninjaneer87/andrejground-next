@@ -48,6 +48,9 @@ const useStyles = makeStyles(theme => ({
         transform: 'scale(1.3)',
         backgroundAttachment: 'fixed',
       },
+      [theme.breakpoints.up(2000)]: {
+        backgroundSize: 'cover'
+      },
     },
   },
   gridItem: {
