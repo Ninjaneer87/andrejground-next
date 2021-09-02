@@ -23,10 +23,12 @@ const useStyles = makeStyles(theme => ({
     minHeight: '100vh',
     position: 'relative',
     // boxShadow: `inset 0px 0px 20px ${theme.palette.custom.boxShadowColor}`,
-    padding: theme.spacing(3),
     paddingBottom: 100,
     zIndex: 1,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    [theme.breakpoints.up(992)]: {
+      padding: theme.spacing(3),
+    },
   },
   bgOverlay: {
     overflow: 'hidden',

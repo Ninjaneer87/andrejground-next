@@ -39,6 +39,10 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: '20px 0px !important',
+    [theme.breakpoints.up(992)]: {
+      padding: theme.spacing(3),
+    },
   },
   gridItem: {
     marginBottom: '3em',
@@ -51,10 +55,10 @@ const ProjectsList = ({ projects }) => {
   return (
     <div className={classes.bgOverlay}>
       <section className={classes.projectsListRoot + ' fadeIn'}>
-        <Container maxWidth='xl'>
+        <Container maxWidth='xl' style={{padding: 0}}>
           <Box width='100%' padding='30px 0'>
             <Heading text="Projects" />
-            <Grid container spacing={5} >
+            <Grid container >
               {projects.map(project =>
                 <Grid item xs={12} md={6} className={classes.contentHolder} key={project._id}>
                   <ProjectItem

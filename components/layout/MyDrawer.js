@@ -101,7 +101,7 @@ const MyDrawer = () => {
             <ListItem
               key={item.id}
               button
-              prefetch={false}
+              // prefetch={false}
               className={`${(
                 (asPath.startsWith(item.path) && item.path.length > 1) ||
                 (asPath === '/' && asPath === item.path)

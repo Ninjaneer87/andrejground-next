@@ -20,9 +20,11 @@ const useStyles = makeStyles(theme => ({
     minHeight: '100vh',
     position: 'relative',
     backgroundColor: 'rgba(0, 0, 0, .8)',
-    padding: theme.spacing(3),
     overflow: 'hidden',
     zIndex: 1,
+    [theme.breakpoints.up(992)]: {
+      padding: theme.spacing(3),
+    },
   },
   bgOverlay: {
     overflow: 'hidden',

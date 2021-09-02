@@ -1,5 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, useTheme } from '@material-ui/core';
+import { useMediaQuery } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -33,6 +34,8 @@ const useStyles = makeStyles(theme => ({
 }))
 const DefaultCard = (props) => {
   const classes = useStyles();
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(600));
 
   return (
     <div
@@ -41,7 +44,7 @@ const DefaultCard = (props) => {
         maxWidth: props.maxWidth || '100%', 
         height: props.height || '100%',
         width: props.width || 'auto',
-        padding: props.padding || '',
+        padding: props.padding || `${isSmallScreen ? '1rem .5rem' : '2rem'}`,
       }}
     >
       <div className={classes.content}>
