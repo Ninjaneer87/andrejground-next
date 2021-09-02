@@ -44,6 +44,7 @@ const useStyles = makeStyles(theme => ({
       minHeight: 60,
       borderBottom: `1px solid ${theme.palette.custom.appbarBorderColor}`,
       background: grey[900],
+      // background: theme.palette.primary.main,
       boxShadow: `0px 0px 20px rgba(0, 0, 0, 0.38)`,
     };
     return isScrolled ? { ...styles, ...scrolled } : styles;

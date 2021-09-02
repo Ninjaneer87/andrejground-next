@@ -12,7 +12,9 @@ const useStyles = makeStyles(theme => ({
     return {
       paddingRight: 2,
       minHeight: 150,
-      backgroundColor: 'rgba(0, 0, 0, 0.38)',
+      backgroundColor: 'rgba(0, 0, 0, 0.3)',
+      // backgroundColor: 'rgba(38, 50, 56, 0.8)',
+      // backgroundColor: '#212121ee',
       position: 'fixed',
       top: '50%',
       right: 0,
@@ -47,6 +49,12 @@ const useStyles = makeStyles(theme => ({
   },
   expandedRoot: {
     width: '180px !important',
+    // backgroundColor: 'rgba(38, 50, 56, 0.7) !important',
+    backgroundColor: 'rgba(0, 0, 0, 0.6) !important',
+    [theme.breakpoints.down(1100)]: {
+      backgroundColor: 'rgba(0, 0, 0, 0.8) !important',
+      // backgroundColor: 'rgba(38, 50, 56, 0.8) !important',
+    },
   },
 
   item: {

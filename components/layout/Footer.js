@@ -13,6 +13,7 @@ const useStyles = makeStyles(theme => ({
     minHeight: '30vh',
     position: 'relative',
     background: grey[900],
+    // background: theme.palette.primary.main,
     marginTop: 'auto',
     borderTop: `1px solid ${theme.palette.custom.appbarBorderColor}`,
     [theme.breakpoints.up(600)]: {
