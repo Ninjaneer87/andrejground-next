@@ -135,6 +135,15 @@ const MyAppBar = (props) => {
   const [mounting, setMounting] = useState(true);
   const [box, setBox] = useState(initialBox);
 
+  const { ref: toolbarScrollRef, inView: toolbarInView } = useInView({
+    threshold: 1
+  });
+  const isScrolled = !toolbarInView;
+
+  const classes = useStyles({ isScrolled, darkMode });
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+
   const setBoxToActiveRef = useCallback(() => {
     const newBox = {
       width: activeRef.current?.offsetWidth,
@@ -142,8 +151,10 @@ const MyAppBar = (props) => {
       top: activeRef.current?.offsetTop,
       height: activeRef.current?.offsetHeight,
     };
+
+    if(activeRef.current)
     setBox(newBox);
-  }, [])
+  }, [isSmallScreen])
 
   useEffect(() => {
     if (activeRef.current && mounting) {
@@ -156,14 +167,10 @@ const MyAppBar = (props) => {
     setBoxToActiveRef();
   }, [asPath, setBoxToActiveRef]);
 
-  const { ref: toolbarScrollRef, inView: toolbarInView } = useInView({
-    threshold: 1
-  });
-  const isScrolled = !toolbarInView;
-
-  const classes = useStyles({ isScrolled, darkMode });
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+  useEffect(() => {
+    window.addEventListener("resize", setBoxToActiveRef);
+    return () => window.removeEventListener("resize", setBoxToActiveRef)
+  }, [setBoxToActiveRef]);
 
   useEffect(() => {
     setIsScrolled(isScrolled);

@@ -108,8 +108,8 @@ const SectionNav = ({ sections, activeSection, activateSection }) => {
       top: activeRef.current?.offsetTop,
       height: activeRef.current?.offsetHeight,
     };
-    setBox(newBox);
-  }, [])
+      setBox(newBox);
+  }, [isSmallScreen])
 
   useEffect(() => {
     if (activeRef.current && mounting) {
@@ -143,6 +143,12 @@ const SectionNav = ({ sections, activeSection, activateSection }) => {
 
   return (
     <ClientOnlyPortal>
+      {isSmallScreen ? <ButtonBase
+        onClick={() => setExpanded(prevExp => !prevExp)}
+        className={classes.item}
+      >
+        {expanded ? <ArrowForwardIosOutlinedIcon style={{ color: '#fff' }} /> : <ArrowBackIosOutlinedIcon style={{ color: '#fff' }} />}
+      </ButtonBase> : null}
       <div
         onMouseEnter={() => !isSmallScreen && setExpanded(true)}
         onMouseLeave={() => !isSmallScreen && setExpanded(false)}
