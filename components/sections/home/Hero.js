@@ -7,7 +7,7 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core';
 
-const heroImage = '/img/bg.jpg';
+const heroImage = '/img/bg.webp';
 
 const useStyles = makeStyles(theme => ({
   hero: {

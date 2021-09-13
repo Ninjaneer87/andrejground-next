@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core';
 import Heading from '../../UI/Heading';
 import BlogItem from './BlogItem';
 
-const patternImage2 = '/img/pattern2.png';
+const patternImage2 = '/img/pattern2.webp';
 
 const useStyles = makeStyles(theme => ({
   blogsListRoot: {

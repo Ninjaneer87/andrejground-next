@@ -15,7 +15,7 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import ClipboardCopy from '../../UI/ClipboardCopy';
 
-const bgImage = '/img/bg4.jpg';
+const bgImage = '/img/bg4.webp';
 
 const useStyles = makeStyles(theme => ({
   contactInfo: {

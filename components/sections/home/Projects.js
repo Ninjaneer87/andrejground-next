@@ -14,8 +14,8 @@ import DefaultCard from '../../cards/DefaultCard';
 import ThemeContext from '../../../context/themeContext';
 // import { scrollTopClick } from '../../helpers/utility';
 
-const patternImage = '/img/pattern2.png';
-const bgImage = '/img/coinland-framed.png';
+const patternImage = '/img/pattern2.webp';
+const bgImage = '/img/coinland-framed.webp';
 
 const useStyles = makeStyles(theme => ({
   projectsRoot: {

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Container, Grid, makeStyles, Box, List, ListItem, TableCell, Table, TableBody, TableRow, Button, Divider } from '@material-ui/core';
 import Heading from '../../UI/Heading';
-import patternImage2 from '../../../public/img/pattern2.png';
+import patternImage2 from '../../../public/img/pattern2.webp';
 import ThemedTypography from '../../UI/ThemedTypography';
 import DefaultCard from '../../cards/DefaultCard';
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';

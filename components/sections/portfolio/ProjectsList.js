@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core';
 import Heading from '../../UI/Heading';
 import ProjectItem from './ProjectItem';
 
-const patternImage2 = '/img/pattern2.png';
+const patternImage2 = '/img/pattern2.webp';
 
 const useStyles = makeStyles(theme => ({
   projectsListRoot: {

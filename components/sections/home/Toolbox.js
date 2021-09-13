@@ -9,7 +9,7 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import Image from 'next/image';
 
-import bgImage from '../../../public/img/bg2.jpg';
+import bgImage from '../../../public/img/bg2.webp';
 import toolboxImage from '../../../public/img/skills1.png';
 
 const useStyles = makeStyles(theme => ({
@@ -167,7 +167,7 @@ const Toolbox = ({ setActiveSection, setRefs }) => {
 
               <Grid item xs={12} md={6} className={classes.gridItem}>
                 <div className={classes.toolboxItem} style={{ maxWidth: 400 }}>
-                  Main tools:
+                  Primary tools:
                   <List>
                     <ListItem className={classes.listItem}>
                       <ListItemIcon>
@@ -205,7 +205,7 @@ const Toolbox = ({ setActiveSection, setRefs }) => {
 
               <Grid item xs={12} md={6} className={classes.gridItem}>
                 <div className={classes.toolboxItem}>
-                  Catching up - tools & helpers:
+                  Secondary tools:
                   <List className={classes.moreTools}>
                     {moreTools.map(tool =>
                       <ListItem key={tool} className={classes.moreToolsItem}>

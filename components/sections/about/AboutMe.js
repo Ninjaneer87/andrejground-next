@@ -5,7 +5,7 @@ import DefaultCard from '../../cards/DefaultCard';
 import GetAppIcon from '@material-ui/icons/GetApp';
 import ThemeContext from '../../../context/themeContext';
 
-const andrejImage = '/img/andrej500transparent.png';
+const andrejImage = '/img/andrej500transparent.webp';
 
 const useStyles = makeStyles(theme => ({
   about: {

@@ -18,6 +18,7 @@ import { grey } from "@material-ui/core/colors";
 import { useRouter } from 'next/dist/client/router';
 import useDarkMode from 'use-dark-mode';
 import ThemeContext from '../../context/themeContext';
+import { hideModal } from '../UI/Modal';
 
 const useStyles = makeStyles(theme => ({
   appBar: ({ isScrolled }) => {
@@ -165,6 +166,7 @@ const MyAppBar = (props) => {
 
   useEffect(() => {
     setBoxToActiveRef();
+    hideModal();
   }, [asPath, setBoxToActiveRef]);
 
   useEffect(() => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 
-const heroImage = '/img/bg.jpg';
+const heroImage = '/img/bg.webp';
 
 const useStyles = makeStyles(theme => ({
   pagetitleRoot: {

@@ -13,7 +13,7 @@ import ThemeContext from '../../../context/themeContext';
 const aboutImage = '/img/aboutme.svg';
 const uiUxImage = '/img/ui-ux.svg';
 const goalImage = '/img/final-goal.svg';
-const patternImage = '/img/pattern2.png';
+const patternImage = '/img/pattern2.webp';
 
 const useStyles = makeStyles(theme => ({
   missionRoot: {

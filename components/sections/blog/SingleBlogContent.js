@@ -1,8 +1,8 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { Container, makeStyles, List, ListItem, Typography, ListItemIcon } from '@material-ui/core';
 import Heading from '../../UI/Heading';
-import patternImage2 from '../../../public/img/pattern2.png';
-import Image from 'next/image';
+import patternImage2 from '../../../public/img/pattern2.webp';
+// import Image from 'next/image';
 import { hideModal, showModal } from './../../UI/Modal';
 import ThemedTypography from '../../UI/ThemedTypography';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
