@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import CheckCircleOutlineOutlinedIcon from '@material-ui/icons/CheckCircleOutlineOutlined';
+// import CheckCircleOutlineOutlinedIcon from '@material-ui/icons/CheckCircleOutlineOutlined';
 import { Avatar, Container, Grid, makeStyles, Box, IconButton, Tooltip } from '@material-ui/core';
 import DefaultCard from '../../cards/DefaultCard';
 import ThemedTypography from './../../UI/ThemedTypography';
@@ -10,6 +10,7 @@ import ClipboardCopy from '../../UI/ClipboardCopy';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
 
 const infoItems = [
   {
@@ -27,8 +28,16 @@ const infoItems = [
   {
     id: 2,
     label: 'Current status',
-    text: 'Available',
-    icon: <CheckCircleOutlineOutlinedIcon fontSize='large' />
+    text: <span>Frontend Developer @ <a 
+        href="https://careers.single.earth/people/1059582-andrej-forgac"
+        target='_blank'
+        rel="noreferrer"
+        className='cyan'
+      >
+        Single.Earth
+      </a>
+    </span>,
+    icon: <WorkOutlineIcon fontSize='large' />
   },
 ];
 
@@ -108,14 +117,14 @@ const Info = () => {
 
                   <ThemedTypography
                     ref={emailRef}
-                    style={{ fontWeight: 400 }}
+                    style={{ fontWeight: 400, textAlign: 'center' }}
                   >
                     <a className='link' style={{ marginRight: 6 }} href='mailto:contact@andrejground.com'>{item.text}</a>
                     <ClipboardCopy ref={emailRef} content={item.text} />
                   </ThemedTypography> :
 
                   <ThemedTypography
-                    style={{ fontWeight: 400 }}
+                    style={{ fontWeight: 400, textAlign: 'center' }}
                   >
                     {item.text}
                   </ThemedTypography>}

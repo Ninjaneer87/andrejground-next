@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useCallback, useEffect, useState, useRef } from 'react';
 import { Box, Container, Grid, makeStyles, Typography, Button, Divider } from '@material-ui/core';
 import Heading from '../../UI/Heading';
 import DefaultCard from '../../cards/DefaultCard';
@@ -70,9 +70,25 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const AboutMe = React.forwardRef((props, ref) => {
+const AboutMe = ({setRefs, refs}) => {
   const classes = useStyles();
   const { darkMode } = useContext(ThemeContext)
+  const ref = useRef(null);
+  const [refLoaded, setRefLoaded] = useState(false);
+
+  useEffect(() => {
+    if(!refLoaded) {
+      if(ref.current) {
+        setRefs('aboutme', ref);
+      }
+      setRefLoaded(true);
+    }
+  }, [refLoaded, setRefs]);
+  
+  const goToValues = useCallback(() => {
+    if (refs['values'].current)
+      refs['values'].current.scrollIntoView({ behavior: 'smooth' });
+  }, [refs]);
 
   return (
     <Container maxWidth='lg' className={`${classes.about} fadeIn`}>
@@ -90,7 +106,7 @@ const AboutMe = React.forwardRef((props, ref) => {
               <br /><br />
               He enjoys learning, coding, and seeing his code getting leaner and cleaner after each project.
               <br /><br />
-              Now, he is on a quest for finding the right environment for professional growth and improvement.
+              He is on the constant quest for people who share similar habits, views and <span className='cyan' style={{ cursor: 'pointer' }} onClick={goToValues}>values</span>.
               <br /><br />
             </Typography>
             <Divider classes={{ root: classes.divider }} />
@@ -111,7 +127,7 @@ const AboutMe = React.forwardRef((props, ref) => {
       </DefaultCard>
     </Container>
   );
-});
+};
 
 AboutMe.displayName = 'AboutMe';
 

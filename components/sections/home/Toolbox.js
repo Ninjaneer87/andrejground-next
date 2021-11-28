@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: '1em',
   },
   toolboxItem: {
-    maxWidth: 600,
+    maxWidth: 700,
     margin: '0 auto',
     fontWeight: 400,
     fontSize: '1.2rem',
@@ -132,6 +132,7 @@ const moreTools = [
   'Redux Saga',
   'Material UI',
   'Next JS',
+  'Angular',
   'Node JS',
   'MongoDB',
   'PHP',

@@ -35,9 +35,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const refs = {};
+const setRefs = (sectionName, ref) => {
+  console.log('setting the ref from aboutme')
+  refs[sectionName] = ref;
+  console.log({refs})
+};
+
 const About = () => {
   const classes = useStyles();
-  const ref = useRef(null);
 
   return (
     <>
@@ -48,9 +54,16 @@ const About = () => {
       <div className={classes.bgOverlay}>
         <div className={classes.root}>
           <PageTitle pageTitle='About' />
-          <Intro ref={ref} />
-          <AboutMe ref={ref} />
-          <Values />
+          <Intro 
+            refs={refs} 
+          />
+          <AboutMe 
+            setRefs={setRefs}
+            refs={refs} 
+          />
+          <Values 
+            setRefs={setRefs}
+          />
         </div>
       </div>
     </>

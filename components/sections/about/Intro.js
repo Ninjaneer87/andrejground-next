@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Box, Container, List, ListItem, ListItemIcon, ListItemText, makeStyles, Typography, Button } from '@material-ui/core';
 import Heading from '../../UI/Heading';
 // import MenuBookIcon from '@material-ui/icons/MenuBook';
@@ -125,19 +125,19 @@ const stats = [
     desc: 'hours of online courses and tutorials'
   },
 ]
-const Intro = React.forwardRef((props, ref) => {
+const Intro = ({refs}) => {
   const classes = useStyles();
   
   const goToAndrej = useCallback(() => {
-    if (ref.current)
-      ref.current.scrollIntoView({ behavior: 'smooth' });
-  }, [ref])
+    if (refs['aboutme'].current)
+      refs['aboutme'].current.scrollIntoView({ behavior: 'smooth' });
+  }, [refs])
 
   return (
     <Container maxWidth='xl' className={`${classes.intro} fadeIn`}>
       <Heading text="What is AndrejGround?" />
       <Typography variant='h6' className={classes.subTitle}>
-        AndrejGround is <span className='cyan' style={{ cursor: 'pointer' }} onClick={goToAndrej}>Andrej</span>&apos;s playground for some UI & UX ideas, features and functionalities, as well as the window to his portfolio.
+        AndrejGround is <span className='cyan' style={{ cursor: 'pointer' }} onClick={goToAndrej}>Andrej</span>&apos;s development playground for ideas, user-facing features and functionalities, as well as the window to his portfolio.
       </Typography>
       <Box className={classes.logoImage} />
       <List className={classes.list}>
@@ -159,7 +159,7 @@ const Intro = React.forwardRef((props, ref) => {
       </List>
     </Container>
   );
-});
+};
 Intro.displayName = 'Intro';
 
 export default Intro;

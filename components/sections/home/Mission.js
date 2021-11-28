@@ -117,7 +117,7 @@ const Mission = ({ setActiveSection, setRefs }) => {
                     <Image className={classes.image} layout='fill' src={aboutImage} alt='icon' />
                   </div>
                   <div className={classes.text}>
-                    This is the place where ideas get converted into code. If you are into any of those two,<br /> let&apos;s <span className='cyan' ><Link href='/contact'  >get in touch</Link></span> and build.
+                    AndrejGround is all about turning ideas into code. If you are into any of these,<br /> <span className='cyan' ><Link href='/contact'  >let&apos;s collaborate</Link></span>.
                   </div>
                 </DefaultCard>
               </Grid>
@@ -128,7 +128,7 @@ const Mission = ({ setActiveSection, setRefs }) => {
                   </div>
                   <div className={classes.text}>
                     {/* To attract and retain user attention, there is a need for catchy UI and smooth UX, which will lead to engagement and interaction. */}
-                    Two key components to make any modern web application stand out and secure user engagement are: <br />catchy <strong className={`${darkMode ? '' : 'grey'}`}>UI</strong> & smooth <strong className={`${darkMode ? '' : 'grey'}`}>UX</strong>.
+                    Tendencies: <strong className={`${darkMode ? '' : 'grey'}`}>clean code</strong> in <strong className={`${darkMode ? '' : 'grey'}`}>latest technologies</strong>, <strong className={`${darkMode ? '' : 'grey'}`}>smooth UX</strong> & <strong className={`${darkMode ? '' : 'grey'}`}>clean UI</strong> on all screens and devices.
                   </div>
                 </DefaultCard>
               </Grid>
@@ -139,7 +139,7 @@ const Mission = ({ setActiveSection, setRefs }) => {
                   </div>
                   <div className={classes.text}>
                     {/* The mission here is to create performant, modern, user friendly web applications, with the latest technologies, and to make sure they achieve the desired effect. */}
-                    Building the fast, pretty and straightforward web experience, that&apos;s what AndrejGround is all about.
+                    The mission here is to connect with likeminded people and build.
                   </div>
                 </DefaultCard>
               </Grid>

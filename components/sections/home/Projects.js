@@ -144,7 +144,7 @@ const Projects = ({ setActiveSection, setRefs }) => {
                     COINLAND
                   </Typography>
                   <Typography className={classes.text}>
-                    This practice project was intended to connect custom built client side app to an external API. All the data comes from <a target="_blank" rel="noopener noreferrer" href='https://coinmarketcap.com/' className='cyan'>coinmarketcap.com</a>.
+                    This practice project was intended to connect client side app to a public API. Data comes from <a target="_blank" rel="noopener noreferrer" href='https://coinmarketcap.com/' className='cyan'>coinmarketcap.com</a>.
                     <br />
                     <br />
                     <small>* AndrejGround&apos;s first ever project</small>
