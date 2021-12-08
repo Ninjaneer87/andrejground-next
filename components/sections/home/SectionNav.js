@@ -143,12 +143,6 @@ const SectionNav = ({ sections, activeSection, activateSection }) => {
 
   return (
     <ClientOnlyPortal>
-      {isSmallScreen ? <ButtonBase
-        onClick={() => setExpanded(prevExp => !prevExp)}
-        className={classes.item}
-      >
-        {expanded ? <ArrowForwardIosOutlinedIcon style={{ color: '#fff' }} /> : <ArrowBackIosOutlinedIcon style={{ color: '#fff' }} />}
-      </ButtonBase> : null}
       <div
         onMouseEnter={() => !isSmallScreen && setExpanded(true)}
         onMouseLeave={() => !isSmallScreen && setExpanded(false)}
