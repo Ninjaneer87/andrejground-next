@@ -63,7 +63,7 @@ export const lightTheme = responsiveFontSizes(createTheme({
       borderColor: 'transparent',
       appbarBorderColor: cyan[900],
       logoBgColor: 'rgba(0, 0, 0, 0.5)',
-      cardBgColor: '#f5f5f5a3',
+      cardBgColor: '#f5f5f544',
     },
     action: {
       disabled: '#bdbdbd'
@@ -97,10 +97,10 @@ export const darkTheme = responsiveFontSizes(createTheme({
       accent: cyan['A400'],
       backgroundColor: grey[900],
       boxShadowColor: '#00e5ff44',
-      borderColor: cyan[900],
+      borderColor:'transparent',
       appbarBorderColor: cyan[900],
       logoBgColor: 'transparent',
-      cardBgColor: '#212121aa',
+      cardBgColor: '#ffffff03',
     },
     action: {
       disabled: '#bdbdbd'

@@ -117,7 +117,7 @@ const Mission = ({ setActiveSection, setRefs }) => {
                     <Image className={classes.image} layout='fill' src={aboutImage} alt='icon' />
                   </div>
                   <div className={classes.text}>
-                    AndrejGround is all about turning ideas into code. If you are into any of these,<br /> <span className='cyan' ><Link href='/contact'  >let&apos;s collaborate</Link></span>.
+                    AndrejGround is about turning ideas into code. If you are into any of these,<br /> <span className='cyan' ><Link href='/contact'  >let&apos;s collaborate</Link></span>.
                   </div>
                 </DefaultCard>
               </Grid>
@@ -128,7 +128,7 @@ const Mission = ({ setActiveSection, setRefs }) => {
                   </div>
                   <div className={classes.text}>
                     {/* To attract and retain user attention, there is a need for catchy UI and smooth UX, which will lead to engagement and interaction. */}
-                    Tendencies: <strong className={`${darkMode ? '' : 'grey'}`}>clean code</strong> in <strong className={`${darkMode ? '' : 'grey'}`}>latest technologies</strong>, <strong className={`${darkMode ? '' : 'grey'}`}>smooth UX</strong> & <strong className={`${darkMode ? '' : 'grey'}`}>clean UI</strong> on all screens and devices.
+                    Tendencies: <strong className={`${darkMode ? '' : 'grey'}`}>clean code</strong> in <strong className={`${darkMode ? '' : 'grey'}`}>latest technologies</strong>, <strong className={`${darkMode ? '' : 'grey'}`}>smooth UX</strong> and <strong className={`${darkMode ? '' : 'grey'}`}>clean UI</strong> on all screens and devices.
                   </div>
                 </DefaultCard>
               </Grid>
@@ -139,7 +139,7 @@ const Mission = ({ setActiveSection, setRefs }) => {
                   </div>
                   <div className={classes.text}>
                     {/* The mission here is to create performant, modern, user friendly web applications, with the latest technologies, and to make sure they achieve the desired effect. */}
-                    The mission here is to connect with likeminded people and build.
+                    The mission is to connect with likeminded people and build.
                   </div>
                 </DefaultCard>
               </Grid>

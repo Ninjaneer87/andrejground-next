@@ -60,13 +60,16 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.custom.accent
   },
   socials: {
-    backgroundColor: theme.palette.custom.cardBgColor,
+    // backgroundColor: theme.palette.custom.cardBgColor,
+    background: 'linear-gradient(135deg, rgba(33,33,33,0.05) 0%, rgba(255,255,255,0.05) 100%)',
     borderRadius: '2rem',
-    border: `1px solid ${theme.palette.custom.borderColor}`,
+    // border: `1px solid ${theme.palette.custom.borderColor}`,
     transition: `all ${theme.transitions.duration.short}ms ease-in-out`,
-    '&:hover': {
-      border: `1px solid ${theme.palette.custom.accent}`,
-    }
+    boxShadow: `10px 10px 10px rgba(0, 0, 0, 0.08)`,
+    backdropFilter: 'blur(6px)',
+    // '&:hover': {
+    //   border: `1px solid ${theme.palette.custom.accent}`,
+    // }
   },
   socialIcon: {
     width: 50,

@@ -7,8 +7,9 @@ const useStyles = makeStyles(theme => ({
     // boxShadow: '0px 0px 30px 0px #ffffff66',
     padding: '1rem .5rem',
     borderRadius: '2rem',
-    backgroundColor: theme.palette.custom.cardBgColor,
-    border: `1px solid ${theme.palette.custom.borderColor}`,
+    // backgroundColor: theme.palette.custom.cardBgColor,
+    background: 'linear-gradient(135deg, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%)',
+    // border: `1px solid ${theme.palette.custom.borderColor}`,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -17,18 +18,17 @@ const useStyles = makeStyles(theme => ({
     transition: `all ${theme.transitions.duration.short}ms ease-in-out`,
     zIndex: 1,
     position: 'relative',
+    boxShadow: `10px 10px 10px rgba(0, 0, 0, 0.08)`,
+    backdropFilter: 'blur(6px)',
     [theme.breakpoints.up(600)]: {
       padding: '2rem',
     },
-    // [theme.breakpoints.up(992)]: {
-    //   backdropFilter: 'blur(4px)',
+    // '&:hover': {
+    //   border: `1px solid ${theme.palette.custom.accent}`,
     // },
-    '&:hover': {
-      border: `1px solid ${theme.palette.custom.accent}`,
-    }
   },
   content: {
-    margin: '1.5rem 0',
+    padding: '1.5rem 0',
     width: '100%'
   }
 }))
