@@ -137,7 +137,7 @@ const Intro = ({refs}) => {
     <Container maxWidth='xl' className={`${classes.intro} fadeIn`}>
       <Heading text="What is AndrejGround?" />
       <Typography variant='h6' className={classes.subTitle}>
-        AndrejGround is <span className='cyan' style={{ cursor: 'pointer' }} onClick={goToAndrej}>Andrej</span>&apos;s development playground for ideas, user-facing features and functionalities, as well as the window to his portfolio.
+        AndrejGround is <span className='cyan' style={{ cursor: 'pointer' }} onClick={goToAndrej}>Andrej</span>&apos;s playground for ideas, front-end features and functionalities, as well as a window to his portfolio.
       </Typography>
       <Box className={classes.logoImage} />
       <List className={classes.list}>

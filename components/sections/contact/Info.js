@@ -107,7 +107,7 @@ const Info = () => {
   return (
     <Container maxWidth='lg' className={`${classes.root} fadeIn`}>
       <Heading text="Let's connect" />
-      <Grid container alignItems='center' justifyContent='center' spacing={5}>
+      <Grid container alignItems='center' justifyContent='center' spacing={5} style={{marginBottom: 20}}>
         {infoItems.map(item => (
           <Grid key={item.id} item xs={12} sm={6} md={4}>
             <DefaultCard height='100%'>
@@ -136,23 +136,26 @@ const Info = () => {
           </Grid>
         ))}
       </Grid>
-      <Box className={classes.socials} display='flex' justifyContent='center' margin='30px 0'>
-        {socials.map(social =>
-          <IconButton
-            key={social.name}
-            edge="start"
-            aria-label="social"
-            component='a'
-            href={social.link}
-            target='_blank'
-            rel="noopener noreferrer"
-          >
-            <Tooltip title={social.name} arrow >
-              {social.icon}
-            </Tooltip>
-          </IconButton>
-        )}
-      </Box>
+      <DefaultCard padding='0px'>
+        <Box display='flex' justifyContent='center'>
+          {socials.map(social =>
+            <IconButton
+              key={social.name}
+              edge="start"
+              aria-label="social"
+              component='a'
+              href={social.link}
+              target='_blank'
+              rel="noopener noreferrer"
+              size='small'
+            >
+              <Tooltip title={social.name} arrow >
+                {social.icon}
+              </Tooltip>
+            </IconButton>
+          )}
+        </Box>
+      </DefaultCard>
     </Container>
   );
 };

@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
   },
   text: {
     color: theme.palette.custom.textColor,
-    textAlign: 'justify',
+    textAlign: 'start',
     padding: 10,
     fontWeight: 500
   },
@@ -102,11 +102,11 @@ const AboutMe = ({setRefs, refs}) => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Typography className={classes.text} >
-              Andrej has been into front-end development for a couple of years now. Beside a few projects, he has developed a strong interest in JavaScript and its ecosystem, with a focus on React.js.
+              Andrej has been into front-end development for a couple of years now. Over this period, he has developed a strong curiosity about JavaScript and its ecosystem, with a focus React and Angular frameworks.
               <br /><br />
               He enjoys learning, coding, and seeing his code getting leaner and cleaner after each project.
               <br /><br />
-              He is on the constant quest for people who share similar habits, views and <span className='cyan' style={{ cursor: 'pointer' }} onClick={goToValues}>values</span>.
+              He is on a constant quest for people who share similar habits, views and <span className='cyan' style={{ cursor: 'pointer' }} onClick={goToValues}>values</span>.
               <br /><br />
             </Typography>
             <Divider classes={{ root: classes.divider }} />

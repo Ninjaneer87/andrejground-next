@@ -104,12 +104,12 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    marginTop: 25
+    marginTop: 25,
+    gap: '10px'
   },
   moreToolsItem: {
     width: 'fit-content',
     fontSize: '1rem',
-    margin: '5px',
     borderRadius: 6,
     border: `1px solid ${theme.palette.custom.accent}`,
     color: '#fff',
@@ -133,10 +133,11 @@ const moreTools = [
   'Material UI',
   'Next JS',
   'Angular',
+  'TypeScript',
+  'RxJS',
+  'SASS',
   'Node JS',
   'MongoDB',
-  'PHP',
-  'MySQL',
   'Git',
 ]
 

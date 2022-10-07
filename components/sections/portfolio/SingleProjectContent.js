@@ -114,6 +114,7 @@ const useStyles = makeStyles(theme => ({
   cell: {
     color: theme.palette.custom.textColor,
     border: 'none',
+    padding: '1rem 0px'
   },
   divider: {
     backgroundColor: theme.palette.custom.accent,
@@ -136,7 +137,7 @@ const SingleProjectContent = (props) => {
               <ThemedTypography component='h3' variant='h5' className={classes.subtitle}>
                 About {props.title}
               </ThemedTypography>
-              <ThemedTypography style={{ textAlign: 'justify' }}>
+              <ThemedTypography>
                 {props.description}
               </ThemedTypography>
               {props.sideNote && (
