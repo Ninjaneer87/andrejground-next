@@ -127,7 +127,6 @@ const Mission = ({ setActiveSection, setRefs }) => {
                     <Image className={classes.image} layout='fill' src={uiUxImage} alt='icon' />
                   </div>
                   <div className={classes.text}>
-                    {/* To attract and retain user attention, there is a need for catchy UI and smooth UX, which will lead to engagement and interaction. */}
                     Tendencies: <strong className={`${darkMode ? '' : 'grey'}`}>clean code</strong> in <strong className={`${darkMode ? '' : 'grey'}`}>latest technologies</strong>, <strong className={`${darkMode ? '' : 'grey'}`}>smooth UX</strong> and <strong className={`${darkMode ? '' : 'grey'}`}>clean UI</strong> on all screens and devices.
                   </div>
                 </DefaultCard>
@@ -138,8 +137,7 @@ const Mission = ({ setActiveSection, setRefs }) => {
                     <Image className={classes.image} layout='fill' src={goalImage} alt='icon' />
                   </div>
                   <div className={classes.text}>
-                    {/* The mission here is to create performant, modern, user friendly web applications, with the latest technologies, and to make sure they achieve the desired effect. */}
-                    The mission is to connect with likeminded people and build.
+                    The mission is to connect with likeminded people and build stuff.
                   </div>
                 </DefaultCard>
               </Grid>

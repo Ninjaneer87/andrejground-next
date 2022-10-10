@@ -102,7 +102,7 @@ const AboutMe = ({setRefs, refs}) => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Typography className={classes.text} >
-              Andrej has been into front-end development for a couple of years now. Over this period, he has developed a strong curiosity about JavaScript and its ecosystem, with a focus React and Angular frameworks.
+              Andrej has been into front-end development for a couple of years now. Over this period, he has developed a strong curiosity about JavaScript and its ecosystem, with a focus on React and Angular frameworks.
               <br /><br />
               He enjoys learning, coding, and seeing his code getting leaner and cleaner after each project.
               <br /><br />
