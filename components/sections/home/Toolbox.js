@@ -109,17 +109,35 @@ const useStyles = makeStyles(theme => ({
     flexWrap: 'wrap',
     justifyContent: 'center',
     marginTop: 25,
-    gap: '16px'
+    gap: '24px',
+    maxWidth: 500,
+    margin: '0px auto',
+  },
+  mainToolsItem: {
+    width: 'fit-content',
+    fontSize: '1rem',
+    borderRadius: 20,
+    backdropFilter: 'blur(10px)',
+    borderTop: `1px solid ${theme.palette.custom.accent}`,
+    borderBottom: `1px solid ${theme.palette.custom.accent}`,
+    boxShadow: `10px 10px 10px #00000055`,
+    backgroundColor: '#ffffff10',
+    color: '#fff',
   },
   moreToolsItem: {
     width: 'fit-content',
     fontSize: '1rem',
-    borderRadius: 20,
-    backdropFilter: 'blur(26px)',
+    borderRadius: 12,
+    backdropFilter: 'blur(10px)',
     borderTop: `1px solid ${theme.palette.custom.accent}`,
     borderBottom: `1px solid ${theme.palette.custom.accent}`,
     backgroundColor: '#ffffff10',
     color: '#fff',
+    boxShadow: `10px 10px 10px #00000055`,
+    // padding: '1rem 2rem',
+    [theme.breakpoints.up(600)]: {
+      padding: '1rem 2rem',
+    },
   },
   translateMinusXl: {
     [theme.breakpoints.up(1300)]: {
@@ -213,7 +231,7 @@ const Toolbox = ({ setActiveSection, setRefs }) => {
         <Container maxWidth='xl'>
           <Box width='100%' padding='30px 0' className='fadeIn'>
             <Heading text="Toolbox" inverse />
-            <Grid container justifyContent='center' spacing={2}>
+            <Grid container justifyContent='center' spacing={5}>
 
               <Grid item xs={12} md={6} className={classes.gridItem}>
                 <div className={classes.toolboxItem} style={{ maxWidth: 400 }}>
@@ -222,7 +240,7 @@ const Toolbox = ({ setActiveSection, setRefs }) => {
                     <Grid container justifyContent='center' spacing={5} style={{marginTop: 20}}>
                       {mainTools.map(tool => 
                         <Grid key={tool.label} item xs={6} >
-                          <div className={classes.moreToolsItem} style={{width: '100%', padding: '1rem'}}>
+                          <div className={classes.mainToolsItem} style={{width: '100%', padding: '1rem'}}>
                             <div className={classes.toolLogoContainer}>
                               <Image className={classes.toolLogo} layout='intrinsic' src={tool.logo} alt='icon' />
                             </div>
@@ -237,11 +255,11 @@ const Toolbox = ({ setActiveSection, setRefs }) => {
                 </div>
               </Grid>
 
-              <Grid item xs={12} md={6} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              {/* <Grid item xs={12} md={6} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <div className={classes.toolboxImageHolder} >
                   <Image src={toolboxImage} alt='toolbox' layout='fill' className={classes.toolboxImage} />
                 </div>
-              </Grid>
+              </Grid> */}
 
               <Grid item xs={12} md={6} className={classes.gridItem}>
                 <div className={classes.toolboxItem}>
