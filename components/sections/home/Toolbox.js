@@ -120,7 +120,7 @@ const useStyles = makeStyles(theme => ({
     backdropFilter: 'blur(10px)',
     borderTop: `1px solid ${theme.palette.custom.accent}`,
     borderBottom: `1px solid ${theme.palette.custom.accent}`,
-    boxShadow: `10px 10px 10px #00000055`,
+    boxShadow: `inset 0px 0px 20px #00000099`,
     backgroundColor: '#ffffff10',
     color: '#fff',
   },
@@ -133,7 +133,7 @@ const useStyles = makeStyles(theme => ({
     borderBottom: `1px solid ${theme.palette.custom.accent}`,
     backgroundColor: '#ffffff10',
     color: '#fff',
-    boxShadow: `10px 10px 10px #00000055`,
+    boxShadow: `inset 0px 0px 20px #00000099`,
     // padding: '1rem 2rem',
     [theme.breakpoints.up(600)]: {
       padding: '1rem 2rem',
