@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     zIndex: 1,
     position: 'relative',
     boxShadow: `10px 10px 10px rgba(0, 0, 0, 0.04)`,
-    backdropFilter: 'blur(6px)',
+    // backdropFilter: 'blur(10px)',
     [theme.breakpoints.up(600)]: {
       padding: '2rem',
     },

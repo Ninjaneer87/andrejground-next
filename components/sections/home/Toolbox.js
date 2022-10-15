@@ -1,16 +1,18 @@
 import React from 'react';
 import { Grid, Box, Container } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core';
-// import { Parallax } from 'react-parallax';
 import Heading from "../../UI/Heading";
-import { List, ListItem, ListItemIcon } from '@material-ui/core';
-import { ListItemText } from '@material-ui/core';
+import { List, ListItem } from '@material-ui/core';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import Image from 'next/image';
 
 import bgImage from '../../../public/img/bg2.webp';
 import toolboxImage from '../../../public/img/skills1.png';
+import reactLogo from '../../../public/img/react-logo.webp';
+import angularLogo from '../../../public/img/angular-logo.png';
+import sassLogo from '../../../public/img/sass-logo.png';
+import tsLogo from '../../../public/img/ts-logo.png';
 
 const useStyles = makeStyles(theme => ({
   toolboxRoot: {
@@ -63,7 +65,7 @@ const useStyles = makeStyles(theme => ({
     color: '#fff',
     [theme.breakpoints.up(600)]: {
       padding: '2rem 1rem',
-      fontSize: '1.4rem',
+      fontSize: '1.8rem',
     },
     '& span': {
       fontWeight: 400,
@@ -99,19 +101,24 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up(600)]: {
       paddingLeft: 50,
     },
+    display: 'flex',
+    gap: '1rem'
   },
   moreTools: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
     marginTop: 25,
-    gap: '10px'
+    gap: '16px'
   },
   moreToolsItem: {
     width: 'fit-content',
     fontSize: '1rem',
-    borderRadius: 6,
-    border: `1px solid ${theme.palette.custom.accent}`,
+    borderRadius: 20,
+    backdropFilter: 'blur(26px)',
+    borderTop: `1px solid ${theme.palette.custom.accent}`,
+    borderBottom: `1px solid ${theme.palette.custom.accent}`,
+    backgroundColor: '#ffffff10',
     color: '#fff',
   },
   translateMinusXl: {
@@ -123,22 +130,63 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up(1300)]: {
       transform: 'translateY(+100px)'
     },
+  },
+  toolIcon: {
+    width: 30,
+    height: 30,
+    objectFit: 'contain',
+    display: 'block',
+  },
+  toolLogoContainer: {
+    height: 50,
+    width: 50,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: '0 auto',
+    position: 'relative',
+    marginBottom: '1rem'
+    // borderRadius: 10,
+    // overflow: 'hidden'
+  },
+  toolLogo: {
+    width: '100%',
+    display: 'block',
+  },
+  favToolItem: {
+    fontSize: '1rem',
+    // fontWeight: '200'
   }
 }));
 
+const mainTools = [
+  {
+    label: 'React',
+    logo: reactLogo,
+  },
+  {
+    label: 'Angular',
+    logo: angularLogo,
+  },
+  {
+    label: 'TypeScript',
+    logo: tsLogo,
+  },
+  {
+    label: 'Sass',
+    logo: sassLogo,
+  },
+]
 const moreTools = [
-  'React',
+  'Next JS',
   'Redux',
   'Redux Saga',
   'Material UI',
-  'Next JS',
-  'Angular',
-  'TypeScript',
+  'Angular Material',
   'RxJS',
-  'SASS',
-  'Node JS',
+  'Jest',
+  'Express',
   'MongoDB',
-  'Git',
 ]
 
 const Toolbox = ({ setActiveSection, setRefs }) => {
@@ -165,37 +213,27 @@ const Toolbox = ({ setActiveSection, setRefs }) => {
         <Container maxWidth='xl'>
           <Box width='100%' padding='30px 0' className='fadeIn'>
             <Heading text="Toolbox" inverse />
-            <Grid container justifyContent='center' spacing={5}>
+            <Grid container justifyContent='center' spacing={2}>
 
               <Grid item xs={12} md={6} className={classes.gridItem}>
                 <div className={classes.toolboxItem} style={{ maxWidth: 400 }}>
-                  Primary tools:
-                  <List>
-                    <ListItem className={classes.listItem}>
-                      <ListItemIcon>
-                        <i className="fab fa-js-square fa-2x"></i>
-                      </ListItemIcon>
-                      <ListItemText>
-                        JavaScript (ES5, ES6+)
-                      </ListItemText>
-                    </ListItem>
-                    <ListItem className={classes.listItem}>
-                      <ListItemIcon>
-                        <i className="fab fa-html5 fa-2x"></i>
-                      </ListItemIcon>
-                      <ListItemText>
-                        HTML
-                      </ListItemText>
-                    </ListItem>
-                    <ListItem className={classes.listItem}>
-                      <ListItemIcon>
-                        <i className="fab fa-css3-alt fa-2x"></i>
-                      </ListItemIcon>
-                      <ListItemText>
-                        CSS
-                      </ListItemText>
-                    </ListItem>
-                  </List>
+                  {/* <DefaultCard> */}
+                    Main tools
+                    <Grid container justifyContent='center' spacing={5} style={{marginTop: 20}}>
+                      {mainTools.map(tool => 
+                        <Grid key={tool.label} item xs={6} >
+                          <div className={classes.moreToolsItem} style={{width: '100%', padding: '1rem'}}>
+                            <div className={classes.toolLogoContainer}>
+                              <Image className={classes.toolLogo} layout='intrinsic' src={tool.logo} alt='icon' />
+                            </div>
+                            <div className={classes.favToolItem}>
+                              {tool.label}
+                            </div>
+                          </div>
+                        </Grid>
+                      )}
+                    </Grid>
+                  {/* </DefaultCard> */}
                 </div>
               </Grid>
 
@@ -207,7 +245,7 @@ const Toolbox = ({ setActiveSection, setRefs }) => {
 
               <Grid item xs={12} md={6} className={classes.gridItem}>
                 <div className={classes.toolboxItem}>
-                  Secondary tools:
+                  Other tools
                   <List className={classes.moreTools}>
                     {moreTools.map(tool =>
                       <ListItem key={tool} className={classes.moreToolsItem}>

@@ -59,8 +59,8 @@ const ProjectsList = ({ projects }) => {
           <Box width='100%' padding='30px 0'>
             <Heading text="Projects" />
             <Grid container >
-              {projects.map(project =>
-                <Grid item xs={12} md={6} className={classes.contentHolder} key={project._id}>
+              {projects.reverse().map(project =>
+                <Grid item xs={12} md={6} lg={6} className={classes.contentHolder} key={project._id}>
                   <ProjectItem
                     id={project._id}
                     slug={project.slug}

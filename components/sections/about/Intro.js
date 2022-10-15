@@ -59,7 +59,8 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     color: theme.palette.custom.textColor,
     // padding: 0,
-    padding: '30px 0',
+    maxWidth: 250,
+    padding: '30px 16px',
     '&:nth-child(2)': {
       '&::before': {
         content: '""',
@@ -111,18 +112,18 @@ const useStyles = makeStyles(theme => ({
 const stats = [
   {
     icon: <LocalLibraryOutlinedIcon fontSize='large' />,
-    number: '3+',
+    number: '4+',
     desc: 'years into frontend development'
   },
   {
     icon: <ImportantDevicesOutlinedIcon fontSize='large' />,
-    number: '2+',
-    desc: 'years of building projects'
+    number: '3+',
+    desc: 'years of professional experience'
   },
   {
     icon: <VideoLibraryOutlinedIcon fontSize='large' />,
     number: '300+',
-    desc: 'hours of online courses and tutorials'
+    desc: 'hours of courses and tutorials'
   },
 ]
 const Intro = ({refs}) => {

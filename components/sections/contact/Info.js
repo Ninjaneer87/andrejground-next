@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-// import CheckCircleOutlineOutlinedIcon from '@material-ui/icons/CheckCircleOutlineOutlined';
+import CheckCircleOutlineOutlinedIcon from '@material-ui/icons/CheckCircleOutlineOutlined';
 import { Avatar, Container, Grid, makeStyles, Box, IconButton, Tooltip } from '@material-ui/core';
 import DefaultCard from '../../cards/DefaultCard';
 import ThemedTypography from './../../UI/ThemedTypography';
@@ -28,16 +28,18 @@ const infoItems = [
   {
     id: 2,
     label: 'Current status',
-    text: <span>Frontend Developer @ <a 
-        href="https://careers.single.earth/people/1059582-andrej-forgac"
-        target='_blank'
-        rel="noreferrer"
-        className='cyan'
-      >
-        Single.Earth
-      </a>
-    </span>,
-    icon: <WorkOutlineIcon fontSize='large' />
+    text: 'Available',
+    // <span>Frontend Developer @ <a 
+    //     href="https://careers.single.earth/people/1059582-andrej-forgac"
+    //     target='_blank'
+    //     rel="noreferrer"
+    //     className='cyan'
+    //   >
+    //     Single.Earth
+    //   </a>
+    // </span>,
+    // icon: <WorkOutlineIcon fontSize='large' />,
+    icon: <CheckCircleOutlineOutlinedIcon fontSize='large' />
   },
 ];
 

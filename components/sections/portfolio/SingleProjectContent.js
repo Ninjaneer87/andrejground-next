@@ -143,7 +143,7 @@ const SingleProjectContent = (props) => {
               {props.sideNote && (
                 <>
                   <br />
-                  <ThemedTypography style={{ opacity: .6 }} component='small' variant='body2'>* {props.sideNote}</ThemedTypography>
+                  <ThemedTypography style={{ opacity: .6 }} component='small' variant='body2'>{props.sideNote}</ThemedTypography>
                 </>
               )}
               <br />
