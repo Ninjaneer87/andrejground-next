@@ -44,7 +44,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      projects: projects.map(project => ({
+      projects: projects.reverse().map(project => ({
         ...project,
         _id: project._id.toString(),
       }))
