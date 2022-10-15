@@ -51,6 +51,7 @@ const useStyles = makeStyles(theme => ({
   list: {
     display: 'flex',
     alignItems: 'flex-start',
+    justifyContent: 'center',
     [theme.breakpoints.down(600)]: {
       flexWrap: 'wrap',
     },
