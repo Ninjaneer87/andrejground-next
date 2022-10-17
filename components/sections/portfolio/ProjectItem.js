@@ -10,6 +10,7 @@ import LinkIcon from '@material-ui/icons/Link';
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import ThemeContext from '../../../context/themeContext';
 import { useContext } from 'react';
+import Button3D from '../../UI/Button3D';
 
 const useStyles = makeStyles(theme => ({
   image: {
@@ -98,8 +99,9 @@ const ProjectItem = ({ image, title, siteLink, codeLink, slug, projectType }) =>
       <ButtonGroup
         aria-label="outlined primary button group"
         fullWidth
+        style={{gap: 20, marginTop: 20}}
       >
-        <Button
+        <Button3D
           variant='text'
           component='a'
           target='_blank'
@@ -110,8 +112,8 @@ const ProjectItem = ({ image, title, siteLink, codeLink, slug, projectType }) =>
           color={`${darkMode ? 'secondary' : 'primary'}`}
         >
           Live site
-        </Button>
-        <Button
+        </Button3D>
+        <Button3D
           variant='text'
           component='a'
           target='_blank'
@@ -122,7 +124,7 @@ const ProjectItem = ({ image, title, siteLink, codeLink, slug, projectType }) =>
           color={`${darkMode ? 'secondary' : 'primary'}`}
         >
           Code {codeLink === '' && 'N/A'}
-        </Button>
+        </Button3D>
       </ButtonGroup>
 
       <Divider classes={{ root: classes.divider }} />
@@ -131,7 +133,7 @@ const ProjectItem = ({ image, title, siteLink, codeLink, slug, projectType }) =>
         href={`/portfolio/${slug}`}
         passHref
       >
-        <Button
+        <Button3D
           variant='text'
           fullWidth
           component='a'
@@ -141,7 +143,7 @@ const ProjectItem = ({ image, title, siteLink, codeLink, slug, projectType }) =>
           href={`/portfolio/${slug}`}
         >
           More details
-        </Button>
+        </Button3D>
       </Link>
     </DefaultCard>
   );

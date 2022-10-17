@@ -18,7 +18,7 @@ export const defaultTheme = responsiveFontSizes(createTheme({
     primary: blueGrey,
     secondary: cyan,
     custom: {
-      textColor: '#fff',
+      textColor: '#fefefe',
       accent: cyan['A400'],
       backgroundColor: grey[900],
       boxShadowColor: '#00e5ff44',
@@ -26,6 +26,9 @@ export const defaultTheme = responsiveFontSizes(createTheme({
       appbarBorderColor: cyan[900],
       logoBgColor: 'transparent',
       cardBgColor: '#212121aa',
+      cardBoxShadow: '-8px -8px 15px 0 #ffffff10,8px 8px 15px 0 #00000077',
+      button3DShadow: '-8px -8px 15px 0 #ffffff33,8px 8px 15px 0 #00000011',
+      button3DShadowInset: 'inset -2px -2px 2px 0 #ffffff99, inset 2px 2px 2px 0 #00000019',
     },
     action: {
       disabled: '#bdbdbd'
@@ -58,12 +61,15 @@ export const lightTheme = responsiveFontSizes(createTheme({
     custom: {
       textColor: grey[900],
       accent: cyan['A400'],
-      backgroundColor: 'rgba(255, 255, 255, 1)',
+      backgroundColor: '#f0f0f3',
       boxShadowColor: 'rgba(0, 0, 0, 0.15)',
       borderColor: 'transparent',
       appbarBorderColor: cyan[900],
       logoBgColor: 'rgba(0, 0, 0, 0.5)',
       cardBgColor: '#f5f5f544',
+      cardBoxShadow: '-12px -12px 25px 0 #ffffffcc,12px 12px 25px 0 #00000020',
+      button3DShadow: '-8px -8px 15px 0 #ffffffcc,8px 8px 15px 0 #00000011',
+      button3DShadowInset: 'inset -2px -2px 2px 0 #ffffff99, inset 2px 2px 2px 0 #00000019',
     },
     action: {
       disabled: '#bdbdbd'
@@ -93,7 +99,7 @@ export const darkTheme = responsiveFontSizes(createTheme({
     primary: blueGrey,
     secondary: cyan,
     custom: {
-      textColor: '#fff',
+      textColor: '#fefefe',
       accent: cyan['A400'],
       backgroundColor: grey[900],
       boxShadowColor: '#00e5ff44',
@@ -101,6 +107,9 @@ export const darkTheme = responsiveFontSizes(createTheme({
       appbarBorderColor: cyan[900],
       logoBgColor: 'transparent',
       cardBgColor: '#ffffff03',
+      cardBoxShadow: '-8px -8px 15px 0 #ffffff10,8px 8px 15px 0 #00000077',
+      button3DShadow: '-8px -8px 15px 0 #ffffff10,8px 8px 15px 0 #00000055',
+      button3DShadowInset: 'inset -2px -2px 2px 0 #ffffff15, inset 2px 2px 2px 0 #00000055',
     },
     action: {
       disabled: '#bdbdbd'

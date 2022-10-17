@@ -9,6 +9,7 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 import CodeIcon from '@material-ui/icons/Code';
 import LinkIcon from '@material-ui/icons/Link';
 import ThemeContext from '../../../context/themeContext';
+import Button3D from '../../UI/Button3D';
 // import { imagesPath } from '../../../config';
 
 const useStyles = makeStyles(theme => ({
@@ -96,16 +97,30 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    marginTop: 25
+    marginTop: 25,
+    gap: 16
   },
   techItem: {
+    // width: 'fit-content',
+    // fontSize: '1rem',
+    // margin: '5px',
+    // borderRadius: 6,
+    // border: `1px solid ${theme.palette.custom.accent}`,
+    // color: theme.palette.custom.textColor,
+    
     width: 'fit-content',
     fontSize: '1rem',
-    margin: '5px',
-    borderRadius: 6,
-    border: `1px solid ${theme.palette.custom.accent}`,
+    borderRadius: 12,
+    backdropFilter: 'blur(10px)',
+    borderTop: `1px solid ${theme.palette.custom.accent}`,
+    borderBottom: `1px solid ${theme.palette.custom.accent}`,
+    backgroundColor: '#ffffff10',
     color: theme.palette.custom.textColor,
-    // backgroundColor: theme.palette.custom.cardBgColor
+    boxShadow: ({darkMode}) => darkMode ?  `inset 0px 0px 20px #00000099` : `inset 0px 0px 20px #00000025`,
+    // padding: '1rem 2rem',
+    [theme.breakpoints.up(600)]: {
+      padding: '1rem 2rem',
+    },
   },
   table: {
     maxWidth: 500,
@@ -124,8 +139,8 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 const SingleProjectContent = (props) => {
-  const classes = useStyles({ image: props.image });
   const { darkMode } = useContext(ThemeContext)
+  const classes = useStyles({ image: props.image, darkMode });
 
   return (
     <div className={classes.bgOverlay} >
@@ -211,8 +226,9 @@ const SingleProjectContent = (props) => {
               <ButtonGroup
                 aria-label="outlined primary button group"
                 fullWidth
+                style={{gap: 20}}
               >
-                <Button
+                <Button3D
                   variant='text'
                   component='a'
                   target='_blank'
@@ -223,8 +239,8 @@ const SingleProjectContent = (props) => {
                   color={`${darkMode ? 'secondary' : 'primary'}`}
                 >
                   Live site
-                </Button>
-                <Button
+                </Button3D>
+                <Button3D
                   variant='text'
                   component='a'
                   target='_blank'
@@ -235,7 +251,7 @@ const SingleProjectContent = (props) => {
                   color={`${darkMode ? 'secondary' : 'primary'}`}
                 >
                   Code {props.codeLink === '' && 'N/A'}
-                </Button>
+                </Button3D>
               </ButtonGroup>
             </DefaultCard>
           </Grid>

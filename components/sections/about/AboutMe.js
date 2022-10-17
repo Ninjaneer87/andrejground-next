@@ -4,6 +4,7 @@ import Heading from '../../UI/Heading';
 import DefaultCard from '../../cards/DefaultCard';
 import GetAppIcon from '@material-ui/icons/GetApp';
 import ThemeContext from '../../../context/themeContext';
+import Button3D from '../../UI/Button3D';
 
 const andrejImage = '/img/andrej500transparent.webp';
 
@@ -110,7 +111,7 @@ const AboutMe = ({setRefs, refs}) => {
               <br /><br />
             </Typography>
             <Divider classes={{ root: classes.divider }} />
-            <Button
+            <Button3D
               component='a'
               href='/resume/AndrejForgacCV.pdf'
               target="_blank"
@@ -121,7 +122,7 @@ const AboutMe = ({setRefs, refs}) => {
               fullWidth
             >
               Andrej&apos;s resume
-            </Button>
+            </Button3D>
           </Grid>
         </Grid>
       </DefaultCard>

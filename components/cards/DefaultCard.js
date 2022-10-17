@@ -6,9 +6,9 @@ const useStyles = makeStyles(theme => ({
   root: {
     // boxShadow: '0px 0px 30px 0px #ffffff66',
     padding: '1rem',
-    borderRadius: '2rem',
+    borderRadius: '.8rem',
     // backgroundColor: theme.palette.custom.cardBgColor,
-    background: 'linear-gradient(135deg, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%)',
+    // background: 'linear-gradient(135deg, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%)',
     // border: `1px solid ${theme.palette.custom.borderColor}`,
     display: 'flex',
     flexDirection: 'column',
@@ -19,13 +19,14 @@ const useStyles = makeStyles(theme => ({
     zIndex: 1,
     position: 'relative',
     boxShadow: `10px 10px 10px rgba(0, 0, 0, 0.04)`,
-    // backdropFilter: 'blur(10px)',
+    boxShadow: theme.palette.custom.cardBoxShadow,
+    backdropFilter: 'blur(20px)',
     [theme.breakpoints.up(600)]: {
       padding: '2rem',
     },
     '&::after': {
       content: '""',
-      borderRadius: '2rem',
+      borderRadius: '.8rem',
       position: 'absolute',
       top: 0,
       bottom: 0,
@@ -39,7 +40,7 @@ const useStyles = makeStyles(theme => ({
     '&:hover': {
       [theme.breakpoints.up(992)]: {
         // border: `1px solid ${theme.palette.custom.accent}`,
-        transform: 'translate(-1px, 4px)',
+        // transform: 'translate(-1px, 4px)',
         
         '&::after': {
           opacity: 1

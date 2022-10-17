@@ -1,6 +1,5 @@
 import { Box, Grid, Typography, Divider, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import React, { useContext } from 'react';
 import Heading from "../../UI/Heading";
@@ -12,6 +11,7 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import DefaultCard from '../../cards/DefaultCard';
 import ThemeContext from '../../../context/themeContext';
+import Button3D from '../../UI/Button3D';
 // import { scrollTopClick } from '../../helpers/utility';
 
 const patternImage = '/img/pattern2.webp';
@@ -152,8 +152,9 @@ const Projects = ({ setActiveSection, setRefs }) => {
                   <ButtonGroup
                     aria-label="outlined primary button group"
                     fullWidth
+                    style={{gap: 20}}
                   >
-                    <Button
+                    <Button3D
                       variant='text'
                       component='a'
                       target='_blank'
@@ -163,8 +164,8 @@ const Projects = ({ setActiveSection, setRefs }) => {
                       color={`${darkMode ? 'secondary' : 'primary'}`}
                     >
                       Live site
-                    </Button>
-                    <Button
+                    </Button3D>
+                    <Button3D
                       variant='text'
                       component='a'
                       target='_blank'
@@ -174,7 +175,7 @@ const Projects = ({ setActiveSection, setRefs }) => {
                       color={`${darkMode ? 'secondary' : 'primary'}`}
                     >
                       Code
-                    </Button>
+                    </Button3D>
                   </ButtonGroup>
 
                   <Divider classes={{ root: classes.divider }} />
@@ -183,7 +184,7 @@ const Projects = ({ setActiveSection, setRefs }) => {
                     href='/portfolio'
                     passHref
                   >
-                    <Button
+                    <Button3D
                       variant='text'
                       fullWidth
                       size="large"
@@ -192,7 +193,7 @@ const Projects = ({ setActiveSection, setRefs }) => {
                       endIcon={<ArrowRightAltIcon />}
                     >
                       More projects
-                    </Button>
+                    </Button3D>
                   </Link>
                 </DefaultCard>
               </Grid>
