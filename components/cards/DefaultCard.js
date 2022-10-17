@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     boxShadow: `10px 10px 10px rgba(0, 0, 0, 0.04)`,
     boxShadow: theme.palette.custom.cardBoxShadow,
-    backdropFilter: 'blur(20px)',
+    backdropFilter: 'blur(12px)',
     [theme.breakpoints.up(600)]: {
       padding: '2rem',
     },
