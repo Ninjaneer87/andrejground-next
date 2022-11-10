@@ -127,7 +127,7 @@ const Values = ({setRefs}) => {
   }, [refLoaded, setRefs]);
 
   return (
-    <Container ref={ref} maxWidth="lg" className={`${classes.root} fadeIn`}>
+    <Container ref={ref} maxWidth="lg" className={`${classes.root} blurIn`}>
       <Heading text="Values & philosophy" />
       <ValuesTabs values={values} />
       <ValuesTabsMobile values={values} />

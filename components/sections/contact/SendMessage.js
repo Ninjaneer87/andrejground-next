@@ -159,7 +159,7 @@ const SendMessage = () => {
   )
   
   return (
-    <Container maxWidth='lg' className={`${classes.root} fadeIn`}>
+    <Container maxWidth='lg' className={`${classes.root} blurIn`}>
       {loading && <LoadingBar />}
       <Heading text="Send a message" />
       <div className={classes.formContainer}>

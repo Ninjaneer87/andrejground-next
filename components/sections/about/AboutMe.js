@@ -92,7 +92,7 @@ const AboutMe = ({setRefs, refs}) => {
   }, [refs]);
 
   return (
-    <Container maxWidth='lg' className={`${classes.about} fadeIn`}>
+    <Container maxWidth='lg' className={`${classes.about} blurIn`}>
       <div ref={ref}>
         <Heading text="Meet Andrej" />
       </div>

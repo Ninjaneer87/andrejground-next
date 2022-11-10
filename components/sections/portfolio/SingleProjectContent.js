@@ -144,7 +144,7 @@ const SingleProjectContent = (props) => {
 
   return (
     <div className={classes.bgOverlay} >
-      <Container maxWidth='xl' className={classes.root + ' fadeIn'}>
+      <Container maxWidth='xl' className={classes.root + ' blurIn'}>
         <Heading text={props.title} />
         <Grid container alignItems='flex-start' justifyContent='center' spacing={3}>
           <Grid item xs={12} sm={10} md={6} lg={5}  >

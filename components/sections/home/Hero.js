@@ -135,7 +135,7 @@ const Hero = ({ setActiveSection, setRefs }) => {
   return (
     <div className={classes.bgOverlay}>
       <section className={classes.hero} ref={scrollRef}>
-        <Container maxWidth='lg' className='fadeIn'>
+        <Container maxWidth='lg' className='blurIn'>
           <Grid container spacing={3} >
             <Grid item lg={8}>
               <div className={classes.welcomeIntro}>

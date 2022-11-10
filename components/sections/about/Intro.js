@@ -136,7 +136,7 @@ const Intro = ({refs}) => {
   }, [refs])
 
   return (
-    <Container maxWidth='xl' className={`${classes.intro} fadeIn`}>
+    <Container maxWidth='xl' className={`${classes.intro} blurIn`}>
       <Heading text="What is AndrejGround?" />
       <Typography variant='h6' className={classes.subTitle}>
         AndrejGround is <span className='cyan' style={{ cursor: 'pointer' }} onClick={goToAndrej}>Andrej</span>&apos;s playground for ideas, front-end features and functionalities, as well as a window to his portfolio.

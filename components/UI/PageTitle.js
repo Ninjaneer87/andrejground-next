@@ -60,7 +60,7 @@ const PageTitle = (props) => {
   return (
     <div className={classes.pagetitleRoot}>
       <Container maxWidth='xl'>
-        <Typography component='h1' variant='h2' className={`${classes.pageTitle} fadeIn`}>
+        <Typography component='h1' variant='h2' className={`${classes.pageTitle} blurIn`}>
           {props.pageTitle}
         </Typography>
       </Container>

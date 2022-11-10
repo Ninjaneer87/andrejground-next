@@ -120,17 +120,19 @@ div, h1, h2, h3, h4, span, p , button{
 }
 
 /* animations */
-.fadeIn {
-  animation: fadeIn 300ms ease-in;
+.blurIn {
+  animation: blurIn 300ms ease-in;
 }
-@keyframes fadeIn {
-  0%{opacity:0}
-  100%{opacity:1;}
+@keyframes blurIn {
+  /* 0%{opacity:0}
+  100%{opacity:1;} */
+  0%{filter:blur(10px);opacity:0}
+  100%{filter:blur(0px);opacity:1;}
 }
 
-.scaleIn {
+/* .scaleIn {
   animation: scaleIn 300ms ease-out;
-}
+} */
 @keyframes scaleIn {
   0%{transform:scale(0.97);}
   50%{transform:scale(1.01);}

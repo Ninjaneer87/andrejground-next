@@ -132,7 +132,7 @@ const Projects = ({ setActiveSection, setRefs }) => {
     <div className={classes.bgOverlay}>
       <section className={classes.projectsRoot} ref={scrollRef}>
         <Container maxWidth='xl'>
-          <Box width='100%' padding='30px 0' className='fadeIn'>
+          <Box width='100%' padding='30px 0' className='blurIn'>
             <Heading text="Projects" />
             <Grid container spacing={5} justifyContent='flex-end'>
               <Grid item xs={12} md={6} className={classes.contentHolder}>

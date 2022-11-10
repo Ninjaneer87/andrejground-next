@@ -16,7 +16,7 @@ export default function TabPanel(props) {
     >
       {value === index && (
         <Box p={3}>
-          <Typography className='fadeIn'>{children}</Typography>
+          <Typography className='blurIn'>{children}</Typography>
         </Box>
       )}
     </div>

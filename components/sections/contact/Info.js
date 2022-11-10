@@ -107,7 +107,7 @@ const Info = () => {
   ];
 
   return (
-    <Container maxWidth='lg' className={`${classes.root} fadeIn`}>
+    <Container maxWidth='lg' className={`${classes.root} blurIn`}>
       <Heading text="Let's connect" />
       <Grid container alignItems='center' justifyContent='center' spacing={5} style={{marginBottom: 20}}>
         {infoItems.map(item => (

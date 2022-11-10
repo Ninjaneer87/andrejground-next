@@ -54,7 +54,7 @@ const ProjectsList = ({ projects }) => {
 
   return (
     <div className={classes.bgOverlay}>
-      <section className={classes.projectsListRoot + ' fadeIn'}>
+      <section className={classes.projectsListRoot + ' blurIn'}>
         <Container maxWidth='xl' style={{padding: 0}}>
           <Box width='100%' padding='30px 0'>
             <Heading text="Projects" />

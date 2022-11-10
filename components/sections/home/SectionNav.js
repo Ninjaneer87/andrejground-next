@@ -146,7 +146,7 @@ const SectionNav = ({ sections, activeSection, activateSection }) => {
       <div
         onMouseEnter={() => !isSmallScreen && setExpanded(true)}
         onMouseLeave={() => !isSmallScreen && setExpanded(false)}
-        className={`${classes.sectionNavRoot}  ${expanded && classes.expandedRoot} fadeIn`}
+        className={`${classes.sectionNavRoot}  ${expanded && classes.expandedRoot} blurIn`}
         style={{
           '--width': Math.round(box.width) - 4 + 'px',
           '--left': Math.round(box.left) + 2 + 'px',

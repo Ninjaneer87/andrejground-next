@@ -108,7 +108,7 @@ const Mission = ({ setActiveSection, setRefs }) => {
     <div className={classes.bgOverlay}>
       <section className={classes.missionRoot} ref={scrollRef}>
         <Container maxWidth='xl'>
-          <Box width='100%' padding='30px 0' className='fadeIn'>
+          <Box width='100%' padding='30px 0' className='blurIn'>
             <Heading text='Mission' />
             <Grid container spacing={5} justifyContent='center'>
               <Grid item className={`${classes.gridItem} ${classes.translateMinusXl}`} xs={12} md={6} lg={4}>

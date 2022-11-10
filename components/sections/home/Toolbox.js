@@ -229,7 +229,7 @@ const Toolbox = ({ setActiveSection, setRefs }) => {
     <div className={classes.bgOverlay}>
       <section className={classes.toolboxRoot} ref={scrollRef}>
         <Container maxWidth='xl'>
-          <Box width='100%' padding='30px 0' className='fadeIn'>
+          <Box width='100%' padding='30px 0' className='blurIn'>
             <Heading text="Toolbox" inverse />
             <Grid container justifyContent='center' spacing={5}>
 

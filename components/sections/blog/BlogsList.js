@@ -50,7 +50,7 @@ const BlogsList = ({ blogs }) => {
 
   return (
     <div className={classes.bgOverlay}>
-      <Container maxWidth='xl' className={classes.blogsListRoot + ' fadeIn'}>
+      <Container maxWidth='xl' className={classes.blogsListRoot + ' blurIn'}>
         <Box width='100%' padding='30px 0'>
           <Heading text="Blog posts" />
           <Grid
