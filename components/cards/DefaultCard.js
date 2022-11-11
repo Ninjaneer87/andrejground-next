@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
     },
     '&::after': {
       content: '""',
-      borderRadius: '.8rem',
+      // borderRadius: '.8rem',
       position: 'absolute',
       top: 0,
       bottom: 0,
