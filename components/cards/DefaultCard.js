@@ -6,8 +6,8 @@ const useStyles = makeStyles(theme => ({
   root: {
     // boxShadow: '0px 0px 30px 0px #ffffff66',
     padding: '1rem',
-    borderRadius: '.8rem',
-    // backgroundColor: theme.palette.custom.cardBgColor,
+    // borderRadius: '.8rem',
+    backgroundColor: theme.palette.custom.cardBgColor,
     // background: 'linear-gradient(135deg, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%)',
     // border: `1px solid ${theme.palette.custom.borderColor}`,
     display: 'flex',
@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     boxShadow: `10px 10px 10px rgba(0, 0, 0, 0.04)`,
     boxShadow: theme.palette.custom.cardBoxShadow,
-    backdropFilter: 'blur(12px)',
+    // backdropFilter: 'blur(12px)',
     [theme.breakpoints.up(600)]: {
       padding: '2rem',
     },
