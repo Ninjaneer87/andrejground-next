@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
     minHeight: 300,
     width: '100%',
     maxHeight: '90vw',
-    filter: `drop-shadow(0px 20px 20px #0000004e)`,
+    filter: theme.palette.custom.imageDropShadow,
   },
   subtitle: {
     color: theme.palette.custom.textColor,

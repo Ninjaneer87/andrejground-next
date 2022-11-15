@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { AppBar, Container, useMediaQuery, useTheme } from "@material-ui/core";
-// import makeStyles from '@material-ui/styles/makeStyles';
 import { makeStyles } from '@material-ui/core';
 import Logo from "../UI/Logo";
 import { useInView } from "react-intersection-observer";
@@ -14,7 +13,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import NavContext, { menuItems } from "../../context/navContext";
 import { useContext } from "react";
-import { grey } from "@material-ui/core/colors";
 import { useRouter } from 'next/dist/client/router';
 import useDarkMode from 'use-dark-mode';
 import ThemeContext from '../../context/themeContext';
@@ -42,11 +40,10 @@ const useStyles = makeStyles(theme => ({
     };
     const scrolled = {
       color: theme.palette.custom.textColor,
-      minHeight: 60,
-      borderBottom: `1px solid ${theme.palette.custom.appbarBorderColor}`,
-      background: grey[900],
-      // background: theme.palette.primary.main,
-      boxShadow: `0px 0px 20px rgba(0, 0, 0, 0.38)`,
+      minHeight: 70,
+      borderBottom: `1px solid ${theme.palette.custom.boxShadowColor}`,
+      background: theme.palette.custom.appbarBackgroundColor,
+      backdropFilter: 'blur(20px)',
     };
     return isScrolled ? { ...styles, ...scrolled } : styles;
   },
@@ -62,6 +59,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexFlow: 'row',
     marginRight: 8,
+    alignItems: 'center',
   },
   navbarInner: ({ darkMode }) => {
     return {
@@ -75,13 +73,12 @@ const useStyles = makeStyles(theme => ({
       '&::after': {
         content: '""',
         position: 'absolute',
-        border: `1px solid ${darkMode ? theme.palette.custom.accent : 'transparent'} `,
         width: 'var(--width)',
         left: 0,
-        bottom: -4,
-        // height: 'var(--height)',
-        height: 4,
-        backgroundColor: `${darkMode ? 'transparent' : theme.palette.custom.accent} `,
+        bottom: 0,
+        top: 0,
+        right: 0,
+      boxShadow: theme.palette.custom.button3DShadow,
         zIndex: -1,
         borderRadius: '6px',
         transition: `all ${theme.transitions.duration.short}ms ease 0s`,
@@ -95,7 +92,7 @@ const useStyles = makeStyles(theme => ({
       paddingLeft: theme.spacing(5),
       paddingRight: theme.spacing(5),
       transition: `color ${theme.transitions.duration.short}ms ease-in-out`,
-      color: '#fff',
+      color: theme.palette.custom.textColor,
       '&:hover': {
         color: theme.palette.custom.accent,
         backgroundColor: 'unset'
@@ -106,12 +103,15 @@ const useStyles = makeStyles(theme => ({
     }
     return isScrolled ? { ...styles, ...scrolled } : styles;
   },
-  active: {
-    color: `${theme.palette.custom.accent} !important`
+  active: ({ isScrolled, darkMode }) => {
+    return {
+      color: `${theme.palette.custom.textColor}`,
+    }
   },
   navIcon: {
-    color: '#fff',
+    color: theme.palette.custom.textColor,
     transition: `color ${theme.transitions.duration.short}ms ease-in-out`,
+    flexGrow: 0,
     '&:hover': {
       color: theme.palette.custom.accent,
       // backgroundColor: 'unset'
@@ -234,6 +234,7 @@ const MyAppBar = (props) => {
                       button
                       component='a'
                       onClick={setBoxToActiveRef}
+                      disableRipple
                     >
                       <ListItemText primary={item.text} />
                     </ListItem>

@@ -26,16 +26,20 @@ const StyledTextField = withStyles(theme => ({
     },
     '& .MuiOutlinedInput-root': {
       color: theme.palette.custom.textColor,
+      boxShadow: theme.palette.custom.button3DShadow,
       '& fieldset': {
         borderColor: theme.palette.custom.textColor,
+        border: 'none',
         opacity: 0.5,
       },
       '&:hover fieldset': {
         borderColor: theme.palette.custom.textColor,
+        border: 'none',
         opacity: 1,
       },
       '&.Mui-focused fieldset': {
         borderColor: theme.palette.custom.accent,
+        border: 'none',
         opacity: 1,
       },
     },
@@ -60,6 +64,7 @@ const MyInput = (props) => {
           color='secondary'
           required={props.required}
           spellCheck="false"
+          placeholder={props.placeholder}
           value={props.value || ''}
         />
       </FormControl>;
@@ -82,6 +87,7 @@ const MyInput = (props) => {
           maxRows={6}
           required={props.required}
           spellCheck="false"
+          placeholder={props.placeholder}
           value={props.value || ''}
         />
       </FormControl>

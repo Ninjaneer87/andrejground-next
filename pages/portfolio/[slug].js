@@ -7,6 +7,7 @@ import Head from 'next/head';
 
 const useStyles = makeStyles(theme => ({
   root: {
+    paddingTop: 70,
     display: 'flex',
     flexFlow: 'column',
     minHeight: '100vh',
@@ -22,7 +23,7 @@ const SingleProject = ({ project }) => {
         <meta name='description' content={project.description} />
       </Head>
       <div className={classes.root}>
-        <PageTitle pageTitle='Project' />
+        {/* <PageTitle pageTitle='Project' /> */}
         <SingleProjectContent {...project} />
       </div>
     </>

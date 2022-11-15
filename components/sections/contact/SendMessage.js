@@ -1,12 +1,14 @@
-import { Container, Button, CircularProgress } from '@material-ui/core';
+import { Container, CircularProgress } from '@material-ui/core';
 import {makeStyles} from '@material-ui/core';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import { checkValidity, sendMail } from '../../helpers/utility';
 import Heading from '../../UI/Heading';
 import MyInput from '../../UI/MyInput';
 import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
 // import { sendMail } from './../../../apiCalls';
 import LoadingBar from './../../UI/LoadingBar';
+import Button3D from '../../UI/Button3D';
+import ThemeContext from '../../../context/themeContext';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -73,6 +75,7 @@ const SendMessage = () => {
   const [inputs, setInputs] = useState(initialInputs);
   const [formIsValid, setFormIsValid] = useState(false);
   const [loading, setLoading] = useState(false);
+  const { darkMode } = useContext(ThemeContext);
 
   const inputHandler = useCallback((value, inputIdentifier) => {
     const updatedInputs = { ...inputs }
@@ -136,7 +139,7 @@ const SendMessage = () => {
           inputName={inputElement.id}
           elementType={inputElement.config.elementType}
           value={inputElement.config.value}
-          label={inputElement.config.label}
+          placeholder={inputElement.config.label}
           invalid={!inputElement.config.valid}
           required={inputElement.config.validationRules.required}
           inputHandler={(event) => inputHandler(event.target.value, inputElement.id)}
@@ -144,17 +147,15 @@ const SendMessage = () => {
         />
       ))}
 
-      <Button
-        className={classes.button}
+      <Button3D
         type='submit'
-        color='secondary'
-        variant='contained'
+        color={darkMode ? 'secondary' : 'primary'}
         endIcon={!loading && <SendOutlinedIcon />}
         fullWidth
         disabled={!formIsValid}
       >
         {!loading ? 'Send' : <CircularProgress size={24}  />}
-      </Button>
+      </Button3D>
     </form>
   )
   

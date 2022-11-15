@@ -12,17 +12,15 @@ const useStyles = makeStyles(theme => ({
     flexFlow: 'column',
     minHeight: '30vh',
     position: 'relative',
-    background: grey[900],
-    // background: theme.palette.primary.main,
     marginTop: 'auto',
-    borderTop: `1px solid ${theme.palette.custom.appbarBorderColor}`,
+    borderTop: `1px solid ${theme.palette.custom.boxShadowColor}`,
     [theme.breakpoints.up(600)]: {
       padding: theme.spacing(3),
     },
   },
   text: {
     fontWeight: 400,
-    color: '#fff',
+    color: theme.palette.custom.textColor,
     padding: theme.spacing(3),
   },
 }))

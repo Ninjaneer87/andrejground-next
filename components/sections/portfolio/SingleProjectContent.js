@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     '&::after': {
       content: '""',
-      backgroundImage: `url('${patternImage2.src}')`,
+      // backgroundImage: `url('${patternImage2.src}')`,
       backgroundPosition: 'center',
       opacity: .35,
       filter: 'drop-shadow(0px 0px 1px #fff)',
@@ -49,7 +49,7 @@ const useStyles = makeStyles(theme => ({
     backgroundSize: 'contain',
     height: 600,
     maxHeight: '90vw',
-    filter: `drop-shadow(0px 20px 20px #0000004e)`,
+    filter: theme.palette.custom.imageDropShadow,
   },
   sticky: {
     position: 'sticky',
@@ -101,23 +101,11 @@ const useStyles = makeStyles(theme => ({
     gap: 16
   },
   techItem: {
-    // width: 'fit-content',
-    // fontSize: '1rem',
-    // margin: '5px',
-    // borderRadius: 6,
-    // border: `1px solid ${theme.palette.custom.accent}`,
-    // color: theme.palette.custom.textColor,
-    
     width: 'fit-content',
     fontSize: '1rem',
     borderRadius: 12,
-    backdropFilter: 'blur(10px)',
-    borderTop: `1px solid ${theme.palette.custom.accent}`,
-    borderBottom: `1px solid ${theme.palette.custom.accent}`,
-    backgroundColor: '#ffffff10',
+    boxShadow: theme.palette.custom.cardBoxShadow,
     color: theme.palette.custom.textColor,
-    boxShadow: ({darkMode}) => darkMode ?  `inset 0px 0px 20px #00000099` : `inset 0px 0px 20px #00000025`,
-    // padding: '1rem 2rem',
     [theme.breakpoints.up(600)]: {
       padding: '1rem 2rem',
     },

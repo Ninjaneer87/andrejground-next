@@ -7,6 +7,7 @@ import Head from 'next/head';
 
 const useStyles = makeStyles(theme => ({
   root: {
+    paddingTop: 70,
     display: 'flex',
     flexFlow: 'column',
     minHeight: '100vh',
@@ -21,7 +22,7 @@ const Blog = ({ blogs }) => {
         <meta name='description' content="AndrejGround blog" />
       </Head>
       <div className={classes.root}>
-        <PageTitle pageTitle='Blog' />
+        {/* <PageTitle pageTitle='Blog' /> */}
         <BlogsList blogs={blogs} />
         {/* {blogs.map(blog => <h1 key={blog.slug}>{blog.content}</h1>)} */}
       </div>

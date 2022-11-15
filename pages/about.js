@@ -11,6 +11,7 @@ const patternImage2 = '/img/pattern2.png';
 
 const useStyles = makeStyles(theme => ({
   root: {
+    paddingTop: 70,
     display: 'flex',
     flexFlow: 'column',
     minHeight: '100vh',
@@ -20,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     '&::after': {
       content: '""',
-      backgroundImage: `url('${patternImage2}')`,
+      // backgroundImage: `url('${patternImage2}')`,
       backgroundPosition: 'center',
       opacity: .35,
       filter: 'drop-shadow(0px 0px 1px #fff)',
@@ -53,7 +54,7 @@ const About = () => {
       </Head>
       <div className={classes.bgOverlay}>
         <div className={classes.root}>
-          <PageTitle pageTitle='About' />
+          {/* <PageTitle pageTitle='About' /> */}
           <Intro 
             refs={refs} 
           />

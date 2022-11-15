@@ -41,7 +41,7 @@ const Layout = (props) => {
       <MyLoader />
       <MyAppBar />
       <MyDrawer />
-      <Starfall />
+      {/* <Starfall /> */}
       <div className={classes.page}>
         {props.children}
       </div>

@@ -45,7 +45,10 @@ const infoItems = [
 
 const useStyles = makeStyles(theme => ({
   root: {
+    paddingTop: 150,
     paddingBottom: 50,
+    margin: 'auto',
+    minHeight: '100vh',
   },
   itemContent: {
     display: 'flex',
@@ -90,11 +93,6 @@ const Info = () => {
 
   const socials = [
     {
-      name: 'Twitter',
-      link: 'https://twitter.com/nindzenjer',
-      icon: <TwitterIcon className={classes.socialIcon} />
-    },
-    {
       name: 'LinkedIn',
       link: 'https://www.linkedin.com/in/andrejforgac87/',
       icon: <LinkedInIcon className={classes.socialIcon} />
@@ -103,6 +101,11 @@ const Info = () => {
       name: 'GitHub',
       link: 'https://github.com/Ninjaneer87',
       icon: <GitHubIcon className={classes.socialIcon} />
+    },
+    {
+      name: 'Twitter',
+      link: 'https://twitter.com/nindzenjer',
+      icon: <TwitterIcon className={classes.socialIcon} />
     },
   ];
 

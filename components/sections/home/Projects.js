@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     '&::after': {
       content: '""',
-      backgroundImage: `url('${patternImage}')`,
+      // backgroundImage: `url('${patternImage}')`,
       backgroundPosition: 'center',
       filter: 'drop-shadow(0px 0px 1px rgba(255, 255, 255, 1))',
       opacity: .35,
@@ -57,7 +57,7 @@ const useStyles = makeStyles(theme => ({
     backgroundSize: 'contain',
     height: 600,
     maxHeight: '90vw',
-    filter: `drop-shadow(0px 20px 20px #0000004e)`,
+    filter: theme.palette.custom.imageDropShadow,
   },
   contentHolder: {
     display: 'flex',

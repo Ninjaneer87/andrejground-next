@@ -7,7 +7,7 @@ import NavContext from '../../context/navContext';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
 
-import logoImg from '../../public/img/logo.png';
+import logoImg from '../../public/img/AG.png';
 
 const useStyles = makeStyles(theme => ({
   logoRoot: {
@@ -17,20 +17,24 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     padding: '4px',
     borderRadius: 6,
-    height: '3rem',
+    height: '3.4rem',
     boxSizing: 'border-box',
   },
   logoHolder: {
     width: '3rem',
+    height: '3rem',
     display: 'block',
+    borderRadius: '100vh',
+    overflow: 'hidden',
+    boxShadow: theme.palette.custom.button3DShadow,
   },
   logoText: {
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       fontSize: '2rem',
       fontWeight: theme.typography.fontWeightLight,
-      color: '#fff',
-      marginLeft: 3,
+      color: theme.palette.custom.textColor,
+      marginLeft: 10,
       display: 'block',
     }
   }
@@ -50,7 +54,7 @@ const Logo = (props) => {
   }
 
   return (
-    <ButtonBase style={{ borderRadius: 16, color: "#000" }}>
+    <ButtonBase style={{ borderRadius: 8,  }}>
       <Link href='/' passHref>
         <a className={classes.logoRoot}  onClick={logoHandler}>
           <div className={classes.logoHolder}>

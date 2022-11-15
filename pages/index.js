@@ -11,28 +11,28 @@ import AssignmentTurnedInOutlinedIcon from '@material-ui/icons/AssignmentTurnedI
 import BuildOutlinedIcon from '@material-ui/icons/BuildOutlined';
 import FolderSpecialOutlinedIcon from '@material-ui/icons/FolderSpecialOutlined';
 import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, useMediaQuery, useTheme } from '@material-ui/core';
 
 const sections = [
   {
     name: 'home',
-    icon: <HomeOutlinedIcon style={{ color: '#fff' }} />
+    icon: <HomeOutlinedIcon />
   },
   {
     name: 'mission',
-    icon: <AssignmentTurnedInOutlinedIcon style={{ color: '#fff' }} />
+    icon: <AssignmentTurnedInOutlinedIcon />
   },
   {
     name: 'toolbox',
-    icon: <BuildOutlinedIcon style={{ color: '#fff' }} />
+    icon: <BuildOutlinedIcon />
   },
   {
     name: 'projects',
-    icon: <FolderSpecialOutlinedIcon style={{ color: '#fff' }} />
+    icon: <FolderSpecialOutlinedIcon />
   },
   {
     name: 'contact',
-    icon: <EmailOutlinedIcon style={{ color: '#fff' }} />
+    icon: <EmailOutlinedIcon />
   },
 ]
 const refs = {};
@@ -49,6 +49,8 @@ const useStyles = makeStyles(theme => ({
 const Home = () => {
   const [activeSection, setActiveSection] = useState('home');
   const classes = useStyles();
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(1100));
 
   const activateSection = useCallback((section) => {
     refs[section].scrollIntoView({behavior: 'smooth'});
@@ -82,11 +84,11 @@ const Home = () => {
         setActiveSection={setActiveSection}
       />
 
-      <SectionNav
+      {isSmallScreen ? null : <SectionNav
         sections={sections}
         activeSection={activeSection}
         activateSection={activateSection}
-      />
+      />}
     </div>
   );
 };

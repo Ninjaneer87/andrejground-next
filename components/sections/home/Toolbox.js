@@ -21,35 +21,8 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     minHeight: '100vh',
     position: 'relative',
-    backgroundColor: 'rgba(0, 0, 0, .8)',
-    overflow: 'hidden',
-    zIndex: 1,
     [theme.breakpoints.up(992)]: {
       padding: theme.spacing(3),
-    },
-  },
-  bgOverlay: {
-    overflow: 'hidden',
-    position: 'relative',
-    '&::after': {
-      content: '""',
-      backgroundImage: `url('${bgImage.src}')`,
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      bottom: 0,
-      right: 0,
-      [theme.breakpoints.up(992)]: {
-        backgroundSize: 'auto',
-        transform: 'scale(1.2)',
-        backgroundAttachment: 'fixed',
-      },
-      [theme.breakpoints.up(2000)]: {
-        backgroundSize: 'cover',
-      },
     },
   },
   gridItem: {
@@ -62,7 +35,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: '1.2rem',
     // padding: '2rem 0',
     borderRadius: '2rem',
-    color: '#fff',
+    color: theme.palette.custom.textColor,
     [theme.breakpoints.up(600)]: {
       padding: '2rem 1rem',
       fontSize: '1.8rem',
@@ -75,7 +48,7 @@ const useStyles = makeStyles(theme => ({
       },
     },
     '& svg': {
-      color: '#fff',
+      color: theme.palette.custom.textColor,
     }
   },
   toolboxImageHolder: {
@@ -97,7 +70,7 @@ const useStyles = makeStyles(theme => ({
   },
   listItem: {
     margin: '20px 0',
-    color: '#fff',
+    color: theme.palette.custom.textColor,
     [theme.breakpoints.up(600)]: {
       paddingLeft: 50,
     },
@@ -117,24 +90,15 @@ const useStyles = makeStyles(theme => ({
     width: 'fit-content',
     fontSize: '1rem',
     borderRadius: 20,
-    backdropFilter: 'blur(10px)',
-    borderTop: `1px solid ${theme.palette.custom.accent}`,
-    borderBottom: `1px solid ${theme.palette.custom.accent}`,
-    boxShadow: `inset 0px 0px 20px #00000099`,
-    backgroundColor: '#ffffff10',
-    color: '#fff',
+    boxShadow: theme.palette.custom.cardBoxShadow,
+    color: theme.palette.custom.textColor,
   },
   moreToolsItem: {
     width: 'fit-content',
     fontSize: '1rem',
     borderRadius: 12,
-    backdropFilter: 'blur(10px)',
-    borderTop: `1px solid ${theme.palette.custom.accent}`,
-    borderBottom: `1px solid ${theme.palette.custom.accent}`,
-    backgroundColor: '#ffffff10',
-    color: '#fff',
-    boxShadow: `inset 0px 0px 20px #00000099`,
-    // padding: '1rem 2rem',
+    color: theme.palette.custom.textColor,
+    boxShadow: theme.palette.custom.cardBoxShadow,
     [theme.breakpoints.up(600)]: {
       padding: '1rem 2rem',
     },
@@ -230,7 +194,7 @@ const Toolbox = ({ setActiveSection, setRefs }) => {
       <section className={classes.toolboxRoot} ref={scrollRef}>
         <Container maxWidth='xl'>
           <Box width='100%' padding='30px 0' className='blurIn'>
-            <Heading text="Toolbox" inverse />
+            <Heading text="Toolbox" />
             <Grid container justifyContent='center' spacing={5}>
 
               <Grid item xs={12} md={6} className={classes.gridItem}>

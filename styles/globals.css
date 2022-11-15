@@ -16,7 +16,8 @@ body {
   /* background: radial-gradient(circle, rgba(38, 50, 56,1) 0%, rgba(96,125,139,1) 100%); */
   background: #f0f0f3;
   opacity: 0;
-  transition: opacity 100ms ease-in-out;
+  transition: all 150ms ease-in-out;
+  transition-property: opacity, background;
 }
 body.dark-mode {
   --backgroundColor: #212121;
@@ -76,7 +77,7 @@ div, h1, h2, h3, h4, span, p , button{
 /* Track */
 ::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 1);
-  background: rgba(38, 50, 56,1);
+  background: var(--backgroundColor);
   /* background: radial-gradient(circle, rgba(31,143,185,1) 0%, rgba(0,0,0,0.5662640056022409) 73%); */
     /* border-radius: 0.7rem; */
 }

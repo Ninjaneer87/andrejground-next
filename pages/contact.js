@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     '&::after': {
       content: '""',
-      backgroundImage: `url('${patternImage2}')`,
+      // backgroundImage: `url('${patternImage2}')`,
       backgroundPosition: 'center',
       opacity: .35,
       filter: 'drop-shadow(0px 0px 1px #fff)',
@@ -44,7 +44,7 @@ const Contact = () => {
       </Head>
       <div className={classes.bgOverlay}>
         <div className={classes.root}>
-          <PageTitle pageTitle='Contact' />
+          {/* <PageTitle pageTitle='Contact' /> */}
           <Info />
           <SendMessage />
         </div>
