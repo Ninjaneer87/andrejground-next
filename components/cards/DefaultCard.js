@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     boxShadow: `10px 10px 10px rgba(0, 0, 0, 0.04)`,
     boxShadow: theme.palette.custom.cardBoxShadow,
-    // backdropFilter: 'blur(12px)',
+    backdropFilter: 'blur(12px)',
     [theme.breakpoints.up(600)]: {
       padding: '2rem',
     },
@@ -60,7 +60,7 @@ const DefaultCard = (props) => {
 
   return (
     <div
-      className={`${classes.root} scaleIn`}
+      className={`${classes.root}`}
       style={{ 
         maxWidth: props.maxWidth || '100%', 
         height: props.height || '100%',

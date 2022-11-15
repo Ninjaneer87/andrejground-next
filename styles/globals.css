@@ -121,10 +121,9 @@ div, h1, h2, h3, h4, span, p , button{
 
 /* animations */
 .blurIn {
-  opacity: 0;
   animation: blurIn 300ms ease-in;
-  animation-fill-mode: forwards;
-  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: backwards;
+  -webkit-animation-fill-mode: backwards;
 }
 @keyframes blurIn {
   /* 0%{opacity:0}
