@@ -6,7 +6,7 @@ import React from 'react';
 const useStyles = makeStyles(theme => {
   return {
     field: {
-      margin: theme.spacing(2, 0),
+      margin: theme.spacing(3, 0),
       display: 'block',
     },
   }
@@ -25,23 +25,33 @@ const StyledTextField = withStyles(theme => ({
       opacity: 1,
     },
     '& .MuiOutlinedInput-root': {
+      transition: 'all 250ms ease-in',
       color: theme.palette.custom.textColor,
       boxShadow: theme.palette.custom.button3DShadow,
       '& fieldset': {
+        transition: 'all 250ms ease-in',
         borderColor: theme.palette.custom.textColor,
         border: 'none',
         opacity: 0.5,
       },
       '&:hover fieldset': {
+        boxShadow: theme.palette.custom.button3DShadowInset,
         borderColor: theme.palette.custom.textColor,
         border: 'none',
         opacity: 1,
       },
       '&.Mui-focused fieldset': {
+        boxShadow: theme.palette.custom.button3DShadowInset,
         borderColor: theme.palette.custom.accent,
         border: 'none',
         opacity: 1,
       },
+    },
+    '& .MuiOutlinedInput-root.Mui-focused': {
+      boxShadow: '0px 0px 0px transparent',
+    },
+    '& .MuiOutlinedInput-root:hover': {
+      boxShadow: '0px 0px 0px transparent',
     },
   },
 }))(TextField);
