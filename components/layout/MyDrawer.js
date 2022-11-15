@@ -14,12 +14,12 @@ const drawerWidth = 250;
 const useStyles = makeStyles(theme => ({
   drawer: {
     width: drawerWidth,
-    background: grey[900],
-    color: '#fff',
+    background: theme.palette.custom.backgroundColor,
+    color: theme.palette.custom.textColor,
   },
   drawerPaper: {
     width: drawerWidth,
-    background: grey[900],
+    background: theme.palette.custom.backgroundColor,
   },
   listItem: {
     transformOrigin: 'center center',
@@ -27,13 +27,13 @@ const useStyles = makeStyles(theme => ({
     '&::before': {
       content: '""',
       display: 'block',
-      width: 2,
+      width: 3,
       transition: `transform ${theme.transitions.duration.short}ms ease`,
       position: 'absolute',
       top: 0,
       left: 0,
       bottom: 0,
-      backgroundColor: '#fff',
+      backgroundColor: theme.palette.custom.textColor,
       transform: 'scaleY(0)',
     }
   },
@@ -45,13 +45,13 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     padding: 0,
-    color: '#fff',
+    color: theme.palette.custom.textColor,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 60,
+    height: 70,
     boxSizing: 'border-box',
-    borderBottom: `1px solid ${theme.palette.custom.appbarBorderColor}`,
+    borderBottom: `1px solid ${theme.palette.custom.boxShadowColor}`,
   },
   divider: {
     backgroundColor: theme.palette.custom.borderColor
