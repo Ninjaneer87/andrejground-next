@@ -1,5 +1,4 @@
 import React from 'react';
-import PageTitle from "../../components/UI/PageTitle";
 import makeStyles from '@material-ui/styles/makeStyles';
 import SingleProjectContent from '../../components/sections/portfolio/SingleProjectContent';
 import { MongoClient } from 'mongodb';
@@ -14,7 +13,6 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 const SingleProject = ({ project }) => {
-  // console.log('project: ', project)
   const classes = useStyles();
   return (
     <>
@@ -23,7 +21,6 @@ const SingleProject = ({ project }) => {
         <meta name='description' content={project.description} />
       </Head>
       <div className={classes.root}>
-        {/* <PageTitle pageTitle='Project' /> */}
         <SingleProjectContent {...project} />
       </div>
     </>

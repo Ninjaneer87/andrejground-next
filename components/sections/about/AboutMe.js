@@ -11,14 +11,13 @@ import {
   Grid,
   makeStyles,
   Typography,
-  Button,
   Divider,
 } from "@material-ui/core";
 import Heading from "../../UI/Heading";
-import DefaultCard from "../../cards/DefaultCard";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import ThemeContext from "../../../context/themeContext";
 import Button3D from "../../UI/Button3D";
+import BlurIn from "../../UI/BlurIn";
 
 const andrejImage = "/img/andrej500transparent.webp";
 
@@ -95,56 +94,66 @@ const AboutMe = ({ setRefs, refs }) => {
   }, [refs]);
 
   return (
-    <Container maxWidth="lg" className={`${classes.about} blurIn`}>
+    <Container maxWidth="lg" className={classes.about}>
       <div ref={ref}>
-        <Heading text="Meet Andrej" />
+        <BlurIn>
+          <Heading text="Meet Andrej" />
+        </BlurIn>
       </div>
       <Grid container spacing={3} alignItems="center" justifyContent="center">
         <Grid item xs={12} md={6}>
-          <Box className={classes.image} />
+          <BlurIn>
+            <Box className={classes.image} />
+          </BlurIn>
         </Grid>
-        <Grid item xs={12} md={6} >
-          {/* <DefaultCard width='100%' > */}
-          <Box maxWidth={600} margin='auto'>
-            <Typography className={classes.text}>
-              Andrej has been into front-end development for a couple of years
-              now. Over this period, he has developed a strong curiosity about
-              JavaScript and its ecosystem, with a focus on React and Angular
-              frameworks.
-              <br />
-              <br />
-              He enjoys learning, coding, and seeing his code getting leaner and
-              cleaner after each project.
-              <br />
-              <br />
-              He is on a constant quest for people who share similar habits,
-              views and{" "}
-              <span
-                className="cyan"
-                style={{ cursor: "pointer" }}
-                onClick={goToValues}
+        <Grid item xs={12} md={6}>
+          <Box maxWidth={600} margin="auto">
+            <BlurIn>
+              <Typography className={classes.text}>
+                Andrej has been into front-end development for a couple of years
+                now. Over this period, he has developed a strong curiosity about
+                JavaScript and its ecosystem, with a focus on React and Angular
+                frameworks.
+                <br />
+                <br />
+                He enjoys learning, coding, and seeing his code getting leaner
+                and cleaner after each project.
+                <br />
+                <br />
+                He is on a constant quest for people who share similar habits,
+                views and{" "}
+                <span
+                  className="cyan"
+                  style={{ cursor: "pointer" }}
+                  onClick={goToValues}
+                >
+                  values
+                </span>
+                .
+                <br />
+                <br />
+              </Typography>
+            </BlurIn>
+
+            <BlurIn>
+              <Divider classes={{ root: classes.divider }} />
+            </BlurIn>
+
+            <BlurIn>
+              <Button3D
+                component="a"
+                href="/resume/AndrejForgacCV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                endIcon={<GetAppIcon />}
+                variant="text"
+                color={`${darkMode ? "secondary" : "primary"}`}
+                fullWidth
               >
-                values
-              </span>
-              .
-              <br />
-              <br />
-            </Typography>
-            <Divider classes={{ root: classes.divider }} />
-            <Button3D
-              component="a"
-              href="/resume/AndrejForgacCV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              endIcon={<GetAppIcon />}
-              variant="text"
-              color={`${darkMode ? "secondary" : "primary"}`}
-              fullWidth
-            >
-              Andrej&apos;s resume
-            </Button3D>
+                Andrej&apos;s resume
+              </Button3D>
+            </BlurIn>
           </Box>
-          {/* </DefaultCard> */}
         </Grid>
       </Grid>
     </Container>

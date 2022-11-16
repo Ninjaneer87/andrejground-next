@@ -33,8 +33,6 @@ const ClipboardCopy = React.forwardRef((props, ref) => {
     await navigator.clipboard.writeText(props.content);
     setCopied(true);
     notify('Copied to clipboard!', 'Success')
-
-    console.log('Copied successfully!');
   }
   return (
 

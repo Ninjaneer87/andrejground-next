@@ -1,7 +1,6 @@
 .Notification {
-    background-color: #212121;
-    color: #fff;
-    border: 1px solid #00e5ff;
+    background-color: var(--backgroundColor);
+    color: var(--text-color);
     border-radius: 10px;
     display: flex;
     align-items: center;

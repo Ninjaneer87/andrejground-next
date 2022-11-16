@@ -7,7 +7,6 @@ const handler = async (req, res) => {
   }
   
   try {
-    console.log('requested projects GET')
     const projects = await Project.find();
     projects.length < 1 && res.status(404).json('There are no projects!');
 

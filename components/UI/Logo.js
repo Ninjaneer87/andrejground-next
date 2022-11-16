@@ -54,7 +54,7 @@ const Logo = (props) => {
   }
 
   return (
-    <ButtonBase style={{ borderRadius: 8,  }}>
+    <ButtonBase style={{ borderRadius: 8,  }} disableRipple>
       <Link href='/' passHref>
         <a className={classes.logoRoot}  onClick={logoHandler}>
           <div className={classes.logoHolder}>

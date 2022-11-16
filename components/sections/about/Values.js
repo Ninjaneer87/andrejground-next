@@ -3,6 +3,7 @@ import { Container, makeStyles } from "@material-ui/core";
 import Heading from "../../UI/Heading";
 import ValuesTabs from "./ValuesTabs";
 import ValuesTabsMobile from "./ValuesTabsMobile";
+import BlurIn from "../../UI/BlurIn";
 
 const values = [
   {
@@ -112,7 +113,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Values = ({setRefs}) => {
+const Values = ({ setRefs }) => {
   const classes = useStyles();
   const ref = useRef(null);
   const [refLoaded, setRefLoaded] = useState(false);
@@ -127,8 +128,11 @@ const Values = ({setRefs}) => {
   }, [refLoaded, setRefs]);
 
   return (
-    <Container ref={ref} maxWidth="lg" className={`${classes.root} blurIn`}>
-      <Heading text="Values & philosophy" />
+    <Container ref={ref} maxWidth="lg" className={classes.root}>
+      <BlurIn>
+        <Heading text="Values & philosophy" />
+      </BlurIn>
+
       <ValuesTabs values={values} />
       <ValuesTabsMobile values={values} />
     </Container>

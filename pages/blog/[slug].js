@@ -1,5 +1,4 @@
 import React from 'react';
-import PageTitle from "../../components/UI/PageTitle";
 import makeStyles from '@material-ui/styles/makeStyles';
 import SingleBlogContent from '../../components/sections/blog/SingleBlogContent';
 import { MongoClient } from 'mongodb';
@@ -22,9 +21,7 @@ const SingleBlog = ({ blog }) => {
         <meta name='description' content={blog.title} />
       </Head>
       <div className={classes.root}>
-        {/* <PageTitle pageTitle='Blog' /> */}
         <SingleBlogContent {...blog} />
-        {/* {blog.title} */}
       </div>
     </>
   );

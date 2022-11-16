@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
     position: 'fixed',
     bottom: 10,
     right: 10,
-    padding: 3,
+    padding: 6,
     transform: 'translateX(200%)',
     transition: `all ${theme.transitions.duration.short}ms ease-in-out`,
     border: `2px solid ${theme.palette.custom.accent}`,
@@ -42,7 +42,7 @@ const ScrollTop = () => {
         onClick={scrollToTop}
         className={`${classes.scrolltopRoot} ${isScrolled && classes.show}`}
         size="medium">
-        <KeyboardArrowUpIcon className={classes.navIcon} />
+        <KeyboardArrowUpIcon className={classes.navIcon} fontSize='medium' />
       </IconButton>
     </ClientOnlyPortal>
   );

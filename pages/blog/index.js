@@ -1,5 +1,4 @@
 import React from 'react';
-import PageTitle from "../../components/UI/PageTitle";
 import BlogsList from '../../components/sections/blog/BlogsList';
 import makeStyles from '@material-ui/styles/makeStyles';
 import { MongoClient } from 'mongodb';
@@ -22,9 +21,7 @@ const Blog = ({ blogs }) => {
         <meta name='description' content="AndrejGround blog" />
       </Head>
       <div className={classes.root}>
-        {/* <PageTitle pageTitle='Blog' /> */}
         <BlogsList blogs={blogs} />
-        {/* {blogs.map(blog => <h1 key={blog.slug}>{blog.content}</h1>)} */}
       </div>
     </>
   );

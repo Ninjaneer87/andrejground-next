@@ -27,7 +27,7 @@ const Heading = (props) => {
   const classes = useStyles(props.inverse);
   
   return (
-    <Typography className={classes.root}  variant='h2'>
+    <Typography className={`${classes.root} ${props.className}`}  variant='h2'>
       {props.text}
     </Typography>
   );

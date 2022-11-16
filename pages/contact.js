@@ -1,11 +1,8 @@
 import React from 'react';
-import PageTitle from "../components/UI/PageTitle";
 import { makeStyles } from '@material-ui/core';
 import SendMessage from '../components/sections/contact/SendMessage';
 import Info from '../components/sections/contact/Info';
 import Head from 'next/head';
-
-const patternImage2 = '/img/pattern2.png';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -18,7 +15,6 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     '&::after': {
       content: '""',
-      // backgroundImage: `url('${patternImage2}')`,
       backgroundPosition: 'center',
       opacity: .35,
       filter: 'drop-shadow(0px 0px 1px #fff)',
@@ -44,7 +40,6 @@ const Contact = () => {
       </Head>
       <div className={classes.bgOverlay}>
         <div className={classes.root}>
-          {/* <PageTitle pageTitle='Contact' /> */}
           <Info />
           <SendMessage />
         </div>

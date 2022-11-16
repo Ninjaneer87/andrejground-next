@@ -17,6 +17,7 @@ import ImportantDevicesOutlinedIcon from "@material-ui/icons/ImportantDevicesOut
 import VideoLibraryOutlinedIcon from "@material-ui/icons/VideoLibraryOutlined";
 import { useCallback } from "react";
 import DefaultCard from "../../cards/DefaultCard";
+import BlurIn from "../../UI/BlurIn";
 
 const logoImg = "/img/AG.png";
 
@@ -53,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "flex-start",
     justifyContent: "center",
-    gap: '1.5rem',
+    gap: "1.5rem",
     [theme.breakpoints.down(956)]: {
       flexWrap: "wrap",
     },
@@ -100,34 +101,43 @@ const Intro = ({ refs }) => {
   }, [refs]);
 
   return (
-    <Container maxWidth="xl" className={`${classes.intro} blurIn`}>
-      <Heading text="What is AndrejGround?" />
-      <Typography variant="h6" className={classes.subTitle}>
-        AndrejGround is{" "}
-        <span
-          className="cyan"
-          style={{ cursor: "pointer" }}
-          onClick={goToAndrej}
-        >
-          Andrej
-        </span>
-        &apos;s playground for ideas, front-end features and functionalities, as
-        well as a window to his portfolio.
-      </Typography>
-      <Box className={classes.logoImage} />
+    <Container maxWidth="xl" className={classes.intro}>
+      <BlurIn>
+        <Heading text="What is AndrejGround?" />
+      </BlurIn>
+      <BlurIn delay={150}>
+        <Typography variant="h6" className={classes.subTitle}>
+          AndrejGround is{" "}
+          <span
+            className="cyan"
+            style={{ cursor: "pointer" }}
+            onClick={goToAndrej}
+          >
+            Andrej
+          </span>
+          &apos;s playground for ideas, front-end features and functionalities,
+          as well as a window to his portfolio.
+        </Typography>
+      </BlurIn>
+
+      <BlurIn delay={300}>
+        <Box className={classes.logoImage} />
+      </BlurIn>
       <List className={classes.list}>
-        {stats.map((stat) => (
-          <DefaultCard key={stat.number} padding={0}>
-            <ListItem className={classes.listItem}>
-              <ListItemText>
-                <ListItemIcon classes={{ root: classes.icon }}>
-                  {stat.icon}
-                </ListItemIcon>
-                <Typography variant="h4">{stat.number}</Typography>
-                <Typography>{stat.desc}</Typography>
-              </ListItemText>
-            </ListItem>
-          </DefaultCard>
+        {stats.map((stat, i) => (
+          <BlurIn delay={i * 150} key={stat.number}>
+            <DefaultCard padding={0}>
+              <ListItem className={classes.listItem}>
+                <ListItemText>
+                  <ListItemIcon classes={{ root: classes.icon }}>
+                    {stat.icon}
+                  </ListItemIcon>
+                  <Typography variant="h4">{stat.number}</Typography>
+                  <Typography>{stat.desc}</Typography>
+                </ListItemText>
+              </ListItem>
+            </DefaultCard>
+          </BlurIn>
         ))}
       </List>
     </Container>

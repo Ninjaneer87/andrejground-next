@@ -23,6 +23,7 @@ import { useEffect } from "react";
 import ClipboardCopy from "../../UI/ClipboardCopy";
 import Button3D from "../../UI/Button3D";
 import ThemeContext from "../../../context/themeContext";
+import BlurIn from "../../UI/BlurIn";
 
 const bgImage = "/img/bg4.webp";
 
@@ -49,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
     height: 25,
     borderRadius: "100vh",
     border: `1px solid ${theme.palette.custom.accent}`,
+    boxShadow: theme.palette.custom.cardBoxShadow,
     [theme.breakpoints.up(450)]: {
       marginRight: 20,
     },
@@ -125,91 +127,99 @@ const ContactInfo = ({ setActiveSection, setRefs }) => {
   return (
     <div className={classes.bgOverlay}>
       <section className={classes.contactInfo} ref={scrollRef}>
-        <Box
-          maxWidth="90vw"
-          width={450}
-          padding="30px 0"
-          margin="0 auto"
-          className="blurIn"
-        >
-          <Heading text="Contact info" />
+        <Box maxWidth="90vw" width={450} padding="30px 0" margin="0 auto">
+          <BlurIn>
+            <Heading text="Contact info" />
+          </BlurIn>
           <List>
-            <ListItem disableGutters style={{ marginBottom: 20 }}>
-              <ListItemIcon>
-                <LocationOnOutlinedIcon
-                  classes={{ root: classes.icon }}
-                  fontSize="large"
-                />
-              </ListItemIcon>
-              <ListItemText>
-                <Typography
-                  style={{ fontWeight: 200, marginBottom: 10 }}
-                  variant="h4"
-                >
-                  Town, State
-                </Typography>
-                <Typography style={{ fontWeight: 400 }}>
-                  Apatin, Serbia
-                </Typography>
-              </ListItemText>
-            </ListItem>
-            <ListItem disableGutters>
-              <ListItemIcon>
-                <MailOutlineIcon
-                  classes={{ root: classes.icon }}
-                  fontSize="large"
-                />
-              </ListItemIcon>
-              <ListItemText>
-                <Typography
-                  style={{ fontWeight: 200, marginBottom: 10 }}
-                  variant="h4"
-                >
-                  Email
-                </Typography>
-                <Typography
-                  component="a"
-                  href="mailto:contact@andrejground.com"
-                  className={classes.emailLink}
-                  style={{ fontWeight: 400, marginRight: 6 }}
-                  ref={emailRef}
-                >
-                  contact@andrejground.com
-                </Typography>
-                <span>
-                  <ClipboardCopy
-                    content="contact@andrejground.com"
-                    ref={emailRef}
+            <BlurIn>
+              <ListItem disableGutters style={{ marginBottom: 20 }}>
+                <ListItemIcon>
+                  <LocationOnOutlinedIcon
+                    classes={{ root: classes.icon }}
+                    fontSize="large"
                   />
-                </span>
-              </ListItemText>
-            </ListItem>
+                </ListItemIcon>
+                <ListItemText>
+                  <Typography
+                    style={{ fontWeight: 200, marginBottom: 10 }}
+                    variant="h4"
+                  >
+                    Town, State
+                  </Typography>
+                  <Typography style={{ fontWeight: 400 }}>
+                    Apatin, Serbia
+                  </Typography>
+                </ListItemText>
+              </ListItem>
+            </BlurIn>
+
+            <BlurIn>
+              <ListItem disableGutters>
+                <ListItemIcon>
+                  <MailOutlineIcon
+                    classes={{ root: classes.icon }}
+                    fontSize="large"
+                  />
+                </ListItemIcon>
+                <ListItemText>
+                  <Typography
+                    style={{ fontWeight: 200, marginBottom: 10 }}
+                    variant="h4"
+                  >
+                    Email
+                  </Typography>
+                  <Typography
+                    component="a"
+                    href="mailto:contact@andrejground.com"
+                    className={classes.emailLink}
+                    style={{ fontWeight: 400, marginRight: 6 }}
+                    ref={emailRef}
+                  >
+                    contact@andrejground.com
+                  </Typography>
+                  <span>
+                    <ClipboardCopy
+                      content="contact@andrejground.com"
+                      ref={emailRef}
+                    />
+                  </span>
+                </ListItemText>
+              </ListItem>
+            </BlurIn>
           </List>
-          <Divider classes={{ root: classes.divider }} />
-          <Box display="flex" justifyContent="center">
-            {socials.map((social) => (
-              <IconButton
-                key={social.link}
-                edge="start"
-                aria-label="social"
-                component="a"
-                href={social.link}
-                target="_blank"
-                rel="noopener noreferrer"
+          <BlurIn>
+            <Divider classes={{ root: classes.divider }} />
+          </BlurIn>
+          <BlurIn>
+            <Box display="flex" justifyContent="center">
+              {socials.map((social) => (
+                <IconButton
+                  key={social.link}
+                  edge="start"
+                  aria-label="social"
+                  component="a"
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {social.icon}
+                </IconButton>
+              ))}
+            </Box>
+          </BlurIn>
+
+          <BlurIn>
+            <Link href="/contact" passHref>
+              <Button3D
+                fullWidth
+                color={darkMode ? "secondary" : "primary"}
+                endIcon={<SendOutlinedIcon />}
               >
-                {social.icon}
-              </IconButton>
-            ))}
-          </Box>
-          <Link href="/contact" passHref>
-            <Button3D
-              fullWidth
-              color={darkMode ? "secondary" : "primary"}
-              endIcon={<SendOutlinedIcon />}
-            >
-              Send a message
-            </Button3D>
-          </Link>
+                Send a message
+              </Button3D>
+            </Link>
+          </BlurIn>
         </Box>
       </section>
     </div>

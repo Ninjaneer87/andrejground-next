@@ -1,24 +1,24 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import TabPanel from './../../UI/TabPanel';
-
+import React from "react";
+import { makeStyles } from "@material-ui/core";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import TabPanel from "./../../UI/TabPanel";
+import BlurIn from "../../UI/BlurIn";
 
 function a11yProps(index) {
   return {
     id: `scrollable-auto-tab-${index}`,
-    'aria-controls': `scrollable-auto-tabpanel-${index}`,
+    "aria-controls": `scrollable-auto-tabpanel-${index}`,
   };
 }
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    width: '100%',
+    width: "100%",
     color: theme.palette.custom.textColor,
     [theme.breakpoints.up(768)]: {
-      display: 'none'
+      display: "none",
     },
   },
   tabs: {
@@ -35,35 +35,29 @@ export default function ValuesTabsMobile(props) {
   };
 
   return (
-    <div className={classes.root}>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        indicatorColor="secondary"
-        // textColor="secondary"
-        variant="scrollable"
-        scrollButtons="auto"
-        aria-label="values mobile"
-        className={classes.tabs}
-      >
-        {props.values.map((val, i) =>
-          <Tab
-            key={val.title}
-            label={val.title}
-            {...a11yProps(i)}
-          />
-        )}
-      </Tabs>
-
-      {props.values.map((val, i) =>
-        <TabPanel
-          key={val.title}
+    <BlurIn fullWidth>
+      <div className={classes.root}>
+        <Tabs
           value={value}
-          index={i}
+          onChange={handleChange}
+          indicatorColor="secondary"
+          // textColor="secondary"
+          variant="scrollable"
+          scrollButtons="auto"
+          aria-label="values mobile"
+          className={classes.tabs}
         >
-          {val.content}
-        </TabPanel>
-      )}
-    </div>
+          {props.values.map((val, i) => (
+            <Tab key={val.title} label={val.title} {...a11yProps(i)} />
+          ))}
+        </Tabs>
+
+        {props.values.map((val, i) => (
+          <TabPanel key={val.title} value={value} index={i}>
+            {val.content}
+          </TabPanel>
+        ))}
+      </div>
+    </BlurIn>
   );
 }

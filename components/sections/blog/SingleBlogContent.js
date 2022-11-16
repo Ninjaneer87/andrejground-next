@@ -80,7 +80,9 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 20,
     display: 'none',
     opacity: 0,
-    transition: 'opacity 150ms ease-in',
+    filter: 'blur(10px)',
+    transition: 'all 150ms ease-in',
+    transitionProperty: 'opacity, filter',
     pointerEvents: 'none',
     [theme.breakpoints.up(1200)]: {
       display: 'block',
@@ -89,7 +91,8 @@ const useStyles = makeStyles(theme => ({
   },
   show: {
     pointerEvents: 'all',
-    opacity: 1
+    opacity: 1,
+    filter: 'blur(0px)'
   },
   subtitle: {
     color: theme.palette.custom.textColor,

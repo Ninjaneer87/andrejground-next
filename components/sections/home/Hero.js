@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { makeStyles } from "@material-ui/core";
 import Button3D from "../../UI/Button3D";
 import ThemeContext from "../../../context/themeContext";
+import BlurIn from "../../UI/BlurIn";
 
 const useStyles = makeStyles((theme) => ({
   hero: {
@@ -28,8 +29,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up(768)]: {
       marginBottom: "50px",
     },
-    [theme.breakpoints.up(992)]: {
-    },
+    [theme.breakpoints.up(992)]: {},
     [theme.breakpoints.up(1400)]: {
       textAlign: "start",
       // width: "20vw",
@@ -106,18 +106,23 @@ const Hero = ({ setActiveSection, setRefs }) => {
 
   return (
     <section className={classes.hero} ref={scrollRef}>
-      <Container maxWidth="lg" className="blurIn">
+      <Container maxWidth="lg">
         <Grid container spacing={3}>
           <Grid item lg={8}>
-            <div className={classes.welcomeIntro}>
-              One stop for awesome front-end solutions.
-            </div>
-            <div
-              className={classes.welcomeTitle}
-              data-text="WELCOME TO THE ANDREJGROUND"
-            >
-              Welcome to the <span className="cyan">Andrej</span>Ground
-            </div>
+            <BlurIn>
+              <div className={classes.welcomeIntro}>
+                One stop for awesome front-end solutions.
+              </div>
+            </BlurIn>
+
+            <BlurIn delay={150}>
+              <div
+                className={classes.welcomeTitle}
+                data-text="WELCOME TO THE ANDREJGROUND"
+              >
+                Welcome to the <span className="cyan">Andrej</span>Ground
+              </div>
+            </BlurIn>
           </Grid>
           <Grid item xs={12} lg={4}>
             <Box
@@ -127,32 +132,37 @@ const Hero = ({ setActiveSection, setRefs }) => {
               flexDirection="column"
               height="100%"
             >
-              <Link href="/portfolio" passHref>
-                <Button3D
-                  fullWidth
-                  // variant="outlined"
-                  color={darkMode ? "secondary" : "primary"}
-                  style={{ marginBottom: "20px", maxWidth: "500px" }}
-                  component="a"
-                  endIcon={<ArrowRightAltIcon />}
-                  // onClick={scrollTopClick}
-                >
-                  PROJECTS
-                </Button3D>
-              </Link>
-              <Link href="/contact" passHref>
-                <Button3D
-                  fullWidth
-                  // variant="contained"
-                  color={darkMode ? "secondary" : "primary"}
-                  style={{ maxWidth: "500px" }}
-                  component="a"
-                  endIcon={<ArrowRightAltIcon />}
-                  // onClick={scrollTopClick}
-                >
-                  Let&apos;s build
-                </Button3D>
-              </Link>
+              <BlurIn delay={300} fullWidth>
+                <Link href="/portfolio" passHref>
+                  <Button3D
+                    fullWidth
+                    // variant="outlined"
+                    color={darkMode ? "secondary" : "primary"}
+                    style={{ marginBottom: "20px", maxWidth: "500px" }}
+                    component="a"
+                    endIcon={<ArrowRightAltIcon />}
+                    // onClick={scrollTopClick}
+                  >
+                    PROJECTS
+                  </Button3D>
+                </Link>
+              </BlurIn>
+
+              <BlurIn delay={450} fullWidth>
+                <Link href="/contact" passHref>
+                  <Button3D
+                    fullWidth
+                    // variant="contained"
+                    color={darkMode ? "secondary" : "primary"}
+                    style={{ maxWidth: "500px" }}
+                    component="a"
+                    endIcon={<ArrowRightAltIcon />}
+                    // onClick={scrollTopClick}
+                  >
+                    Let&apos;s build
+                  </Button3D>
+                </Link>
+              </BlurIn>
             </Box>
           </Grid>
         </Grid>

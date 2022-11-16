@@ -1,67 +1,68 @@
-import React from 'react';
+import React from "react";
 import { Grid, Box, Container } from "@material-ui/core";
-import { makeStyles } from '@material-ui/core';
+import { makeStyles } from "@material-ui/core";
 import Heading from "../../UI/Heading";
-import { List, ListItem } from '@material-ui/core';
-import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
-import Image from 'next/image';
+import { List, ListItem } from "@material-ui/core";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import Image from "next/image";
 
-import bgImage from '../../../public/img/bg2.webp';
-import toolboxImage from '../../../public/img/skills1.png';
-import reactLogo from '../../../public/img/react-logo.webp';
-import angularLogo from '../../../public/img/angular-logo.png';
-import sassLogo from '../../../public/img/sass-logo.png';
-import tsLogo from '../../../public/img/ts-logo.png';
+import bgImage from "../../../public/img/bg2.webp";
+import toolboxImage from "../../../public/img/skills1.png";
+import reactLogo from "../../../public/img/react-logo.webp";
+import angularLogo from "../../../public/img/angular-logo.png";
+import sassLogo from "../../../public/img/sass-logo.png";
+import tsLogo from "../../../public/img/ts-logo.png";
+import BlurIn from "../../UI/BlurIn";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   toolboxRoot: {
-    display: 'flex',
-    textAlign: 'center',
-    alignItems: 'center',
-    minHeight: '100vh',
-    position: 'relative',
+    display: "flex",
+    textAlign: "center",
+    alignItems: "center",
+    minHeight: "100vh",
+    position: "relative",
     [theme.breakpoints.up(992)]: {
       padding: theme.spacing(3),
     },
   },
   gridItem: {
-    marginBottom: '1em',
+    marginBottom: "1em",
   },
   toolboxItem: {
     maxWidth: 700,
-    margin: '0 auto',
+    margin: "0 auto",
     fontWeight: 400,
-    fontSize: '1.2rem',
+    fontSize: "1.2rem",
     // padding: '2rem 0',
-    borderRadius: '2rem',
+    borderRadius: "2rem",
     color: theme.palette.custom.textColor,
     [theme.breakpoints.up(600)]: {
-      padding: '2rem 1rem',
-      fontSize: '1.8rem',
+      padding: "2rem 1rem",
+      fontSize: "1.8rem",
     },
-    '& span': {
+    "& span": {
       fontWeight: 400,
-      fontSize: '1.05rem',
+      fontSize: "1.05rem",
       [theme.breakpoints.up(600)]: {
-        fontSize: '1.3rem',
+        fontSize: "1.3rem",
       },
     },
-    '& svg': {
+    "& svg": {
       color: theme.palette.custom.textColor,
-    }
+    },
   },
   toolboxImageHolder: {
-    width: '90vw',
+    width: "90vw",
     maxWidth: 400,
-    height: '90vw',
+    height: "90vw",
     maxHeight: 400,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     filter: `drop-shadow(30px 10px 4px #0000005e)`,
     // animation: 'rotate 24s linear infinite',
-    position: 'relative'
+    position: "relative",
   },
   toolboxImage: {
     // width: '90vw',
@@ -69,152 +70,169 @@ const useStyles = makeStyles(theme => ({
     // filter: 'brightness(.8)',
   },
   listItem: {
-    margin: '20px 0',
+    margin: "20px 0",
     color: theme.palette.custom.textColor,
     [theme.breakpoints.up(600)]: {
       paddingLeft: 50,
     },
-    display: 'flex',
-    gap: '1rem'
+    display: "flex",
+    gap: "1rem",
   },
   moreTools: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
     marginTop: 25,
-    gap: '24px',
+    gap: "24px",
     maxWidth: 500,
-    margin: '0px auto',
+    margin: "0px auto",
   },
   mainToolsItem: {
-    width: 'fit-content',
-    fontSize: '1rem',
+    width: "fit-content",
+    fontSize: "1rem",
     borderRadius: 20,
     boxShadow: theme.palette.custom.cardBoxShadow,
     color: theme.palette.custom.textColor,
   },
   moreToolsItem: {
-    width: 'fit-content',
-    fontSize: '1rem',
+    width: "fit-content",
+    fontSize: "1rem",
     borderRadius: 12,
     color: theme.palette.custom.textColor,
     boxShadow: theme.palette.custom.cardBoxShadow,
     [theme.breakpoints.up(600)]: {
-      padding: '1rem 2rem',
+      padding: "1rem 2rem",
     },
   },
   translateMinusXl: {
     [theme.breakpoints.up(1300)]: {
-      transform: 'translateY(-100px)'
+      transform: "translateY(-100px)",
     },
   },
   translatePlusXl: {
     [theme.breakpoints.up(1300)]: {
-      transform: 'translateY(+100px)'
+      transform: "translateY(+100px)",
     },
   },
   toolIcon: {
     width: 30,
     height: 30,
-    objectFit: 'contain',
-    display: 'block',
+    objectFit: "contain",
+    display: "block",
   },
   toolLogoContainer: {
     height: 50,
     width: 50,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: '0 auto',
-    position: 'relative',
-    marginBottom: '1rem'
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    margin: "0 auto",
+    position: "relative",
+    marginBottom: "1rem",
     // borderRadius: 10,
     // overflow: 'hidden'
   },
   toolLogo: {
-    width: '100%',
-    display: 'block',
+    width: "100%",
+    display: "block",
   },
   favToolItem: {
-    fontSize: '1rem',
+    fontSize: "1rem",
     // fontWeight: '200'
-  }
+  },
 }));
 
 const mainTools = [
   {
-    label: 'React',
+    label: "React",
     logo: reactLogo,
   },
   {
-    label: 'Angular',
+    label: "Angular",
     logo: angularLogo,
   },
   {
-    label: 'TypeScript',
+    label: "TypeScript",
     logo: tsLogo,
   },
   {
-    label: 'Sass',
+    label: "Sass",
     logo: sassLogo,
   },
-]
+];
 const moreTools = [
-  'Next JS',
-  'Redux',
-  'Redux Saga',
-  'Material UI',
-  'Angular Material',
-  'RxJS',
-  'Jest',
-  'Express',
-  'MongoDB',
-]
+  "Next JS",
+  "Redux",
+  "Redux Saga",
+  "Material UI",
+  "Angular Material",
+  "RxJS",
+  "Jest",
+  "Express",
+  "MongoDB",
+];
 
 const Toolbox = ({ setActiveSection, setRefs }) => {
   const classes = useStyles();
 
-  const { ref: scrollRef, inView: scrollInView, entry } = useInView({
-    rootMargin: '-50%'
+  const {
+    ref: scrollRef,
+    inView: scrollInView,
+    entry,
+  } = useInView({
+    rootMargin: "-50%",
   });
 
   useEffect(() => {
-    if (entry)
-      setRefs('toolbox', entry.target)
-  }, [entry, setRefs])
-
+    if (entry) setRefs("toolbox", entry.target);
+  }, [entry, setRefs]);
 
   useEffect(() => {
-    if (scrollInView)
-      setActiveSection('toolbox');
+    if (scrollInView) setActiveSection("toolbox");
   }, [scrollInView, setActiveSection]);
 
   return (
     <div className={classes.bgOverlay}>
       <section className={classes.toolboxRoot} ref={scrollRef}>
-        <Container maxWidth='xl'>
-          <Box width='100%' padding='30px 0' className='blurIn'>
-            <Heading text="Toolbox" />
-            <Grid container justifyContent='center' spacing={5}>
-
+        <Container maxWidth="xl">
+          <Box width="100%" padding="30px 0">
+            <BlurIn>
+              <Heading text="Toolbox" />
+            </BlurIn>
+            <Grid container justifyContent="center" spacing={5}>
               <Grid item xs={12} md={6} className={classes.gridItem}>
                 <div className={classes.toolboxItem} style={{ maxWidth: 400 }}>
                   {/* <DefaultCard> */}
-                    Main tools
-                    <Grid container justifyContent='center' spacing={5} style={{marginTop: 20}}>
-                      {mainTools.map(tool => 
-                        <Grid key={tool.label} item xs={6} >
-                          <div className={classes.mainToolsItem} style={{width: '100%', padding: '1rem'}}>
+                  <BlurIn>Main tools</BlurIn>
+                  <Grid
+                    container
+                    justifyContent="center"
+                    spacing={5}
+                    style={{ marginTop: 20 }}
+                  >
+                    {mainTools.map((tool, i) => (
+                      <Grid key={tool.label} item xs={6}>
+                        <BlurIn delay={i * 150}>
+                          <div
+                            className={classes.mainToolsItem}
+                            style={{ width: "100%", padding: "1rem" }}
+                          >
                             <div className={classes.toolLogoContainer}>
-                              <Image className={classes.toolLogo} layout='intrinsic' src={tool.logo} alt='icon' />
+                              <Image
+                                className={classes.toolLogo}
+                                layout="intrinsic"
+                                src={tool.logo}
+                                alt="icon"
+                              />
                             </div>
                             <div className={classes.favToolItem}>
                               {tool.label}
                             </div>
                           </div>
-                        </Grid>
-                      )}
-                    </Grid>
+                        </BlurIn>
+                      </Grid>
+                    ))}
+                  </Grid>
                   {/* </DefaultCard> */}
                 </div>
               </Grid>
@@ -227,16 +245,18 @@ const Toolbox = ({ setActiveSection, setRefs }) => {
 
               <Grid item xs={12} md={6} className={classes.gridItem}>
                 <div className={classes.toolboxItem}>
-                  Other tools
+                  <BlurIn>Other tools</BlurIn>
                   <List className={classes.moreTools}>
-                    {moreTools.map(tool =>
-                      <ListItem key={tool} className={classes.moreToolsItem}>
-                        {tool}
-                      </ListItem>)}
+                    {moreTools.map((tool, i) => (
+                      <BlurIn delay={i * 150} key={tool}>
+                        <ListItem  className={classes.moreToolsItem}>
+                          {tool}
+                        </ListItem>
+                      </BlurIn>
+                    ))}
                   </List>
                 </div>
               </Grid>
-
             </Grid>
           </Box>
         </Container>

@@ -1,5 +1,4 @@
 import React from 'react';
-import PageTitle from "../../components/UI/PageTitle";
 import ProjectsList from '../../components/sections/portfolio/ProjectsList';
 import makeStyles from '@material-ui/styles/makeStyles';
 import { MongoClient } from 'mongodb';
@@ -22,7 +21,6 @@ const Portfolio = ({ projects }) => {
         <meta name='description' content="AndrejGround projects" />
       </Head>
       <div className={classes.root}>
-        {/* <PageTitle pageTitle='Portfolio' /> */}
         <ProjectsList projects={projects} />
       </div>
     </>

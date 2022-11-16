@@ -1,35 +1,44 @@
-import React, { useRef } from 'react';
-import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
-import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import CheckCircleOutlineOutlinedIcon from '@material-ui/icons/CheckCircleOutlineOutlined';
-import { Avatar, Container, Grid, makeStyles, Box, IconButton, Tooltip } from '@material-ui/core';
-import DefaultCard from '../../cards/DefaultCard';
-import ThemedTypography from './../../UI/ThemedTypography';
-import Heading from '../../UI/Heading';
-import ClipboardCopy from '../../UI/ClipboardCopy';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
+import React, { useRef } from "react";
+import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
+import MailOutlineIcon from "@material-ui/icons/MailOutline";
+import CheckCircleOutlineOutlinedIcon from "@material-ui/icons/CheckCircleOutlineOutlined";
+import {
+  Avatar,
+  Container,
+  Grid,
+  makeStyles,
+  Box,
+  IconButton,
+  Tooltip,
+} from "@material-ui/core";
+import DefaultCard from "../../cards/DefaultCard";
+import ThemedTypography from "./../../UI/ThemedTypography";
+import Heading from "../../UI/Heading";
+import ClipboardCopy from "../../UI/ClipboardCopy";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import WorkOutlineIcon from "@material-ui/icons/WorkOutline";
+import BlurIn from "../../UI/BlurIn";
 
 const infoItems = [
   {
     id: 0,
-    label: 'Located at',
-    text: 'Serbia',
-    icon: <LocationOnOutlinedIcon fontSize='large' />
+    label: "Located at",
+    text: "Serbia",
+    icon: <LocationOnOutlinedIcon fontSize="large" />,
   },
   {
     id: 1,
-    label: 'Email',
-    text: 'contact@andrejground.com',
-    icon: <MailOutlineIcon fontSize='large' />
+    label: "Email",
+    text: "contact@andrejground.com",
+    icon: <MailOutlineIcon fontSize="large" />,
   },
   {
     id: 2,
-    label: 'Current status',
-    text: 'Available',
-    // <span>Frontend Developer @ <a 
+    label: "Current status",
+    text: "Available",
+    // <span>Frontend Developer @ <a
     //     href="https://careers.single.earth/people/1059582-andrej-forgac"
     //     target='_blank'
     //     rel="noreferrer"
@@ -39,39 +48,41 @@ const infoItems = [
     //   </a>
     // </span>,
     // icon: <WorkOutlineIcon fontSize='large' />,
-    icon: <CheckCircleOutlineOutlinedIcon fontSize='large' />
+    icon: <CheckCircleOutlineOutlinedIcon fontSize="large" />,
   },
 ];
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     paddingTop: 150,
     paddingBottom: 50,
-    margin: 'auto',
-    minHeight: '100vh',
+    margin: "auto",
+    minHeight: "100vh",
   },
   itemContent: {
-    display: 'flex',
-    flexFlow: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    minHeight: '200px',
+    display: "flex",
+    flexFlow: "column",
+    alignItems: "center",
+    justifyContent: "space-between",
+    minHeight: "200px",
   },
   avatar: {
-    padding: 30,
+    padding: 40,
     marginBottom: 30,
-    backgroundColor: 'transparent',
-    border: `2px solid ${theme.palette.custom.accent}`,
-    color: theme.palette.custom.accent
+    backgroundColor: "transparent",
+    border: `1px solid ${theme.palette.custom.accent}`,
+    boxShadow: theme.palette.custom.cardBoxShadow,
+    color: theme.palette.custom.textColor,
   },
   socials: {
     // backgroundColor: theme.palette.custom.cardBgColor,
-    background: 'linear-gradient(135deg, rgba(33,33,33,0.05) 0%, rgba(255,255,255,0.05) 100%)',
-    borderRadius: '2rem',
+    background:
+      "linear-gradient(135deg, rgba(33,33,33,0.05) 0%, rgba(255,255,255,0.05) 100%)",
+    borderRadius: "2rem",
     // border: `1px solid ${theme.palette.custom.borderColor}`,
     transition: `all ${theme.transitions.duration.short}ms ease-in-out`,
     boxShadow: `10px 10px 10px rgba(0, 0, 0, 0.08)`,
-    backdropFilter: 'blur(6px)',
+    backdropFilter: "blur(6px)",
     // '&:hover': {
     //   border: `1px solid ${theme.palette.custom.accent}`,
     // }
@@ -79,88 +90,110 @@ const useStyles = makeStyles(theme => ({
   socialIcon: {
     width: 50,
     height: 50,
-    padding: '20px',
+    padding: "20px",
     color: theme.palette.custom.textColor,
     transition: `color ${theme.transitions.duration.short}ms ease-in-out`,
-    '&:hover': {
+    "&:hover": {
       color: theme.palette.custom.accent,
-    }
+    },
   },
-}))
+}));
 const Info = () => {
   const classes = useStyles();
-  const emailRef = useRef(null)
+  const emailRef = useRef(null);
 
   const socials = [
     {
-      name: 'LinkedIn',
-      link: 'https://www.linkedin.com/in/andrejforgac87/',
-      icon: <LinkedInIcon className={classes.socialIcon} />
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/andrejforgac87/",
+      icon: <LinkedInIcon className={classes.socialIcon} />,
     },
     {
-      name: 'GitHub',
-      link: 'https://github.com/Ninjaneer87',
-      icon: <GitHubIcon className={classes.socialIcon} />
+      name: "GitHub",
+      link: "https://github.com/Ninjaneer87",
+      icon: <GitHubIcon className={classes.socialIcon} />,
     },
     {
-      name: 'Twitter',
-      link: 'https://twitter.com/nindzenjer',
-      icon: <TwitterIcon className={classes.socialIcon} />
+      name: "Twitter",
+      link: "https://twitter.com/nindzenjer",
+      icon: <TwitterIcon className={classes.socialIcon} />,
     },
   ];
 
   return (
-    <Container maxWidth='lg' className={`${classes.root} blurIn`}>
-      <Heading text="Let's connect" />
-      <Grid container alignItems='center' justifyContent='center' spacing={5} style={{marginBottom: 20}}>
-        {infoItems.map(item => (
+    <Container maxWidth="lg" className={`${classes.root} `}>
+      <BlurIn>
+        <Heading text="Let's connect" />
+      </BlurIn>
+      <Grid
+        container
+        alignItems="center"
+        justifyContent="center"
+        spacing={5}
+        style={{ marginBottom: 20 }}
+      >
+        {infoItems.map((item, i) => (
           <Grid key={item.id} item xs={12} sm={6} md={4}>
-            <DefaultCard height='100%'>
-              <div className={classes.itemContent}>
-                <ThemedTypography style={{ marginBottom: 40, fontWeight: 400 }} variant='h6'>
-                  {item.label}
-                </ThemedTypography>
-                <Avatar className={classes.avatar}>{item.icon}</Avatar>
-                {item.label === 'Email' ?
-
+            <BlurIn delay={i * 150}>
+              <DefaultCard height="100%">
+                <div className={classes.itemContent}>
                   <ThemedTypography
-                    ref={emailRef}
-                    style={{ fontWeight: 400, textAlign: 'center' }}
+                    style={{ marginBottom: 40, fontWeight: 400 }}
+                    variant="h6"
                   >
-                    <a className='link' style={{ marginRight: 6 }} href='mailto:contact@andrejground.com'>{item.text}</a>
-                    <ClipboardCopy ref={emailRef} content={item.text} />
-                  </ThemedTypography> :
-
-                  <ThemedTypography
-                    style={{ fontWeight: 400, textAlign: 'center' }}
-                  >
-                    {item.text}
-                  </ThemedTypography>}
-              </div>
-            </DefaultCard>
+                    {item.label}
+                  </ThemedTypography>
+                  <Avatar className={classes.avatar}>{item.icon}</Avatar>
+                  {item.label === "Email" ? (
+                    <ThemedTypography
+                      ref={emailRef}
+                      style={{ fontWeight: 400, textAlign: "center" }}
+                    >
+                      <a
+                        className="link"
+                        style={{ marginRight: 6 }}
+                        href="mailto:contact@andrejground.com"
+                      >
+                        {item.text}
+                      </a>
+                      <ClipboardCopy ref={emailRef} content={item.text} />
+                    </ThemedTypography>
+                  ) : (
+                    <ThemedTypography
+                      style={{ fontWeight: 400, textAlign: "center" }}
+                    >
+                      {item.text}
+                    </ThemedTypography>
+                  )}
+                </div>
+              </DefaultCard>
+            </BlurIn>
           </Grid>
         ))}
       </Grid>
-      <DefaultCard padding='0px'>
-        <Box display='flex' justifyContent='center'>
-          {socials.map(social =>
-            <IconButton
-              key={social.name}
-              edge="start"
-              aria-label="social"
-              component='a'
-              href={social.link}
-              target='_blank'
-              rel="noopener noreferrer"
-              size='small'
-            >
-              <Tooltip title={social.name} arrow >
-                {social.icon}
-              </Tooltip>
-            </IconButton>
-          )}
-        </Box>
-      </DefaultCard>
+
+      <BlurIn delay={450}>
+        <DefaultCard padding="0px">
+          <Box display="flex" justifyContent="center">
+            {socials.map((social) => (
+              <IconButton
+                key={social.name}
+                edge="start"
+                aria-label="social"
+                component="a"
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                size="small"
+              >
+                <Tooltip title={social.name} arrow>
+                  {social.icon}
+                </Tooltip>
+              </IconButton>
+            ))}
+          </Box>
+        </DefaultCard>
+      </BlurIn>
     </Container>
   );
 };

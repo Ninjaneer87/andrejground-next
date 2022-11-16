@@ -119,6 +119,9 @@ div, h1, h2, h3, h4, span, p , button{
     transform: translateY(160vh);
   }
 }
+.invis {
+  opacity: 0;
+}
 
 /* animations */
 .blurIn {
@@ -129,7 +132,19 @@ div, h1, h2, h3, h4, span, p , button{
 @keyframes blurIn {
   /* 0%{opacity:0}
   100%{opacity:1;} */
-  0%{filter:blur(10px);opacity:0}
+  0%{filter:blur(10px);opacity:0; transform: translateY(20px);}
+  100%{filter:blur(0px);opacity:1;  transform: translateY(0);}
+}
+
+.appear {
+  animation: appear 300ms ease-in;
+  animation-fill-mode: backwards;
+  -webkit-animation-fill-mode: backwards;
+}
+@keyframes appear {
+  /* 0%{opacity:0}
+  100%{opacity:1;} */
+  0%{filter:blur(10px);opacity:0;}
   100%{filter:blur(0px);opacity:1;}
 }
 

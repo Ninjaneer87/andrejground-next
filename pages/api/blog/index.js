@@ -7,7 +7,6 @@ const handler = async (req, res) => {
   }
   
   try {
-    console.log('requested blogs GET')
     const blogs = await Blog.find();
     blogs.length < 1 && res.status(404).json('There are no blogs!');
 

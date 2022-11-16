@@ -6,6 +6,7 @@ import CheckOutlinedIcon from '@material-ui/icons/CheckOutlined';
 import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import ClientOnlyPortal from '../helpers/ClientOnlyPortal';
+import { withStyles } from '@material-ui/core';
 
 
 const emitter = new ee();
@@ -19,8 +20,8 @@ const Icons = {
     Info: <InfoOutlinedIcon fontSize="small" />,
 }
 class Notification extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             show: false,
             hovered: false,
@@ -71,6 +72,7 @@ class Notification extends Component {
                 <div
                     onClick={this.clicked}
                     className={`${classes.Notification} ${this.state.show ? classes.Show : ''} ${classes[this.state.type]}`}
+                    style={{ boxShadow: this.props.theme.palette.custom.cardBoxShadow }}
                 >
                     {Icons[this.state.type]} {this.state.msg}
                 </div>
@@ -79,4 +81,4 @@ class Notification extends Component {
     }
 }
 
-export default Notification;
+export default withStyles({}, { withTheme: true })(Notification);
