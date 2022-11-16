@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
           <meta property="og:description" content="Frontend development playground" />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://andrejground.com/" />
-          <meta property="og:image" content="/meta-img.jpg" />
+          <meta property="og:image" content="/meta-img.png" />
 
           <meta name="dc.coverage" content="AndrejGround" />
           <meta name="dc:description" content="Frontend development playground. One stop for all frontend solutions!" />
