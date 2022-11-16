@@ -201,7 +201,7 @@ const MyAppBar = (props) => {
                 aria-label="menu"
                 onClick={toggleExpanded}
                 size="medium">
-                <MenuIcon fontSize='large' className={classes.navIcon} />
+                <MenuIcon  className={classes.navIcon} />
               </IconButton>
               :
               <List
@@ -250,6 +250,7 @@ const MyAppBar = (props) => {
               aria-label="menu"
               onClick={toggle}
               size="medium"
+              style={{ marginLeft: 4 }}
             >
               {darkMode ? <Brightness2Icon className={classes.navIcon} /> : <WbSunnyIcon className={classes.navIcon} />}
             </IconButton>

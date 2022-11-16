@@ -28,32 +28,11 @@ import BlurIn from "../../UI/BlurIn";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // display: 'flex',
-    // textAlign: 'center',
-    // alignItems: 'flex-start',
     minHeight: "100vh",
     position: "relative",
     paddingBottom: 50,
     [theme.breakpoints.up("md")]: {
       padding: theme.spacing(3),
-    },
-  },
-  bgOverlay: {
-    // overflow: 'hidden',
-    position: "relative",
-    "&::after": {
-      content: '""',
-      // backgroundImage: `url('${patternImage2.src}')`,
-      backgroundPosition: "center",
-      opacity: 0.35,
-      filter: "drop-shadow(0px 0px 1px #fff)",
-      position: "absolute",
-      top: 0,
-      left: 0,
-      bottom: 0,
-      right: 0,
-      transform: "scaleX(-1)",
-      zIndex: -1,
     },
   },
   image: {
@@ -145,199 +124,197 @@ const SingleProjectContent = (props) => {
   const classes = useStyles({ image: props.image, darkMode });
 
   return (
-    <div className={classes.bgOverlay}>
-      <Container maxWidth="xl" className={classes.root}>
-        <Heading text={props.title} />
-        <Grid
-          container
-          alignItems="flex-start"
-          justifyContent="center"
-          spacing={3}
-        >
-          <Grid item xs={12} sm={10} md={6} lg={5}>
-            <BlurIn>
-              <DefaultCard>
-                <BlurIn>
-                  <ThemedTypography
-                    component="h3"
-                    variant="h5"
-                    className={classes.subtitle}
-                  >
-                    About {props.title}
-                  </ThemedTypography>
-                </BlurIn>
-                <BlurIn>
-                  <ThemedTypography>{props.description}</ThemedTypography>
-                </BlurIn>
-                {props.sideNote && (
-                  <>
-                    <BlurIn>
-                      <br />
-                      <ThemedTypography
-                        style={{ opacity: 0.6 }}
-                        component="small"
-                        variant="body2"
-                      >
-                        {props.sideNote}
-                      </ThemedTypography>
-                    </BlurIn>
-                  </>
-                )}
-                <br />
-                <br />
+    <Container maxWidth="xl" className={classes.root}>
+      <Heading text={props.title} />
+      <Grid
+        container
+        alignItems="flex-start"
+        justifyContent="center"
+        spacing={3}
+      >
+        <Grid item xs={12} sm={10} md={6} lg={5}>
+          <BlurIn>
+            <DefaultCard>
+              <BlurIn>
+                <ThemedTypography
+                  component="h3"
+                  variant="h5"
+                  className={classes.subtitle}
+                >
+                  About {props.title}
+                </ThemedTypography>
+              </BlurIn>
+              <BlurIn>
+                <ThemedTypography>{props.description}</ThemedTypography>
+              </BlurIn>
+              {props.sideNote && (
+                <>
+                  <BlurIn>
+                    <br />
+                    <ThemedTypography
+                      style={{ opacity: 0.6 }}
+                      component="small"
+                      variant="body2"
+                    >
+                      {props.sideNote}
+                    </ThemedTypography>
+                  </BlurIn>
+                </>
+              )}
+              <br />
+              <br />
 
-                <BlurIn>
-                  <ThemedTypography
-                    component="h3"
-                    variant="h5"
-                    className={classes.subtitle}
-                  >
-                    Features & functionalities
-                  </ThemedTypography>
-                </BlurIn>
-                <List disablePadding className={classes.features}>
-                  {props.features?.map((feature, i) => (
-                    <BlurIn delay={i * 150} key={feature}>
-                      <ListItem className={classes.feature}>{feature}</ListItem>
-                    </BlurIn>
+              <BlurIn>
+                <ThemedTypography
+                  component="h3"
+                  variant="h5"
+                  className={classes.subtitle}
+                >
+                  Features & functionalities
+                </ThemedTypography>
+              </BlurIn>
+              <List disablePadding className={classes.features}>
+                {props.features?.map((feature, i) => (
+                  <BlurIn delay={i * 150} key={feature}>
+                    <ListItem className={classes.feature}>{feature}</ListItem>
+                  </BlurIn>
+                ))}
+              </List>
+              <br />
+              <br />
+
+              <BlurIn>
+                <ThemedTypography
+                  component="h3"
+                  variant="h5"
+                  className={classes.subtitle}
+                >
+                  Technologies used
+                </ThemedTypography>
+              </BlurIn>
+              <BlurIn>
+                <List className={classes.tech}>
+                  {props.technologies?.map((tech, i) => (
+                    <ListItem
+                      key={tech}
+                      className={classes.techItem + " blurIn"}
+                      style={{ animationDelay: `${i * 150}ms` }}
+                    >
+                      {tech}
+                    </ListItem>
                   ))}
                 </List>
-                <br />
-                <br />
+              </BlurIn>
+              <br />
+              <br />
 
-                <BlurIn>
-                  <ThemedTypography
-                    component="h3"
-                    variant="h5"
-                    className={classes.subtitle}
-                  >
-                    Technologies used
-                  </ThemedTypography>
-                </BlurIn>
-                <BlurIn>
-                  <List className={classes.tech}>
-                    {props.technologies?.map((tech, i) => (
-                      <ListItem
-                        key={tech}
-                        className={classes.techItem + " blurIn"}
-                        style={{ animationDelay: `${i * 150}ms` }}
-                      >
-                        {tech}
-                      </ListItem>
-                    ))}
-                  </List>
-                </BlurIn>
-                <br />
-                <br />
-
-                <BlurIn>
-                  <ThemedTypography
-                    component="h3"
-                    variant="h5"
-                    className={classes.subtitle}
-                  >
-                    And more
-                  </ThemedTypography>
-                </BlurIn>
-                <BlurIn>
-                  <Table className={classes.table}>
-                    <TableBody>
-                      {props.dataSource ? (
-                        <TableRow>
-                          <TableCell
-                            className={classes.cell}
-                            style={{ opacity: 0.6 }}
+              <BlurIn>
+                <ThemedTypography
+                  component="h3"
+                  variant="h5"
+                  className={classes.subtitle}
+                >
+                  And more
+                </ThemedTypography>
+              </BlurIn>
+              <BlurIn>
+                <Table className={classes.table}>
+                  <TableBody>
+                    {props.dataSource ? (
+                      <TableRow>
+                        <TableCell
+                          className={classes.cell}
+                          style={{ opacity: 0.6 }}
+                        >
+                          <strong>Data source:</strong>
+                        </TableCell>
+                        <TableCell className={classes.cell} align="right">
+                          <Button
+                            component="a"
+                            href={props.dataSource}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            color={`${darkMode ? "secondary" : "primary"}`}
                           >
-                            <strong>Data source:</strong>
-                          </TableCell>
-                          <TableCell className={classes.cell} align="right">
-                            <Button
-                              component="a"
-                              href={props.dataSource}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              color={`${darkMode ? "secondary" : "primary"}`}
-                            >
-                              <OpenInNewIcon />
-                            </Button>
-                          </TableCell>
-                        </TableRow>
-                      ) : null}
-                      <TableRow>
-                        <TableCell
-                          className={classes.cell}
-                          style={{ opacity: 0.6 }}
-                        >
-                          <strong>Project type:</strong>
-                        </TableCell>
-                        <TableCell className={classes.cell} align="right">
-                          {props.projectType?.toUpperCase()}
+                            <OpenInNewIcon />
+                          </Button>
                         </TableCell>
                       </TableRow>
-                      <TableRow>
-                        <TableCell
-                          className={classes.cell}
-                          style={{ opacity: 0.6 }}
-                        >
-                          <strong>Completed on:</strong>
-                        </TableCell>
-                        <TableCell className={classes.cell} align="right">
-                          {props.completedAt}
-                        </TableCell>
-                      </TableRow>
-                    </TableBody>
-                  </Table>
-                </BlurIn>
+                    ) : null}
+                    <TableRow>
+                      <TableCell
+                        className={classes.cell}
+                        style={{ opacity: 0.6 }}
+                      >
+                        <strong>Project type:</strong>
+                      </TableCell>
+                      <TableCell className={classes.cell} align="right">
+                        {props.projectType?.toUpperCase()}
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell
+                        className={classes.cell}
+                        style={{ opacity: 0.6 }}
+                      >
+                        <strong>Completed on:</strong>
+                      </TableCell>
+                      <TableCell className={classes.cell} align="right">
+                        {props.completedAt}
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </BlurIn>
 
-                <BlurIn>
-                  <Divider classes={{ root: classes.divider }} />
-                </BlurIn>
+              <BlurIn>
+                <Divider classes={{ root: classes.divider }} />
+              </BlurIn>
 
-                <BlurIn>
-                  <ButtonGroup
-                    aria-label="outlined primary button group"
-                    fullWidth
-                    style={{ gap: 20 }}
+              <BlurIn>
+                <ButtonGroup
+                  aria-label="outlined primary button group"
+                  fullWidth
+                  style={{ gap: 20 }}
+                >
+                  <Button3D
+                    variant="text"
+                    component="a"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={props.siteLink}
+                    disabled={!props.siteLink}
+                    endIcon={<LinkIcon />}
+                    color={`${darkMode ? "secondary" : "primary"}`}
                   >
-                    <Button3D
-                      variant="text"
-                      component="a"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={props.siteLink}
-                      disabled={!props.siteLink}
-                      endIcon={<LinkIcon />}
-                      color={`${darkMode ? "secondary" : "primary"}`}
-                    >
-                      Live site
-                    </Button3D>
-                    <Button3D
-                      variant="text"
-                      component="a"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={props.codeLink}
-                      disabled={!props.codeLink}
-                      endIcon={<CodeIcon />}
-                      color={`${darkMode ? "secondary" : "primary"}`}
-                    >
-                      Code {props.codeLink === "" && "N/A"}
-                    </Button3D>
-                  </ButtonGroup>
-                </BlurIn>
-              </DefaultCard>
-            </BlurIn>
-          </Grid>
-
-          <Grid item xs={12} md={6} className={classes.sticky}>
-            <BlurIn>
-              <div className={classes.image} />
-            </BlurIn>
-          </Grid>
+                    Live site
+                  </Button3D>
+                  <Button3D
+                    variant="text"
+                    component="a"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={props.codeLink}
+                    disabled={!props.codeLink}
+                    endIcon={<CodeIcon />}
+                    color={`${darkMode ? "secondary" : "primary"}`}
+                  >
+                    Code {props.codeLink === "" && "N/A"}
+                  </Button3D>
+                </ButtonGroup>
+              </BlurIn>
+            </DefaultCard>
+          </BlurIn>
         </Grid>
-        <Box margin="30px 0"></Box>
-      </Container>
-    </div>
+
+        <Grid item xs={12} md={6} className={classes.sticky}>
+          <BlurIn>
+            <div className={classes.image} />
+          </BlurIn>
+        </Grid>
+      </Grid>
+      <Box margin="30px 0"></Box>
+    </Container>
   );
 };
 

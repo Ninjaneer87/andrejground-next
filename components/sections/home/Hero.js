@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     zIndex: 1,
     color: theme.palette.custom.textColor,
+    padding: "100px 0",
   },
   welcomeIntro: {
     fontSize: "clamp(1.5rem, 3vw, 40px)",
