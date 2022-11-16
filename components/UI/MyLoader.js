@@ -18,9 +18,9 @@ const useStyles = makeStyles((theme) => ({
     display: "block",
     borderRadius: "100vh",
     overflow: "hidden",
-    backgroundColor: theme.palette.custom.textColor,
+    backgroundColor: '#212121',
     zIndex: 23,
-    border: `20px solid ${theme.palette.custom.textColor}`,
+    border: `20px solid #212121`,
     boxSizing: "border-box", 
   },
 }));
@@ -40,16 +40,6 @@ const MyLoader = () => {
       {removed ? null : (
         <div className="loader">
           <div className={`loader1 ${loaded ? "exitLeft" : ""}`}>
-            {/* <div className={classes.logoHolder}>
-              <Image
-                priority
-                className={classes.logoImg + " appear"}
-                src={logoImg}
-                alt="logo"
-                width={250}
-                height={250}
-              />
-            </div> */}
           </div>
           <div className={`loader2 ${loaded ? "exitRight" : ""}`}>
             <div className={classes.logoHolder}>
