@@ -299,7 +299,7 @@ const SingleProjectContent = (props) => {
                     endIcon={<CodeIcon />}
                     color={`${darkMode ? "secondary" : "primary"}`}
                   >
-                    Code {props.codeLink === "" && "N/A"}
+                    Code
                   </Button3D>
                 </ButtonGroup>
               </BlurIn>

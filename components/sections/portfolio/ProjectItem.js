@@ -121,7 +121,7 @@ const ProjectItem = ({ image, title, siteLink, codeLink, slug, projectType }) =>
           endIcon={<CodeIcon />}
           color={`${darkMode ? 'secondary' : 'primary'}`}
         >
-          Code {codeLink === '' && 'N/A'}
+          Code
         </Button3D>
       </ButtonGroup>
 
