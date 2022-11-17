@@ -1,18 +1,16 @@
 import React from "react";
-import { Grid, Box } from "@material-ui/core";
+import { Grid, Box, Divider } from "@material-ui/core";
 import { makeStyles, Container } from "@material-ui/core";
 import DefaultCard from "../../cards/DefaultCard";
 import Heading from "../../UI/Heading";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useContext } from "react";
-import Image from "next/image";
 import ThemeContext from "../../../context/themeContext";
 import BlurIn from "../../UI/BlurIn";
-
-const aboutImage = "/img/aboutme.svg";
-const uiUxImage = "/img/ui-ux.svg";
-const goalImage = "/img/final-goal.svg";
+import KeyboardIcon from "@material-ui/icons/Keyboard";
+import DevicesIcon from "@material-ui/icons/Devices";
+import GroupWorkIcon from "@material-ui/icons/GroupWork";
 
 const useStyles = makeStyles((theme) => ({
   missionRoot: {
@@ -51,17 +49,23 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
   },
   image: {
-    width: "100%",
+    color: theme.palette.custom.accent,
     display: "block",
-    filter: `drop-shadow(0px 0px 4px ${theme.palette.custom.cyan})`,
+    transform: "scale(3)",
     // transform: 'skewY(5deg)',
   },
   text: {
     margin: "1.5rem 0",
     lineHeight: 2,
     fontWeight: 400,
-    textAlign: "center",
+    textAlign: "start",
     color: theme.palette.custom.textColor,
+  },
+  divider: {
+    backgroundColor: theme.palette.custom.accent,
+    boxShadow: "0px 10px 20px #000000be",
+    margin: "20px 0",
+    width: "100%",
   },
 }));
 
@@ -103,13 +107,9 @@ const Mission = ({ setActiveSection, setRefs }) => {
               <BlurIn delay={150}>
                 <DefaultCard maxWidth={400}>
                   <div className={classes.imageContainer}>
-                    <Image
-                      className={classes.image}
-                      layout="fill"
-                      src={aboutImage}
-                      alt="icon"
-                    />
+                    <KeyboardIcon fontSize="large" className={classes.image} />
                   </div>
+                  <Divider classes={{ root: classes.divider }} />
                   <div className={classes.text}>
                     AndrejGround is about turning ideas into code. If you are
                     into any of these,
@@ -124,15 +124,11 @@ const Mission = ({ setActiveSection, setRefs }) => {
             </Grid>
             <Grid item className={classes.gridItem} xs={12} md={6} lg={4}>
               <BlurIn delay={300}>
-                <DefaultCard maxWidth={400}>
+                <DefaultCard maxWidth={400} >
                   <div className={classes.imageContainer}>
-                    <Image
-                      className={classes.image}
-                      layout="fill"
-                      src={uiUxImage}
-                      alt="icon"
-                    />
+                    <DevicesIcon fontSize="large" className={classes.image} />
                   </div>
+                  <Divider classes={{ root: classes.divider }} />
                   <div className={classes.text}>
                     Tendencies:{" "}
                     <strong className={`${darkMode ? "" : "grey"}`}>
@@ -165,16 +161,14 @@ const Mission = ({ setActiveSection, setRefs }) => {
               <BlurIn delay={450}>
                 <DefaultCard maxWidth={400}>
                   <div className={classes.imageContainer}>
-                    <Image
-                      className={classes.image}
-                      layout="fill"
-                      src={goalImage}
-                      alt="icon"
-                    />
+                    <GroupWorkIcon fontSize="large" className={classes.image} />
                   </div>
+                  <Divider classes={{ root: classes.divider }} />
                   <div className={classes.text}>
                     The mission is to connect with likeminded people and build
                     stuff.
+                    <br />
+                    Onwards!
                   </div>
                 </DefaultCard>
               </BlurIn>

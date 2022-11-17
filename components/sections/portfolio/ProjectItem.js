@@ -1,7 +1,6 @@
 import React from 'react';
-import { Button, Typography } from '@material-ui/core';
+import { Box, Button, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
-import DefaultCard from '../../cards/DefaultCard';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import { Divider } from '@material-ui/core';
 import Link from 'next/link';
@@ -13,6 +12,10 @@ import { useContext } from 'react';
 import Button3D from '../../UI/Button3D';
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    position: 'relative',
+    margin: '0 auto',
+  },
   image: {
     backgroundImage: ({ image }) => image && `url("/thumbs/${image}")`,
     backgroundRepeat: 'no-repeat',
@@ -59,24 +62,18 @@ const useStyles = makeStyles(theme => ({
     lineHeight: 1.7
   },
   type: {
-    position: 'absolute',
-    top: 10,
-    right: -10,
-    color: '#212121',
-    backgroundColor: theme.palette.custom.accent,
-    padding: '5px 10px',
+    // position: 'absolute',
+    // top: 10,
+    // right: 10,
+    color: theme.palette.custom.textColor,
+    color: '#999',
+    width: 'fit-content',
+    margin: 'auto',
+    // backgroundColor: theme.palette.custom.accent,
+    padding: '.5rem 1.5rem',
     fontSize: 12,
     textTransform: 'uppercase',
-    '&::before': {
-      content: '""',
-      position: 'absolute',
-      top: '50%',
-      right: 'calc(100% - 10px)',
-      bottom: 0,
-      border: `10px solid ${theme.palette.custom.accent}`,
-      transform: 'translateY(-50%) rotate(45deg)',
-      zIndex: -1
-    }
+    boxShadow: theme.palette.custom.button3DShadow,
   },
 }));
 
@@ -86,15 +83,16 @@ const ProjectItem = ({ image, title, siteLink, codeLink, slug, projectType }) =>
   const { darkMode } = useContext(ThemeContext);
 
   return (
-    <DefaultCard
+    <Box
       // maxWidth={600}
+      className={classes.root}
       width='90%'
       height='fit-content'
     >
-      <Typography className={classes.type}>{projectType}</Typography>
       <Typography component='h3' variant='h5' className={classes.subtitle}>
         {title}
       </Typography>
+      <Typography className={classes.type}>{projectType}</Typography>
       <div className={classes.image} />
       <ButtonGroup
         aria-label="outlined primary button group"
@@ -145,7 +143,7 @@ const ProjectItem = ({ image, title, siteLink, codeLink, slug, projectType }) =>
           More details
         </Button3D>
       </Link>
-    </DefaultCard>
+    </Box>
   );
 };
 

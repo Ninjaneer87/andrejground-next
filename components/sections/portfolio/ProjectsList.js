@@ -66,8 +66,9 @@ const ProjectsList = ({ projects }) => {
                 <Grid
                   item
                   xs={12}
-                  md={6}
+                  sm={6}
                   lg={4}
+                  xl={3}
                   style={{ animationDelay: `${i * 150}ms` }}
                   className={classes.contentHolder}
                   key={project._id}

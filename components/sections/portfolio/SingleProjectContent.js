@@ -134,7 +134,7 @@ const SingleProjectContent = (props) => {
       >
         <Grid item xs={12} sm={10} md={6} lg={5}>
           <BlurIn>
-            <DefaultCard>
+            <Box maxWidth={650}>
               <BlurIn>
                 <ThemedTypography
                   component="h3"
@@ -303,7 +303,7 @@ const SingleProjectContent = (props) => {
                   </Button3D>
                 </ButtonGroup>
               </BlurIn>
-            </DefaultCard>
+            </Box>
           </BlurIn>
         </Grid>
 

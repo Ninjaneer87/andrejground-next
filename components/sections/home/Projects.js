@@ -141,8 +141,8 @@ const Projects = ({ setActiveSection, setRefs }) => {
             </BlurIn>
             <Grid container spacing={5} justifyContent="flex-end">
               <Grid item xs={12} md={6} className={classes.contentHolder}>
-                <BlurIn delay={150}>
-                  <DefaultCard maxWidth={600} height="fit-content">
+                <Box maxWidth={500} height="fit-content">
+                  <BlurIn>
                     <Typography
                       component="h3"
                       variant="h5"
@@ -150,6 +150,9 @@ const Projects = ({ setActiveSection, setRefs }) => {
                     >
                       COINLAND
                     </Typography>
+                  </BlurIn>
+
+                  <BlurIn>
                     <Typography className={classes.text}>
                       This practice project was intended to connect client side
                       app to a public API. Data comes from{" "}
@@ -166,6 +169,9 @@ const Projects = ({ setActiveSection, setRefs }) => {
                       <br />
                       <small>* AndrejGround&apos;s first ever project</small>
                     </Typography>
+                  </BlurIn>
+
+                  <BlurIn>
                     <ButtonGroup
                       aria-label="outlined primary button group"
                       fullWidth
@@ -194,9 +200,13 @@ const Projects = ({ setActiveSection, setRefs }) => {
                         Code
                       </Button3D>
                     </ButtonGroup>
+                  </BlurIn>
 
+                  <BlurIn>
                     <Divider classes={{ root: classes.divider }} />
+                  </BlurIn>
 
+                  <BlurIn>
                     <Link href="/portfolio" passHref>
                       <Button3D
                         variant="text"
@@ -209,8 +219,8 @@ const Projects = ({ setActiveSection, setRefs }) => {
                         More projects
                       </Button3D>
                     </Link>
-                  </DefaultCard>
-                </BlurIn>
+                  </BlurIn>
+                </Box>
               </Grid>
               <Grid item xs={12} md={6}>
                 <BlurIn delay={450}>
