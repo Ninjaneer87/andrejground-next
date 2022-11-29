@@ -49,8 +49,6 @@ const SectionNav = ({ inViewSection }: Props) => {
   const [expanded, setExpanded] = useState(false);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(1100));
-  const [mounted, setMounted] = useState(false);
-  const [refLoaded, setRefLoaded] = useState(false);
   const {activeBoxRef, boxPosition, setBoxPosition} = useBoxPosition<HTMLButtonElement>();
 
   const boxCoordsStyles = {
@@ -63,19 +61,6 @@ const SectionNav = ({ inViewSection }: Props) => {
   useEffect(() => {
     setBoxPosition();
   }, [inViewSection, setBoxPosition]);
-
-  useEffect(() => {
-    setMounted(true);
-    window.addEventListener("resize", setBoxPosition);
-    return () => window.removeEventListener("resize", setBoxPosition);
-  }, [setBoxPosition]);
-
-  useEffect(() => {
-    if (activeBoxRef.current && mounted && !refLoaded) {
-      setRefLoaded(true);
-      setBoxPosition();
-    }
-  });
 
   return (
     isSmallScreen ? null :

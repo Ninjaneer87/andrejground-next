@@ -68,7 +68,7 @@ const Info = () => {
       className="pt-[150px] pb-[50px] m-auto min-h-screen"
     >
       <BlurIn>
-        <Heading text="Let's connect" />
+        <Heading component='h1' text="Let's connect" />
       </BlurIn>
       
       <Grid

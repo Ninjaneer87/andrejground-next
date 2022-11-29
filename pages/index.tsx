@@ -1,10 +1,10 @@
 import React from "react";
-import Hero from "@/components/sections/home/Hero";
-import Mission from "@/components/sections/home/Mission";
-import Toolbox from "@/components/sections/home/Toolbox";
-import Projects from "@/components/sections/home/Projects";
-import ContactInfo from "@/components/sections/home/ContactInfo";
-import SectionNav from "@/components/sections/home/SectionNav";
+import Hero from "@/components/pages/home/Hero";
+import Mission from "@/components/pages/home/Mission";
+import Toolbox from "@/components/pages/home/Toolbox";
+import Projects from "@/components/pages/home/Projects";
+import ContactInfo from "@/components/pages/home/ContactInfo";
+import SectionNav from "@/components/pages/home/SectionNav";
 import { useState } from "react";
 
 export type HomeSectionNames = "home" | "mission" | "toolbox" | "projects" | "contact";

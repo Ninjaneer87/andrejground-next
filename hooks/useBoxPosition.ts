@@ -14,7 +14,8 @@ const initialBox = {
 
 export default function useBoxPosition<T extends HTMLElement>() {
   const [boxPosition, setBoxPosition] = useState(initialBox);
-  const [mounting, setMounting] = useState(true);
+  const [mounted, setMounted] = useState(false);
+  const [refLoaded, setRefLoaded] = useState(false);
   const activeBoxRef = useRef<T>(null);
 
   const setBoxToActiveRef = useCallback(() => {
@@ -30,13 +31,14 @@ export default function useBoxPosition<T extends HTMLElement>() {
   }, []);
 
   useEffect(() => {
-    if (activeBoxRef.current && mounting) {
+    if (activeBoxRef.current && mounted && !refLoaded) {
+      setRefLoaded(true);
       setBoxToActiveRef();
-      setMounting(false);
     }
-  }, [mounting, setBoxToActiveRef]);
+  }, [mounted, refLoaded, setBoxToActiveRef]);
   
   useEffect(() => {
+    setMounted(true);
     window.addEventListener("resize", setBoxToActiveRef);
     return () => window.removeEventListener("resize", setBoxToActiveRef)
   }, [setBoxToActiveRef]);

@@ -1,5 +1,5 @@
 import React from "react";
-import BlogsList from "@/components/sections/blog/BlogsList";
+import BlogsList from "@/components/pages/blog/BlogsList";
 import { MongoClient } from "mongodb";
 import Head from "next/head";
 import { IBlog } from "models/Blog";

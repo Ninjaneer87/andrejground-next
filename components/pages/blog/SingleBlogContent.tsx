@@ -38,7 +38,7 @@ const SingleBlogContent = ({ blog }: Props) => {
       </div>
 
       <BlurIn className={classes.root }>
-        <Heading text={blog.title} />
+        <Heading component='h1' text={blog.title} />
         <Typography className={classes.subtitle} component="h2" variant="h5">
           {blog.subtitle}
         </Typography>

@@ -30,7 +30,7 @@ const SingleProjectContent = ({ project }: Props) => {
 
   return (
     <Container maxWidth="xl" className="min-h-screen relative pb-[50px] md:p-6">
-      <Heading text={project.title} />
+      <Heading component='h1' text={project.title} />
       <Grid
         container
         alignItems="flex-start"

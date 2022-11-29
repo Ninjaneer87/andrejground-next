@@ -12,7 +12,11 @@ import { HomeSectionProps, registerHomeSection } from "pages";
 
 const Hero = ({ setInViewSection }: HomeSectionProps) => {
   const { dark } = useContext(ThemeContext) as ThemeContextType;
-  const { ref: scrollRef, inView: scrollInView, entry } = useInView({ rootMargin: "-50%" });
+  const {
+    ref: scrollRef,
+    inView: scrollInView,
+    entry,
+  } = useInView({ rootMargin: "-50%" });
 
   useEffect(() => {
     if (scrollInView) setInViewSection("home");
@@ -33,13 +37,13 @@ const Hero = ({ setInViewSection }: HomeSectionProps) => {
               </div>
             </BlurIn>
 
-            <BlurIn delay={150}>
-              <div
-                className={classes.welcomeTitle}
-                data-text="WELCOME TO THE ANDREJGROUND"
-              >
-                Welcome to the <span className="cyan">Andrej</span>Ground
-              </div>
+            <BlurIn
+              delay={150}
+              className={classes.welcomeTitle}
+              data-text="WELCOME TO THE ANDREJGROUND"
+              component='h1'
+            >
+              Welcome to the <span className="cyan">Andrej</span>Ground
             </BlurIn>
           </Grid>
           <Grid item xs={12} lg={4}>
@@ -50,7 +54,7 @@ const Hero = ({ setInViewSection }: HomeSectionProps) => {
               flexDirection="column"
               height="100%"
             >
-              <BlurIn delay={300} className='w-full'>
+              <BlurIn delay={300} className="w-full">
                 <Link href="/portfolio" passHref>
                   <Button3D
                     fullWidth
@@ -64,7 +68,7 @@ const Hero = ({ setInViewSection }: HomeSectionProps) => {
                 </Link>
               </BlurIn>
 
-              <BlurIn delay={450} className='w-full'>
+              <BlurIn delay={450} className="w-full">
                 <Link href="/contact" passHref>
                   <Button3D
                     fullWidth

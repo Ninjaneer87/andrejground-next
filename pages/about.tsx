@@ -1,7 +1,7 @@
 import React from "react";
-import Intro from "@/components/sections/about/Intro";
-import AboutMe from "@/components/sections/about/AboutMe";
-import Values from "@/components/sections/about/Values";
+import Intro from "@/components/pages/about/Intro";
+import AboutMe from "@/components/pages/about/AboutMe";
+import Values from "@/components/pages/about/Values";
 import Head from "next/head";
 
 export enum AboutSectionNames {

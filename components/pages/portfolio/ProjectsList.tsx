@@ -15,7 +15,7 @@ const ProjectsList = ({ projects }: Props) => {
         <Container maxWidth="xl" disableGutters>
           <Box width="100%" padding="30px 0">
             <BlurIn>
-              <Heading text="Projects" />
+              <Heading component='h1' text="Projects" />
             </BlurIn>
             <Grid container>
               {projects.map((project, i) => (

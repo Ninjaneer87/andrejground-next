@@ -1,5 +1,5 @@
 import React from "react";
-import SingleProjectContent from "@/components/sections/portfolio/SingleProjectContent";
+import SingleProjectContent from "@/components/pages/portfolio/SingleProjectContent";
 import { MongoClient } from "mongodb";
 import Head from "next/head";
 import { IProject } from "models/Project";

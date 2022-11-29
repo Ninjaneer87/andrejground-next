@@ -1,6 +1,6 @@
 import React from "react";
-import SendMessage from "@/components/sections/contact/SendMessage";
-import Info from "@/components/sections/contact/Info";
+import SendMessage from "@/components/pages/contact/SendMessage";
+import Info from "@/components/pages/contact/Info";
 import Head from "next/head";
 
 

@@ -15,7 +15,7 @@ const BlogsList = ({ blogs }: Props) => {
     >
       <Box width="100%" padding="30px 0">
         <BlurIn>
-          <Heading text="Blog" />
+          <Heading component='h1' text="Blog" />
         </BlurIn>
         <Grid container spacing={5} justifyContent="center">
           {blogs.map((blog, i) => (

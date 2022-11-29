@@ -21,7 +21,7 @@ const Intro = () => {
   return (
     <Container maxWidth="xl" className="pt-[70px] flex flex-col items-center justify-center text-center min-h-screen">
       <BlurIn>
-        <Heading text="What is AndrejGround?" />
+        <Heading component='h1' text="What is AndrejGround?" />
       </BlurIn>
       <BlurIn delay={150}>
         <Typography variant="h6" className="max-w-[600px] font-medium">
