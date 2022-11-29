@@ -9,7 +9,7 @@ import BlurIn from "@/components/UI/BlurIn";
 import { HomeSectionProps, registerHomeSection } from "pages";
 
 const reactLogo = "/img/react-logo.webp";
-const angularLogo = "/img/angular-logo.png";
+const nextLogo = "/img/next-logo.png";
 const sassLogo = "/img/sass-logo.png";
 const tsLogo = "/img/ts-logo.png";
 
@@ -19,8 +19,8 @@ const mainTools = [
     logo: reactLogo,
   },
   {
-    label: "Angular",
-    logo: angularLogo,
+    label: "Next JS",
+    logo: nextLogo,
   },
   {
     label: "TypeScript",
@@ -33,15 +33,15 @@ const mainTools = [
 ];
 
 const moreTools = [
-  "Next JS",
   "Redux",
   "Redux Saga",
   "Material UI",
+  "Express",
+  "MongoDB",
+  "Angular",
   "Angular Material",
   "RxJS",
   "Jest",
-  "Express",
-  "MongoDB",
 ];
 
 const Toolbox = ({ setInViewSection }: HomeSectionProps) => {
@@ -80,11 +80,11 @@ const Toolbox = ({ setInViewSection }: HomeSectionProps) => {
                   {mainTools.map((tool, i) => (
                     <BlurIn
                       key={tool.label}
-                      className="text-base rounded-[20px] shadow-3d-card w-full p-4 flex-wrap flex-row basis-[30%] grow"
+                      className="text-base rounded-[20px] shadow-3d-card w-full px-4 py-8 flex-wrap flex-row basis-[30%] grow"
                       delay={i * 150}
                     >
                       <Image
-                        className="block mx-auto mb-4 h-[50px] w-[50px] object-contain"
+                        className="block mx-auto mb-4 h-[50px] w-[50px] object-contain drop-shadow-[0px_0px_20px_#ffffff55]"
                         src={tool.logo}
                         alt="icon"
                         width={50}

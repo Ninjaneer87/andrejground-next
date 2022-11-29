@@ -53,22 +53,9 @@ const Hero = ({ setInViewSection }: HomeSectionProps) => {
               justifyContent="center"
               flexDirection="column"
               height="100%"
+              gap={3}
             >
               <BlurIn delay={300} className="w-full">
-                <Link href="/portfolio" passHref>
-                  <Button3D
-                    fullWidth
-                    color={dark ? "primary" : "secondary"}
-                    className="mb-5 max-w-[500px]"
-                    component="a"
-                    endIcon={<ArrowRightAltIcon />}
-                  >
-                    PROJECTS
-                  </Button3D>
-                </Link>
-              </BlurIn>
-
-              <BlurIn delay={450} className="w-full">
                 <Link href="/contact" passHref>
                   <Button3D
                     fullWidth
@@ -78,6 +65,20 @@ const Hero = ({ setInViewSection }: HomeSectionProps) => {
                     endIcon={<ArrowRightAltIcon />}
                   >
                     Let&apos;s build
+                  </Button3D>
+                </Link>
+
+              </BlurIn>
+              <BlurIn delay={450} className="w-full">
+                <Link href="/portfolio" passHref>
+                  <Button3D
+                    fullWidth
+                    color={dark ? "primary" : "secondary"}
+                    className="max-w-[500px]"
+                    component="a"
+                    endIcon={<ArrowRightAltIcon />}
+                  >
+                    SOME COOL STUFF
                   </Button3D>
                 </Link>
               </BlurIn>
