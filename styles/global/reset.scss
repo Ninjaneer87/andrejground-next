@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira S ans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: all 150ms ease-in-out;
+  transition-property: background;
+  // opacity: 0;
+}
+body.visible {
+  opacity: 1;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+p,
+div,
+section,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+div,
+h1,
+h2,
+h3,
+h4,
+span,
+p,
+button,
+a {
+  -webkit-tap-highlight-color: transparent !important;
+}

@@ -1,0 +1,23 @@
+.cyan {
+  color: var(--color-primary);
+}
+
+.grey {
+  color: grey;
+}
+
+.white {
+  color: #fff;
+}
+
+.link {
+  transition: color 250ms ease-in-out;
+}
+
+.link:hover {
+  color: var(--color-primary);
+}
+
+.invis {
+  opacity: 0;
+}

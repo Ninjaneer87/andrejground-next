@@ -1,0 +1,45 @@
+.loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  pointer-events: none;
+}
+.loader1,
+.loader2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.loader1 {
+  left: 0;
+  background-color: #f0f0f3;
+}
+.loader2 {
+  right: 0;
+  background-color: #212121;
+}
+.logoHolder {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translate(calc(50%), -50%);
+  width: 250px;
+  height: 250px;
+  max-width: 50vw;
+  max-height: 50vw;
+  display: block;
+  border-radius: 100vh;
+  overflow: hidden;
+  background-color: #212121;
+  z-index: 23;
+  border: 20px solid #212121;
+  box-sizing: border-box;
+}

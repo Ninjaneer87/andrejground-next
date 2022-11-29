@@ -1,0 +1,104 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  min-height: 100vh;
+  position: relative;
+  padding: 1rem;
+  padding-bottom: 50px;
+  margin: 0 auto;
+  @media (min-width: 900px) {
+    padding: 1.4rem;
+  }
+}
+
+.dateAndAuthor {
+  padding: 0px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  width: fit-content;
+  font-size: .9rem;
+}
+.dateAndAuthorList {
+  color: grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 500px;
+  max-height: 50vw;
+  width: 100%;
+  box-sizing: border-box;
+  filter: drop-shadow(var(--drop-shadow-image));
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.stickyInfo {
+  position: sticky;
+  top: 20%;
+  height: 0;
+  margin-left: 20px;
+  display: none;
+  opacity: 0;
+  filter: blur(10px);
+  transition: all 150ms ease-in;
+  transition-property: opacity, filter;
+  pointer-events: none;
+  @media (min-width: 1200px) {
+    display: block;
+  }
+}
+.show {
+  pointer-events: all;
+  opacity: 1;
+  filter: blur(0px);
+}
+.subtitle {
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: fit-content;
+  min-width: 200px;
+  position: relative;
+  margin-bottom: 10px;
+  text-align: start;
+  opacity: 0.85;
+}
+.content {
+  & p {
+    font-size: 1rem;
+    line-height: 2;
+    letter-spacing: -0.005em;
+    font-weight: 400;
+    @media (min-width: 800px) {
+      fontsize: 1.1rem;
+    }
+    @media (min-width: 1200px) {
+      fontsize: 1.25rem;
+    }
+  }
+  & div {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+  }
+
+  & h4 {
+    font-size: 1.5rem;
+    @media (min-width: 1200px) {
+      fontsize: 1.6rem;
+    }
+  }
+
+  & a {
+    color: var(--color-primary);
+  }
+}

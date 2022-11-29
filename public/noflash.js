@@ -1,37 +1,39 @@
 (function () {
   // Change these if you use something different in your hook.
-  var storageKey = 'darkMode';
-  var classNameDark = 'dark-mode';
-  var classNameLight = 'light-mode';
+  var storageKey = "theme";
+  var classNameDark = "dark";
 
   function setClassOnDocumentBody(darkMode) {
-      document.body.classList.add(darkMode ? classNameDark : classNameLight);
-      document.body.classList.remove(darkMode ? classNameLight : classNameDark);
+    darkMode
+      ? document.body.classList.add(classNameDark)
+      : document.body.classList.remove(classNameDark);
   }
 
-  var preferDarkQuery = '(prefers-color-scheme: dark)';
-  var mql = window.matchMedia(preferDarkQuery);
-  var supportsColorSchemeQuery = mql.media === preferDarkQuery;
-  var localStorageTheme = null;
+  //   var preferDarkQuery = '(prefers-color-scheme: dark)';
+  //   var mql = window.matchMedia(preferDarkQuery);
+  //   var supportsColorSchemeQuery = mql.media === preferDarkQuery;
+  var localStorageIsDark = null;
   try {
-      localStorageTheme = localStorage.getItem(storageKey);
+    localStorageIsDark = !!localStorage.getItem(storageKey);
   } catch (err) {}
-  var localStorageExists = localStorageTheme !== null;
+  var localStorageExists = localStorageIsDark !== null;
   if (localStorageExists) {
-      localStorageTheme = JSON.parse(localStorageTheme);
+    localStorageIsDark = localStorageIsDark;
   }
 
   // Determine the source of truth
   if (localStorageExists) {
-      // source of truth from localStorage
-      setClassOnDocumentBody(localStorageTheme);
-  } else if (supportsColorSchemeQuery) {
-      // source of truth from system
-      setClassOnDocumentBody(mql.matches);
-      localStorage.setItem(storageKey, mql.matches);
-  } else {
-      // source of truth from document.body
-      var isDarkMode = document.body.classList.contains(classNameDark);
-      localStorage.setItem(storageKey, JSON.stringify(isDarkMode));
+    // source of truth from localStorage
+    setClassOnDocumentBody(localStorageIsDark);
+  }
+  //   else if (supportsColorSchemeQuery) {
+  //       // source of truth from system
+  //       setClassOnDocumentBody(mql.matches);
+  //       localStorage.setItem(storageKey, mql.matches);
+  //   }
+  else {
+    // source of truth from document.body
+    var isDarkMode = document.body.classList.contains(classNameDark);
+    localStorage.setItem(storageKey, JSON.stringify(isDarkMode));
   }
 })();

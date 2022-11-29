@@ -1,0 +1,64 @@
+// Chromium Scrollbar
+/* width */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  z-index: 2;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 1);
+  background: var(--color-background);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #141c2879;
+  background: linear-gradient(
+    90deg,
+    #00e5ffad 0%,
+    rgba(38, 50, 56, 1) 45%,
+    rgba(38, 50, 56, 1) 55%,
+    #00e5ffad 100%
+  );
+  border-radius: 1rem;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(38, 50, 56, 1);
+  background: linear-gradient(
+    90deg,
+    #00e5ffdc 10%,
+    rgba(38, 50, 56, 1) 45%,
+    rgba(38, 50, 56, 1) 55%,
+    #00e5ffdc 90%
+  );
+}
+
+// Firefox Scrollbar
+:root {
+  scrollbar-width: thin;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-text);
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Text selection styles */
+::-moz-selection {
+  /* Code for Firefox */
+  color: var(--color-selection-text);
+  background: var(--color-selection-background);
+}
+::selection {
+  color: var(--color-selection-text);
+  background: var(--color-selection-background);
+}
