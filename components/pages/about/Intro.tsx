@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import Heading from "@/components/UI/Heading";
 import BlurIn from "@/components/UI/BlurIn";
-import { AboutSectionNames, scrollToAboutSection } from "@/pages/about";
+import { AboutSectionNames, scrollToAboutSection } from "pages/about";
 import { aboutStats } from "utils/constants";
 
 const logoImg = "/img/AG.png";

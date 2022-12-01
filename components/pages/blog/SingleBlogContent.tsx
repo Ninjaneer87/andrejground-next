@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   List,
   ListItem,
@@ -21,11 +21,7 @@ type Props = {
 
 const SingleBlogContent = ({ blog }: Props) => {
   const [showSticky, setShowSticky] = useState(false);
-  const { ref: scrollRef, inView } = useInView({  rootMargin: "-30%" });
-
-  useEffect(() => {
-    setShowSticky(inView);
-  }, [inView]);
+  const { ref } = useInView({  rootMargin: "-30%", onChange: setShowSticky });
 
   return (
     <>
@@ -65,7 +61,7 @@ const SingleBlogContent = ({ blog }: Props) => {
         <Typography
           component="div"
           className={classes.content}
-          ref={scrollRef}
+          ref={ref}
           dangerouslySetInnerHTML={{ __html: blog.content }}
         />
       </BlurIn>

@@ -1,30 +1,21 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Container, Grid, Box } from "@mui/material";
 import Link from "next/link";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
 import Button3D from "@/components/UI/Button3D";
-import ThemeContext, { ThemeContextType } from "context/themeContext";
 import BlurIn from "@/components/UI/BlurIn";
 import classes from "./Hero.module.scss";
 import { HomeSectionProps, registerHomeSection } from "pages";
 
 const Hero = ({ setInViewSection }: HomeSectionProps) => {
-  const { dark } = useContext(ThemeContext) as ThemeContextType;
-  const {
-    ref: scrollRef,
-    inView: scrollInView,
-    entry,
-  } = useInView({ rootMargin: "-50%" });
-
-  useEffect(() => {
-    if (scrollInView) setInViewSection("home");
-  }, [scrollInView, setInViewSection]);
-
-  useEffect(() => {
-    if (entry) registerHomeSection("home", entry.target);
-  }, [entry]);
+  const { ref: scrollRef } = useInView({
+    rootMargin: "-50%",
+    onChange: (inView, entry) => {
+      inView && setInViewSection("home");
+      entry && registerHomeSection("home", entry.target);
+    },
+  });
 
   return (
     <section className={classes.hero} ref={scrollRef}>
@@ -41,7 +32,7 @@ const Hero = ({ setInViewSection }: HomeSectionProps) => {
               delay={150}
               className={classes.welcomeTitle}
               data-text="WELCOME TO THE ANDREJGROUND"
-              component='h1'
+              component="h1"
             >
               Welcome to the <span className="cyan">Andrej</span>Ground
             </BlurIn>
@@ -57,29 +48,28 @@ const Hero = ({ setInViewSection }: HomeSectionProps) => {
             >
               <BlurIn delay={300} className="w-full">
                 <Link href="/contact" passHref>
-                  <Button3D
-                    fullWidth
-                    color={dark ? "primary" : "secondary"}
-                    className="max-w-[500px]"
-                    component="a"
-                    endIcon={<ArrowRightAltIcon />}
-                  >
-                    Let&apos;s build
-                  </Button3D>
+                  <a>
+                    <Button3D
+                      fullWidth
+                      className="max-w-[500px]"
+                      endIcon={<ArrowRightAltIcon />}
+                    >
+                      Let&apos;s build
+                    </Button3D>
+                  </a>
                 </Link>
-
               </BlurIn>
               <BlurIn delay={450} className="w-full">
                 <Link href="/portfolio" passHref>
-                  <Button3D
-                    fullWidth
-                    color={dark ? "primary" : "secondary"}
-                    className="max-w-[500px]"
-                    component="a"
-                    endIcon={<ArrowRightAltIcon />}
-                  >
-                    SOME COOL STUFF
-                  </Button3D>
+                  <a>
+                    <Button3D
+                      fullWidth
+                      className="max-w-[500px]"
+                      endIcon={<ArrowRightAltIcon />}
+                    >
+                      SOME COOL STUFF
+                    </Button3D>
+                  </a>
                 </Link>
               </BlurIn>
             </Box>

@@ -10,8 +10,8 @@ const MyLoader = () => {
   const [removed, setRemoved] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setLoaded(true), 1000);
-    setTimeout(() => setRemoved(true), 2500);
+      setTimeout(() => setLoaded(true), 1000);
+      setTimeout(() => setRemoved(true), 2500);
   }, []);
 
   return (
@@ -23,10 +23,9 @@ const MyLoader = () => {
             <div className={classes.logoHolder}>
               <Image
                 priority
-                className={"appear"}
+                className={"appear pulse"}
                 src={logoImg}
                 alt="logo"
-                layout="intrinsic"
                 width={250}
                 height={250}
               />

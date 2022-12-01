@@ -29,6 +29,7 @@ export default function ValuesTabsMobile() {
           variant="scrollable"
           scrollButtons="auto"
           aria-label="values mobile"
+          textColor="inherit"
         >
           {aboutValues.map((val, i) => (
             <Tab key={val.title} label={val.title} {...a11yProps(i)} />

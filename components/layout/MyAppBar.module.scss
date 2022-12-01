@@ -39,7 +39,7 @@
   width: fit-content;
   display: flex;
   flex-flow: row;
-  margin-right: 8;
+  margin-right: 8px;
   align-items: center;
 }
 
@@ -47,9 +47,9 @@
   width: fit-content;
   display: flex;
   flex-flow: row;
-  margin-right: 8;
+  margin-right: 8px;
   @media (min-width: 600px) {
-    marginright: 40px;
+    margin-right: 40px;
   }
 
   &::after {

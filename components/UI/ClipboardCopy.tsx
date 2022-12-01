@@ -1,9 +1,8 @@
-import React, { PropsWithoutRef, useEffect, useState } from "react";
+import React, { PropsWithoutRef, useState } from "react";
 import FileCopyOutlinedIcon from "@mui/icons-material/FileCopyOutlined";
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 import { Alert, Snackbar, Tooltip } from "@mui/material";
 import { selectText } from "utils/utility";
-import Notification from "./Notification";
 import ClientOnlyPortal from "../portals/ClientOnlyPortal";
 
 type Props = PropsWithoutRef<{
@@ -18,18 +17,15 @@ const ClipboardCopy = ({ content, contentElement }: Props) => {
     setSnackOpen(false);
   };
 
-  useEffect(() => {
-    if (copied) setTimeout(() => setCopied(false), 5000);
-  }, [copied]);
-
   const copyHandler = async () => {
     if (copied) return;
-    if (!navigator.clipboard)
-      return selectText(contentElement);
+    if (!navigator.clipboard) return selectText(contentElement);
 
     await navigator.clipboard.writeText(content);
     setCopied(true);
     setSnackOpen(true);
+
+    setTimeout(() => setCopied(false), 5000);
   };
 
   return (
@@ -47,10 +43,17 @@ const ClipboardCopy = ({ content, contentElement }: Props) => {
         </Tooltip>
       </span>
 
-
       <ClientOnlyPortal>
-        <Snackbar open={snackOpen} autoHideDuration={6000} onClick={closeSnack} anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
-          <Alert onClose={closeSnack} className="snackbar" severity="success">Copied successfully</Alert>
+        <Snackbar
+          open={snackOpen}
+          autoHideDuration={6000}
+          onClose={closeSnack}
+          onClick={closeSnack}
+          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+        >
+          <Alert onClose={closeSnack} className="snackbar" severity="success">
+            Copied successfully
+          </Alert>
         </Snackbar>
       </ClientOnlyPortal>
     </>

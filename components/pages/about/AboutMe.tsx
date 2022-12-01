@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import Heading from "@/components/UI/Heading";
 import GetAppIcon from "@mui/icons-material/GetApp";
-import ThemeContext, { ThemeContextType } from "context/themeContext";
 import Button3D from "@/components/UI/Button3D";
 import BlurIn from "@/components/UI/BlurIn";
 import StyledDivider from "@/components/UI/StyledDivider";
@@ -10,12 +9,11 @@ import {
   AboutSectionNames,
   registerAboutSection,
   scrollToAboutSection,
-} from "@/pages/about";
+} from "pages/about";
 
 const andrejImage = "/img/andrej500transparent.webp";
 
 const AboutMe = () => {
-  const { dark } = useContext(ThemeContext) as ThemeContextType;
   const ref = useRef(null);
 
   const scrollToValues = () => scrollToAboutSection(AboutSectionNames.VALUES);
@@ -79,7 +77,6 @@ const AboutMe = () => {
                 rel="noopener noreferrer"
                 endIcon={<GetAppIcon />}
                 variant="text"
-                color={dark ? "primary" : "secondary"}
                 fullWidth
               >
                 Andrej&apos;s resume

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import {
   Container,
   Grid,
@@ -9,7 +9,6 @@ import {
   Table,
   TableBody,
   TableRow,
-  Button,
   Typography,
 } from "@mui/material";
 import Heading from "@/components/UI/Heading";
@@ -17,7 +16,6 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import CodeIcon from "@mui/icons-material/Code";
 import LinkIcon from "@mui/icons-material/Link";
-import ThemeContext, { ThemeContextType } from "context/themeContext";
 import Button3D from "@/components/UI/Button3D";
 import BlurIn from "@/components/UI/BlurIn";
 import { IProject } from "models/Project";
@@ -26,8 +24,6 @@ import StyledDivider from "@/components/UI/StyledDivider";
 type Props = { project: IProject };
 
 const SingleProjectContent = ({ project }: Props) => {
-  const { dark } = useContext(ThemeContext) as ThemeContextType;
-
   return (
     <Container maxWidth="xl" className="min-h-screen relative pb-[50px] md:p-6">
       <Heading component='h1' text={project.title} />
@@ -117,27 +113,26 @@ const SingleProjectContent = ({ project }: Props) => {
                   <TableBody>
                     {project.dataSource ? (
                       <TableRow>
-                        <TableCell className="border-none p-[1rem_0px] opacity-60">
+                        <TableCell className="border-none p-[1rem_0px]">
                           <strong>Data source:</strong>
                         </TableCell>
                         <TableCell
                           className="border-none p-[1rem_0px]"
                           align="right"
                         >
-                          <Button
+                          <Button3D
                             component="a"
                             href={project.dataSource}
                             target="_blank"
                             rel="noopener noreferrer"
-                            color={dark ? "primary" : "secondary"}
                           >
                             <OpenInNewIcon />
-                          </Button>
+                          </Button3D>
                         </TableCell>
                       </TableRow>
                     ) : null}
                     <TableRow>
-                      <TableCell className="border-none p-[1rem_0px] bg-opacity-60">
+                      <TableCell className="border-none p-[1rem_0px]">
                         <strong>Project type:</strong>
                       </TableCell>
                       <TableCell
@@ -148,7 +143,7 @@ const SingleProjectContent = ({ project }: Props) => {
                       </TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell className="border-none p-[1rem_0px] opacity-60">
+                      <TableCell className="border-none p-[1rem_0px]">
                         <strong>Completed on:</strong>
                       </TableCell>
                       <TableCell
@@ -180,7 +175,6 @@ const SingleProjectContent = ({ project }: Props) => {
                     href={project.siteLink}
                     disabled={!project.siteLink}
                     endIcon={<LinkIcon />}
-                    color={dark ? "primary" : "secondary"}
                   >
                     Live site
                   </Button3D>
@@ -192,7 +186,6 @@ const SingleProjectContent = ({ project }: Props) => {
                     href={project.codeLink}
                     disabled={!project.codeLink}
                     endIcon={<CodeIcon />}
-                    color={dark ? "primary" : "secondary"}
                   >
                     Code
                   </Button3D>

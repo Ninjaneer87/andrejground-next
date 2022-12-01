@@ -1,14 +1,12 @@
 import { Box, Grid, Typography, Container } from "@mui/material";
 import ButtonGroup from "@mui/material/ButtonGroup";
-import React, { useContext } from "react";
+import React from "react";
 import Heading from "@/components/UI/Heading";
 import Link from "next/link";
 import LinkIcon from "@mui/icons-material/Link";
 import CodeIcon from "@mui/icons-material/Code";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
-import ThemeContext, { ThemeContextType } from "context/themeContext";
 import Button3D from "@/components/UI/Button3D";
 import BlurIn from "@/components/UI/BlurIn";
 import StyledDivider from "@/components/UI/StyledDivider";
@@ -17,23 +15,13 @@ import { HomeSectionProps, registerHomeSection } from "pages";
 const bgImageUrl = "/img/coinland-framed.webp";
 
 const Projects = ({ setInViewSection }: HomeSectionProps) => {
-  const { dark } = useContext(ThemeContext) as ThemeContextType;
-
-  const {
-    ref: scrollRef,
-    inView: scrollInView,
-    entry,
-  } = useInView({
+  const { ref: scrollRef } = useInView({
     rootMargin: "-50%",
+    onChange: (inView, entry) => {
+      inView && setInViewSection("projects");
+      entry && registerHomeSection("projects", entry.target);
+    },
   });
-
-  useEffect(() => {
-    if (scrollInView) setInViewSection("projects");
-  }, [scrollInView, setInViewSection]);
-
-  useEffect(() => {
-    if (entry) registerHomeSection("projects", entry.target);
-  }, [entry]);
 
   return (
     <section
@@ -93,7 +81,6 @@ const Projects = ({ setInViewSection }: HomeSectionProps) => {
                       rel="noopener noreferrer"
                       href="https://ninjaneer87.github.io/coinland/"
                       endIcon={<LinkIcon />}
-                      color={dark ? "primary" : "secondary"}
                     >
                       Live site
                     </Button3D>
@@ -104,7 +91,6 @@ const Projects = ({ setInViewSection }: HomeSectionProps) => {
                       rel="noopener noreferrer"
                       href="https://github.com/Ninjaneer87/coinland/"
                       endIcon={<CodeIcon />}
-                      color={dark ? "primary" : "secondary"}
                     >
                       Code
                     </Button3D>
@@ -117,17 +103,16 @@ const Projects = ({ setInViewSection }: HomeSectionProps) => {
 
                 <BlurIn>
                   <Link href="/portfolio" passHref>
-                    <Button3D
-                      variant="text"
-                      fullWidth
-                      size="large"
-                      component="a"
-                      href="/portfolio"
-                      color={dark ? "primary" : "secondary"}
-                      endIcon={<ArrowRightAltIcon />}
-                    >
-                      More projects
-                    </Button3D>
+                    <a>
+                      <Button3D
+                        variant="text"
+                        fullWidth
+                        size="large"
+                        endIcon={<ArrowRightAltIcon />}
+                      >
+                        More projects
+                      </Button3D>
+                    </a>
                   </Link>
                 </BlurIn>
               </Box>

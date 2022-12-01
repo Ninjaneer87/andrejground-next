@@ -4,7 +4,7 @@ import Heading from "@/components/UI/Heading";
 import ValuesTabs from "./ValuesTabs";
 import ValuesTabsMobile from "./ValuesTabsMobile";
 import BlurIn from "@/components/UI/BlurIn";
-import { AboutSectionNames, registerAboutSection } from "@/pages/about";
+import { AboutSectionNames, registerAboutSection } from "pages/about";
 
 const Values = () => {
   const ref = useRef(null);

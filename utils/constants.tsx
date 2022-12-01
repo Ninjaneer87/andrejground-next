@@ -6,6 +6,39 @@ import VideoLibraryOutlinedIcon from "@mui/icons-material/VideoLibraryOutlined";
 
 export const EMAIL_REGEX = /^\w+([.-]?\w+)+@\w+([.:]?\w+)+(\.[a-zA-Z0-9]{2,})+$/;
 
+export const navItems = [
+  {
+    id: 1,
+    text: "HOME",
+    path: "/",
+    exact: true,
+  },
+  {
+    id: 2,
+    text: "PORTFOLIO",
+    path: "/portfolio",
+    exact: false,
+  },
+  {
+    id: 3,
+    text: "BLOG",
+    path: "/blog",
+    exact: false,
+  },
+  {
+    id: 4,
+    text: "ABOUT",
+    path: "/about",
+    exact: false,
+  },
+  {
+    id: 5,
+    text: "CONTACT",
+    path: "/contact",
+    exact: false,
+  },
+];
+
 export const contactFormInputs: FormControls = {
   fullName: {
     elementType: "text-input",

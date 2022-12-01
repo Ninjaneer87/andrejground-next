@@ -1,10 +1,8 @@
 import React from "react";
-import { Grid, Box, Container, Stack } from "@mui/material";
+import { Grid, Box, Container } from "@mui/material";
 import Heading from "@/components/UI/Heading";
-import { List, ListItem } from "@mui/material";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
-import Image from "next/future/image";
+import Image from "next/image";
 import BlurIn from "@/components/UI/BlurIn";
 import { HomeSectionProps, registerHomeSection } from "pages";
 
@@ -45,21 +43,13 @@ const moreTools = [
 ];
 
 const Toolbox = ({ setInViewSection }: HomeSectionProps) => {
-  const {
-    ref: scrollRef,
-    inView: scrollInView,
-    entry,
-  } = useInView({
+  const { ref: scrollRef } = useInView({
     rootMargin: "-50%",
+    onChange: (inView, entry) => {
+      inView && setInViewSection("toolbox");
+      entry && registerHomeSection("toolbox", entry.target);
+    },
   });
-
-  useEffect(() => {
-    if (entry) registerHomeSection("toolbox", entry.target);
-  }, [entry]);
-
-  useEffect(() => {
-    if (scrollInView) setInViewSection("toolbox");
-  }, [scrollInView, setInViewSection]);
 
   return (
     <section

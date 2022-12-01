@@ -1,16 +1,14 @@
 import { Container, CircularProgress, Snackbar, useMediaQuery, useTheme, Alert } from "@mui/material";
-import React, { useContext, useState, FormEventHandler } from "react";
+import React, { useState, FormEventHandler } from "react";
 import Heading from "@/components/UI/Heading";
 import MyInput from "@/components/UI/MyInput";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 import LoadingBar from "@/components/UI/LoadingBar";
 import Button3D from "@/components/UI/Button3D";
-import ThemeContext, { ThemeContextType } from "context/themeContext";
 import axios from "axios";
 import Dialog from "@mui/material/Dialog";
 import useForm from "hooks/useForm";
 import { createBody } from "utils/utility";
-import Notification from "@/components/UI/Notification";
 import BlurIn from "@/components/UI/BlurIn";
 import MessageSuccess from "@/components/UI/MessageSuccess";
 import { contactFormInputs } from "utils/constants";
@@ -20,7 +18,6 @@ const SendMessage = () => {
   const [loading, setLoading] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [snackOpen, setSnackOpen] = useState(false);
-  const { dark } = useContext(ThemeContext) as ThemeContextType;
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -73,7 +70,6 @@ const SendMessage = () => {
             <BlurIn>
               <Button3D
                 type="submit"
-                color={dark ? "primary" : "secondary"}
                 endIcon={!loading && <SendOutlinedIcon />}
                 fullWidth
                 disabled={!formIsValid}

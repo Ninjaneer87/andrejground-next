@@ -7,10 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   transition: all 150ms ease-in-out;
   transition-property: background;
-  // opacity: 0;
-}
-body.visible {
-  opacity: 1;
 }
 
 a {

@@ -4,7 +4,6 @@ import { Container } from "@mui/material";
 import Heading from "@/components/UI/Heading";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
 import BlurIn from "@/components/UI/BlurIn";
 import KeyboardIcon from "@mui/icons-material/Keyboard";
 import DevicesIcon from "@mui/icons-material/Devices";
@@ -13,15 +12,13 @@ import StyledDivider from "@/components/UI/StyledDivider";
 import { HomeSectionProps, registerHomeSection } from "pages";
 
 const Mission = ({ setInViewSection }: HomeSectionProps) => {
-  const { ref: scrollRef, inView: scrollInView, entry} = useInView({ rootMargin: "-50%" });
-
-  useEffect(() => {
-    if (scrollInView) setInViewSection("mission");
-  }, [scrollInView, setInViewSection]);
-
-  useEffect(() => {
-    if (entry) registerHomeSection("mission", entry.target);
-  }, [entry]);
+  const { ref: scrollRef } = useInView({
+    rootMargin: "-50%",
+    onChange: (inView, entry) => {
+      inView && setInViewSection("mission");
+      entry && registerHomeSection("mission", entry.target);
+    },
+  });
 
   return (
     <section 

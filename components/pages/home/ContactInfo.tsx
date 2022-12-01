@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useRef } from "react";
 import {
   Avatar,
   Box,
@@ -18,14 +18,11 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
 import ClipboardCopy from "@/components/UI/ClipboardCopy";
 import Button3D from "@/components/UI/Button3D";
-import ThemeContext, { ThemeContextType } from "context/themeContext";
 import BlurIn from "@/components/UI/BlurIn";
 import StyledDivider from "@/components/UI/StyledDivider";
 import { HomeSectionProps, registerHomeSection } from "pages";
-
 
 const socials = [
   {
@@ -44,16 +41,13 @@ const socials = [
 
 const ContactInfo = ({ setInViewSection }: HomeSectionProps) => {
   const emailRef = useRef<HTMLAnchorElement>(null);
-  const { dark } = useContext(ThemeContext) as ThemeContextType;
-  const { ref: scrollRef, inView: scrollInView, entry } = useInView({ rootMargin: "-50%" });
-
-  useEffect(() => {
-    if (scrollInView) setInViewSection("contact");
-  }, [scrollInView, setInViewSection]);
-
-  useEffect(() => {
-    if (entry) registerHomeSection("contact", entry.target);
-  }, [entry]);
+  const { ref: scrollRef } = useInView({
+    rootMargin: "-50%",
+    onChange: (inView, entry) => {
+      inView && setInViewSection("contact");
+      entry && registerHomeSection("contact", entry.target);
+    },
+  });
 
   return (
     <section
@@ -73,15 +67,10 @@ const ContactInfo = ({ setInViewSection }: HomeSectionProps) => {
                 </Avatar>
               </ListItemIcon>
               <ListItemText>
-                <Typography
-                  className="font-extralight mb-5"
-                  variant="h4"
-                >
+                <Typography className="font-extralight mb-5" variant="h4">
                   Town, State
                 </Typography>
-                <Typography className="font-normal">
-                  Apatin, Serbia
-                </Typography>
+                <Typography className="font-normal">Apatin, Serbia</Typography>
               </ListItemText>
             </ListItem>
           </BlurIn>
@@ -94,10 +83,7 @@ const ContactInfo = ({ setInViewSection }: HomeSectionProps) => {
                 </Avatar>
               </ListItemIcon>
               <ListItemText>
-                <Typography
-                  className="font-extralight mb-5"
-                  variant="h4"
-                >
+                <Typography className="font-extralight mb-5" variant="h4">
                   Email
                 </Typography>
                 <Typography
@@ -143,14 +129,14 @@ const ContactInfo = ({ setInViewSection }: HomeSectionProps) => {
 
         <BlurIn>
           <Link href="/contact" passHref>
-            <Button3D
-              fullWidth
-              component="a"
-              color={dark ? "primary" : "secondary"}
-              endIcon={<SendOutlinedIcon />}
-            >
-              Send a message
-            </Button3D>
+            <a>
+              <Button3D
+                fullWidth
+                endIcon={<SendOutlinedIcon />}
+              >
+                Send a message
+              </Button3D>
+            </a>
           </Link>
         </BlurIn>
       </Box>

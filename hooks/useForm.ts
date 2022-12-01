@@ -11,7 +11,10 @@ export default function useForm(initialInputs: FormControls) {
   const [inputs, setInputs] = useState(initialInputs);
   const [formIsValid, setFormIsValid] = useState(false);
 
-  const resetForm = useCallback(() => setInputs(initialInputs), [initialInputs]);
+  const resetForm = useCallback(() => {
+    setInputs(initialInputs);
+    setFormIsValid(false);
+  }, [initialInputs]);
 
   const inputHandler: InputHandler = useCallback(
     (

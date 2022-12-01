@@ -1,7 +1,4 @@
-import React, {
-  useEffect,
-  useState,
-} from "react";
+import React, { useState } from "react";
 import { ButtonBase } from "@mui/material";
 import ClientOnlyPortal from "@/components/portals/ClientOnlyPortal";
 import { HomeSectionNames, scrollToHomeSection } from "pages";
@@ -49,18 +46,7 @@ const SectionNav = ({ inViewSection }: Props) => {
   const [expanded, setExpanded] = useState(false);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(1100));
-  const {activeBoxRef, boxPosition, setBoxPosition} = useBoxPosition<HTMLButtonElement>();
-
-  const boxCoordsStyles = {
-    "--width": `${boxPosition.width - 4}px`,
-    "--left": `${boxPosition.left + 2}px`,
-    "--top": `${boxPosition.top + 2}px`,
-    "--height": `${boxPosition.height - 8}px`,
-  } as React.CSSProperties;
-
-  useEffect(() => {
-    setBoxPosition();
-  }, [inViewSection, setBoxPosition]);
+  const { activeBoxRef, boxPosition } = useBoxPosition<HTMLButtonElement, string>(inViewSection);
 
   return (
     isSmallScreen ? null :
@@ -68,8 +54,8 @@ const SectionNav = ({ inViewSection }: Props) => {
       <div
         onMouseEnter={() => setExpanded(true)}
         onMouseLeave={() => setExpanded(false)}
-        className={`appear p-[10px] min-h-[150px] bg-themed-bg fixed top-1/2 right-0 -translate-y-1/2 flex flex-col justify-center  rounded-[6px_0_0_6px] transition-all duration-150 ease-linear z-[1] after:content-[''] after:absolute after:w-[calc(100%_-_25px)] after:left-[var(--left)] after:top-[2px] after:h-[var(--height)] after:z-[-1] after:rounded-[6px] after:transition-all after:duration-150 after:ease-linear after:translate-y-[var(--top)] after:shadow-3d-button ${expanded ? 'w-[180px] opacity-100' : 'w-[58px] opacity-80'}`}
-        style={boxCoordsStyles}
+        className={`appear p-[10px] min-h-[150px] bg-themed-bg fixed top-1/2 right-0 -translate-y-1/2 flex flex-col justify-center  rounded-[6px_0_0_6px] transition-all duration-150 ease-linear z-[1] after:content-[''] after:absolute after:w-[calc(100%_-_22px)] after:left-[var(--left)] after:top-[2px] after:h-[var(--height)] after:z-[-1] after:rounded-[6px] after:transition-all after:duration-150 after:ease-linear after:translate-y-[var(--top)] after:shadow-3d-button ${expanded ? 'w-[180px] opacity-100' : 'w-[58px] opacity-80'}`}
+        style={boxPosition}
       >
         {sections.map((section) => (
           <div key={section.id}>

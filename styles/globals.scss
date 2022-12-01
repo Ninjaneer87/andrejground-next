@@ -1,11 +1,5 @@
 @use "/styles/global/_index.scss" as *;
-// @import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap");
-body {
-  opacity: 0;
-}
-// @tailwind base;
-// @tailwind components;
-// @tailwind utilities;
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
@@ -65,4 +59,3 @@ body {
     @apply bg-themed-bg text-themed-text p-5 cursor-pointer shadow-3d-card w-full;
   }
 }
-
