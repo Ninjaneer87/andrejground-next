@@ -6,7 +6,6 @@ import Button3D from "@/components/UI/Button3D";
 import BlurIn from "@/components/UI/BlurIn";
 import StyledDivider from "@/components/UI/StyledDivider";
 import {
-  AboutSectionNames,
   registerAboutSection,
   scrollToAboutSection,
 } from "pages/about";
@@ -16,11 +15,11 @@ const andrejImage = "/img/andrej500transparent.webp";
 const AboutMe = () => {
   const ref = useRef(null);
 
-  const scrollToValues = () => scrollToAboutSection(AboutSectionNames.VALUES);
+  const scrollToValues = () => scrollToAboutSection("values");
 
   useEffect(() => {
     if (ref.current) {
-      registerAboutSection(AboutSectionNames.ABOUTME, ref.current);
+      registerAboutSection("aboutme", ref.current);
     }
   }, []);
 

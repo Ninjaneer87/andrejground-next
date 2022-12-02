@@ -4,10 +4,7 @@ import AboutMe from "@/components/pages/about/AboutMe";
 import Values from "@/components/pages/about/Values";
 import Head from "next/head";
 
-export enum AboutSectionNames {
-  ABOUTME = "aboutme",
-  VALUES = "values",
-}
+type AboutSectionNames = "aboutme" |"values";
 
 const sections = {} as { [key in AboutSectionNames]: Element | null };
 export const registerAboutSection = (sectionName: AboutSectionNames, section: Element | null) => {
