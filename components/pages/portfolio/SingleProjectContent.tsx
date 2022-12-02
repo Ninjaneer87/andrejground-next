@@ -25,8 +25,12 @@ type Props = { project: IProject };
 
 const SingleProjectContent = ({ project }: Props) => {
   return (
-    <Container maxWidth="xl" className="min-h-screen relative pb-[50px] md:p-6">
-      <Heading component='h1' text={project.title} />
+    <Container
+      component="section"
+      maxWidth="xl"
+      className="min-h-screen relative pb-[50px] md:p-6 mt-[100px]"
+    >
+      <Heading component="h1" text={project.title} />
       <Grid
         container
         alignItems="flex-start"
@@ -199,7 +203,7 @@ const SingleProjectContent = ({ project }: Props) => {
           <BlurIn>
             <div
               style={{ backgroundImage: `url('/images/${project.image}')` }}
-              className={`bg-no-repeat bg-center bg-contain h-[600px] max-h-[90vw] drop-shadow-drop`}
+              className={`bg-no-repeat bg-center bg-contain aspect-[4/3] max-w-[800px] mx-auto drop-shadow-themed`}
             />
           </BlurIn>
         </Grid>

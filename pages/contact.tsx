@@ -3,7 +3,6 @@ import SendMessage from "@/components/pages/contact/SendMessage";
 import Info from "@/components/pages/contact/Info";
 import Head from "next/head";
 
-
 const Contact = () => {
   return (
     <>
@@ -11,10 +10,8 @@ const Contact = () => {
         <title>AndrejGround | Contact</title>
         <meta name="description" content="AndrejGround contact page" />
       </Head>
-      <div className="flex flex-col min-h-screen">
-        <Info />
-        <SendMessage />
-      </div>
+      <Info />
+      <SendMessage />
     </>
   );
 };

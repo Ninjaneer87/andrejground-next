@@ -9,7 +9,11 @@ const ScrollTop = () => {
   const { ref: pageTop, inView: pageTopInView } = useInView({ threshold: 1 });
 
   const scrollToTop = useCallback(() => {
-    document.body.scrollIntoView({ behavior: "smooth" });
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
   }, []);
 
   return (

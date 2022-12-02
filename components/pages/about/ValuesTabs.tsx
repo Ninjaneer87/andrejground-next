@@ -41,11 +41,13 @@ export default function ValuesTabs() {
           ))}
         </Tabs>
 
-        {aboutValues.map((val, i) => (
-          <TabPanel key={val.title} value={value} index={i}>
-            {val.content}
-          </TabPanel>
-        ))}
+        <div className="px-6">
+          {aboutValues.map((val, i) => (
+              <TabPanel key={val.title} value={value} index={i}>
+                {val.content}
+              </TabPanel>
+          ))}
+        </div>
       </div>
     </BlurIn>
   );

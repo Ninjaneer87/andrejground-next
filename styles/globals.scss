@@ -12,8 +12,10 @@
     --color-dark: #212121;
     --color-light-transparent: #f0f0f3cc;
     --color-dark-transparent: #212121cc;
-    --color-border-appbar-dark: rgba(0, 229, 255, 0.267);
     --color-border-appbar-light: rgba(0, 0, 0, 0.1);
+    --color-border-appbar-dark: rgba(0, 229, 255, 0.267);
+    --drop-shadow-light: 0px 0px 15px #ffffff55;
+    --drop-shadow-dark: 0px 0px 15px #00000088;
 
     // Themed colors (light)
     --color-text: rgba(0, 0, 0, 0.87);
@@ -22,7 +24,7 @@
     --color-selection-background: var(--color-dark);
     --color-selection-text: var(--color-primary);
     --color-reflection: #b6b6b666;
-    --drop-shadow-image: 0px 0px 15px #00000088;
+    --drop-shadow: var(--drop-shadow-dark);
     --shadow-3d-card: -12px -12px 25px 0 #ffffffee, 12px 12px 25px 0 #00000020;
     --shadow-3d-button: -8px -8px 15px 0 #ffffffee, 8px 8px 15px 0 #00000011;
     --shadow-3d-button-inset: inset -2px -2px 2px 0 #ffffff99,
@@ -38,7 +40,7 @@
     --color-selection-background: var(--color-primary);
     --color-selection-text: var(--color-dark);
     --color-reflection: #e6e6e610;
-    --drop-shadow-image: 0px 0px 15px #ffffff55;
+    --drop-shadow: var(--drop-shadow-light);
     --shadow-3d-card: -8px -8px 15px 0 #ffffff10, 8px 8px 15px 0 #00000077;
     --shadow-3d-button: -8px -8px 15px 0 #ffffff10, 8px 8px 15px 0 #00000055;
     --shadow-3d-button-inset: inset -2px -2px 2px 0 #ffffff15,

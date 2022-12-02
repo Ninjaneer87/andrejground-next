@@ -36,11 +36,13 @@ export default function ValuesTabsMobile() {
           ))}
         </Tabs>
 
-        {aboutValues.map((val, i) => (
-          <TabPanel key={val.title} value={value} index={i}>
-            {val.content}
-          </TabPanel>
-        ))}
+        <div className="py-6">
+          {aboutValues.map((val, i) => (
+              <TabPanel key={val.title} value={value} index={i}>
+                {val.content}
+              </TabPanel>
+          ))}
+        </div>
       </div>
     </BlurIn>
   );

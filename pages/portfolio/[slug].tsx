@@ -17,9 +17,7 @@ const SingleProject = ({ project }: ProjectProps) => {
         <title>AndrejGround | {project?.title}</title>
         <meta name="description" content={project?.description} />
       </Head>
-      <div className="flex flex-col min-h-screen pt-[70px]">
-        <SingleProjectContent project={project} />
-      </div>
+      <SingleProjectContent project={project} />
     </>
   );
 };

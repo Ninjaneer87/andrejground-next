@@ -25,7 +25,11 @@ const AboutMe = () => {
   }, []);
 
   return (
-    <Container maxWidth="lg" className="flex flex-col justify-center items-center text-center min-h-screen pb-10">
+    <Container 
+      component="section" 
+      maxWidth="lg" 
+      className="flex flex-col justify-center items-center text-center min-h-screen pb-10"
+    >
       <div ref={ref}>
         <BlurIn>
           <Heading text="Meet Andrej" />
@@ -43,15 +47,14 @@ const AboutMe = () => {
         <Grid item xs={12} md={6}>
           <Box maxWidth={600} margin="auto">
             <BlurIn>
-              <Typography className="text-start p-3 font-medium">
+              <Typography className="text-start py-3 font-medium">
                 Andrej has been into front-end development for a couple of years
                 now. Over this period, he has developed a strong curiosity about
-                JavaScript and its ecosystem, with a focus on React and Angular
-                frameworks.
+                JavaScript and its ecosystem, with a focus on React and TypeScript
                 <br />
                 <br />
                 He enjoys learning, coding, and seeing his code getting leaner
-                and cleaner after each project.
+                and cleaner after each project
                 <br />
                 <br />
                 He is on a constant quest for people who share similar habits,
@@ -59,7 +62,6 @@ const AboutMe = () => {
                 <span className="text-primary cursor-pointer"  onClick={scrollToValues}>
                   values
                 </span>
-                .
                 <br />
                 <br />
               </Typography>

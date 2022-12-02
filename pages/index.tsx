@@ -6,6 +6,7 @@ import Projects from "@/components/pages/home/Projects";
 import ContactInfo from "@/components/pages/home/ContactInfo";
 import SectionNav from "@/components/pages/home/SectionNav";
 import { useState } from "react";
+import Head from "next/head";
 
 export type HomeSectionNames = "home" | "mission" | "toolbox" | "projects" | "contact";
 
@@ -25,7 +26,11 @@ const Home = () => {
   const [inViewSection, setInViewSection] = useState<HomeSectionNames>("home");
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
+      <Head>
+        <title>AndrejGround | Home</title>
+        <meta name="description" content="Welcome to the AndrejGround" />
+      </Head>
       <Hero setInViewSection={setInViewSection} />
       <Mission setInViewSection={setInViewSection} />
       <Toolbox setInViewSection={setInViewSection} />
@@ -33,7 +38,7 @@ const Home = () => {
       <ContactInfo setInViewSection={setInViewSection} />
 
       <SectionNav inViewSection={inViewSection} />
-    </div>
+    </>
   );
 };
 

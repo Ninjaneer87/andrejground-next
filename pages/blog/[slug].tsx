@@ -17,9 +17,7 @@ const SingleBlog = ({ blog }: BlogProps) => {
         <title>AndrejGround | {blog.title}</title>
         <meta name='description' content={blog.title} />
       </Head>
-      <div className="flex flex-col min-h-screen pt-[100px]">
-        <SingleBlogContent blog={blog} />
-      </div>
+      <SingleBlogContent blog={blog} />
     </>
   );
 };

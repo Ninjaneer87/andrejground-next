@@ -11,11 +11,12 @@ const BlogsList = ({ blogs }: Props) => {
   return (
     <Container
       maxWidth="xl"
-      className="flex text-center items-start min-h-screen relative"
+      component="section"
+      className="flex text-center items-start min-h-screen relative md:p-4 mt-[100px]"
     >
-      <Box width="100%" padding="30px 0">
+      <Box width="100%" paddingBottom="30px">
         <BlurIn>
-          <Heading component='h1' text="Blog" />
+          <Heading component="h1" text="Blog" />
         </BlurIn>
         <Grid container spacing={5} justifyContent="center">
           {blogs.map((blog, i) => (
@@ -26,7 +27,7 @@ const BlogsList = ({ blogs }: Props) => {
               className="flex items-center justify-center"
               key={blog._id}
             >
-              <BlurIn delay={i * 150} className='w-full'>
+              <BlurIn delay={(i + 1) * 250} className="w-full">
                 <BlogItem blog={blog} />
               </BlurIn>
             </Grid>

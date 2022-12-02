@@ -19,25 +19,32 @@ const Intro = () => {
   const scrollToAboutMe = () => scrollToAboutSection(AboutSectionNames.ABOUTME);
 
   return (
-    <Container maxWidth="xl" className="pt-[70px] flex flex-col items-center justify-center text-center min-h-screen">
+    <Container
+      component="section"
+      maxWidth="xl"
+      className="flex flex-col items-center justify-center text-center min-h-screen mt-[100px]"
+    >
       <BlurIn>
-        <Heading component='h1' text="What is AndrejGround?" />
+        <Heading component="h1" text="What is AndrejGround?" />
       </BlurIn>
       <BlurIn delay={150}>
-        <Typography variant="h6" className="max-w-[600px] font-medium">
+        <Typography variant="h6" className="max-w-[650px] font-medium">
           AndrejGround is{" "}
-          <span className="text-primary cursor-pointer" onClick={scrollToAboutMe}>
+          <span
+            className="text-primary cursor-pointer"
+            onClick={scrollToAboutMe}
+          >
             Andrej
           </span>
           &apos;s playground for ideas, front-end features and functionalities,
-          as well as a window to his portfolio.
+          as well as a window to his portfolio
         </Typography>
       </BlurIn>
 
       <BlurIn delay={300}>
-        <Box 
-          style={{backgroundImage: `url(${logoImg})`}}
-          className={`bg-center bg-contain bg-no-repeat w-[200px] h-[200px] p-8 my-[80px] mx-0 box-border rounded-full relative shadow-3d-card`} 
+        <Box
+          style={{ backgroundImage: `url(${logoImg})` }}
+          className={`bg-center bg-contain bg-no-repeat w-[200px] h-[200px] p-8 my-[80px] mx-0 box-border rounded-full relative shadow-3d-card`}
         />
       </BlurIn>
       <List className="flex items-start justify-center gap-6 flex-wrap">

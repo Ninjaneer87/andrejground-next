@@ -45,7 +45,8 @@ const SendMessage = () => {
   return (
     <Container
       maxWidth="lg"
-      className="flex flex-col items-center justify-center text-center min-h-[700px] pb-10"
+      component="section"
+      className="flex flex-col items-center justify-center text-center pb-10"
     >
       {loading && <LoadingBar />}
       <BlurIn>

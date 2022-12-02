@@ -24,11 +24,9 @@ const About = () => {
         <title>AndrejGround | About</title>
         <meta name="description" content="AndrejGround about page" />
       </Head>
-      <div className="flex flex-col min-h-screen pt-[70px]">
-        <Intro />
-        <AboutMe />
-        <Values />
-      </div>
+      <Intro />
+      <AboutMe />
+      <Values />
     </>
   );
 };

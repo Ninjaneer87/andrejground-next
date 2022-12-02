@@ -8,13 +8,13 @@ const Layout = ({ children }: PropsWithChildren) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="min-h-screen">
+    <>
       <MyAppBar setExpanded={setExpanded} />
       <MyDrawer expanded={expanded} setExpanded={setExpanded} />
-      <div>{children}</div>
+      <main>{children}</main>
       <ScrollTop />
       <Footer />
-    </div>
+    </>
   );
 };
 

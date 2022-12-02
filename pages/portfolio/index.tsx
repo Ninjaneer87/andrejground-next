@@ -15,9 +15,7 @@ const Portfolio = ({ projects }: ProjectsProps) => {
         <title>AndrejGround | Portfolio</title>
         <meta name="description" content="AndrejGround projects" />
       </Head>
-      <div className="flex flex-col min-h-screen pt-[70px]">
-        <ProjectsList projects={projects} />
-      </div>
+      <ProjectsList projects={projects} />
     </>
   );
 };

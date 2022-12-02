@@ -1,6 +1,5 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
 
 interface Props {
   children?: React.ReactNode;
@@ -20,9 +19,9 @@ export default function TabPanel(props: Props) {
       {...other}
     >
       {value === index && (
-        <Box p={3}>
-          <Typography className="appear">{children}</Typography>
-        </Box>
+        <Typography className="appear">
+          {children}
+        </Typography>
       )}
     </div>
   );

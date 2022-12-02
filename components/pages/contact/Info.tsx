@@ -64,8 +64,9 @@ const Info = () => {
 
   return (
     <Container
+      component="section"
       maxWidth="lg"
-      className="pt-[150px] pb-[50px] m-auto min-h-screen"
+      className="mt-[100px] pb-[50px] flex flex-col"
     >
       <BlurIn>
         <Heading component='h1' text="Let's connect" />
@@ -119,6 +120,7 @@ const Info = () => {
           </Grid>
         ))}
       </Grid>
+      
       <Grid container justifyContent="center" spacing={5}>
         <Grid item xs={12} md={6} lg={12}>
           <BlurIn delay={450}>
@@ -144,7 +146,6 @@ const Info = () => {
           </BlurIn>
         </Grid>
       </Grid>
-
     </Container>
   );
 };

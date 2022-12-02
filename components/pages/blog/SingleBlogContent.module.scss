@@ -7,6 +7,7 @@
   padding: 1rem;
   padding-bottom: 50px;
   margin: 0 auto;
+  margin-top: 100px;
   @media (min-width: 900px) {
     padding: 1.4rem;
   }
@@ -33,7 +34,7 @@
   max-height: 50vw;
   width: 100%;
   box-sizing: border-box;
-  filter: drop-shadow(var(--drop-shadow-image));
+  filter: drop-shadow(var(--drop-shadow));
   overflow: hidden;
   border-radius: 10px;
   margin-bottom: 40px;

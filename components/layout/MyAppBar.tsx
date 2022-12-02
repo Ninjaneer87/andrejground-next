@@ -3,33 +3,25 @@ import { AppBar, Container, useMediaQuery, useTheme } from "@mui/material";
 import Logo from "@/components/UI/Logo";
 import { useInView } from "react-intersection-observer";
 import List from '@mui/material/List';
-import ListItemText from '@mui/material/ListItemText';
-import Link from 'next/link';
 import TungstenOutlinedIcon from '@mui/icons-material/TungstenOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 import { useContext } from "react";
-import { useRouter } from 'next/dist/client/router';
 import ThemeContext, { ThemeContextType } from 'context/themeContext';
-import useBoxPosition from 'hooks/useBoxPosition';
-import { isActive } from 'utils/utility';
 import classes from './MyAppBar.module.scss';
 import PageTop from '../UI/PageTop';
-import { navItems } from 'utils/constants';
-import { ListItemButton } from '@mui/material';
+import NavItems from './NavItems';
 
 type Props = { setExpanded: Dispatch<SetStateAction<boolean>> }
 
 const MyAppBar = ({ setExpanded }: Props) => {
-  const { asPath: currentUrl } = useRouter();
   const { setDark } = useContext(ThemeContext) as ThemeContextType;
   const { ref: pageTop, inView: pageTopInView } = useInView({ threshold: 1 });
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('lg'));
-  const { activeBoxRef, boxPosition } = useBoxPosition<HTMLAnchorElement, string>(currentUrl);
 
   return (
-    <div>
+    <>
       <PageTop ref={pageTop} />
       <AppBar className={`${classes.appBar} ${!pageTopInView ? classes['appBar--scrolled'] : ''}`} elevation={0}>
         <Container maxWidth='xl' className='flex justify-between'>
@@ -51,29 +43,7 @@ const MyAppBar = ({ setExpanded }: Props) => {
                 <MenuIcon  className={classes.navIcon} />
               </IconButton>
               :
-              <List
-                disablePadding
-                component='nav'
-                className={classes.navbarInner}
-                style={boxPosition}
-              >
-                {navItems.map(({id, text, exact, path}) =>
-                  <Link
-                    href={path}
-                    passHref
-                    key={id}
-                  >
-                    <ListItemButton
-                      {...(isActive(path, currentUrl, exact) && { ref: activeBoxRef })}
-                      className={`${classes.listItem}`}
-                      component='a'
-                      disableRipple
-                    >
-                      <ListItemText primary={text} />
-                    </ListItemButton>
-                  </Link>
-                )}
-              </List>
+              <NavItems />
             }
             
             <button
@@ -86,7 +56,7 @@ const MyAppBar = ({ setExpanded }: Props) => {
           </List>
         </Container>
       </AppBar>
-    </div>
+    </>
   );
 };
 

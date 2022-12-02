@@ -6,7 +6,7 @@ const year = new Date().getFullYear();
 
 const Footer = () => {
   return (
-    <section className="flex text-center items-center justify-evenly flex-col min-h-[30vh] relative mt-auto sm:p-5 blur-in border-[0] border-t-[1px] border-solid border-t-appbar-border">
+    <footer className="flex text-center items-center justify-evenly flex-col min-h-[30vh] relative mt-auto sm:p-5 blur-in border-[0] border-t-[1px] border-solid border-t-appbar-border">
       <Typography className="text-base p-5">
         Let&apos;s build some cool stuff!
       </Typography>
@@ -15,7 +15,7 @@ const Footer = () => {
         Copyright © {year} by <span className="text-primary">Andrej</span>Ground. All
         rights reserved.
       </Typography>
-    </section>
+    </footer>
   );
 };
 

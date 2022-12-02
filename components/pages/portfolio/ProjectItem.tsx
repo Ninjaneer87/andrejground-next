@@ -24,7 +24,7 @@ const ProjectItem = ({ project: { image, title, siteLink, codeLink, slug, projec
       </Typography>
       <div
         style={{backgroundImage: `url('/thumbs/${image}')`}}
-        className={`bg-no-repeat bg-center bg-contain m-[20px_0] min-h-[300px] w-full max-h-[90vw] drop-shadow-drop`}
+        className={`bg-no-repeat bg-center bg-contain m-[20px_0] aspect-[4/3] w-full drop-shadow-themed`}
       />
       <ButtonGroup
         aria-label="outlined primary button group"

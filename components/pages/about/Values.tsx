@@ -21,7 +21,8 @@ const Values = () => {
     <Container
       ref={ref}
       maxWidth="lg"
-      className="flex flex-col items-center justify-center min-h-[70vh] pb-10"
+      component="section"
+      className="flex flex-col items-center justify-center pb-10"
     >
       <BlurIn>
         <Heading text="Values & philosophy" />

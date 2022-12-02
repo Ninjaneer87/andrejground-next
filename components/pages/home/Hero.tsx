@@ -24,7 +24,7 @@ const Hero = ({ setInViewSection }: HomeSectionProps) => {
           <Grid item lg={8}>
             <BlurIn>
               <div className={classes.welcomeIntro}>
-                One stop for awesome front-end solutions.
+                One stop for awesome front-end solutions
               </div>
             </BlurIn>
 

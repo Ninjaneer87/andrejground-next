@@ -13,7 +13,8 @@ module.exports = {
         '3d-card': "var(--shadow-3d-card)",
       },
       dropShadow: {
-        'drop': "var(--drop-shadow-image)",
+        'themed': "var(--drop-shadow)",
+        'light': "var(--drop-shadow-light)",
       }
     },
     colors: {

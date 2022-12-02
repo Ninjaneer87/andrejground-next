@@ -52,61 +52,61 @@ const Toolbox = ({ setInViewSection }: HomeSectionProps) => {
   });
 
   return (
-    <section
+    <Container 
+      component="section"
       className="flex text-center items-center min-h-screen relative lg:p-4"
       ref={scrollRef}
+      maxWidth="xl"
     >
-      <Container maxWidth="xl">
-        <Box width="100%" padding="30px 0">
-          <BlurIn>
-            <Heading text="Toolbox" />
-          </BlurIn>
+      <Box width="100%" padding="30px 0">
+        <BlurIn>
+          <Heading text="Toolbox" />
+        </BlurIn>
 
-          <Grid container justifyContent="center" spacing={5}>
-            <Grid item xs={12} md={6} className="mb-[1em]">
-              <div className="max-w-[400px] my-0 mx-auto font-normal text-xl rounded-[2rem] sm:p-[2rem_1rem] sm:text-3xl">
-                <BlurIn>Main tools</BlurIn>
-                <div className="flex flex-wrap justify-center items-center gap-8 mt-12">
-                  {mainTools.map((tool, i) => (
-                    <BlurIn
-                      key={tool.label}
-                      className="text-base rounded-[20px] shadow-3d-card w-full px-4 py-8 flex-wrap flex-row basis-[30%] grow"
-                      delay={i * 150}
-                    >
-                      <Image
-                        className="block mx-auto mb-4 h-[50px] w-[50px] object-contain drop-shadow-[0px_0px_20px_#ffffff55]"
-                        src={tool.logo}
-                        alt="icon"
-                        width={50}
-                        height={50}
-                      />
-                      <div className="text-base">{tool.label}</div>
-                    </BlurIn>
-                  ))}
-                </div>
+        <Grid container justifyContent="center" spacing={5}>
+          <Grid item xs={12} md={6} className="mb-[1em]">
+            <div className="max-w-[400px] my-0 mx-auto font-normal text-xl rounded-[2rem] sm:p-[2rem_1rem] sm:text-3xl">
+              <BlurIn>Main tools</BlurIn>
+              <div className="flex flex-wrap justify-center items-center gap-8 mt-12">
+                {mainTools.map((tool, i) => (
+                  <BlurIn
+                    key={tool.label}
+                    className="text-base rounded-[20px] shadow-3d-card w-full px-4 py-8 flex-wrap flex-row basis-[30%] grow drop-shadow-light"
+                    delay={i * 150}
+                  >
+                    <Image
+                      className="block mx-auto mb-4 h-[50px] w-[50px] object-contain"
+                      src={tool.logo}
+                      alt="icon"
+                      width={50}
+                      height={50}
+                    />
+                    <div className="text-base">{tool.label}</div>
+                  </BlurIn>
+                ))}
               </div>
-            </Grid>
-
-            <Grid item xs={12} md={6} className="mb-[1em]">
-              <div className="max-w-[700px] my-0 mx-auto font-normal text-xl rounded-[2rem] sm:p-[2rem_1rem] sm:text-3xl">
-                <BlurIn>Other tools</BlurIn>
-                <div className="flex flex-wrap justify-center gap-6 max-w-[500px] my-0 mt-12 mx-auto">
-                  {moreTools.map((tool, i) => (
-                    <BlurIn
-                      delay={i * 150}
-                      key={tool}
-                      className="w-fit text-base rounded-xl shadow-3d-card py-3 px-4"
-                    >
-                      {tool}
-                    </BlurIn>
-                  ))}
-                </div>
-              </div>
-            </Grid>
+            </div>
           </Grid>
-        </Box>
-      </Container>
-    </section>
+
+          <Grid item xs={12} md={6} className="mb-[1em]">
+            <div className="max-w-[700px] my-0 mx-auto font-normal text-xl rounded-[2rem] sm:p-[2rem_1rem] sm:text-3xl">
+              <BlurIn>Other tools</BlurIn>
+              <div className="flex flex-wrap justify-center gap-6 max-w-[500px] my-0 mt-12 mx-auto">
+                {moreTools.map((tool, i) => (
+                  <BlurIn
+                    delay={i * 150}
+                    key={tool}
+                    className="w-fit text-base rounded-xl shadow-3d-card py-3 px-4"
+                  >
+                    {tool}
+                  </BlurIn>
+                ))}
+              </div>
+            </div>
+          </Grid>
+        </Grid>
+      </Box>
+    </Container>
   );
 };
 
