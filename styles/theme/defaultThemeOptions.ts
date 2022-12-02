@@ -17,6 +17,11 @@ const defaultThemeOptions: ThemeOptions  = {
       light: cyan['A400'],
       dark: cyan['A400'],
     },
+    success: {
+      main: cyan['A400'],
+      light: cyan['A400'],
+      dark: cyan['A400'],
+    },
     secondary: blueGrey,
     action: {
       disabled: "#bdbdbd",
