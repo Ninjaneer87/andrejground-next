@@ -69,4 +69,4 @@ const SingleBlogContent = ({ blog }: Props) => {
   );
 };
 
-export default React.memo(SingleBlogContent);
+export default SingleBlogContent;

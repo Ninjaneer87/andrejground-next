@@ -212,4 +212,4 @@ const SingleProjectContent = ({ project }: Props) => {
   );
 };
 
-export default React.memo(SingleProjectContent);
+export default SingleProjectContent;

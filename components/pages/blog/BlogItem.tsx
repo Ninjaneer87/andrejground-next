@@ -7,7 +7,7 @@ import { IBlog } from "models/Blog";
 type Props = {
   blog: IBlog;
 };
-const ProjectItem = ({ blog: { image, title, createdAt, slug }, }: Props) => {
+const BlogItem = ({ blog: { image, title, createdAt, slug }, }: Props) => {
 
   return (
     <Link href={`/blog/${slug}`} passHref>
@@ -37,4 +37,4 @@ const ProjectItem = ({ blog: { image, title, createdAt, slug }, }: Props) => {
   );
 };
 
-export default ProjectItem;
+export default React.memo(BlogItem);

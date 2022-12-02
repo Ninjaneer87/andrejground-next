@@ -45,4 +45,4 @@ export async function getStaticProps() {
   };
 }
 
-export default React.memo(Portfolio);
+export default Portfolio;

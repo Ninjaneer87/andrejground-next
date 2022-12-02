@@ -74,4 +74,4 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 };
 
-export default React.memo(SingleProject);
+export default SingleProject;

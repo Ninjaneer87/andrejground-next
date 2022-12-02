@@ -37,4 +37,4 @@ const MyLoader = () => {
   );
 };
 
-export default React.memo(MyLoader);
+export default MyLoader;

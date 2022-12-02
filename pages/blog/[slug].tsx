@@ -76,4 +76,4 @@ export const getStaticProps: GetStaticProps = async (context) => {
   }
 }
 
-export default React.memo(SingleBlog);
+export default SingleBlog;
