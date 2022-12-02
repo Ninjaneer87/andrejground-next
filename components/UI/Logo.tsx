@@ -14,7 +14,7 @@ type Props = {
 const Logo = ({ inHeader, setExpanded }: Props) => {
   const { asPath } = useRouter();
 
-  const logoHandler: MouseEventHandler<HTMLDivElement> = (event) => {
+  const logoHandler: MouseEventHandler<HTMLAnchorElement> = (event) => {
     if (asPath === "/") {
       event.preventDefault();
       document.body.scrollIntoView({ behavior: "smooth" });
@@ -24,11 +24,11 @@ const Logo = ({ inHeader, setExpanded }: Props) => {
   };
 
   return (
-    <ButtonBase className="rounded-lg" disableRipple>
       <Link 
         href="/"
+        passHref
       >
-        <div className="flex text-center items-center p-[4px] rounded-[6px] h-[3.4rem] box-border" onClick={logoHandler}>
+        <a className="flex text-center items-center p-[4px] rounded-[6px] h-[3.4rem] box-border" onClick={logoHandler}>
           <div className="w-[50px] h-[50px] block rounded-full overflow-hidden shadow-3d-button">
             <Image src={logoImg} alt="logo" width={50} height={50} />
           </div>
@@ -37,9 +37,8 @@ const Logo = ({ inHeader, setExpanded }: Props) => {
               <span className="text-primary">Andrej</span>Ground
             </Typography>
           )}
-        </div>
+        </a>
     </Link>
-    </ButtonBase>
   );
 };
 
