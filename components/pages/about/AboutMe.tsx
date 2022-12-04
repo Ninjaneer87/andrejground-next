@@ -5,23 +5,21 @@ import GetAppIcon from "@mui/icons-material/GetApp";
 import Button3D from "@/components/UI/Button3D";
 import BlurIn from "@/components/UI/BlurIn";
 import StyledDivider from "@/components/UI/StyledDivider";
-import {
-  registerAboutSection,
-  scrollToAboutSection,
-} from "pages/about";
+import { AboutSectionNames } from "pages/about";
 
 const andrejImage = "/img/andrej500transparent.webp";
 
-const AboutMe = () => {
+type Props = {
+  addSection: (sectionName: AboutSectionNames, section: Element) => void;
+  scrollToSection: (sectionName: AboutSectionNames) => void;
+}
+
+const AboutMe = ({addSection, scrollToSection}: Props) => {
   const ref = useRef(null);
 
-  const scrollToValues = () => scrollToAboutSection("values");
-
   useEffect(() => {
-    if (ref.current) {
-      registerAboutSection("aboutme", ref.current);
-    }
-  }, []);
+    if (ref.current) addSection("aboutme", ref.current);
+  }, [addSection]);
 
   return (
     <Container 
@@ -58,7 +56,7 @@ const AboutMe = () => {
                 <br />
                 He is on a constant quest for people who share similar habits,
                 views and{" "}
-                <span className="text-primary cursor-pointer"  onClick={scrollToValues}>
+                <span className="text-primary cursor-pointer"  onClick={() => scrollToSection("values")}>
                   values
                 </span>
                 <br />

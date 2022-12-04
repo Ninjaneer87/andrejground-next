@@ -15,7 +15,7 @@ import NavItems from './NavItems';
 type Props = { setExpanded: Dispatch<SetStateAction<boolean>> }
 
 const MyAppBar = ({ setExpanded }: Props) => {
-  const { setDark } = useContext(ThemeContext) as ThemeContextType;
+  const { toggleDarkMode } = useContext(ThemeContext) as ThemeContextType;
   const { ref: pageTop, inView: pageTopInView } = useInView({ threshold: 1 });
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('lg'));
@@ -49,7 +49,7 @@ const MyAppBar = ({ setExpanded }: Props) => {
             <button
               className="bg-themed-bg cursor-pointer text-themed-text hover:text-primary transition-colors shrink-0 rounded-full w-[40px] h-[40px] flex items-center justify-center outline-none border-none ml-1 dark:shadow-3d-button shadow-3d-button-inset"
               color="inherit"
-              onClick={() => setDark(prev => !prev)}
+              onClick={toggleDarkMode}
             >
               <TungstenOutlinedIcon />
             </button>

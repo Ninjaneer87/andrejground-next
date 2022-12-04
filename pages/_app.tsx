@@ -28,7 +28,7 @@ const lightTheme = responsiveFontSizes(createTheme(lightThemeOptions));
 
 const MyApp: React.FC<MyAppProps> = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-  const [dark, setDark] = useDarkMode(null);
+  const [dark, toggleDarkMode] = useDarkMode(null);
   const mounted = useMounted();
 
   return (
@@ -40,7 +40,7 @@ const MyApp: React.FC<MyAppProps> = (props) => {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <ThemeContext.Provider value={{ dark, setDark }}>
+      <ThemeContext.Provider value={{ dark, toggleDarkMode }}>
         <CacheProvider value={emotionCache}>
           <ThemeProvider theme={dark ? darkTheme : lightTheme}>
             <CssBaseline />

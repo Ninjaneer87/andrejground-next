@@ -3,27 +3,22 @@ import Intro from "@/components/pages/about/Intro";
 import AboutMe from "@/components/pages/about/AboutMe";
 import Values from "@/components/pages/about/Values";
 import Head from "next/head";
+import { useSections } from "hooks/useSections";
 
-type AboutSectionNames = "aboutme" |"values";
-
-const sections = {} as { [key in AboutSectionNames]: Element | null };
-export const registerAboutSection = (sectionName: AboutSectionNames, section: Element | null) => {
-  sections[sectionName] = section;
-};
-export const scrollToAboutSection = (section: AboutSectionNames) => {
-  sections[section]?.scrollIntoView({ behavior: "smooth" });
-};
+export type AboutSectionNames = "aboutme" | "values";
 
 const About = () => {
+  const { addSection, scrollToSection } = useSections<AboutSectionNames>();
+
   return (
     <>
       <Head>
         <title>AndrejGround | About</title>
         <meta name="description" content="AndrejGround about page" />
       </Head>
-      <Intro />
-      <AboutMe />
-      <Values />
+      <Intro scrollToSection={scrollToSection} />
+      <AboutMe addSection={addSection} scrollToSection={scrollToSection} />
+      <Values addSection={addSection} />
     </>
   );
 };

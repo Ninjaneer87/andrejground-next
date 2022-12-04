@@ -10,16 +10,16 @@ import { useInView } from "react-intersection-observer";
 import Button3D from "@/components/UI/Button3D";
 import BlurIn from "@/components/UI/BlurIn";
 import StyledDivider from "@/components/UI/StyledDivider";
-import { HomeSectionProps, registerHomeSection } from "pages";
+import { HomeSectionProps } from "pages";
 
 const bgImageUrl = "/img/coinland-framed.webp";
 
-const Projects = ({ setInViewSection }: HomeSectionProps) => {
+const Projects = ({ setInViewSection, addSection }: HomeSectionProps) => {
   const { ref: scrollRef } = useInView({
     rootMargin: "-50%",
     onChange: (inView, entry) => {
       inView && setInViewSection("projects");
-      entry && registerHomeSection("projects", entry.target);
+      entry && addSection("projects", entry.target);
     },
   });
 

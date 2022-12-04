@@ -4,7 +4,7 @@ import Heading from "@/components/UI/Heading";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import BlurIn from "@/components/UI/BlurIn";
-import { HomeSectionProps, registerHomeSection } from "pages";
+import { HomeSectionProps } from "pages";
 
 const reactLogo = "/img/react-logo.webp";
 const nextLogo = "/img/next-logo.png";
@@ -42,12 +42,12 @@ const moreTools = [
   "Jest",
 ];
 
-const Toolbox = ({ setInViewSection }: HomeSectionProps) => {
+const Toolbox = ({ setInViewSection, addSection }: HomeSectionProps) => {
   const { ref: scrollRef } = useInView({
     rootMargin: "-50%",
     onChange: (inView, entry) => {
       inView && setInViewSection("toolbox");
-      entry && registerHomeSection("toolbox", entry.target);
+      entry && addSection("toolbox", entry.target);
     },
   });
 

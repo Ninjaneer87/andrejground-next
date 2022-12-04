@@ -6,14 +6,14 @@ import { useInView } from "react-intersection-observer";
 import Button3D from "@/components/UI/Button3D";
 import BlurIn from "@/components/UI/BlurIn";
 import classes from "./Hero.module.scss";
-import { HomeSectionProps, registerHomeSection } from "pages";
+import { HomeSectionProps } from "pages";
 
-const Hero = ({ setInViewSection }: HomeSectionProps) => {
+const Hero = ({ setInViewSection, addSection }: HomeSectionProps) => {
   const { ref: scrollRef } = useInView({
     rootMargin: "-50%",
     onChange: (inView, entry) => {
       inView && setInViewSection("home");
-      entry && registerHomeSection("home", entry.target);
+      entry && addSection("home", entry.target);
     },
   });
 

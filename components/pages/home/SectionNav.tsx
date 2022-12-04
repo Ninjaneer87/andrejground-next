@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ButtonBase } from "@mui/material";
 import ClientOnlyPortal from "@/components/portals/ClientOnlyPortal";
-import { HomeSectionNames, scrollToHomeSection } from "pages";
+import { HomeSectionNames } from "pages";
 import useBoxPosition from "hooks/useBoxPosition";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import AssignmentTurnedInOutlinedIcon from "@mui/icons-material/AssignmentTurnedInOutlined";
@@ -10,7 +10,7 @@ import FolderSpecialOutlinedIcon from "@mui/icons-material/FolderSpecialOutlined
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import { useMediaQuery, useTheme } from "@mui/material";
 
-const sections: { id: number; name: HomeSectionNames; icon: JSX.Element }[] = [
+const homeSections: { id: number; name: HomeSectionNames; icon: JSX.Element }[] = [
   {
     id: 0,
     name: "home",
@@ -40,9 +40,10 @@ const sections: { id: number; name: HomeSectionNames; icon: JSX.Element }[] = [
 
 type Props = {
   inViewSection: HomeSectionNames;
+  scrollToSection: (sectionName: HomeSectionNames) => void;
 };
 
-const SectionNav = ({ inViewSection }: Props) => {
+const SectionNav = ({ inViewSection, scrollToSection }: Props) => {
   const [expanded, setExpanded] = useState(false);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(1100));
@@ -57,11 +58,11 @@ const SectionNav = ({ inViewSection }: Props) => {
         className={`appear p-[10px] min-h-[150px] bg-themed-bg fixed top-1/2 right-0 -translate-y-1/2 flex flex-col justify-center  rounded-[6px_0_0_6px] transition-all duration-150 ease-linear z-[1] after:content-[''] after:absolute after:w-[calc(100%_-_22px)] after:left-[var(--left)] after:top-[2px] after:h-[var(--height)] after:z-[-1] after:rounded-[6px] after:transition-all after:duration-150 after:ease-linear after:translate-y-[var(--top)] after:shadow-3d-button ${expanded ? 'w-[180px] opacity-100' : 'w-[58px] opacity-80'}`}
         style={boxPosition}
       >
-        {sections.map((section) => (
+        {homeSections.map((section) => (
           <div key={section.id}>
             <ButtonBase
               {...(section.name === inViewSection && { ref: activeBoxRef })}
-              onClick={() => scrollToHomeSection(section.name)}
+              onClick={() => scrollToSection(section.name)}
               className="p-[16px_6px] cursor-pointer w-full rounded-[6px_0_0_6px] relative flex justify-start text-start"
               disableRipple
             >

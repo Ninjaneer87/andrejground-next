@@ -10,14 +10,16 @@ import {
 } from "@mui/material";
 import Heading from "@/components/UI/Heading";
 import BlurIn from "@/components/UI/BlurIn";
-import { scrollToAboutSection } from "pages/about";
 import { aboutStats } from "utils/constants";
+import { AboutSectionNames } from "@/pages/about";
 
 const logoImg = "/img/AG.png";
 
-const Intro = () => {
-  const scrollToAboutMe = () => scrollToAboutSection("aboutme");
+type Props = {
+  scrollToSection: (sectionName: AboutSectionNames) => void;
+}
 
+const Intro = ({ scrollToSection }: Props) => {
   return (
     <Container
       component="section"
@@ -32,7 +34,7 @@ const Intro = () => {
           AndrejGround is{" "}
           <span
             className="text-primary cursor-pointer"
-            onClick={scrollToAboutMe}
+            onClick={() => scrollToSection("aboutme")}
           >
             Andrej
           </span>

@@ -7,23 +7,17 @@ import ContactInfo from "@/components/pages/home/ContactInfo";
 import SectionNav from "@/components/pages/home/SectionNav";
 import { useState } from "react";
 import Head from "next/head";
+import { useSections } from "hooks/useSections";
 
 export type HomeSectionNames = "home" | "mission" | "toolbox" | "projects" | "contact";
-
 export type HomeSectionProps = { 
   setInViewSection: (sectionName: HomeSectionNames) => void;
-};
-
-const sections = {} as { [key in HomeSectionNames]: Element | null };
-export const registerHomeSection = (sectionName: HomeSectionNames, section: Element | null ) => {
-  sections[sectionName] = section;
-};
-export const scrollToHomeSection = (section: HomeSectionNames) => {
-  sections[section]?.scrollIntoView({ behavior: "smooth" });
+  addSection: (sectionName: HomeSectionNames, section: Element) => void;
 };
 
 const Home = () => {
   const [inViewSection, setInViewSection] = useState<HomeSectionNames>("home");
+  const { addSection, scrollToSection } = useSections<HomeSectionNames>();
 
   return (
     <>
@@ -31,13 +25,13 @@ const Home = () => {
         <title>AndrejGround | Home</title>
         <meta name="description" content="Welcome to the AndrejGround" />
       </Head>
-      <Hero setInViewSection={setInViewSection} />
-      <Mission setInViewSection={setInViewSection} />
-      <Toolbox setInViewSection={setInViewSection} />
-      <Projects setInViewSection={setInViewSection} />
-      <ContactInfo setInViewSection={setInViewSection} />
+      <Hero setInViewSection={setInViewSection} addSection={addSection}  />
+      <Mission setInViewSection={setInViewSection} addSection={addSection} />
+      <Toolbox setInViewSection={setInViewSection} addSection={addSection} />
+      <Projects setInViewSection={setInViewSection} addSection={addSection} />
+      <ContactInfo setInViewSection={setInViewSection} addSection={addSection} />
 
-      <SectionNav inViewSection={inViewSection} />
+      <SectionNav inViewSection={inViewSection} scrollToSection={scrollToSection}/>
     </>
   );
 };

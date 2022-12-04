@@ -9,14 +9,14 @@ import KeyboardIcon from "@mui/icons-material/Keyboard";
 import DevicesIcon from "@mui/icons-material/Devices";
 import GroupWorkIcon from "@mui/icons-material/GroupWork";
 import StyledDivider from "@/components/UI/StyledDivider";
-import { HomeSectionProps, registerHomeSection } from "pages";
+import { HomeSectionProps } from "pages";
 
-const Mission = ({ setInViewSection }: HomeSectionProps) => {
+const Mission = ({ setInViewSection, addSection }: HomeSectionProps) => {
   const { ref: scrollRef } = useInView({
     rootMargin: "-50%",
     onChange: (inView, entry) => {
       inView && setInViewSection("mission");
-      entry && registerHomeSection("mission", entry.target);
+      entry && addSection("mission", entry.target);
     },
   });
 

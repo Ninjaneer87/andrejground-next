@@ -4,18 +4,20 @@ import Heading from "@/components/UI/Heading";
 import ValuesTabs from "./ValuesTabs";
 import ValuesTabsMobile from "./ValuesTabsMobile";
 import BlurIn from "@/components/UI/BlurIn";
-import { registerAboutSection } from "pages/about";
+import { AboutSectionNames } from "pages/about";
 
-const Values = () => {
+type Props = {
+  addSection: (sectionName: AboutSectionNames, section: Element) => void;
+};
+
+const Values = ({ addSection }: Props) => {
   const ref = useRef(null);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(768));
 
   useEffect(() => {
-    if (ref.current) {
-      registerAboutSection("values", ref.current);
-    }
-  }, []);
+    if (ref.current) addSection("values", ref.current);
+  }, [addSection]);
 
   return (
     <Container

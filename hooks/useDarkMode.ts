@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 type ThemeConfig = {
   className: string;
@@ -7,7 +7,9 @@ type ThemeConfig = {
 }
 
 let config: ThemeConfig;
-export let initialDark: boolean;
+let initialDark: boolean;
+let applyTheme: (val: boolean) => void;
+let storageValueChanged: (e: StorageEvent) => boolean;
 
 if (typeof window !== 'undefined') {
   config = {
@@ -16,30 +18,41 @@ if (typeof window !== 'undefined') {
     storageKey: 'theme'
   }
   initialDark = localStorage.getItem("theme") === "dark";
+
+  applyTheme = (val: boolean) => {
+    const { className, element, storageKey } = config;
+    if (val === true) {
+      element.classList.add(className);
+      localStorage.setItem(storageKey, 'dark');
+    } else if (val === false) {
+      element.classList.remove(className);
+      localStorage.setItem(storageKey, '');
+    }
+  }
+  storageValueChanged = (e: StorageEvent) => {
+    return e.key === config.storageKey && e.oldValue !== e.newValue
+  }
 }
 
 export function useDarkMode(isDark: boolean | null): [boolean | null, (val: boolean) => void] {
   const [dark, setDark] = useState(isDark);
 
-  useEffect(() => {
-    setDark(initialDark);
-
-    const storageHandler = (e: StorageEvent) => (e.key === config.storageKey && e.oldValue !== e.newValue) && setDark(e.newValue === 'dark')
-    window.addEventListener('storage', storageHandler);
-    
-    return () => { window.removeEventListener('storage', storageHandler); }
+  const setDarkMode = (val: boolean) => {
+    applyTheme(val);
+    setDark(val);
+  }
+  const storageHandler = useCallback((e: StorageEvent) => {
+    if (storageValueChanged(e))
+      setDarkMode(e.newValue === 'dark');
   }, []);
 
   useEffect(() => {
-    const { className, element, storageKey } = config;
-    if (dark === true) {
-      element.classList.add(className);
-      localStorage.setItem(storageKey, 'dark');
-    } else if(dark === false) {
-      element.classList.remove(className);
-      localStorage.setItem(storageKey, '');
-    }
-  }, [dark]);
+    setDarkMode(initialDark);
+    window.addEventListener('storage', storageHandler);
+    return () => { window.removeEventListener('storage', storageHandler); }
+  }, [storageHandler]);
 
-  return [dark, setDark];
+  const toggleDarkMode = () => { setDarkMode(!dark) }
+  
+  return [dark, toggleDarkMode];
 }

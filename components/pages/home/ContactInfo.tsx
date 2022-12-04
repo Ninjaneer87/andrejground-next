@@ -22,7 +22,7 @@ import ClipboardCopy from "@/components/UI/ClipboardCopy";
 import Button3D from "@/components/UI/Button3D";
 import BlurIn from "@/components/UI/BlurIn";
 import StyledDivider from "@/components/UI/StyledDivider";
-import { HomeSectionProps, registerHomeSection } from "pages";
+import { HomeSectionProps } from "pages";
 
 const socials = [
   {
@@ -39,13 +39,13 @@ const socials = [
   },
 ];
 
-const ContactInfo = ({ setInViewSection }: HomeSectionProps) => {
+const ContactInfo = ({ setInViewSection, addSection }: HomeSectionProps) => {
   const emailRef = useRef<HTMLAnchorElement>(null);
   const { ref: scrollRef } = useInView({
     rootMargin: "-50%",
     onChange: (inView, entry) => {
       inView && setInViewSection("contact");
-      entry && registerHomeSection("contact", entry.target);
+      entry && addSection("contact", entry.target);
     },
   });
 
@@ -128,7 +128,7 @@ const ContactInfo = ({ setInViewSection }: HomeSectionProps) => {
         </BlurIn>
 
         <BlurIn>
-          <Link href="/contact" passHref>
+          <Link href="/contact#message" passHref>
             <a>
               <Button3D
                 fullWidth
