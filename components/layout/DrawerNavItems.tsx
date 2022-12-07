@@ -21,8 +21,8 @@ const DrawerNavItems = () => {
             <ListItemButton
               disableRipple
               className={`
-                ${isActive(path, currentUrl, exact) ? "shadow-3d-button" : ""} 
-                text-center hover:bg-transparent hover:text-primary transition-colors
+                ${isActive(path, currentUrl, exact) ? "shadow-3d-button delay-300" : ""} 
+                text-center hover:bg-transparent hover:text-primary transition-all
               `}
               onClick={closeDrawer}
               component="a"
