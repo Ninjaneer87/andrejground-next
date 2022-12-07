@@ -17,6 +17,7 @@ import { CacheProvider, EmotionCache } from "@emotion/react";
 import MyLoader from "@/components/UI/MyLoader";
 import { useMounted } from "hooks/useMounted";
 import Layout from "@/components/layout/Layout";
+import { NavContextProvider } from "context/navContext";
 
 type MyAppProps = AppProps & {
   emotionCache?: EmotionCache;
@@ -41,15 +42,17 @@ const MyApp: React.FC<MyAppProps> = (props) => {
         />
       </Head>
       <ThemeContext.Provider value={{ dark, toggleDarkMode }}>
-        <CacheProvider value={emotionCache}>
-          <ThemeProvider theme={dark ? darkTheme : lightTheme}>
-            <CssBaseline />
-            <MyLoader />
-              {!mounted ? null : <Layout>
-                <Component {...pageProps} />
-              </Layout>}
-          </ThemeProvider>
-        </CacheProvider>
+        <NavContextProvider>
+          <CacheProvider value={emotionCache}>
+            <ThemeProvider theme={dark ? darkTheme : lightTheme}>
+              <CssBaseline />
+              <MyLoader />
+                {!mounted ? null : <Layout>
+                  <Component {...pageProps} />
+                </Layout>}
+            </ThemeProvider>
+          </CacheProvider>
+        </NavContextProvider>
       </ThemeContext.Provider>
     </React.Fragment>
   );

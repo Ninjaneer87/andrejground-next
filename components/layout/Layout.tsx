@@ -1,18 +1,16 @@
-import React, { PropsWithChildren, useState } from "react";
-import MyAppBar from "./MyAppBar";
-import MyDrawer from "./MyDrawer";
+import React, { PropsWithChildren, useContext, useState } from "react";
+import Header from "./Header";
 import ScrollTop from "../UI/ScrollTop";
 import Footer from "./Footer";
+import Drawer from "./Drawer";
 
 const Layout = ({ children }: PropsWithChildren) => {
-  const [expanded, setExpanded] = useState(false);
-
   return (
     <>
-      <MyAppBar setExpanded={setExpanded} />
-      <MyDrawer expanded={expanded} setExpanded={setExpanded} />
+      <Header />
       <main>{children}</main>
       <ScrollTop />
+      <Drawer />
       <Footer />
     </>
   );

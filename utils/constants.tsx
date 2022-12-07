@@ -3,8 +3,29 @@ import { Validators } from "./Validators";
 import LocalLibraryOutlinedIcon from "@mui/icons-material/LocalLibraryOutlined";
 import ImportantDevicesOutlinedIcon from "@mui/icons-material/ImportantDevicesOutlined";
 import VideoLibraryOutlinedIcon from "@mui/icons-material/VideoLibraryOutlined";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 export const EMAIL_REGEX = /^\w+([.-]?\w+)+@\w+([.:]?\w+)+(\.[a-zA-Z0-9]{2,})+$/;
+
+export const socials = [
+  {
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/andrejforgac87/",
+    icon: <LinkedInIcon fontSize="large" />,
+  },
+  {
+    name: "GitHub",
+    link: "https://github.com/Ninjaneer87",
+    icon: <GitHubIcon fontSize="large" />,
+  },
+  {
+    name: "Twitter",
+    link: "https://twitter.com/nindzenjer",
+    icon: <TwitterIcon fontSize="large" />,
+  },
+];
 
 export const navItems = [
   {

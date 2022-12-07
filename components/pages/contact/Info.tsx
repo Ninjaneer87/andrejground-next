@@ -13,10 +13,8 @@ import {
 } from "@mui/material";
 import Heading from "@/components/UI/Heading";
 import ClipboardCopy from "@/components/UI/ClipboardCopy";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import BlurIn from "@/components/UI/BlurIn";
+import { socials } from "utils/constants";
 // import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 
 const infoItems = [
@@ -37,25 +35,6 @@ const infoItems = [
     label: "Current status",
     text: "Available",
     icon: <CheckCircleOutlineOutlinedIcon fontSize="large" />,
-  },
-];
-
-const socialIconClassName = "w-[50px] h-[50px] p-4 transition-colors duration-150 ease-in-out hover:text-primary";
-const socials = [
-  {
-    name: "LinkedIn",
-    link: "https://www.linkedin.com/in/andrejforgac87/",
-    icon: <LinkedInIcon fontSize="large" />,
-  },
-  {
-    name: "GitHub",
-    link: "https://github.com/Ninjaneer87",
-    icon: <GitHubIcon fontSize="large" />,
-  },
-  {
-    name: "Twitter",
-    link: "https://twitter.com/nindzenjer",
-    icon: <TwitterIcon fontSize="large" />,
   },
 ];
 

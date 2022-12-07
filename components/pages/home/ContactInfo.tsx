@@ -12,9 +12,6 @@ import Heading from "@/components/UI/Heading";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import IconButton from "@mui/material/IconButton";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
@@ -23,21 +20,7 @@ import Button3D from "@/components/UI/Button3D";
 import BlurIn from "@/components/UI/BlurIn";
 import StyledDivider from "@/components/UI/StyledDivider";
 import { HomeSectionProps } from "pages";
-
-const socials = [
-  {
-    link: "https://www.linkedin.com/in/andrejforgac87/",
-    icon: <LinkedInIcon fontSize="large" />,
-  },
-  {
-    link: "https://github.com/Ninjaneer87",
-    icon: <GitHubIcon fontSize="large" />,
-  },
-  {
-    link: "https://twitter.com/nindzenjer",
-    icon: <TwitterIcon fontSize="large" />,
-  },
-];
+import { socials } from "utils/constants";
 
 const ContactInfo = ({ setInViewSection, addSection }: HomeSectionProps) => {
   const emailRef = useRef<HTMLAnchorElement>(null);

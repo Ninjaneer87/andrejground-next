@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   transition: all 150ms ease-in-out;
   transition-property: background;
+  overflow: overlay;
 }
 
 a {

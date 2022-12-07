@@ -46,7 +46,7 @@ const SendMessage = () => {
     <Container
       maxWidth="lg"
       component="section"
-      className="flex flex-col items-center justify-center text-center pb-10"
+      className="flex flex-col items-center justify-center text-center pb-10 pt-10"
       id="message"
     >
       {loading && <LoadingBar />}

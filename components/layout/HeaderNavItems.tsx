@@ -7,9 +7,9 @@ import { isActive } from 'utils/utility';
 import ListItemText from '@mui/material/ListItemText';
 import Link from 'next/link';
 import List from '@mui/material/List';
-import classes from './NavItems.module.scss';
+import classes from './HeaderNavItems.module.scss';
 
-const NavItems = () => {
+const HeaderNavItems = () => {
   const { asPath: currentUrl } = useRouter();
   const { activeBoxRef, boxPosition } = useBoxPosition<HTMLAnchorElement, string>(currentUrl);
 
@@ -40,4 +40,4 @@ const NavItems = () => {
   );
 };
 
-export default React.memo(NavItems);
+export default React.memo(HeaderNavItems);
