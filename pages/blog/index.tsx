@@ -16,7 +16,7 @@ const Blog = ({ blogs }: BlogsProps) => {
         <meta name="description" content="Learn more about AndrejGround and Andrej by reading these technical and non-technical articles. Andrej is happy to share his learning path and self improvement tips in order to help/inspire people." />
         <link
           rel="canonical"
-          href={`${process.env.NEXT_PUBLIC_BASE_URL}/blog`}
+          href="https://andrejground.com/blog"
           key="canonical"
         />
       </Head>

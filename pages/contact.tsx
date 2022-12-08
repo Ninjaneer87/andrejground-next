@@ -11,7 +11,7 @@ const Contact = () => {
         <meta name="description" content="Let's get in touch and build together. We can connect through email, linkedin, or through the message form provided on the page." />
         <link
           rel="canonical"
-          href={`${process.env.NEXT_PUBLIC_BASE_URL}/contact`}
+          href="https://andrejground.com/contact"
           key="canonical"
         />
       </Head>

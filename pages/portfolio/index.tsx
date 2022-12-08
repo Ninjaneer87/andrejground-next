@@ -16,7 +16,7 @@ const Portfolio = ({ projects }: ProjectsProps) => {
         <meta name="description" content="Take a look at some cool stuff Andrej has built over the course of his career. Here is a list of both professional and personal projects" />
         <link
           rel="canonical"
-          href={`${process.env.NEXT_PUBLIC_BASE_URL}/portfolio`}
+          href="https://andrejground.com/portfolio"
           key="canonical"
         />
       </Head>

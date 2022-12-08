@@ -18,7 +18,7 @@ const SingleProject = ({ project }: ProjectProps) => {
         <meta name="description" content={project.description} />
         <link
           rel="canonical"
-          href={`${process.env.NEXT_PUBLIC_BASE_URL}/portfolio/${project.slug}`}
+          href={`https://andrejground.com/portfolio/${project.slug}`}
           key="canonical"
         />
       </Head>

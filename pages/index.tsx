@@ -26,7 +26,7 @@ const Home = () => {
         <meta name="description" content="AndrejGround is a frontend playground representing Andrej Forgac, a front-end developer, his portfolio and a couple of ways to connect with him." />
         <link
           rel="canonical"
-          href={`${process.env.NEXT_PUBLIC_BASE_URL}`}
+          href="https://andrejground.com"
           key="canonical"
         />
       </Head>

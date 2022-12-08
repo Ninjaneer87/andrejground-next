@@ -18,7 +18,7 @@ const SingleBlog = ({ blog }: BlogProps) => {
         <meta name='description' content={blog.subtitle} />
         <link
           rel="canonical"
-          href={`${process.env.NEXT_PUBLIC_BASE_URL}/blog/${blog.slug}`}
+          href={`https://andrejground.com/blog/${blog.slug}`}
           key="canonical"
         />
       </Head>
