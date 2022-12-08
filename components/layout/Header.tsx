@@ -43,6 +43,7 @@ const Header = () => {
               className="bg-themed-bg cursor-pointer text-themed-text transition-colors shrink-0 rounded-full w-[40px] h-[40px] flex items-center justify-center outline-none border-none ml-1 dark:shadow-3d-button shadow-3d-button-inset"
               color="inherit"
               onClick={toggleDarkMode}
+              aria-label="toggle dark-mode"
             >
               <TungstenOutlinedIcon />
             </button>

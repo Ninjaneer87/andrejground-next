@@ -63,7 +63,7 @@ const Info = () => {
             <BlurIn delay={i * 150}>
               <Box height="100%" className="shadow-3d-card p-4 py-14">
                 <div className="flex flex-col items-center justify-between min-h-[200px]">
-                  <Typography className="mb-[40px] font-normal" variant="h6">
+                  <Typography className="mb-[40px] font-normal" variant="h6" component='div'>
                     {item.label}
                   </Typography>
 

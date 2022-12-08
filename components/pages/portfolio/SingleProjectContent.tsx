@@ -42,7 +42,7 @@ const SingleProjectContent = ({ project }: Props) => {
           <BlurIn>
             <Box maxWidth={650}>
               <BlurIn>
-                <Typography component="h3" variant="h5" className="subtitle">
+                <Typography component="h2" variant="h5" className="subtitle">
                   About {project.title}
                 </Typography>
               </BlurIn>
@@ -67,7 +67,7 @@ const SingleProjectContent = ({ project }: Props) => {
               <br />
 
               <BlurIn>
-                <Typography component="h3" variant="h5" className="subtitle">
+                <Typography component="h2" variant="h5" className="subtitle">
                   Features & functionalities
                 </Typography>
               </BlurIn>
@@ -76,10 +76,13 @@ const SingleProjectContent = ({ project }: Props) => {
                 className="flex flex-wrap justify-center mt-[25px] gap-[5px]"
               >
                 {project.features?.map((feature, i) => (
-                  <BlurIn delay={i * 150} key={feature}>
-                    <ListItem className="w-fit text-[1rem] rounded-[6px] bg-[#6f6f6faa] text-white">
-                      {feature}
-                    </ListItem>
+                  <BlurIn
+                    delay={i * 150}
+                    key={feature}
+                    component={ListItem}
+                    className="w-fit text-[1rem] rounded-[6px] bg-[#6f6f6faa] text-white"
+                  >
+                    {feature}
                   </BlurIn>
                 ))}
               </List>
@@ -87,7 +90,7 @@ const SingleProjectContent = ({ project }: Props) => {
               <br />
 
               <BlurIn>
-                <Typography component="h3" variant="h5" className="subtitle">
+                <Typography component="h2" variant="h5" className="subtitle">
                   Technologies used
                 </Typography>
               </BlurIn>
@@ -108,7 +111,7 @@ const SingleProjectContent = ({ project }: Props) => {
               <br />
 
               <BlurIn>
-                <Typography component="h3" variant="h5" className="subtitle">
+                <Typography component="h2" variant="h5" className="subtitle">
                   And more
                 </Typography>
               </BlurIn>

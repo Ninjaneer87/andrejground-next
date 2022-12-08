@@ -30,7 +30,7 @@ const Intro = ({ scrollToSection }: Props) => {
         <Heading component="h1" text="What is AndrejGround?" />
       </BlurIn>
       <BlurIn delay={150}>
-        <Typography variant="h6" className="max-w-[650px] font-medium">
+        <Typography variant="h6" component='h2' className="max-w-[650px] font-medium">
           AndrejGround is{" "}
           <span
             className="text-primary cursor-pointer"
@@ -52,18 +52,14 @@ const Intro = ({ scrollToSection }: Props) => {
       </BlurIn>
       <List className="flex items-start justify-center gap-6 flex-wrap">
         {aboutStats.map((stat, i) => (
-          <BlurIn delay={i * 150} key={stat.number}>
-            <Box className="shadow-3d-card">
-              <ListItem className="text-center max-w-[250px] py-[2rem] px-[1rem]">
-                <ListItemText>
-                  <ListItemIcon className="mb-8 justify-center">
-                    {stat.icon}
-                  </ListItemIcon>
-                  <Typography variant="h4">{stat.number}</Typography>
-                  <Typography>{stat.desc}</Typography>
-                </ListItemText>
-              </ListItem>
-            </Box>
+          <BlurIn component={ListItem} delay={i * 150} key={stat.number} className="text-center max-w-[250px] py-[2rem] px-[1rem] shadow-3d-card">
+            <ListItemText>
+              <ListItemIcon className="mb-8 justify-center">
+                {stat.icon}
+              </ListItemIcon>
+              <Typography variant="h4" component='div'>{stat.number}</Typography>
+              <Typography>{stat.desc}</Typography>
+            </ListItemText>
           </BlurIn>
         ))}
       </List>

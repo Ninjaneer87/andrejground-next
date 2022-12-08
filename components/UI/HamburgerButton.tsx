@@ -13,6 +13,7 @@ const HamburgerButton = ({ expanded, toggleExpanded, dark }: Props) => {
     <button
       className={`${classes.toggle} ${dark ? classes["toggle--dark"] : ""}`}
       aria-controls="mobile-navigation"
+      aria-label="Toggle-navigation"
       aria-expanded={expanded}
       onClick={toggleExpanded}
     >

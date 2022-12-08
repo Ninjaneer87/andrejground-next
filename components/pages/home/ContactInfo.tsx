@@ -42,49 +42,45 @@ const ContactInfo = ({ setInViewSection, addSection }: HomeSectionProps) => {
           <Heading text="Contact info" />
         </BlurIn>
         <List>
-          <BlurIn>
-            <ListItem disableGutters className="mb-5">
-              <ListItemIcon>
-                <Avatar className="bg-transparent text-themed-text p-7 sm:p-[35px] mr-2 sm:mr-4 border-[1px] border-solid border-primary shadow-3d-card">
-                  <LocationOnOutlinedIcon fontSize="large" />
-                </Avatar>
-              </ListItemIcon>
-              <ListItemText>
-                <Typography className="font-extralight mb-5" variant="h4">
-                  Town, State
-                </Typography>
-                <Typography className="font-normal">Apatin, Serbia</Typography>
-              </ListItemText>
-            </ListItem>
+          <BlurIn component={ListItem} disableGutters className="mb-5">
+            <ListItemIcon>
+              <Avatar className="bg-transparent text-themed-text p-7 sm:p-[35px] mr-2 sm:mr-4 border-[1px] border-solid border-primary shadow-3d-card">
+                <LocationOnOutlinedIcon fontSize="large" />
+              </Avatar>
+            </ListItemIcon>
+            <ListItemText>
+              <Typography className="font-extralight mb-5" variant="h4" component='div'>
+                Town, State
+              </Typography>
+              <Typography className="font-normal">Apatin, Serbia</Typography>
+            </ListItemText>
           </BlurIn>
 
-          <BlurIn>
-            <ListItem disableGutters>
-              <ListItemIcon>
-                <Avatar className="bg-transparent text-themed-text p-7 sm:p-[35px] mr-2 sm:mr-4 border-[1px] border-solid border-primary shadow-3d-card">
-                  <MailOutlineIcon fontSize="large" />
-                </Avatar>
-              </ListItemIcon>
-              <ListItemText>
-                <Typography className="font-extralight mb-5" variant="h4">
-                  Email
-                </Typography>
-                <Typography
-                  component="a"
-                  href="mailto:contact@andrejground.com"
-                  className="transition-colors duration-150 ease-in-out hover:text-primary font-normal mr-[6px]"
-                  ref={emailRef}
-                >
-                  contact@andrejground.com
-                </Typography>
-                <span>
-                  <ClipboardCopy
-                    content="contact@andrejground.com"
-                    contentElement={emailRef.current}
-                  />
-                </span>
-              </ListItemText>
-            </ListItem>
+          <BlurIn component={ListItem} disableGutters>
+            <ListItemIcon>
+              <Avatar className="bg-transparent text-themed-text p-7 sm:p-[35px] mr-2 sm:mr-4 border-[1px] border-solid border-primary shadow-3d-card">
+                <MailOutlineIcon fontSize="large" />
+              </Avatar>
+            </ListItemIcon>
+            <ListItemText>
+              <Typography className="font-extralight mb-5" variant="h4" component='div'>
+                Email
+              </Typography>
+              <Typography
+                component="a"
+                href="mailto:contact@andrejground.com"
+                className="transition-colors duration-150 ease-in-out hover:text-primary font-normal mr-[6px]"
+                ref={emailRef}
+              >
+                contact@andrejground.com
+              </Typography>
+              <span>
+                <ClipboardCopy
+                  content="contact@andrejground.com"
+                  contentElement={emailRef.current}
+                />
+              </span>
+            </ListItemText>
           </BlurIn>
         </List>
         <BlurIn>
