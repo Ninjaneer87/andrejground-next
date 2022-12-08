@@ -14,8 +14,13 @@ const SingleProject = ({ project }: ProjectProps) => {
   return (
     <>
       <Head>
-        <title>AndrejGround | {project?.title}</title>
-        <meta name="description" content={project?.description} />
+        <title>AndrejGround | {project.title}</title>
+        <meta name="description" content={project.description} />
+        <link
+          rel="canonical"
+          href={`${process.env.NEXT_PUBLIC_BASE_URL}/portfolio/${project.slug}`}
+          key="canonical"
+        />
       </Head>
       <SingleProjectContent project={project} />
     </>

@@ -8,7 +8,12 @@ const Contact = () => {
     <>
       <Head>
         <title>AndrejGround | Contact</title>
-        <meta name="description" content="AndrejGround contact page" />
+        <meta name="description" content="Let's get in touch and build together. We can connect through email, linkedin, or through the message form provided on the page." />
+        <link
+          rel="canonical"
+          href={`${process.env.NEXT_PUBLIC_BASE_URL}/contact`}
+          key="canonical"
+        />
       </Head>
       <Info />
       <SendMessage />

@@ -13,7 +13,12 @@ const Blog = ({ blogs }: BlogsProps) => {
     <>
       <Head>
         <title>AndrejGround | Blog</title>
-        <meta name="description" content="AndrejGround blog" />
+        <meta name="description" content="Learn more about AndrejGround and Andrej by reading these technical and non-technical articles. Andrej is happy to share his learning path and self improvement tips in order to help/inspire people." />
+        <link
+          rel="canonical"
+          href={`${process.env.NEXT_PUBLIC_BASE_URL}/blog`}
+          key="canonical"
+        />
       </Head>
       <BlogsList blogs={blogs} />
     </>

@@ -14,7 +14,12 @@ const About = () => {
     <>
       <Head>
         <title>AndrejGround | About</title>
-        <meta name="description" content="AndrejGround about page" />
+        <meta name="description" content="Learn more about AndrejGround and Andrej Forgac, by exploring this page. Get to know more about Andrej's skills, experiences, passion and values." />
+        <link
+          rel="canonical"
+          href={`${process.env.NEXT_PUBLIC_BASE_URL}/about`}
+          key="canonical"
+        />
       </Head>
       <Intro scrollToSection={scrollToSection} />
       <AboutMe addSection={addSection} scrollToSection={scrollToSection} />

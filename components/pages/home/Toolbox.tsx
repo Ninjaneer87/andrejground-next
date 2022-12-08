@@ -6,10 +6,10 @@ import Image from "next/image";
 import BlurIn from "@/components/UI/BlurIn";
 import { HomeSectionProps } from "pages";
 
-const reactLogo = "/img/react-logo.webp";
-const nextLogo = "/img/next-logo.png";
-const sassLogo = "/img/sass-logo.png";
-const tsLogo = "/img/ts-logo.png";
+import reactLogo from "../../../public/img/react-logo.webp";
+import nextLogo from "../../../public/img/next-logo.png";
+import sassLogo from "../../../public/img/sass-logo.png";
+import tsLogo from "../../../public/img/ts-logo.png";
 
 const mainTools = [
   {

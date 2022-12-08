@@ -15,7 +15,12 @@ const SingleBlog = ({ blog }: BlogProps) => {
     <>
       <Head>
         <title>AndrejGround | {blog.title}</title>
-        <meta name='description' content={blog.title} />
+        <meta name='description' content={blog.subtitle} />
+        <link
+          rel="canonical"
+          href={`${process.env.NEXT_PUBLIC_BASE_URL}/blog/${blog.slug}`}
+          key="canonical"
+        />
       </Head>
       <SingleBlogContent blog={blog} />
     </>

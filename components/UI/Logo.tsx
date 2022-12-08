@@ -5,7 +5,7 @@ import { useRouter } from "next/dist/client/router";
 import Image from "next/image";
 import NavContext from "context/navContext";
 
-const logoImg = "/img/AG.png";
+import logoImg from "../../public/img/AG.png";
 
 type Props = {
   inHeader?: boolean;

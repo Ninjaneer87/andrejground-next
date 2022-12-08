@@ -23,7 +23,12 @@ const Home = () => {
     <>
       <Head>
         <title>AndrejGround | Home</title>
-        <meta name="description" content="Welcome to the AndrejGround" />
+        <meta name="description" content="AndrejGround is a frontend playground representing Andrej Forgac, a front-end developer, his portfolio and a couple of ways to connect with him." />
+        <link
+          rel="canonical"
+          href={`${process.env.NEXT_PUBLIC_BASE_URL}`}
+          key="canonical"
+        />
       </Head>
       <Hero setInViewSection={setInViewSection} addSection={addSection}  />
       <Mission setInViewSection={setInViewSection} addSection={addSection} />
