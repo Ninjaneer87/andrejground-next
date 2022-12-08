@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
 import {
   ThemeProvider,
@@ -32,6 +32,10 @@ const MyApp: React.FC<MyAppProps> = (props) => {
   const [dark, toggleDarkMode] = useDarkMode(null);
   const mounted = useMounted();
 
+  useEffect(() => {
+    if(mounted) document.body.style.visibility = "visible";
+  }, [mounted])
+
   return (
     <React.Fragment>
       <Head>
@@ -47,9 +51,9 @@ const MyApp: React.FC<MyAppProps> = (props) => {
             <ThemeProvider theme={dark ? darkTheme : lightTheme}>
               <CssBaseline />
               <MyLoader />
-                {!mounted ? null : <Layout>
+                <Layout>
                   <Component {...pageProps} />
-                </Layout>}
+                </Layout>
             </ThemeProvider>
           </CacheProvider>
         </NavContextProvider>
