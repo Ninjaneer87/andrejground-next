@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>AndrejGround | Home | Welcome to the AndrejGround | Let&apos;s build some cool stuff</title>
+        <title>AndrejGround | Frontend UI UX | Ideas into code</title>
         <meta name="description" content="AndrejGround is a frontend playground representing Andrej Forgac, a front-end developer, his portfolio and a couple of ways to connect with him." />
         <link
           rel="canonical"

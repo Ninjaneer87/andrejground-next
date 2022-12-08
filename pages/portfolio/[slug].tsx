@@ -14,7 +14,7 @@ const SingleProject = ({ project }: ProjectProps) => {
   return (
     <>
       <Head>
-        <title>AndrejGround | Portfolio | {project.title} | Project type: {project.projectType}</title>
+        <title>AndrejGround | {project.title} | Project type: {project.projectType}</title>
         <meta name="description" content={project.description} />
         <link
           rel="canonical"

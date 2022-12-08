@@ -33,7 +33,7 @@
 
 .welcomeTitle {
   font-weight: 300;
-  font-size: 9.5vw;
+  font-size: 8.8vw;
   text-align: center;
   text-transform: uppercase;
   line-height: 1.1;
@@ -47,19 +47,19 @@
 
 
   @media (min-width: 768px) {
-    font-size: clamp(26px, 20vw, 70px);
+    font-size: clamp(24px, 20vw, 70px);
   }
 
   @media (min-width: 1400px) {
     text-align: start;
     width: 65vw;
-    font-size: clamp(50px, 4.2vw, 80px);
+    font-size: clamp(50px, 4.2vw, 76px);
   }
 
   @media (min-width: 2000px) {
     text-align: start;
     width: 800px;
-    font-size: 80px;
+    font-size: 76px;
   }
 
   &::after {

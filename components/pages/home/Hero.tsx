@@ -31,9 +31,9 @@ const Hero = ({ setInViewSection, addSection }: HomeSectionProps) => {
           <Grid item lg={8} m="auto">
 
             <BlurIn>
-              <h1 className={classes.welcomeIntro}>
-                One stop for awesome front-end solutions
-              </h1>
+              <h2 className={classes.welcomeIntro}>
+                Turning ideas into code
+              </h2>
             </BlurIn>
 
             <BlurIn className={`flex items-center ${isSmallScreen ? "justify-center" : "justify-start"} gap-3 px-5`}>
@@ -50,10 +50,10 @@ const Hero = ({ setInViewSection, addSection }: HomeSectionProps) => {
             <BlurIn
               delay={150}
               className={classes.welcomeTitle}
-              data-text="Welcome to the ANDREJGROUND"
-              component="h2"
+              data-text="UI - UX - frontend ANDREJGROUND"
+              component="h1"
             >
-              Welcome to the <span className="cyan">Andrej</span>Ground
+              UI <span className="cyan">-</span> UX <span className="cyan">-</span> frontend <span className="cyan">Andrej</span>Ground
             </BlurIn>
           </Grid>
           <Grid item xs={12} lg={4}>

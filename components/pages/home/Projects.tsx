@@ -49,15 +49,15 @@ const Projects = ({ setInViewSection, addSection }: HomeSectionProps) => {
               </BlurIn>
 
               <BlurIn className="text-start my-8 mx-0">
-                This practice project was intended to connect client side app to
-                a public API. Data comes from{" "}
+                This practice project was intended to connect a public API to a vanilla JS frontend. 
+                <br />API comes from{" "}
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://coinmarketcap.com/"
                   className="text-primary"
                 >
-                  coinmarketcap.com
+                  coinmarketcap
                 </a>
                 <br />
                 <br />

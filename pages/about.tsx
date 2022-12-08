@@ -13,7 +13,7 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>AndrejGround | About | What is AndrejGround and who is Andrej</title>
+        <title>AndrejGround | What is AndrejGround and who is Andrej</title>
         <meta name="description" content="Learn more about AndrejGround and Andrej Forgac, by exploring this page. Get to know more about Andrej's skills, experiences, passion and values." />
         <link
           rel="canonical"
