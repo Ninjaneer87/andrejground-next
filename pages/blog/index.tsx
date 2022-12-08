@@ -12,7 +12,7 @@ const Blog = ({ blogs }: BlogsProps) => {
   return (
     <>
       <Head>
-        <title>AndrejGround | Blog</title>
+        <title>AndrejGround | Blog | Technical and non technical articles about web development / self improvement</title>
         <meta name="description" content="Learn more about AndrejGround and Andrej by reading these technical and non-technical articles. Andrej is happy to share his learning path and self improvement tips in order to help/inspire people." />
         <link
           rel="canonical"

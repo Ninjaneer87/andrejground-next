@@ -31,7 +31,7 @@ const Logo = ({ inHeader }: Props) => {
       >
         <a className="flex text-center items-center p-[4px] rounded-[6px] h-[3.4rem] box-border" onClick={logoHandler}>
           <div className={`w-[50px] h-[50px] block rounded-full overflow-hidden shadow-3d-button`}>
-            <Image src={logoImg} alt="logo" width={50} height={50} />
+            <Image src={logoImg} alt="AndrejGround logo" width={50} height={50} />
           </div>
           {inHeader && (
             <Typography className="hidden sm:block text-[2rem] font-[300] ml-[10px]">

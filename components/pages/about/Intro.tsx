@@ -46,6 +46,7 @@ const Intro = ({ scrollToSection }: Props) => {
       <BlurIn delay={300}>
         <Box
           style={{ backgroundImage: `url(${logoImg})` }}
+          title="AndrejGround logo"
           className={`bg-center bg-contain bg-no-repeat w-[200px] h-[200px] p-8 my-[80px] mx-0 box-border rounded-full relative shadow-3d-card`}
         />
       </BlurIn>

@@ -56,6 +56,7 @@ const SingleBlogContent = ({ blog }: Props) => {
         </Typography>
         <div 
           style={{ backgroundImage: `url('/images/${blog.image}')` }}
+          title={blog.title}
           className={classes.image}
         />
         <Typography

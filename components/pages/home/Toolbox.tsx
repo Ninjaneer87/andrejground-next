@@ -77,7 +77,7 @@ const Toolbox = ({ setInViewSection, addSection }: HomeSectionProps) => {
                     <Image
                       className="block mx-auto mb-4 h-[50px] w-[50px] object-contain"
                       src={tool.logo}
-                      alt="icon"
+                      alt={tool.label}
                       width={50}
                       height={50}
                     />

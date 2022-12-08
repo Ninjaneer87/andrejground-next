@@ -29,12 +29,12 @@ const StyledButton3D = styled(Button, {
     boxShadow: "var(--shadow-3d-button-inset)",
   },
   "&:hover": {
-    backgroundColor: "transparent !important",
+    backgroundColor: "transparent",
     "&::before": { opacity: 0 },
     "&::after": { opacity: 1 },
   },
   "&:focus": {
-    backgroundColor: "transparent !important",
+    backgroundColor: "transparent",
   },
   "&:disabled": {
     "&::before": { opacity: 0 },

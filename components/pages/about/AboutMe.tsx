@@ -37,6 +37,7 @@ const AboutMe = ({addSection, scrollToSection}: Props) => {
           <BlurIn>
             <Box 
             style={{backgroundImage: `url(${andrejImage})`}}
+            title="Andrej"
             className={`bg-center bg-cover bg-no-repeat w-[250px] max-w-[80vw] h-[250px] max-h-[80vw] p-8 m-auto box-border rounded-full relative shadow-3d-card`}
              />
           </BlurIn>

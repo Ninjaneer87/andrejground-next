@@ -17,6 +17,7 @@ const BlogItem = ({ blog: { image, title, createdAt, slug }, }: Props) => {
       >
         <div 
           style={{backgroundImage: `url('/thumbs/${image}')`}}
+          title={title}
           className={`bg-no-repeat bg-center bg-cover min-h-[50vh] w-full max-h-[800px] drop-shadow-drop rounded-[20px] overflow-hidden cursor-pointer flex flex-col justify-end box-border relative`}
         >
           <div className="bg-black/70 pb-5 border-solid border-0 border-t-[1px] border-t-primary">

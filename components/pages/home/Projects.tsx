@@ -117,6 +117,7 @@ const Projects = ({ setInViewSection, addSection }: HomeSectionProps) => {
             <BlurIn delay={450}>
               <div
                 style={{ backgroundImage: `url(${bgImageUrl})` }}
+                title="Coinland"
                 className={`bg-no-repeat bg-center bg-contain aspect-[4/3] max-w-[800px] mx-auto drop-shadow-themed`}
               />
             </BlurIn>

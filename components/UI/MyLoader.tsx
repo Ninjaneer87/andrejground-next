@@ -25,7 +25,7 @@ const MyLoader = () => {
                 priority
                 className={"appear pulse"}
                 src={logoImg}
-                alt="logo"
+                alt="AndrejGround logo"
                 width={250}
                 height={250}
               />

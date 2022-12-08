@@ -14,7 +14,7 @@ const SingleBlog = ({ blog }: BlogProps) => {
   return (
     <>
       <Head>
-        <title>AndrejGround | {blog.title}</title>
+        <title>AndrejGround | Blog | {blog.title}</title>
         <meta name='description' content={blog.subtitle} />
         <link
           rel="canonical"

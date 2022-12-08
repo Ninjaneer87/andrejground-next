@@ -24,6 +24,7 @@ const ProjectItem = ({ project: { image, title, siteLink, codeLink, slug, projec
       </Typography>
       <div
         style={{backgroundImage: `url('/thumbs/${image}')`}}
+        title={title}
         className={`bg-no-repeat bg-center bg-contain m-[20px_0] aspect-[4/3] w-full drop-shadow-themed`}
       />
       <ButtonGroup

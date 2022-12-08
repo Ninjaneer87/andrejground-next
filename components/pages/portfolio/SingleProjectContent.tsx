@@ -203,6 +203,7 @@ const SingleProjectContent = ({ project }: Props) => {
           <BlurIn>
             <div
               style={{ backgroundImage: `url('/images/${project.image}')` }}
+              title={project.title}
               className={`bg-no-repeat bg-center bg-contain aspect-[4/3] max-w-[800px] mx-auto drop-shadow-themed`}
             />
           </BlurIn>

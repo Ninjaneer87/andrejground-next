@@ -23,7 +23,8 @@
     --color-background-transparent: var(--color-light-transparent);
     --color-selection-background: var(--color-dark);
     --color-selection-text: var(--color-primary);
-    --color-reflection: #b6b6b666;
+    --color-reflection: #b6b6b652;
+    --color-reflection-clip: hsla(0, 0%, 0%, 0.377);
     --drop-shadow: var(--drop-shadow-dark);
     --shadow-3d-card: 12px -12px 25px 0 #ffffffee, -12px 12px 25px 0 #00000020;
     --shadow-3d-button: 8px -8px 15px 0 #ffffffee, -8px 8px 15px 0 #00000011;
@@ -41,6 +42,7 @@
     --color-selection-background: var(--color-primary);
     --color-selection-text: var(--color-dark);
     --color-reflection: #e6e6e610;
+    --color-reflection-clip: hsla(0, 0%, 100%, 0.721);
     --drop-shadow: var(--drop-shadow-light);
     --shadow-3d-card: 8px -8px 15px 0 #ffffff10, -8px 8px 15px 0 #00000077;
     --shadow-3d-button: 8px -8px 15px 0 #ffffff10, -8px 8px 15px 0 #00000055;

@@ -11,7 +11,7 @@ export default class MyDocument extends Document {
         <Head>
           {/* PWA primary color */}
           {/* <meta name="theme-color" content={theme.palette.primary.main} /> */}
-          <meta name="description" content="Frontend development playground" />
+          {/* <meta name="description" content="Frontend development playground" /> */}
           <meta name="author" content="Andrej Forgac" />
 
           <meta property="og:title" content="AndrejGround" />

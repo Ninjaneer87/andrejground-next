@@ -12,7 +12,7 @@ const Portfolio = ({ projects }: ProjectsProps) => {
   return (
     <>
       <Head>
-        <title>AndrejGround | Portfolio</title>
+        <title>AndrejGround | Portfolio | Explore projects from the AndrejGround lab</title>
         <meta name="description" content="Take a look at some cool stuff Andrej has built over the course of his career. Here is a list of both professional and personal projects" />
         <link
           rel="canonical"
