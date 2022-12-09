@@ -1,5 +1,5 @@
 import React from 'react';
-import SingleBlogContent from '@/components/pages/blog/SingleBlogContent';
+import SingleBlog from '@/components/pages/blog/SingleBlog';
 import { MongoClient } from 'mongodb';
 import Head from 'next/head';
 import { GetStaticProps } from 'next';
@@ -10,7 +10,7 @@ type BlogProps = {
   blog: IBlog;
 };
 
-const SingleBlog = ({ blog }: BlogProps) => {
+const SingleBlogPage = ({ blog }: BlogProps) => {
   return (
     <>
       <Head>
@@ -22,7 +22,7 @@ const SingleBlog = ({ blog }: BlogProps) => {
           key="canonical"
         />
       </Head>
-      <SingleBlogContent blog={blog} />
+      <SingleBlog blog={blog} />
     </>
   );
 };
@@ -81,4 +81,4 @@ export const getStaticProps: GetStaticProps = async (context) => {
   }
 }
 
-export default SingleBlog;
+export default SingleBlogPage;

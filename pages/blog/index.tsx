@@ -8,7 +8,7 @@ type BlogsProps = {
   blogs: IBlog[];
 };
 
-const Blog = ({ blogs }: BlogsProps) => {
+const BlogPage = ({ blogs }: BlogsProps) => {
   return (
     <>
       <Head>
@@ -55,4 +55,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Blog;
+export default BlogPage;

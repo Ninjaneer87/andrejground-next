@@ -11,7 +11,7 @@ import ScheduleIcon from "@mui/icons-material/Schedule";
 import { formatDate } from "utils/utility";
 import StickyInfo from "./StickyInfo";
 import { useInView } from "react-intersection-observer";
-import classes from "./SingleBlogContent.module.scss";
+import classes from "./SingleBlog.module.scss";
 import { IBlog } from "models/Blog";
 import BlurIn from "@/components/UI/BlurIn";
 
@@ -19,7 +19,7 @@ type Props = {
   blog: IBlog;
 };
 
-const SingleBlogContent = ({ blog }: Props) => {
+const SingleBlog = ({ blog }: Props) => {
   const [showSticky, setShowSticky] = useState(false);
   const { ref } = useInView({  rootMargin: "-30%", onChange: setShowSticky });
 
@@ -35,9 +35,11 @@ const SingleBlogContent = ({ blog }: Props) => {
 
       <BlurIn className={classes.root} component='section'>
         <Heading component='h1' text={blog.title} />
+
         <Typography className={classes.subtitle} component="h2" variant="h5">
           {blog.subtitle}
         </Typography>
+
         <Typography component="div" className={classes.dateAndAuthor}>
           <List disablePadding className={classes.dateAndAuthorList}>
             <ListItem className="w-fit">
@@ -54,11 +56,13 @@ const SingleBlogContent = ({ blog }: Props) => {
             </ListItem>
           </List>
         </Typography>
+
         <div 
           style={{ backgroundImage: `url('/images/${blog.image}')` }}
           title={blog.title}
           className={classes.image}
         />
+        
         <Typography
           component="div"
           className={classes.content}
@@ -70,4 +74,4 @@ const SingleBlogContent = ({ blog }: Props) => {
   );
 };
 
-export default SingleBlogContent;
+export default SingleBlog;

@@ -3,7 +3,7 @@ import SendMessage from "@/components/pages/contact/SendMessage";
 import Info from "@/components/pages/contact/Info";
 import Head from "next/head";
 
-const Contact = () => {
+const ContactPage = () => {
   return (
     <>
       <Head>
@@ -21,4 +21,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactPage;

@@ -7,7 +7,7 @@ import { useSections } from "hooks/useSections";
 
 export type AboutSectionNames = "aboutme" | "values";
 
-const About = () => {
+const AboutPage = () => {
   const { addSection, scrollToSection } = useSections<AboutSectionNames>();
 
   return (
@@ -28,4 +28,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutPage;

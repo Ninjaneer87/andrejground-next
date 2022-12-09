@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 type InViewClasses = "invis" | "blur-in";
 type Props<T extends ElementType> = BoxProps<T, { component?: T }> & {
-  children: ReactNode;
+  children?: ReactNode;
   delay?: number;
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import SingleProjectContent from "@/components/pages/portfolio/SingleProjectContent";
+import SingleProject from "@/components/pages/portfolio/SingleProject";
 import { MongoClient } from "mongodb";
 import Head from "next/head";
 import { IProject } from "models/Project";
@@ -10,7 +10,7 @@ type ProjectProps = {
   project: IProject;
 };
 
-const SingleProject = ({ project }: ProjectProps) => {
+const SingleProjectPage = ({ project }: ProjectProps) => {
   return (
     <>
       <Head>
@@ -22,7 +22,7 @@ const SingleProject = ({ project }: ProjectProps) => {
           key="canonical"
         />
       </Head>
-      <SingleProjectContent project={project} />
+      <SingleProject project={project} />
     </>
   );
 };
@@ -79,4 +79,4 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 };
 
-export default SingleProject;
+export default SingleProjectPage;

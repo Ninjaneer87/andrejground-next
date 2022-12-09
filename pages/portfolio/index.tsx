@@ -8,7 +8,7 @@ type ProjectsProps = {
   projects: IProject[];
 };
 
-const Portfolio = ({ projects }: ProjectsProps) => {
+const PortfolioPage = ({ projects }: ProjectsProps) => {
   return (
     <>
       <Head>
@@ -50,4 +50,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Portfolio;
+export default PortfolioPage;

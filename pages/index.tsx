@@ -15,7 +15,7 @@ export type HomeSectionProps = {
   addSection: (sectionName: HomeSectionNames, section: Element) => void;
 };
 
-const Home = () => {
+const HomePage = () => {
   const [inViewSection, setInViewSection] = useState<HomeSectionNames>("home");
   const { addSection, scrollToSection } = useSections<HomeSectionNames>();
 
@@ -41,4 +41,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

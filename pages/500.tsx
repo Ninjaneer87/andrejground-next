@@ -1,7 +1,7 @@
 import Head from "next/head";
 import ErrorPage from "@/components/pages/error/ErrorPage";
 
-const NotFound = () => {
+const ServerErrorPage = () => {
   return (
     <>
       <Head>
@@ -17,4 +17,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default ServerErrorPage;
