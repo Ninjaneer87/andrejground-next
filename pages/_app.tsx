@@ -33,8 +33,8 @@ const MyApp: React.FC<MyAppProps> = (props) => {
   const mounted = useMounted();
 
   useEffect(() => {
-    if(mounted) document.body.style.visibility = "visible";
-  }, [mounted])
+    if (mounted) document.body.style.visibility = "visible";
+  }, [mounted]);
 
   return (
     <React.Fragment>
@@ -51,9 +51,9 @@ const MyApp: React.FC<MyAppProps> = (props) => {
             <ThemeProvider theme={dark ? darkTheme : lightTheme}>
               <CssBaseline />
               <MyLoader />
-                <Layout>
-                  <Component {...pageProps} />
-                </Layout>
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
             </ThemeProvider>
           </CacheProvider>
         </NavContextProvider>

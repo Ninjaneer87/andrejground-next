@@ -1,9 +1,9 @@
-.fade-out {
-  animation: fade-out 200ms ease-in;
+.blur-out {
+  animation: blur-out 200ms ease-in;
   animation-fill-mode: forwards;
   -webkit-animation-fill-mode: forwards;
 }
-@keyframes fade-out {
+@keyframes blur-out {
   0% {
     filter: blur(0px);
     opacity: 1;

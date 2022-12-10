@@ -1,18 +1,18 @@
 import React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import TabPanel from "@/components/UI/TabPanel";
+import TabPanel from "@/components/pages/about/Values/TabPanel";
 import BlurIn from "@/components/UI/BlurIn";
 import { aboutValues } from "utils/constants";
 
 function a11yProps(index: number) {
   return {
-    id: `vertical-tab-${index}`,
-    "aria-controls": `vertical-tabpanel-${index}`,
+    id: `scrollable-auto-tab-${index}`,
+    "aria-controls": `scrollable-auto-tabpanel-${index}`,
   };
 }
 
-export default function ValuesTabs() {
+export default function ValuesTabsMobile() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -20,28 +20,23 @@ export default function ValuesTabs() {
   };
 
   return (
-    <BlurIn>
-      <div className="flex-grow-0 flex w-[800px] max-w-[90vw] h-fit">
+    <BlurIn width='100%'>
+      <div className="flex-grow w-full">
         <Tabs
-          orientation="vertical"
-          variant="scrollable"
           value={value}
           onChange={handleChange}
-          aria-label="values"
-          className="max-w-[200px] min-w-[200px] text-left items-start"
+          indicatorColor="primary"
+          variant="scrollable"
+          scrollButtons="auto"
+          aria-label="values mobile"
           textColor="inherit"
         >
           {aboutValues.map((val, i) => (
-            <Tab
-              key={val.title}
-              className="text-left items-start"
-              label={val.title}
-              {...a11yProps(i)}
-            />
+            <Tab key={val.title} label={val.title} {...a11yProps(i)} />
           ))}
         </Tabs>
 
-        <div className="px-6">
+        <div className="py-6">
           {aboutValues.map((val, i) => (
               <TabPanel key={val.title} value={value} index={i}>
                 {val.content}

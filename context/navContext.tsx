@@ -29,7 +29,9 @@ export const NavContextProvider = ({ children }: Props) => {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = expanded ? "hidden" : "overlay";
+    const isChrome = navigator.userAgent.indexOf("Chrome") > 0;
+    const visibleOverflow = isChrome ? "overlay" : "auto";
+    document.body.style.overflow = expanded ? "hidden" : visibleOverflow;
   }, [expanded]);
 
   const context = {

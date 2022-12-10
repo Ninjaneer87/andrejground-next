@@ -23,20 +23,18 @@ export default function useForm(initialInputs: FormControls) {
       blurred?: boolean
     ) => {
       // Update input value
-      const allInputs = cloneDeep(inputs);
-      const currentInput = allInputs[currentInputKey];
+      const clonedInputs = cloneDeep(inputs);
+      const currentInput = clonedInputs[currentInputKey];
       currentInput.value = value;
       currentInput.touched = true;
-      if (blurred) {
-        currentInput.blurred = true;
-      }
-      allInputs[currentInputKey] = currentInput;
+      if (blurred) currentInput.blurred = true;
+      clonedInputs[currentInputKey] = currentInput;
 
       // Validate all fields
       let isFormValid = true;
-      Object.values(allInputs).forEach((input: FormControl) => {
+      Object.values(clonedInputs).forEach((input: FormControl) => {
         if (input.validators?.length) {
-          const validity = checkValidity(input.value, input.validators, allInputs);
+          const validity = checkValidity(input.value, input.validators, clonedInputs);
           input.valid = validity.isValid;
           input.validationErrorMessage = validity.message;
         }
@@ -44,7 +42,7 @@ export default function useForm(initialInputs: FormControls) {
       });
 
       // Set new state
-      setInputs(allInputs);
+      setInputs(clonedInputs);
       setFormIsValid(isFormValid);
     },
     [inputs]

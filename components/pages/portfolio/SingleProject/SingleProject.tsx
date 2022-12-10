@@ -47,14 +47,14 @@ const SingleProject = ({
             <SingleProjectAbout title={title} description={description} sideNote={sideNote} />
             <SingleProjectFeatures features={features} />
             <SingleProjectTech technologies={technologies} />
-            <SingleProjectMore dataSource={dataSource} projectType={projectType} completedAt={completedAt}  />
+            <SingleProjectMore dataSource={dataSource} projectType={projectType} completedAt={completedAt} />
             <BlurIn><StyledDivider /></BlurIn>
-            <SingleProjectControls siteLink={siteLink} codeLink={codeLink}  />
+            <SingleProjectControls siteLink={siteLink} codeLink={codeLink} />
           </BlurIn>
         </Grid>
 
         <Grid item xs={12} md={6} className="sticky top-[100px]">
-          <SingleProjectImage image={image} title={title}  />
+          <SingleProjectImage image={image} title={title} />
         </Grid>
       </Grid>
     </Container>

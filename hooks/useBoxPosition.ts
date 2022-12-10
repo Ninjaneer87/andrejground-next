@@ -1,9 +1,9 @@
-import { FontType } from "@/types/font.type";
 import {
   useCallback,
   useEffect,
   useRef,
   useState,
+  CSSProperties
 } from "react";
 import { useFontLoaded } from "./useFontLoaded";
 import { useMounted } from "./useMounted";
@@ -18,17 +18,18 @@ const initialBox = {
 export default function useBoxPosition<T extends HTMLElement, C>(changeTrigger: C) {
   const [boxPosition, setBoxPosition] = useState(initialBox);
   const mounted = useMounted();
-  const fontLoaded = useFontLoaded<FontType>("16px Montserrat");
+  const fontLoaded = useFontLoaded();
   const activeBoxRef = useRef<T>(null);
 
   const setBoxToActiveRef = useCallback(() => {
     if (!activeBoxRef.current) return;
 
+    const { offsetTop, offsetLeft, offsetWidth, offsetHeight } = activeBoxRef.current;
     const newBoxPosition = {
-      "--top": Math.round(activeBoxRef.current.offsetTop) + "px",
-      "--left": Math.round(activeBoxRef.current.offsetLeft) + "px",
-      "--width": Math.round(activeBoxRef.current.offsetWidth) + "px",
-      "--height": Math.round(activeBoxRef.current.offsetHeight) + "px",
+      "--top": `${Math.round(offsetTop)}px`,
+      "--left": `${Math.round(offsetLeft)}px`,
+      "--width": `${Math.round(offsetWidth)}px`,
+      "--height": `${Math.round(offsetHeight)}px`,
     };
     setBoxPosition(newBoxPosition);
   }, []);
@@ -40,5 +41,5 @@ export default function useBoxPosition<T extends HTMLElement, C>(changeTrigger: 
     return () => window.removeEventListener("resize", setBoxToActiveRef)
   }, [setBoxToActiveRef]);
 
-  return { activeBoxRef, boxPosition: boxPosition as React.CSSProperties }
+  return { activeBoxRef, boxPosition: boxPosition as CSSProperties }
 }

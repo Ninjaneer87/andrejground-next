@@ -53,7 +53,7 @@ const Hero = ({ setInViewSection, addSection }: HomeSectionProps) => {
               data-text="UI - UX - frontend ANDREJGROUND"
               component="h1"
             >
-              UI <span className="cyan">-</span> UX <span className="cyan">-</span> frontend <span className="cyan">Andrej</span>Ground
+              UI <span className="text-primary">-</span> UX <span className="text-primary">-</span> frontend <span className="text-primary">Andrej</span>Ground
             </BlurIn>
           </Grid>
           <Grid item xs={12} lg={4}>

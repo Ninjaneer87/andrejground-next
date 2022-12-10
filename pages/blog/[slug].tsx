@@ -1,5 +1,5 @@
 import React from 'react';
-import SingleBlog from '@/components/pages/blog/SingleBlog';
+import SingleBlog from '@/components/pages/blog/SingleBlog/SingleBlog';
 import { MongoClient } from 'mongodb';
 import Head from 'next/head';
 import { GetStaticProps } from 'next';

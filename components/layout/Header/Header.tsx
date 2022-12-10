@@ -7,9 +7,9 @@ import TungstenOutlinedIcon from '@mui/icons-material/TungstenOutlined';
 import { useContext } from "react";
 import ThemeContext, { ThemeContextType } from 'context/themeContext';
 import classes from './Header.module.scss';
-import PageTop from '../UI/PageTop';
+import PageTop from '@/components/UI/PageTop';
 import NavContext from 'context/navContext';
-import HamburgerButton from '../UI/HamburgerButton';
+import HamburgerButton from '@/components/UI/HamburgerButton';
 import HeaderNavItems from './HeaderNavItems';
 
 const Header = () => {
