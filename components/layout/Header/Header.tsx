@@ -8,12 +8,12 @@ import { useContext } from "react";
 import ThemeContext, { ThemeContextType } from 'context/themeContext';
 import classes from './Header.module.scss';
 import PageTop from '@/components/UI/PageTop';
-import NavContext from 'context/navContext';
+import DrawerContext from 'context/drawerContext';
 import HamburgerButton from '@/components/UI/HamburgerButton';
 import HeaderNavItems from './HeaderNavItems';
 
 const Header = () => {
-  const { expanded, toggleExpanded } = useContext(NavContext);
+  const { expanded, mounted, toggleExpanded } = useContext(DrawerContext);
   const { toggleDarkMode } = useContext(ThemeContext) as ThemeContextType;
   const { ref: pageTop, inView: pageTopInView } = useInView({ threshold: 1 });
   const theme = useTheme();
@@ -34,8 +34,13 @@ const Header = () => {
           >
             {isSmallScreen ? 
               <HamburgerButton 
+                aria-controls="mobile-navigation"
+                aria-label="Toggle-navigation"
+                aria-expanded={expanded}
+                onClick={toggleExpanded}
                 expanded={expanded} 
-                toggleExpanded={toggleExpanded} 
+                disabled={mounted}
+                className={`${!mounted ? "appear" : "blur-out"}`}
               /> : 
               <HeaderNavItems />}
             

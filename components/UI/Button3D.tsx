@@ -42,10 +42,7 @@ const StyledButton3D = styled(Button, {
   },
 }));
 
-type Props<T extends ElementType> = { children: ReactNode } & ButtonProps<
-  T,
-  { component?: T }
->;
+type Props<T extends ElementType> = { children: ReactNode } & ButtonProps<T, { component?: T }>;
 
 function Button3D<C extends ElementType>({  children,  color, ...props }: Props<C>) {
   const { dark } = useContext(ThemeContext) as ThemeContextType;

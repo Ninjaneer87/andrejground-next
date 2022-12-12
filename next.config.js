@@ -30,7 +30,7 @@ module.exports = {
   experimental: {
     scrollRestoration: true,
   },
-  Image: {
+  images: {
     minimumCacheTTL: 60 * 60 * 24, // 1 day
   },
   poweredByHeader: false,

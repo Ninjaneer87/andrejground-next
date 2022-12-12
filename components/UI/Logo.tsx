@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/dist/client/router";
 import Image from "next/image";
-import NavContext from "context/navContext";
+import DrawerContext from "context/drawerContext";
 
 import logoImg from "../../public/img/AG.png";
 
@@ -12,7 +12,7 @@ type Props = {
 };
 
 const Logo = ({ inHeader }: Props) => {
-  const { setExpanded } = useContext(NavContext);
+  const { setExpanded } = useContext(DrawerContext);
   const { asPath } = useRouter();
 
   const logoHandler: MouseEventHandler<HTMLAnchorElement> = (event) => {
@@ -21,7 +21,7 @@ const Logo = ({ inHeader }: Props) => {
       document.body.scrollIntoView({ behavior: "smooth" });
     }
     
-    setExpanded && setExpanded(false);
+    setExpanded(false);
   };
 
   return (

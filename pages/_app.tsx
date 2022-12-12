@@ -17,7 +17,7 @@ import { CacheProvider, EmotionCache } from "@emotion/react";
 import MyLoader from "@/components/UI/MyLoader";
 import { useMounted } from "hooks/useMounted";
 import Layout from "@/components/layout/Layout";
-import { NavContextProvider } from "context/navContext";
+import { DrawerContextProvider } from "context/drawerContext";
 
 type MyAppProps = AppProps & {
   emotionCache?: EmotionCache;
@@ -30,7 +30,8 @@ const lightTheme = responsiveFontSizes(createTheme(lightThemeOptions));
 const MyApp: React.FC<MyAppProps> = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const [dark, toggleDarkMode] = useDarkMode(null);
-  const mounted = useMounted();
+  const { mounted } = useMounted();
+  const theme = dark ? darkTheme : lightTheme;
 
   useEffect(() => {
     if (mounted) document.body.style.visibility = "visible";
@@ -46,9 +47,9 @@ const MyApp: React.FC<MyAppProps> = (props) => {
         />
       </Head>
       <ThemeContext.Provider value={{ dark, toggleDarkMode }}>
-        <NavContextProvider>
+        <DrawerContextProvider>
           <CacheProvider value={emotionCache}>
-            <ThemeProvider theme={dark ? darkTheme : lightTheme}>
+            <ThemeProvider theme={theme}>
               <CssBaseline />
               <MyLoader />
               <Layout>
@@ -56,7 +57,7 @@ const MyApp: React.FC<MyAppProps> = (props) => {
               </Layout>
             </ThemeProvider>
           </CacheProvider>
-        </NavContextProvider>
+        </DrawerContextProvider>
       </ThemeContext.Provider>
     </React.Fragment>
   );

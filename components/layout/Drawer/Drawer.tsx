@@ -1,6 +1,6 @@
 import { DrawerSocials } from './DrawerSocials';
-import NavContext from "context/navContext";
-import React, { useContext, useRef, useEffect, useState } from "react";
+import DrawerContext from "context/drawerContext";
+import React, { useContext, useRef, useEffect } from "react";
 import ClientOnlyPortal from "@/components/portals/ClientOnlyPortal";
 import HamburgerButton from "@/components/UI/HamburgerButton";
 import Logo from "@/components/UI/Logo";
@@ -8,24 +8,15 @@ import DrawerNavItems from "./DrawerNavItems";
 import classes from "./Drawer.module.scss";
 
 const Drawer = () => {
-  const { expanded, toggleExpanded } = useContext(NavContext);
-  const [mounted, setMounted] = useState(false);
+  const { expanded, mounted, toggleExpanded } = useContext(DrawerContext);
   const navigationRef = useRef<HTMLDivElement>(null);
 
   const navStateClass = expanded ? classes["navigation--opened"] : classes["navigation--closed"];
   const starStateClass = expanded ? classes["star--opened"] : classes["star--closed"];
 
   useEffect(() => {
-    if (expanded && !mounted) {
-      setMounted(true);
-    } 
-    if (!expanded && mounted) {
-      setTimeout(() => setMounted(false), 1000);
-    }
-    if(mounted) {
-      setTimeout(() =>  navigationRef.current?.focus(), 0);
-    }
-  }, [expanded, mounted]);
+    if(mounted) setTimeout(() =>  navigationRef.current?.focus(), 0);
+  }, [mounted]);
 
   return !mounted ? null : (
     <ClientOnlyPortal>
@@ -37,10 +28,14 @@ const Drawer = () => {
         <div className={`${classes.star} ${starStateClass}`} />
         <div className={`${classes.navHeader} ${expanded ? "appear-delay" : "blur-out"}`} >
           <Logo />
-          <HamburgerButton
+          <HamburgerButton 
+            aria-controls="mobile-navigation"
+            aria-label="close-navigation"
+            aria-expanded={expanded}
+            onClick={toggleExpanded}
             expanded={expanded}
-            dark
-            toggleExpanded={toggleExpanded}
+            disabled={!expanded}
+            black 
           />
         </div>
         <div className={`${classes.navContent} ${expanded ? "" : "blur-out"}`}>

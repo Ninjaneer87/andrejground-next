@@ -5,10 +5,10 @@ import { navItems } from "utils/constants";
 import { isActive } from "utils/utility";
 import Link from "next/link";
 import { List, ListItemButton, ListItemText } from "@mui/material";
-import NavContext from "context/navContext";
+import DrawerContext from "context/drawerContext";
 
 const DrawerNavItems = () => {
-  const { setExpanded } = useContext(NavContext);
+  const { setExpanded } = useContext(DrawerContext);
   const { asPath: currentUrl } = useRouter();
 
   const closeDrawer = () => setExpanded(false);

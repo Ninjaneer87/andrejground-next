@@ -4,7 +4,7 @@
   border: 0;
   cursor: pointer;
   
-  &--dark {
+  &--black {
     .hamburger,
     .hamburger::before,
     .hamburger::after {
@@ -22,8 +22,8 @@
   height: 2px;
   width: 1.75em;
   border-radius: 3px;
-  transition: transform ease-in-out 500ms, background ease-in-out 150ms,
-    opacity ease-in-out 500ms;
+  transition: transform ease-in-out 200ms, background ease-in-out 150ms,
+    opacity ease-in-out 200ms;
 
 }
 

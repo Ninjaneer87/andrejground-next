@@ -22,7 +22,7 @@ export const socials = [
   },
   {
     name: "Twitter",
-    link: "https://twitter.com/nindzenjer",
+    link: "https://twitter.com/AndrejGround",
     icon: <TwitterIcon fontSize="large" />,
   },
 ];

@@ -1,21 +1,19 @@
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
 import classes from "./HamburgerButton.module.scss";
 
-type Props = {
-  expanded: boolean;
-  toggleExpanded: () => void;
-  dark?: boolean;
-};
-const HamburgerButton = ({ expanded, toggleExpanded, dark }: Props) => {
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & { black?: boolean, expanded?: boolean }
+
+function HamburgerButton({ black, className, expanded, ...props }: Props){
   const hamburgerExpandedClassName = expanded ? "hamburger--expanded" : "";
-  
+
   return (
     <button
-      className={`${classes.toggle} ${dark ? classes["toggle--dark"] : ""}`}
-      aria-controls="mobile-navigation"
-      aria-label="Toggle-navigation"
-      aria-expanded={expanded}
-      onClick={toggleExpanded}
+      className={`
+        ${classes.toggle} 
+        ${black ? classes["toggle--black"] : ""} 
+        ${className || ""}
+      `}
+      {...props}
     >
       <span className={classes.hidden}>Menu</span>
       <div
