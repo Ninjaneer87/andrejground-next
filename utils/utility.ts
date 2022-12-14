@@ -50,7 +50,7 @@ export function selectText(node: HTMLElement | null) {
     selection?.addRange(range);
     return true;
   } else {
-    console.warn("Could not select text in node: Unsupported browser.");
+    console.warn("Could not select text in node: Unsupported browser");
     return false;
   }
 }
