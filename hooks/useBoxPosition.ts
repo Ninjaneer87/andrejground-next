@@ -19,12 +19,12 @@ export default function useBoxPosition<T extends HTMLElement, C>(changeTrigger: 
   const [boxPosition, setBoxPosition] = useState(initialBox);
   const { mounted } = useMounted();
   const fontLoaded = useFontLoaded();
-  const activeBoxRef = useRef<T>(null);
+  const boxRef = useRef<T>(null);
 
-  const setBoxToActiveRef = useCallback(() => {
-    if (!activeBoxRef.current) return;
+  const setPosition = useCallback(() => {
+    if (!boxRef.current) return;
 
-    const { offsetTop, offsetLeft, offsetWidth, offsetHeight } = activeBoxRef.current;
+    const { offsetTop, offsetLeft, offsetWidth, offsetHeight } = boxRef.current;
     const newBoxPosition = {
       "--top": `${Math.round(offsetTop)}px`,
       "--left": `${Math.round(offsetLeft)}px`,
@@ -34,12 +34,12 @@ export default function useBoxPosition<T extends HTMLElement, C>(changeTrigger: 
     setBoxPosition(newBoxPosition);
   }, []);
 
-  useEffect(setBoxToActiveRef, [changeTrigger, fontLoaded, mounted, setBoxToActiveRef]);
+  useEffect(setPosition, [changeTrigger, fontLoaded, mounted, setPosition]);
 
   useEffect(() => {
-    window.addEventListener("resize", setBoxToActiveRef);
-    return () => window.removeEventListener("resize", setBoxToActiveRef)
-  }, [setBoxToActiveRef]);
+    window.addEventListener("resize", setPosition);
+    return () => window.removeEventListener("resize", setPosition)
+  }, [setPosition]);
 
-  return { activeBoxRef, boxPosition: boxPosition as CSSProperties }
+  return { boxRef, boxPosition: boxPosition as CSSProperties }
 }

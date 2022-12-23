@@ -47,7 +47,7 @@ const SectionNav = ({ inViewSection, scrollToSection }: Props) => {
   const [expanded, setExpanded] = useState(false);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(1100));
-  const { activeBoxRef, boxPosition } = useBoxPosition<HTMLButtonElement, string>(inViewSection);
+  const { boxRef, boxPosition } = useBoxPosition<HTMLButtonElement, string>(inViewSection);
 
   return (
     isSmallScreen ? null :
@@ -61,7 +61,7 @@ const SectionNav = ({ inViewSection, scrollToSection }: Props) => {
         {homeSections.map((section) => (
           <div key={section.id}>
             <ButtonBase
-              {...(section.name === inViewSection && { ref: activeBoxRef })}
+              {...(section.name === inViewSection && { ref: boxRef })}
               onClick={() => scrollToSection(section.name)}
               className="p-[16px_6px] cursor-pointer w-full rounded-[6px_0_0_6px] relative flex justify-start text-start"
               disableRipple

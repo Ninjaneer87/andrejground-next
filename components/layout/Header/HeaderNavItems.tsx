@@ -11,7 +11,7 @@ import classes from './HeaderNavItems.module.scss';
 
 const HeaderNavItems = () => {
   const { asPath: currentUrl } = useRouter();
-  const { activeBoxRef, boxPosition } = useBoxPosition<HTMLAnchorElement, string>(currentUrl);
+  const { boxRef, boxPosition } = useBoxPosition<HTMLAnchorElement, string>(currentUrl);
 
   return (
     <List
@@ -27,7 +27,7 @@ const HeaderNavItems = () => {
           key={id}
         >
           <ListItemButton
-            {...(isActive(path, currentUrl, exact) && { ref: activeBoxRef })}
+            {...(isActive(path, currentUrl, exact) && { ref: boxRef })}
             className={`${classes.listItem}`}
             component='a'
             disableRipple
