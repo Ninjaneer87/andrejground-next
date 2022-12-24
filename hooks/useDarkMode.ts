@@ -34,7 +34,7 @@ if (typeof window !== 'undefined') {
   }
 }
 
-export function useDarkMode(isDark: boolean | null): [boolean | null, (val: boolean) => void] {
+export function useDarkMode(isDark: boolean | null): [boolean | null, Function] {
   const [dark, setDark] = useState(isDark);
 
   const setDarkMode = (val: boolean) => {

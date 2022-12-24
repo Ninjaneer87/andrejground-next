@@ -6,51 +6,11 @@
 
 @layer base {
   body {
-    // Static colors
-    --color-primary: #00e5ff;
-    --color-light: #f0f0f3;
-    --color-dark: #212121;
-    --color-light-transparent: #f0f0f3cc;
-    --color-dark-transparent: #212121cc;
-    --color-border-appbar-light: rgba(0, 0, 0, 0.1);
-    --color-border-appbar-dark: rgba(0, 229, 255, 0.267);
-    --drop-shadow-light: 0px 0px 15px #ffffff55;
-    --drop-shadow-dark: 0px 0px 15px #00000088;
-
-    // Themed colors (light)
-    --color-text: rgba(0, 0, 0, 0.87);
-    --color-background: var(--color-light);
-    --color-background-transparent: var(--color-light-transparent);
-    --color-selection-background: var(--color-dark);
-    --color-selection-text: var(--color-primary);
-    --color-reflection: #b6b6b656;
-    --color-reflection-clip: hsla(0, 0%, 0%, 0.26);
-    --drop-shadow: var(--drop-shadow-dark);
-    --shadow-3d-card: 12px -12px 25px 0 #ffffffee, -12px 12px 25px 0 #00000020;
-    --shadow-3d-button: 8px -8px 15px 0 #ffffffee, -8px 8px 15px 0 #00000011;
-    --shadow-3d-button-inset: inset 2px -2px 2px 0 #ffffff99,
-      inset -2px 2px 2px 0 #00000019;
-    --color-border: transparent;
-    --color-border-appbar: var(--color-border-appbar-light);
-    --color-background-menu: #ffffffbd;
+    @include static-colors;
+    @include light-theme-colors;
   }
   body.dark {
-    // Themed colors (dark)
-    --color-text: #fff;
-    --color-background: var(--color-dark);
-    --color-background-transparent: var(--color-dark-transparent);
-    --color-selection-background: var(--color-primary);
-    --color-selection-text: var(--color-dark);
-    --color-reflection: #e6e6e610;
-    --color-reflection-clip: hsla(0, 0%, 100%, 0.721);
-    --drop-shadow: var(--drop-shadow-light);
-    --shadow-3d-card: 8px -8px 15px 0 #ffffff10, -8px 8px 15px 0 #00000077;
-    --shadow-3d-button: 8px -8px 15px 0 #ffffff10, -8px 8px 15px 0 #00000055;
-    --shadow-3d-button-inset: inset 2px -2px 2px 0 #ffffff15,
-      inset -2px 2px 2px 0 #00000055;
-    --color-border: var(--color-primary);
-    --color-border-appbar: var(--color-border-appbar-dark);
-    --color-background-menu: #000000ea;
+    @include dark-theme-colors;
   }
 }
 

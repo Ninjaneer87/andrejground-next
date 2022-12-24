@@ -17,7 +17,7 @@ const initialBox = {
 
 export default function useBoxPosition<T extends HTMLElement, C>(changeTrigger: C) {
   const [boxPosition, setBoxPosition] = useState(initialBox);
-  const { mounted } = useMounted();
+  const [mounted] = useMounted();
   const fontLoaded = useFontLoaded();
   const boxRef = useRef<T>(null);
 

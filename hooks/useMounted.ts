@@ -1,25 +1,17 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
-export function useMounted(autoMount: boolean = true) {
+type MountHandler = (value: boolean, delay?: number) => any;
+
+export function useMounted(autoMount: boolean = true): [boolean, MountHandler] {
   const [mounted, setMounted] = useState(false);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const mount = useCallback((delay?: number) => {
-    if (mounted) return;
-    if (!delay || delay < 1) return setMounted(true);
-    timerRef.current = setTimeout(() => setMounted(true), delay);
+  const handleMounting: MountHandler = useCallback((value: boolean, delay?: number) => {
+    if (value === mounted) return;
+    if (!delay || delay < 1) return setMounted(value);
+    setTimeout(() => setMounted(value), delay);
   }, [mounted]);
 
-  const unmount = useCallback((delay?: number) => {
-    if (!mounted) return;
-    if (!delay || delay < 1) return setMounted(false);
-    timerRef.current = setTimeout(() => setMounted(false), delay);
-  }, [mounted]);
+  useEffect(() => { if (autoMount) setMounted(true) }, [autoMount]);
 
-  useEffect(() => {
-    if (autoMount) setMounted(true);
-    return () => { timerRef.current && clearTimeout(timerRef.current) };
-  }, [autoMount]);
-
-  return { mounted, mount, unmount };
+  return [mounted, handleMounting];
 }

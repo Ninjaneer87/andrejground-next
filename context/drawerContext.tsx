@@ -22,7 +22,7 @@ type Props = {
 
 export const DrawerContextProvider = ({ children }: Props) => {
   const [expanded, setExpanded] = useState(false);
-  const { mounted, mount, unmount } = useMounted(false);
+  const [mounted, setMounted] = useMounted(false);
 
   const handleChange = useCallback(
     (val: boolean) => {
@@ -30,9 +30,9 @@ export const DrawerContextProvider = ({ children }: Props) => {
       const visibleOverflow = isChrome ? "overlay" : "auto";
       document.body.style.overflow = val ? "hidden" : visibleOverflow;
 
-      val ? mount() : unmount(1000);
+      val ? setMounted(true) : setMounted(false, 1000);
     },
-    [mount, unmount]
+    [setMounted]
   );
 
   const toggleExpandedHandler = useCallback(() => {
