@@ -14,15 +14,16 @@ export default function TabPanel(props: Props) {
     <div
       role="tabpanel"
       hidden={value !== index}
-      id={`vertical-tabpanel-${index}`}
-      aria-labelledby={`vertical-tab-${index}`}
+      id={`tabpanel-${index}`}
+      aria-labelledby={`tab-${index}`}
+      className='h-full'
       {...other}
     >
-      {value === index && (
-        <Typography className="appear">
+      {/* {value === index && ( */}
+        <Typography component='div' className="appear h-full">
           {children}
         </Typography>
-      )}
+      {/* )} */}
     </div>
   );
 }

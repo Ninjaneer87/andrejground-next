@@ -79,3 +79,12 @@ export const formatDate = (date: Date | string | number) => {
   const year = formattedDate.getFullYear();
   return `${mL[month]} ${day}${year === currentYear ? "" : `, ${year}`}`;
 };
+
+export function delay(callback: Function, ms: number) {
+  setTimeout(callback, ms);
+}
+
+export function asyncDelay(callback: Function, ms: number) {
+  setTimeout(callback, ms);
+}
+

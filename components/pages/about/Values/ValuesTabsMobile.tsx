@@ -20,7 +20,7 @@ export default function ValuesTabsMobile() {
   };
 
   return (
-    <BlurIn width='100%'>
+    <BlurIn width="100%">
       <div className="flex-grow w-full">
         <Tabs
           value={value}
@@ -32,15 +32,20 @@ export default function ValuesTabsMobile() {
           textColor="inherit"
         >
           {aboutValues.map((val, i) => (
-            <Tab key={val.title} label={val.title} {...a11yProps(i)} />
+            <Tab
+              classes={{ root: "transition-opacity" }}
+              key={val.title}
+              label={val.title}
+              {...a11yProps(i)}
+            />
           ))}
         </Tabs>
 
         <div className="py-6">
           {aboutValues.map((val, i) => (
-              <TabPanel key={val.title} value={value} index={i}>
-                {val.content}
-              </TabPanel>
+            <TabPanel key={val.title} value={value} index={i}>
+              {val.content}
+            </TabPanel>
           ))}
         </div>
       </div>

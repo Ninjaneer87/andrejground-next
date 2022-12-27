@@ -58,7 +58,7 @@ const ProjectItem = ({ project: { image, title, siteLink, codeLink, slug, projec
 
       <StyledDivider />
 
-      <Link href={`/portfolio/${slug}`} passHref>
+      <Link href={`/projects/${slug}`} passHref>
         <a>
           <Button3D
             variant="text"

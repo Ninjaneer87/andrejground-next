@@ -98,7 +98,7 @@ const Projects = ({ setInViewSection, addSection }: HomeSectionProps) => {
               </BlurIn>
 
               <BlurIn>
-                <Link href="/portfolio" passHref>
+                <Link href="/projects" passHref>
                   <a>
                     <Button3D
                       variant="text"

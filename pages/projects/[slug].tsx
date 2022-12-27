@@ -1,5 +1,5 @@
 import React from "react";
-import SingleProject from "@/components/pages/portfolio/SingleProject/SingleProject";
+import SingleProject from "@/components/pages/projects/SingleProject/SingleProject";
 import { MongoClient } from "mongodb";
 import Head from "next/head";
 import { IProject } from "models/Project";
@@ -18,7 +18,7 @@ const SingleProjectPage = ({ project }: ProjectProps) => {
         <meta name="description" content={project.description} />
         <link
           rel="canonical"
-          href={`https://andrejground.com/portfolio/${project.slug}`}
+          href={`https://andrejground.com/projects/${project.slug}`}
           key="canonical"
         />
       </Head>

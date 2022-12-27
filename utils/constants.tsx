@@ -36,24 +36,30 @@ export const navItems = [
   },
   {
     id: 2,
-    text: "PORTFOLIO",
-    path: "/portfolio",
+    text: "PROJECTS",
+    path: "/projects",
     exact: false,
   },
   {
     id: 3,
+    text: "UI",
+    path: "/ui",
+    exact: false,
+  },
+  {
+    id: 4,
     text: "BLOG",
     path: "/blog",
     exact: false,
   },
   {
-    id: 4,
+    id: 5,
     text: "ABOUT",
     path: "/about",
     exact: false,
   },
   {
-    id: 5,
+    id: 6,
     text: "CONTACT",
     path: "/contact",
     exact: false,
@@ -203,5 +209,18 @@ export const aboutStats = [
     icon: <VideoLibraryOutlinedIcon color="primary" fontSize="large" className="scale-[1.5]"/>,
     number: "300+",
     desc: "hours of courses and tutorials",
+  },
+];
+
+export type IFrameItem = {
+  path: string;
+  title: string;
+  id: string;
+}
+export const uiItems: IFrameItem[] = [
+  {
+    path: 'ui-select',
+    title: 'Select',
+    id: "andrejground-select",
   },
 ];

@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectsList from "@/components/pages/portfolio/ProjectsList";
+import ProjectsList from "@/components/pages/projects/ProjectsList";
 import { MongoClient } from "mongodb";
 import Head from "next/head";
 import { IProject } from "models/Project";
@@ -8,7 +8,7 @@ type ProjectsProps = {
   projects: IProject[];
 };
 
-const PortfolioPage = ({ projects }: ProjectsProps) => {
+const ProjectsPage = ({ projects }: ProjectsProps) => {
   return (
     <>
       <Head>
@@ -16,7 +16,7 @@ const PortfolioPage = ({ projects }: ProjectsProps) => {
         <meta name="description" content="Take a look at some cool stuff Andrej has built over the course of his career. Here is a list of both professional and personal projects" />
         <link
           rel="canonical"
-          href="https://andrejground.com/portfolio"
+          href="https://andrejground.com/projects"
           key="canonical"
         />
       </Head>
@@ -50,4 +50,4 @@ export async function getStaticProps() {
   };
 }
 
-export default PortfolioPage;
+export default ProjectsPage;

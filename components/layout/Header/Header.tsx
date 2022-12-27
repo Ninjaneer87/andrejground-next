@@ -17,7 +17,7 @@ const Header = () => {
   const { toggleDarkMode } = useContext(ThemeContext) as ThemeContextType;
   const { ref: pageTop, inView: pageTopInView } = useInView({ threshold: 1 });
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down(1300));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(1480));
 
   return (
     <>

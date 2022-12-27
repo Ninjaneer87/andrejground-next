@@ -26,7 +26,7 @@ if (typeof window !== 'undefined') {
       localStorage.setItem(storageKey, 'dark');
     } else if (val === false) {
       element.classList.remove(className);
-      localStorage.setItem(storageKey, '');
+      localStorage.setItem(storageKey, 'light');
     }
   }
   storageValueChanged = (e: StorageEvent) => {

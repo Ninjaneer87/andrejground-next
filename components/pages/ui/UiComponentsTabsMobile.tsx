@@ -1,9 +1,9 @@
 import React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import TabPanel from "@/components/pages/about/Values/TabPanel";
 import BlurIn from "@/components/UI/BlurIn";
-import { aboutValues } from "utils/constants";
+import { uiItems } from "utils/constants";
+import UiIFrameItem from "./UiIFrameItem";
 
 function a11yProps(index: number) {
   return {
@@ -12,7 +12,7 @@ function a11yProps(index: number) {
   };
 }
 
-export default function ValuesTabs() {
+export default function UiComponentsTabsMobile() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -20,36 +20,35 @@ export default function ValuesTabs() {
   };
 
   return (
-    <BlurIn>
-      <div className="flex-grow-0 flex w-[800px] max-w-[90vw] h-fit">
+    <>
+      <BlurIn className="flex-grow w-full">
         <Tabs
-          orientation="vertical"
-          variant="scrollable"
+          className="shadow-3d-card my-5"
           value={value}
           onChange={handleChange}
-          aria-label="values"
-          className="max-w-[200px] min-w-[200px] text-left items-start"
+          indicatorColor="primary"
+          variant="scrollable"
+          scrollButtons="auto"
+          aria-label="values mobile"
           textColor="inherit"
         >
-          {aboutValues.map((val, i) => (
+          {uiItems.map((val, i) => (
             <Tab
               key={val.title}
               className="text-left items-start"
-              classes={{ root : "transition-opacity"}}
+              classes={{ root: "transition-opacity" }}
               label={val.title}
               {...a11yProps(i)}
             />
           ))}
         </Tabs>
 
-        <div className="px-6">
-          {aboutValues.map((val, i) => (
-              <TabPanel key={val.title} value={value} index={i}>
-                {val.content}
-              </TabPanel>
+        <div className="flex-grow">
+          {uiItems.map((item, i) => (
+            <UiIFrameItem item={item} key={item.title} value={value} index={i} />
           ))}
         </div>
-      </div>
-    </BlurIn>
+      </BlurIn>
+    </>
   );
 }
