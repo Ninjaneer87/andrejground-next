@@ -1,10 +1,10 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext } from "react";
 import { IFrameItem } from 'utils/constants';
 import TabPanel from '../about/Values/TabPanel';
 import ThemeContext, { ThemeContextType } from "context/themeContext";
 import  { EmbedOptions } from '@stackblitz/sdk';
 import { styled } from "@mui/material";
-import useIFrameTheme, { ThemeValue } from "hooks/useIFrameTheme";
+import useIFrameThemeSync, { ThemeValue } from "hooks/useIFrameThemeSync";
 
 const IFrameContainer = styled('div')({
   boxShadow: "var(--shadow-3d-card)",
@@ -34,16 +34,16 @@ type Props = {
 }
 
 const UiIFrameItem = ({ item, value, index }: Props) => {
-  const iframeRef = useRef<HTMLDivElement>(null);
   const { dark } = useContext(ThemeContext) as ThemeContextType;
   const theme: ThemeValue = dark ? "dark" : "light";
   const elementId = String(index);
-  useIFrameTheme(elementId, item.id, iFrameConfig, theme)
+  const projectId = item.id;
+  useIFrameThemeSync(elementId, projectId, iFrameConfig, theme);
 
   return (
     <TabPanel key={item.title} value={value} index={index}>
       <IFrameContainer>
-        <div id={`${index}`} ref={iframeRef} />
+        <div id={`${index}`} />
       </IFrameContainer>
     </TabPanel>
   );

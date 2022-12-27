@@ -84,7 +84,12 @@ export function delay(callback: Function, ms: number) {
   setTimeout(callback, ms);
 }
 
-export function asyncDelay(callback: Function, ms: number) {
-  setTimeout(callback, ms);
+export async function asyncDelay(callback: Function, ms: number) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      callback();
+      resolve(true)
+    }, ms);
+  });
 }
 
