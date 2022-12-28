@@ -3,6 +3,7 @@ import { Validator } from "@/types/validator.type";
 import { Validity } from "@/types/validity.type";
 import { InputValue } from "@/types/input-value.type";
 import { FormBody } from "@/types/form-body.type";
+import { SelectOption } from "@/types/select-option.type";
 
 export const isActive = (linkPath: string, currentUrl: string, exact?: boolean): boolean => {
   const isExact = currentUrl === linkPath;

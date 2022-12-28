@@ -3,7 +3,7 @@ import useBoxPosition from 'hooks/useBoxPosition';
 import { useSyncRefs } from 'hooks/useSyncRefs';
 import { canFitBellow } from 'utils/utility';
 import classes from './SelectOptions.module.scss';
-import { SelectOption } from '@/types/option.type';
+import { SelectOption } from '@/types/select-option.type';
 
 type Props = {
   open: boolean;

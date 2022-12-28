@@ -3,7 +3,7 @@ import { useMounted } from 'hooks/useMounted';
 import { findNextIndexForGivenChar } from 'utils/utility';
 import classes from './Select.module.scss';
 import SelectOptions from './SelectOptions';
-import { SelectOption } from '@/types/option.type';
+import { SelectOption } from '@/types/select-option.type';
 
 type Props = {
   options: SelectOption[];

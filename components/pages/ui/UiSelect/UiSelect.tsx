@@ -1,4 +1,4 @@
-import { SelectOption } from '@/types/option.type';
+import { SelectOption } from '@/types/select-option.type';
 import React from 'react';
 import MultiSelect from './MultiSelect';
 import Select from './Select';
