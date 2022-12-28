@@ -6,6 +6,9 @@ import VideoLibraryOutlinedIcon from "@mui/icons-material/VideoLibraryOutlined";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import UiSelect from "@/components/pages/ui/UiSelect/UiSelect";
+import { ReactNode } from "react";
+import { UiItem } from "@/types/ui-item.type";
 
 export const EMAIL_REGEX = /^\w+([.-]?\w+)+@\w+([.:]?\w+)+(\.[a-zA-Z0-9]{2,})+$/;
 
@@ -196,31 +199,26 @@ export const aboutValues = [
 
 export const aboutStats = [
   {
-    icon: <LocalLibraryOutlinedIcon color="primary" fontSize="large" className="scale-[1.5]"/>,
+    icon: <LocalLibraryOutlinedIcon color="primary" fontSize="large" className="scale-[1.5]" />,
     number: "4+",
     desc: "years into frontend development",
   },
   {
-    icon: <ImportantDevicesOutlinedIcon color="primary" fontSize="large" className="scale-[1.5]"/>,
+    icon: <ImportantDevicesOutlinedIcon color="primary" fontSize="large" className="scale-[1.5]" />,
     number: "3+",
     desc: "years of professional experience",
   },
   {
-    icon: <VideoLibraryOutlinedIcon color="primary" fontSize="large" className="scale-[1.5]"/>,
+    icon: <VideoLibraryOutlinedIcon color="primary" fontSize="large" className="scale-[1.5]" />,
     number: "300+",
     desc: "hours of courses and tutorials",
   },
 ];
 
-export type IFrameItem = {
-  path: string;
-  title: string;
-  id: string;
-}
-export const uiItems: IFrameItem[] = [
+export const uiItems: UiItem[] = [
   {
     path: 'ui-select',
-    title: 'Select',
-    id: "andrejground-select",
+    title: '< Select  />',
+    component: <UiSelect />
   },
 ];

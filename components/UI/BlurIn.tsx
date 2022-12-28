@@ -2,7 +2,7 @@ import { Box, BoxProps } from "@mui/material";
 import React, { ReactNode, ElementType } from "react";
 import { useInView } from "react-intersection-observer";
 
-type InViewClasses = "invis" | "blur-in";
+type InViewClasses = "invis" | "blur-in-translate";
 type Props<T extends ElementType> = BoxProps<T, { component?: T }> & {
   children?: ReactNode;
   delay?: number;
@@ -12,7 +12,7 @@ function BlurIn<C extends ElementType>({ children, delay, className, ...props }:
   const [inViewClass, setInViewClass] = React.useState<InViewClasses>("invis");
   const { ref } = useInView({
     rootMargin: "-10%",
-    onChange: (inView) => inView && setInViewClass("blur-in"),
+    onChange: (inView) => inView && setInViewClass("blur-in-translate"),
   });
 
   return (

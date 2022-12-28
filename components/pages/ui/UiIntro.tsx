@@ -16,7 +16,7 @@ const UiIntro = () => {
     <Container
       component="section"
       maxWidth="xl"
-      className="flex flex-col items-center justify-center text-center my-[100px]"
+      className="flex flex-col items-center justify-center text-center mt-[100px] mb-6"
     >
       <BlurIn>
         <Heading component="h1" text="AndrejGround UI" />

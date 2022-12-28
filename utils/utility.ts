@@ -93,3 +93,29 @@ export async function asyncDelay(callback: Function, ms: number) {
   });
 }
 
+
+export function canFitBellow<T extends HTMLElement, C extends HTMLElement>(rootEl: T, el: C): boolean {
+  if (!el) return false;
+
+  const elHeight = el.offsetHeight;
+  const distanceFromBottom = document.body.offsetHeight - (rootEl.offsetTop + rootEl.offsetHeight);
+
+  return elHeight < distanceFromBottom;
+}
+
+export function findNextIndexForGivenChar(
+  currentIndex: number,
+  char: string,
+  options: SelectOption[]
+): number {
+  const charFilter = (opt: SelectOption) => opt.label.toLowerCase().startsWith(char.toLowerCase());
+
+  let filteredOptions = options.slice(currentIndex + 1).filter(charFilter)
+  if (!filteredOptions.length) {
+    filteredOptions = options.filter(charFilter)
+  }
+  const nextOption = filteredOptions[0];
+  const nextHoverIndex = options.indexOf(nextOption);
+
+  return nextHoverIndex;
+}

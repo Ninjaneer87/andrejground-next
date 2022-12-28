@@ -1,17 +1,11 @@
 import React from "react";
-import Intro from "@/components/pages/about/Intro";
-import AboutMe from "@/components/pages/about/AboutMe";
-import Values from "@/components/pages/about/Values/Values";
 import Head from "next/head";
-import { useSections } from "hooks/useSections";
 import UiIntro from "@/components/pages/ui/UiIntro";
-import UiComponents from "@/components/pages/ui/UiComponents";
+import Ui from "@/components/pages/ui/Ui";
 
 export type AboutSectionNames = "aboutme" | "values";
 
 const UiPage = () => {
-  const { addSection, scrollToSection } = useSections<AboutSectionNames>();
-
   return (
     <>
       <Head>
@@ -24,7 +18,7 @@ const UiPage = () => {
         />
       </Head>
       <UiIntro />
-      <UiComponents />
+      <Ui />
     </>
   );
 };

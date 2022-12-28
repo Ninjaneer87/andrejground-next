@@ -17,7 +17,7 @@ export function SingleProjectTech({ technologies }: Props) {
           {technologies?.map((tech, i) => (
             <ListItem
               key={tech}
-              className="w-fit text-[1rem] rounded-xl shadow-3d-card py-3 px-4 blur-in"
+              className="w-fit text-[1rem] rounded-xl shadow-3d-card py-3 px-4 blur-in-translate"
               style={{ animationDelay: `${i * 150}ms` }}
             >
               {tech}

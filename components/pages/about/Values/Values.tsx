@@ -1,8 +1,7 @@
 import React, { useRef, useEffect } from "react";
-import { Container, useTheme, useMediaQuery } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import Heading from "@/components/UI/Heading";
 import ValuesTabs from "./ValuesTabs";
-import ValuesTabsMobile from "./ValuesTabsMobile";
 import BlurIn from "@/components/UI/BlurIn";
 import { AboutSectionNames } from "pages/about";
 
@@ -12,8 +11,6 @@ type Props = {
 
 const Values = ({ addSection }: Props) => {
   const ref = useRef(null);
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down(768));
 
   useEffect(() => {
     if (ref.current) addSection("values", ref.current);
@@ -29,8 +26,9 @@ const Values = ({ addSection }: Props) => {
       <BlurIn>
         <Heading text="Values & philosophy" />
       </BlurIn>
-
-      {isSmallScreen ? <ValuesTabsMobile /> : <ValuesTabs />}
+      <Box maxWidth={800} width='100%'>
+        <ValuesTabs />
+      </Box>
     </Container>
   );
 };
