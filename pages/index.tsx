@@ -9,7 +9,7 @@ import { useState } from "react";
 import Head from "next/head";
 import { useSections } from "hooks/useSections";
 
-export type HomeSectionNames = "home" | "mission" | "toolbox" | "projects" | "contact";
+export type HomeSectionNames = "home" | "mission" | "projects" | "toolbox" |  "contact";
 export type HomeSectionProps = { 
   setInViewSection: (sectionName: HomeSectionNames) => void;
   addSection: (sectionName: HomeSectionNames, section: Element) => void;
@@ -32,8 +32,8 @@ const HomePage = () => {
       </Head>
       <Hero setInViewSection={setInViewSection} addSection={addSection}  />
       <Mission setInViewSection={setInViewSection} addSection={addSection} />
-      <Toolbox setInViewSection={setInViewSection} addSection={addSection} />
       <Projects setInViewSection={setInViewSection} addSection={addSection} />
+      <Toolbox setInViewSection={setInViewSection} addSection={addSection} />
       <ContactInfo setInViewSection={setInViewSection} addSection={addSection} />
 
       <SectionNav inViewSection={inViewSection} scrollToSection={scrollToSection}/>

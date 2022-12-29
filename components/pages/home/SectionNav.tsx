@@ -23,13 +23,13 @@ const homeSections: { id: number; name: HomeSectionNames; icon: JSX.Element }[] 
   },
   {
     id: 2,
-    name: "toolbox",
-    icon: <BuildOutlinedIcon />,
+    name: "projects",
+    icon: <FolderSpecialOutlinedIcon />,
   },
   {
     id: 3,
-    name: "projects",
-    icon: <FolderSpecialOutlinedIcon />,
+    name: "toolbox",
+    icon: <BuildOutlinedIcon />,
   },
   {
     id: 4,
