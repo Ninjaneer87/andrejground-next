@@ -1,6 +1,7 @@
 import React from "react";
 import { socials } from "utils/constants";
 import IconButton from "@mui/material/IconButton";
+import { Tooltip } from "@mui/material";
 
 export function DrawerSocials() {
   return (
@@ -17,7 +18,9 @@ export function DrawerSocials() {
           size="small"
           className={`text-themed-text appear-delay`}
         >
-          {social.icon}
+          <Tooltip title={social.name} arrow>
+            {social.icon}
+          </Tooltip>
         </IconButton>
       ))}
     </div>

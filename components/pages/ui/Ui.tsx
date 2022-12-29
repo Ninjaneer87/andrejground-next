@@ -12,7 +12,9 @@ const Ui = () => {
       component="section"
       className="flex flex-col items-center justify-center pb-10"
     >
-      <StyledDivider />
+      <BlurIn width={'100%'}>
+        <StyledDivider />
+      </BlurIn>
       <UiTabs />
     </Container>
   );

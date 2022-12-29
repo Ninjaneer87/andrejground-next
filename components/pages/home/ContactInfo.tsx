@@ -6,6 +6,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import Heading from "@/components/UI/Heading";
@@ -100,7 +101,9 @@ const ContactInfo = ({ setInViewSection, addSection }: HomeSectionProps) => {
                 size="large"
                 className="transition-colors duration-150 ease-in-out text-themed-text hover:text-primary"
               >
-                {social.icon}
+                <Tooltip title={social.name} arrow>
+                  {social.icon}
+                </Tooltip>
               </IconButton>
             ))}
           </Box>

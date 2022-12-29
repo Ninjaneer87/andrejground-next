@@ -39,7 +39,7 @@ const UiSelect = () => {
       <div className="my-5 text">
         User friendly, animated and highly accessible <strong>Select</strong> and <strong>MultiSelect</strong> components
       </div>
-      <div className='flex flex-wrap justify-center items-center gap-10 py-[100px]'>
+      <div className='flex flex-wrap justify-center gap-10 pt-[50px] pb-[100px] min-h-[400px]'>
         <div className="mb-5 w-fit max-w-full">
           <h2 className='subtitle'>Select</h2>
           <Select
@@ -58,8 +58,8 @@ const UiSelect = () => {
           />
         </div>
       </div>
-      <StyledDivider />
       <UiItemLinks links={links} />
+      <StyledDivider />
     </>
   );
 };
