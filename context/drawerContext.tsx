@@ -5,6 +5,7 @@ import { createContext, useState } from "react";
 export type DrawerContextType = {
   expanded: boolean;
   mounted: boolean;
+  mounting: boolean;
   toggleExpanded: () => void;
   setExpanded: (exp: boolean) => void;
 };
@@ -12,6 +13,7 @@ export type DrawerContextType = {
 const DrawerContext = createContext<DrawerContextType>({
   expanded: false,
   mounted: false,
+  mounting: false,
   toggleExpanded: () => {},
   setExpanded: (exp: boolean) => {},
 });
@@ -22,7 +24,7 @@ type Props = {
 
 export const DrawerContextProvider = ({ children }: Props) => {
   const [expanded, setExpanded] = useState(false);
-  const [mounted, setMounted] = useMounted(false);
+  const [mounted, setMounted, mounting] = useMounted(false);
 
   const handleChange = useCallback(
     (val: boolean) => {
@@ -49,6 +51,7 @@ export const DrawerContextProvider = ({ children }: Props) => {
   const context = {
     expanded,
     mounted,
+    mounting,
     toggleExpanded: toggleExpandedHandler,
     setExpanded: setExpandedHandler,
   };

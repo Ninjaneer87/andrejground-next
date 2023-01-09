@@ -8,7 +8,7 @@ import DrawerNavItems from "./DrawerNavItems";
 import classes from "./Drawer.module.scss";
 
 const Drawer = () => {
-  const { expanded, mounted, toggleExpanded } = useContext(DrawerContext);
+  const { expanded, mounted, toggleExpanded, mounting } = useContext(DrawerContext);
   const navigationRef = useRef<HTMLDivElement>(null);
 
   const navStateClass = expanded ? classes["navigation--opened"] : classes["navigation--closed"];
@@ -34,7 +34,7 @@ const Drawer = () => {
             aria-expanded={expanded}
             onClick={toggleExpanded}
             expanded={expanded}
-            disabled={!expanded}
+            disabled={mounting}
             black 
           />
         </div>
