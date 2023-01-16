@@ -120,3 +120,6 @@ export function findNextIndexForGivenChar(
 
   return nextHoverIndex;
 }
+
+const web3Projects = ['BlockStarter'];
+export const isWeb3Project = (projectTitle: string) => web3Projects.includes(projectTitle);

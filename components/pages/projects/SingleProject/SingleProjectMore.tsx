@@ -15,12 +15,14 @@ type Props = {
   dataSource: string;
   projectType: IProject["projectType"];
   completedAt?: string;
+  isWeb3: boolean;
 };
 
 export function SingleProjectMore({
   dataSource,
   projectType,
   completedAt,
+  isWeb3
 }: Props) {
   return (
     <>
@@ -36,7 +38,7 @@ export function SingleProjectMore({
             {dataSource ? (
               <TableRow>
                 <TableCell className="border-none p-[1rem_0px]">
-                  <strong>Data source:</strong>
+                  <strong>{isWeb3 ? 'Smart contract source code' : 'Data source:'}</strong>
                 </TableCell>
                 <TableCell className="border-none p-[1rem_0px]" align="right">
                   <Button3D

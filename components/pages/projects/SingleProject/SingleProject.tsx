@@ -10,6 +10,7 @@ import Heading from "@/components/UI/Heading";
 import BlurIn from "@/components/UI/BlurIn";
 import { IProject } from "models/Project";
 import StyledDivider from "@/components/UI/StyledDivider";
+import { isWeb3Project } from "utils/utility";
 
 type Props = { project: IProject };
 
@@ -28,6 +29,8 @@ const SingleProject = ({
     sideNote,
   },
 }: Props) => {
+  const isWeb3 = isWeb3Project(title);
+
   return (
     <Container
       component="section"
@@ -47,7 +50,7 @@ const SingleProject = ({
             <SingleProjectAbout title={title} description={description} sideNote={sideNote} />
             <SingleProjectFeatures features={features} />
             <SingleProjectTech technologies={technologies} />
-            <SingleProjectMore dataSource={dataSource} projectType={projectType} completedAt={completedAt} />
+            <SingleProjectMore dataSource={dataSource} projectType={projectType} completedAt={completedAt} isWeb3={isWeb3} />
             <BlurIn><StyledDivider /></BlurIn>
             <SingleProjectControls siteLink={siteLink} codeLink={codeLink} />
           </BlurIn>

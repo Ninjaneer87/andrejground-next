@@ -12,7 +12,7 @@ import BlurIn from "@/components/UI/BlurIn";
 import StyledDivider from "@/components/UI/StyledDivider";
 import { HomeSectionProps } from "pages";
 
-const bgImageUrl = "/img/coinland-framed.webp";
+const bgImageUrl = "/images/blockstarter-framed.webp";
 
 const Projects = ({ setInViewSection, addSection }: HomeSectionProps) => {
   const { ref: scrollRef } = useInView({
@@ -44,24 +44,22 @@ const Projects = ({ setInViewSection, addSection }: HomeSectionProps) => {
             <Box maxWidth={500} height="fit-content">
               <BlurIn>
                 <Typography component="h3" variant="h5" className="subtitle">
-                  COINLAND
+                  BLOCKSTARTER
                 </Typography>
               </BlurIn>
 
               <BlurIn className="text-start my-8 mx-0">
-                This practice project was intended to connect a public API to a vanilla JS frontend. 
-                <br />API comes from{" "}
+                BlockStarter is a web3 crowdfunding platform.
+                <br /> It is a Next JS application, connected to a solidity smart contract, placed on Ethereum - GOERLI testnet.
+                <br /> <br />Smart contract source code - {" "}
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://coinmarketcap.com/"
+                  href="https://github.com/Ninjaneer87/blockstarter-web3"
                   className="text-primary"
                 >
-                  coinmarketcap
+                  BlockStarter ↗
                 </a>
-                <br />
-                <br />
-                <small>* AndrejGround&apos;s first ever project</small>
               </BlurIn>
 
               <BlurIn>
@@ -75,7 +73,7 @@ const Projects = ({ setInViewSection, addSection }: HomeSectionProps) => {
                     component="a"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://ninjaneer87.github.io/coinland/"
+                    href="https://blockstarter.vercel.app/"
                     endIcon={<LinkIcon />}
                   >
                     Live site
@@ -85,7 +83,7 @@ const Projects = ({ setInViewSection, addSection }: HomeSectionProps) => {
                     component="a"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://github.com/Ninjaneer87/coinland/"
+                    href="https://github.com/Ninjaneer87/blockstarter-next"
                     endIcon={<CodeIcon />}
                   >
                     Code
