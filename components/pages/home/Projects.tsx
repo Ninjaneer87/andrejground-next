@@ -49,7 +49,7 @@ const Projects = ({ setInViewSection, addSection }: HomeSectionProps) => {
               </BlurIn>
 
               <BlurIn className="text-start my-8 mx-0">
-                BlockStarter is a web3 crowdfunding platform.
+                BlockStarter is the latest practice project, a web3 crowdfunding platform.
                 <br /> It is a Next JS application, connected to a solidity smart contract, placed on Ethereum - GOERLI testnet.
                 <br /> <br />Smart contract source code - {" "}
                 <a
@@ -95,16 +95,31 @@ const Projects = ({ setInViewSection, addSection }: HomeSectionProps) => {
                 <StyledDivider />
               </BlurIn>
 
-              <BlurIn>
-                <Link href="/projects" passHref>
-                  <a>
+              <BlurIn className="flex gap-5">
+                <Link href="/projects/blockstarter" passHref>
+                  <a className="block grow basis-0">
                     <Button3D
                       variant="text"
                       fullWidth
                       size="large"
                       endIcon={<ArrowRightAltIcon />}
+                      className='text-sm'
                     >
-                      More projects
+                      Details
+                    </Button3D>
+                  </a>
+                </Link>
+
+                <Link href="/projects" passHref>
+                  <a className="block grow basis-0">
+                    <Button3D
+                      variant="text"
+                      fullWidth
+                      size="large"
+                      endIcon={<ArrowRightAltIcon />}
+                      className='text-sm'
+                    >
+                      Projects
                     </Button3D>
                   </a>
                 </Link>

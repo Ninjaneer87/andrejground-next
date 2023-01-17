@@ -80,7 +80,7 @@ const Hero = ({ setInViewSection, addSection }: HomeSectionProps) => {
                 </Link>
               </BlurIn>
               <BlurIn delay={450} className="w-full">
-                <Link href="/ui" passHref>
+                <Link href="/projects" passHref>
                   <a>
                     <Button3D
                       fullWidth
