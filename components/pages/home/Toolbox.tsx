@@ -31,15 +31,15 @@ const mainTools = [
 ];
 
 const moreTools = [
+  "Material UI",
+  "TailwindCSS",
+  "React Query",
   "Redux",
   "Redux Saga",
-  "Material UI",
-  "Express",
-  "MongoDB",
-  "Angular",
-  "Angular Material",
-  "RxJS",
+  "Solidity",
   "Jest",
+  "RxJS",
+  "Angular",
 ];
 
 const Toolbox = ({ setInViewSection, addSection }: HomeSectionProps) => {
