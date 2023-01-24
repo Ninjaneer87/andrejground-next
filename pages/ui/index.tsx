@@ -3,8 +3,6 @@ import Head from "next/head";
 import UiIntro from "@/components/pages/ui/UiIntro";
 import Ui from "@/components/pages/ui/Ui";
 
-export type AboutSectionNames = "aboutme" | "values";
-
 const UiPage = () => {
   return (
     <>
@@ -23,4 +21,4 @@ const UiPage = () => {
   );
 };
 
-export default UiPage;
+export default React.memo(UiPage);

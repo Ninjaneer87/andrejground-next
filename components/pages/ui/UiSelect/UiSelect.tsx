@@ -16,6 +16,15 @@ const options: SelectOption[] = [
   { label: 'Sixth', value: 6 },
   { label: 'Seventh', value: 7 },
 ];
+const optionsMulti: SelectOption[] = [
+  { label: 'First option with a veeery long label', value: 1 },
+  { label: 'Second', value: 2 },
+  { label: 'Third', value: 3 },
+  { label: 'Fourth', value: 4 },
+  { label: 'Fifth', value: 5 },
+  { label: 'Sixth', value: 6 },
+  { label: 'Seventh', value: 7 },
+];
 
 const links = [
   {
@@ -52,7 +61,7 @@ const UiSelect = () => {
         <div className="mb-5 w-fit max-w-full">
           <h2 className='subtitle'>Multi select</h2>
           <MultiSelect
-            options={options}
+            options={optionsMulti}
             selected={selectedMulti}
             onChange={setSelectedMulti}
           />
@@ -64,4 +73,4 @@ const UiSelect = () => {
   );
 };
 
-export default UiSelect;
+export default React.memo(UiSelect);

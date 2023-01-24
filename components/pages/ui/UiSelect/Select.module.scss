@@ -3,31 +3,36 @@
   max-width: 100%;
   position: relative;
   min-height: 3.5em;
-  box-shadow: var(--shadow-3d-button);
   border-radius: 0.25em;
   display: flex;
   align-items: center;
   gap: 0.5em;
   padding: 0.6em;
-  transition: all 250ms ease-in-out;
-  transition-property: box-shadow;
 
+  &::before,
   &::after {
     content: '';
     inset: 0;
     position: absolute;
+    transition: opacity 400ms ease-in-out;
+  }
+  &::before {
+    box-shadow: var(--shadow-3d-button);
+    opacity: 1;
+  }
+  &::after {
     box-shadow: var(--shadow-3d-button-inset);
     opacity: 0;
-    transition: opacity 400ms ease-in-out;
-    z-index: -1;
   }
 
   &:focus,
   &:hover {
-    box-shadow: 0px 0px 0px transparent;
     outline: none;
     &::after {
       opacity: 1;
+    }
+    &::before {
+      opacity: 0;
     }
   }
 }

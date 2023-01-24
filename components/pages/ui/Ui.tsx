@@ -20,4 +20,4 @@ const Ui = () => {
   );
 };
 
-export default Ui;
+export default React.memo(Ui);

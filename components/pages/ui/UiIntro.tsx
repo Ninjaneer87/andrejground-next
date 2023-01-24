@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Container,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Typography,
-} from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import Heading from "@/components/UI/Heading";
 import BlurIn from "@/components/UI/BlurIn";
 
@@ -31,4 +23,4 @@ const UiIntro = () => {
   );
 };
 
-export default UiIntro;
+export default React.memo(UiIntro);

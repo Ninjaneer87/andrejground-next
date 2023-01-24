@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import useBoxPosition from 'hooks/useBoxPosition';
 import { useSyncRefs } from 'hooks/useSyncRefs';
 import { canFitBellow } from 'utils/utility';
@@ -77,4 +77,4 @@ const SelectOptions = React.forwardRef<HTMLLIElement, Props>(
 
 SelectOptions.displayName = 'SelectOptions'
 
-export default SelectOptions;
+export default React.memo(SelectOptions);

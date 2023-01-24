@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useMounted } from 'hooks/useMounted';
 import { findNextIndexForGivenChar } from 'utils/utility';
 import classes from './Select.module.scss';
@@ -128,4 +128,4 @@ const Select = ({ selected, onChange, options }: Props) => {
   );
 };
 
-export default Select;
+export default React.memo(Select);

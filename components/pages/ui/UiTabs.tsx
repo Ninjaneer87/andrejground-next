@@ -13,7 +13,7 @@ function a11yProps(index: number) {
   };
 }
 
-export default function UiTabs() {
+export default React.memo(function UiTabs() {
   const [value, setValue] = React.useState(0);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(768));
@@ -57,4 +57,4 @@ export default function UiTabs() {
       </BlurIn>
     </>
   );
-}
+})

@@ -1,6 +1,4 @@
 import React from 'react';
-import GitHubIcon from "@mui/icons-material/GitHub";
-import BoltIcon from '@mui/icons-material/Bolt';
 import { Box, IconButton, Tooltip } from '@mui/material';
 import { UiItemLink } from '@/types/ui-item-link';
 
@@ -30,4 +28,4 @@ const UiItemLinks = ({ links }: Props) => {
   );
 };
 
-export default UiItemLinks;
+export default React.memo(UiItemLinks);
