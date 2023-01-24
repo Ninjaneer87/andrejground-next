@@ -21,4 +21,4 @@ const UiPage = () => {
   );
 };
 
-export default React.memo(UiPage);
+export default UiPage;
