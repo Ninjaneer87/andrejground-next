@@ -1,15 +1,15 @@
 .appBar {
-  transition: transform 250ms ease-in-out;
-  transform: translateY(10px);
-  min-height: 70px;
+  transition: all 250ms ease-in-out;
+  transition-property: transform, backdrop-filter;
+  transform: translateY(0);
+  min-height: 90px;
   flex-flow: row;
   justify-content: space-between;
-  align-items: center;
-  background: transparent;
-  border-bottom: 1px solid transparent;
+  align-items: flex-end;
   left: 0;
   right: 0;
   width: 100vw;
+  padding-bottom: 10px;
   z-index: 5;
   box-sizing: border-box;
   @media (min-width: 1400px) {
@@ -29,7 +29,7 @@
   }
 
   &--scrolled {
-    transform: translateY(0px);
+    transform: translateY(-12px);
     backdrop-filter: blur(16px);
     background: var(--color-background-transparent);
     &::after {

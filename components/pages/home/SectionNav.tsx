@@ -52,8 +52,6 @@ const SectionNav = ({ inViewSection, scrollToSection }: Props) => {
   return (
     isSmallScreen ? null :
     <ClientOnlyPortal>
-    transform: translateZ(0);
-    will-change: transform;
       <div
         onMouseEnter={() => setExpanded(true)}
         onMouseLeave={() => setExpanded(false)}

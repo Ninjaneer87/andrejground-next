@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <>
       <PageTop ref={pageTop} />
-      <AppBar className={`${classes.appBar} ${!pageTopInView ? classes['appBar--scrolled'] : ''} transform-gpu`} elevation={0}>
+      <AppBar color='transparent' className={`${classes.appBar} ${!pageTopInView ? classes['appBar--scrolled'] : ''} transform-gpu`} elevation={0}>
         <Container maxWidth='xl' className='flex justify-between'>
           <div className={`${classes.logo} ${!pageTopInView ? classes['logo--scrolled'] : ''}`}>
             <Logo inHeader />
