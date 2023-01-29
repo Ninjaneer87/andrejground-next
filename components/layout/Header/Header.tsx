@@ -22,14 +22,14 @@ const Header = () => {
   return (
     <>
       <PageTop ref={pageTop} />
-      <AppBar className={`${classes.appBar} ${!pageTopInView ? classes['appBar--scrolled'] : ''}`} elevation={0}>
+      <AppBar className={`${classes.appBar} ${!pageTopInView ? classes['appBar--scrolled'] : ''} transform-gpu`} elevation={0}>
         <Container maxWidth='xl' className='flex justify-between'>
           <div className={`${classes.logo} ${!pageTopInView ? classes['logo--scrolled'] : ''}`}>
             <Logo inHeader />
           </div>
           <List
             component='nav'
-            className={classes.navbar}
+            className={`${classes.navbar} ${!pageTopInView ? classes['navbar--scrolled'] : ''}`}
             disablePadding
           >
             {isSmallScreen ? 

@@ -17,7 +17,7 @@ const HeaderNavItems = () => {
     <List
       disablePadding
       component='nav'
-      className={classes.navbarInner}
+      className={`${classes.navbarInner} transform-gpu`}
       style={boxPosition}
     >
       {navItems.map(({id, text, exact, path}) =>

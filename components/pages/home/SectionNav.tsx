@@ -52,10 +52,13 @@ const SectionNav = ({ inViewSection, scrollToSection }: Props) => {
   return (
     isSmallScreen ? null :
     <ClientOnlyPortal>
+    transform: translateZ(0);
+    will-change: transform;
       <div
         onMouseEnter={() => setExpanded(true)}
         onMouseLeave={() => setExpanded(false)}
-        className={`appear p-[10px] min-h-[150px] bg-themed-bg fixed top-1/2 right-0 -translate-y-1/2 flex flex-col justify-center  rounded-[6px_0_0_6px] transition-all duration-150 ease-linear z-[1] after:content-[''] after:absolute after:w-[calc(100%_-_22px)] after:left-[var(--left)] after:top-[2px] after:h-[var(--height)] after:z-[-1] after:rounded-[6px] after:transition-all after:duration-150 after:ease-linear after:translate-y-[var(--top)] after:shadow-3d-button ${expanded ? 'w-[180px] opacity-100' : 'w-[58px] opacity-80'}`}
+        className={`appear transform-gpu p-[10px] min-h-[150px] bg-themed-bg fixed top-1/2 right-0 -translate-y-1/2 flex flex-col justify-center rounded-[6px_0_0_6px] transition-all duration-300 ease-in-out z-[1] after:content-[''] after:absolute after:w-[calc(100%_-_22px)] after:left-[var(--left)] after:top-[2px] after:h-[var(--height)] after:z-[-1] after:rounded-[6px] after:transition-all after:duration-150 after:ease-linear after:translate-y-[var(--top)] after:shadow-3d-button w-[180px]
+        ${expanded ? 'opacity-100' : 'translate-x-32 opacity-80'}`}
         style={boxPosition}
       >
         {homeSections.map((section) => (
