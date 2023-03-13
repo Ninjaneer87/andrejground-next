@@ -30,7 +30,7 @@
 
   &--scrolled {
     transform: translateY(-12px);
-    backdrop-filter: blur(16px);
+    // backdrop-filter: blur(16px);
     background: var(--color-background-transparent);
     &::after {
       opacity: 1;
