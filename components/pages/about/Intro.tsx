@@ -38,7 +38,7 @@ const Intro = ({ scrollToSection }: Props) => {
           >
             Andrej
           </span>
-          &apos;s playground for ideas, front-end features and functionalities,
+          &apos;s playground for ideas, frontend features and functionalities,
           as well as a window to his portfolio
         </Typography>
       </BlurIn>

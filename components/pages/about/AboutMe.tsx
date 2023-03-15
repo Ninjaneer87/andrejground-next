@@ -46,7 +46,7 @@ const AboutMe = ({addSection, scrollToSection}: Props) => {
           <Box maxWidth={600} margin="auto">
             <BlurIn>
               <Typography className="text-start py-3 font-medium">
-                Andrej has been into front-end development for a couple of years
+                Andrej has been into frontend development for a couple of years
                 now. Over this period, he has developed a strong curiosity about
                 JavaScript and its ecosystem, with a focus on React and TypeScript
                 <br />

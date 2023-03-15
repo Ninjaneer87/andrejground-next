@@ -15,9 +15,21 @@ import Heading from "@/components/UI/Heading";
 import ClipboardCopy from "@/components/UI/ClipboardCopy";
 import BlurIn from "@/components/UI/BlurIn";
 import { socials } from "utils/constants";
-// import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
+import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 
-const infoItems = [
+type InfoItem = {
+  id: number;
+  label: "Located at" | "Email";
+  text: string;
+  icon: JSX.Element;
+} | {
+  id: number;
+  label: "Employment status";
+  text: JSX.Element;
+  icon: JSX.Element;
+}
+
+const infoItems: InfoItem[] = [
   {
     id: 0,
     label: "Located at",
@@ -32,9 +44,18 @@ const infoItems = [
   },
   {
     id: 2,
-    label: "Current status",
-    text: "Available",
-    icon: <CheckCircleOutlineOutlinedIcon fontSize="large" />,
+    label: "Employment status",
+    text: <span>Frontend Developer @&nbsp;
+      <a 
+        href="https://probely.com"
+        target='_blank'
+        rel="noreferrer"
+        className='cyan'
+      >
+        Probely ↗
+      </a>
+    </span>,
+    icon: <WorkOutlineIcon fontSize="large" />,
   },
 ];
 
