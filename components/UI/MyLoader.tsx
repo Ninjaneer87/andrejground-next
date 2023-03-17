@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import ClientOnlyPortal from "@/components/portals/ClientOnlyPortal";
 import classes from "./MyLoader.module.scss";
 
-const logoImg = "/img/AG.png";
+const logoImg = "/img/AG-dark.svg";
 
 const MyLoader = () => {
   const [loaded, setLoaded] = useState(false);
@@ -23,7 +23,7 @@ const MyLoader = () => {
             <div className={classes.logoHolder}>
               <Image
                 priority
-                className={"appear pulse"}
+                className={"pulse"}
                 src={logoImg}
                 alt="AndrejGround logo"
                 width={250}
