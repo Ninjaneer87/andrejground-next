@@ -17,26 +17,25 @@ export default class MyDocument extends Document {
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff"></meta>
-
-          {/* PWA primary color */}
-          {/* <meta name="theme-color" content={theme.palette.primary.main} /> */}
-          {/* <meta name="description" content="Frontend development playground" /> */}
           <meta name="author" content="Andrej Forgac" />
 
+          {/* Facebook */}
           <meta property="og:title" content="AndrejGround" />
-          <meta
-            property="og:description"
-            content="Frontend development playground"
-          />
+          <meta property="og:description" content="Frontend development" />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://andrejground.com/" />
           <meta property="og:image" content="/meta-img.png" />
 
+          {/* Twitter */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="twitter:domain" content="andrejground.com" />
+          <meta property="twitter:url" content="https://andrejground.com/" />
+          <meta name="twitter:title" content="AndrejGround" />
+          <meta name="twitter:description" content="Frontend development playground" />
+          <meta name="twitter:image" content="/meta-img.png"></meta>
+
           <meta name="dc.coverage" content="AndrejGround" />
-          <meta
-            name="dc:description"
-            content="Frontend development playground. One stop for all frontend solutions!"
-          />
+          <meta name="dc:description" content="Frontend development. One stop for all frontend solutions!" />
           <meta name="dc.publisher" content="AndrejGround" />
           <meta name="dc.title" content="AndrejGround" />
           <meta name="dc.type" content="website" />
@@ -45,7 +44,6 @@ export default class MyDocument extends Document {
 
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
-          {/* <link  rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" /> */}
 
         </Head>
         <Script src="/noflash.js" strategy="beforeInteractive" />

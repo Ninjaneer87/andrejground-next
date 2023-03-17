@@ -23,7 +23,7 @@ const HomePage = () => {
     <>
       <Head>
         <title>AndrejGround | Frontend UI UX | Ideas into code</title>
-        <meta name="description" content="AndrejGround is a frontend playground representing Andrej Forgac, a frontend developer, his portfolio and a couple of ways to connect with him." />
+        <meta name="description" content="AndrejGround is a frontend solutions provider representing Andrej Forgac, a frontend developer, his portfolio and a couple of ways to connect with him." />
         <link
           rel="canonical"
           href="https://andrejground.com"
