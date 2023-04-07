@@ -7,10 +7,10 @@
   stroke-dashoffset: 0;
 }
 .A {
-  animation: letter 10s ease-in-out forwards infinite;
+  animation: letter 20s ease-in-out forwards infinite;
 }
 .rest {
-  animation: lines 10s ease-in-out forwards infinite;
+  animation: lines 20s ease-in-out forwards infinite;
 }
 
 // Animations
@@ -19,14 +19,14 @@
     stroke-dashoffset: 700;
     filter: blur(10px);
   }
-  8% {
+  4% {
     stroke: var(--color-primary);
   }
-  16% {
+  8% {
     stroke-dashoffset: 0;
     fill: transparent;
   }
-  20%,
+  10%,
   100%  {
     stroke: transparent;
     fill: var(--color-text);
@@ -39,14 +39,14 @@
     stroke-dashoffset: 700;
     filter: blur(10px);
   }
-  8% {
+  4% {
     stroke: var(--color-text);
   }
-  16% {
+  8% {
     stroke-dashoffset: 0;
     fill: transparent;
   }
-  20%,
+  10%,
   100% {
     stroke: transparent;
     fill: var(--color-primary);
