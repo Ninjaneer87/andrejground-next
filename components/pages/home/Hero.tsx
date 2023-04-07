@@ -58,14 +58,11 @@ const Hero = ({ setInViewSection, addSection }: HomeSectionProps) => {
                 cursor={false}
                 sequence={[
                   'FRONTEND',
-                  3000,
+                  1500,
                   'UI',
-                  3000,
+                  1500,
                   'UX',
-                  3000,
-                  () => {
-                    console.log('Sequence completed'); // Place optional callbacks anywhere in the array
-                  }
+                  1500,
                 ]}
                 wrapper="span"
                 repeat={Infinity}

@@ -34,7 +34,7 @@
 .welcomeTitle {
   font-weight: 300;
   font-size: 8.8vw;
-  text-align: center;
+  text-align: start;
   text-transform: uppercase;
   line-height: 1.1;
   position: relative;
@@ -89,7 +89,7 @@
 }
 .typing::after {
   content: '|';
-  animation: cursor 1.1s infinite ease-in-out;
+  animation: cursor 1s infinite ease-in-out;
   color: var(--color-primary);
 }
  
