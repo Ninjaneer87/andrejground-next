@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import {
   Box,
   Container,
@@ -12,18 +12,13 @@ import Heading from "@/components/UI/Heading";
 import BlurIn from "@/components/UI/BlurIn";
 import { aboutStats } from "utils/constants";
 import { AboutSectionNames } from "@/pages/about";
-import ThemeContext, { ThemeContextType } from "context/themeContext";
-
-const logoImg = "/img/AG.svg";
-const logoImgDark = "/img/AG-dark.svg";
+import LogoAnimated from "@/components/UI/LogoAnimated";
 
 type Props = {
   scrollToSection: (sectionName: AboutSectionNames) => void;
 }
 
 const Intro = ({ scrollToSection }: Props) => {
-  const { dark } = useContext(ThemeContext) as ThemeContextType;
-
   return (
     <Container
       component="section"
@@ -49,10 +44,11 @@ const Intro = ({ scrollToSection }: Props) => {
 
       <BlurIn delay={300}>
         <Box
-          style={{ backgroundImage: `url(${dark ? logoImgDark : logoImg})` }}
           title="AndrejGround logo"
-          className={`bg-center bg-[80%_,80%] bg-no-repeat w-[220px] h-[220px] p-8 my-[80px] mx-0 box-border rounded-full relative shadow-3d-card`}
-        />
+          className={`bg-center bg-[80%_,80%] bg-no-repeat w-[220px] h-[220px] p-4 my-[80px] mx-0 box-border rounded-full relative shadow-3d-card grid place-items-center`}
+        >
+          <LogoAnimated  />
+        </Box>
       </BlurIn>
       <List className="flex items-start justify-center gap-6 flex-wrap">
         {aboutStats.map((stat, i) => (

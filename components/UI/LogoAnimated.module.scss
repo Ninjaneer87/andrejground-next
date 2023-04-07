@@ -1,0 +1,55 @@
+.A,
+.rest {
+  fill: transparent;
+  stroke: transparent;
+  stroke-width: 10;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 0;
+}
+.A {
+  animation: letter 10s ease-in-out forwards infinite;
+}
+.rest {
+  animation: lines 10s ease-in-out forwards infinite;
+}
+
+// Animations
+@keyframes lines {
+  0% {
+    stroke-dashoffset: 700;
+    filter: blur(10px);
+  }
+  8% {
+    stroke: var(--color-primary);
+  }
+  16% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  20%,
+  100%  {
+    stroke: transparent;
+    fill: var(--color-text);
+    filter: blur(0);
+  }
+}
+
+@keyframes letter {
+  0% {
+    stroke-dashoffset: 700;
+    filter: blur(10px);
+  }
+  8% {
+    stroke: var(--color-text);
+  }
+  16% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  20%,
+  100% {
+    stroke: transparent;
+    fill: var(--color-primary);
+    filter: blur(0);
+  }
+}

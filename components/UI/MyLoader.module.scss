@@ -20,11 +20,11 @@
 }
 .loader1 {
   left: 0;
-  background-color: #f0f0f3;
+  background-color: var(--color-text);
 }
 .loader2 {
   right: 0;
-  background-color: #212121;
+  background-color: var(--color-background);
 }
 .logoHolder {
   position: absolute;
@@ -38,8 +38,8 @@
   display: block;
   border-radius: 100vh;
   overflow: hidden;
-  background-color: #212121;
+  background-color: var(--color-background);
   z-index: 23;
-  border: 20px solid #212121;
+  border: 20px solid var(--color-background);
   box-sizing: border-box;
 }

@@ -11,7 +11,7 @@
 }
 
 @mixin light-theme-colors {
-  --color-text: rgba(0, 0, 0, 0.87);
+  --color-text: var(--color-dark);
   --color-background: var(--color-light);
   --color-background-transparent: var(--color-light-transparent);
   --color-selection-background: var(--color-dark);
@@ -29,7 +29,7 @@
 }
 
 @mixin dark-theme-colors {
-  --color-text: #fff;
+  --color-text: var(--color-light);
   --color-background: var(--color-dark);
   --color-background-transparent: var(--color-dark-transparent);
   --color-selection-background: var(--color-primary);

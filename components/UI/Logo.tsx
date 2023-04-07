@@ -2,12 +2,8 @@ import React, { MouseEventHandler, useContext } from "react";
 import { Typography } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/dist/client/router";
-import Image from "next/image";
 import DrawerContext from "context/drawerContext";
-
-import logoImg from "../../public/img/AG.svg";
-import logoImgDark from "../../public/img/AG-dark.svg";
-import ThemeContext, { ThemeContextType } from "context/themeContext";
+import LogoAnimated from "./LogoAnimated";
 
 type Props = {
   inHeader?: boolean;
@@ -16,32 +12,31 @@ type Props = {
 const Logo = ({ inHeader }: Props) => {
   const { setExpanded } = useContext(DrawerContext);
   const { asPath } = useRouter();
-  const { dark } = useContext(ThemeContext) as ThemeContextType;
 
   const logoHandler: MouseEventHandler<HTMLAnchorElement> = (event) => {
     if (asPath === "/") {
       event.preventDefault();
       document.body.scrollIntoView({ behavior: "smooth" });
     }
-    
+
     setExpanded(false);
   };
 
   return (
-      <Link 
-        href="/"
-        passHref
-      >
-        <a className="flex text-center items-center p-[4px] rounded-[6px] h-[3.4rem] box-border" onClick={logoHandler}>
-          <div className={`w-[50px] h-[50px] block rounded-full overflow-hidden shadow-3d-card p-[.38rem]`}>
-            <Image src={dark ? logoImgDark : logoImg} alt="AndrejGround logo" width={50} height={50} />
-          </div>
-          {inHeader && (
-            <Typography className="hidden sm:block text-[2rem] font-[300] ml-[10px]">
-              <span className="text-primary">Andrej</span>Ground
-            </Typography>
-          )}
-        </a>
+    <Link
+      href="/"
+      passHref
+    >
+      <a className="flex text-center items-center p-[4px] rounded-[6px] h-[3.4rem] box-border" onClick={logoHandler}>
+        <div className={`w-[50px] h-[50px] block rounded-full overflow-hidden shadow-3d-card p-[.38rem]`}>
+          <LogoAnimated width={40} />
+        </div>
+        {inHeader && (
+          <Typography className="hidden sm:block text-[2rem] font-[300] ml-[10px]">
+            <span className="text-primary">Andrej</span>Ground
+          </Typography>
+        )}
+      </a>
     </Link>
   );
 };

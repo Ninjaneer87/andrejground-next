@@ -1,17 +1,16 @@
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import ClientOnlyPortal from "@/components/portals/ClientOnlyPortal";
 import classes from "./MyLoader.module.scss";
+import LogoAnimated from "./LogoAnimated";
 
-const logoImg = "/img/AG-dark.svg";
 
 const MyLoader = () => {
   const [loaded, setLoaded] = useState(false);
   const [removed, setRemoved] = useState(false);
 
   useEffect(() => {
-      setTimeout(() => setLoaded(true), 1000);
-      setTimeout(() => setRemoved(true), 2500);
+    setTimeout(() => setLoaded(true), 1000);
+    setTimeout(() => setRemoved(true), 2500);
   }, []);
 
   return (
@@ -21,14 +20,7 @@ const MyLoader = () => {
           <div className={`${classes.loader1} ${loaded ? "exit-left" : ""}`} />
           <div className={`${classes.loader2} ${loaded ? "exit-right" : ""}`}>
             <div className={classes.logoHolder}>
-              <Image
-                priority
-                className={"pulse"}
-                src={logoImg}
-                alt="AndrejGround logo"
-                width={250}
-                height={250}
-              />
+              <LogoAnimated />
             </div>
           </div>
         </div>
