@@ -8,10 +8,10 @@ import BlurIn from "@/components/UI/BlurIn";
 import classes from "./Hero.module.scss";
 import { HomeSectionProps } from "pages";
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
-import ArrowRightAltOutlinedIcon from '@mui/icons-material/ArrowRightAltOutlined';
 import StraightOutlinedIcon from '@mui/icons-material/StraightOutlined';
 import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
 import TurnRightOutlinedIcon from '@mui/icons-material/TurnRightOutlined';
+import { TypeAnimation } from 'react-type-animation';
 
 const Hero = ({ setInViewSection, addSection }: HomeSectionProps) => {
   const { ref: scrollRef } = useInView({
@@ -50,10 +50,28 @@ const Hero = ({ setInViewSection, addSection }: HomeSectionProps) => {
             <BlurIn
               delay={150}
               className={classes.welcomeTitle}
-              data-text="UI - UX - frontend ANDREJGROUND"
+              data-text="ANDREJGROUND"
               component="h1"
             >
-              UI <span className="text-primary">-</span> UX <span className="text-primary">-</span> frontend <span className="text-primary">Andrej</span>Ground
+              <TypeAnimation
+                className={classes.typing}
+                cursor={false}
+                sequence={[
+                  'FRONTEND',
+                  3000,
+                  'UI',
+                  3000,
+                  'UX',
+                  3000,
+                  () => {
+                    console.log('Sequence completed'); // Place optional callbacks anywhere in the array
+                  }
+                ]}
+                wrapper="span"
+                repeat={Infinity}
+              />
+              <br />
+              <span className="text-primary">Andrej</span>Ground
             </BlurIn>
           </Grid>
           <Grid item xs={12} lg={4}>
