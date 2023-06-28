@@ -12,7 +12,13 @@ function BlurIn<C extends ElementType>({ children, delay, className, ...props }:
   const [inViewClass, setInViewClass] = React.useState<InViewClasses>("invis");
   const { ref } = useInView({
     rootMargin: "-10%",
-    onChange: (inView) => inView && setInViewClass("blur-in-translate"),
+    onChange: (inView) => {
+      const updateClass = () => {
+        inView && setInViewClass("blur-in-translate")
+        requestAnimationFrame(updateClass);
+      };
+      requestAnimationFrame(updateClass);
+    },
   });
 
   return (

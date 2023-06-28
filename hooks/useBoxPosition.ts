@@ -24,17 +24,20 @@ export default function useBoxPosition<T extends HTMLElement, C>(changeTrigger: 
   const setPosition = useCallback(() => {
     if (!boxRef.current) return;
 
-    const { offsetTop, offsetLeft, offsetWidth, offsetHeight } = boxRef.current;
-    const newBoxPosition = {
-      "--top": `${Math.round(offsetTop)}px`,
-      "--left": `${Math.round(offsetLeft)}px`,
-      "--width": `${Math.round(offsetWidth)}px`,
-      "--height": `${Math.round(offsetHeight)}px`,
-    };
-    setBoxPosition(newBoxPosition);
+      const { offsetTop, offsetLeft, offsetWidth, offsetHeight } = boxRef.current;
+      const newBoxPosition = {
+        "--top": `${Math.round(offsetTop)}px`,
+        "--left": `${Math.round(offsetLeft)}px`,
+        "--width": `${Math.round(offsetWidth)}px`,
+        "--height": `${Math.round(offsetHeight)}px`,
+      };
+      setBoxPosition(newBoxPosition);
+      requestAnimationFrame(setPosition);
   }, []);
 
-  useEffect(setPosition, [changeTrigger, fontLoaded, mounted, setPosition]);
+  useEffect(() => {
+    requestAnimationFrame(setPosition);
+  }, [changeTrigger, fontLoaded, mounted, setPosition]);
 
   useEffect(() => {
     window.addEventListener("resize", setPosition);
