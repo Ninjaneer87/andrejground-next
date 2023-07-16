@@ -5,12 +5,22 @@ import Head from "next/head";
 import { IProject } from "models/Project";
 import { GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
+import { Alert, AlertTitle } from "@mui/material";
 
 type ProjectProps = {
   project: IProject;
 };
 
 const SingleProjectPage = ({ project }: ProjectProps) => {
+  if (!project) {
+    return <div className="min-h-[60vh] grid place-items-center">
+      < Alert severity="error" variant="standard" className="my-12 mx-auto blur-in w-fit" >
+        <AlertTitle>This project does not exist</AlertTitle>
+        Seems like you&apos;re looking for something that doesn&apos;t exist... or does it...? No, it doesn&apos;t.
+      </Alert >
+    </div>
+  }
+
   return (
     <>
       <Head>

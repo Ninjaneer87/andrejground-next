@@ -5,12 +5,22 @@ import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 import { IBlog } from 'models/Blog';
+import { Alert, AlertTitle } from '@mui/material';
 
 type BlogProps = {
   blog: IBlog;
 };
 
 const SingleBlogPage = ({ blog }: BlogProps) => {
+  if (!blog) {
+    return <div className="min-h-[60vh] grid place-items-center">
+      < Alert severity="error" variant="standard" className="my-12 mx-auto blur-in w-fit" >
+        <AlertTitle>This blog post does not exist</AlertTitle>
+        Seems like you&apos;re looking for something that doesn&apos;t exist... or does it...? No, it doesn&apos;t.
+      </Alert >
+    </div>
+  }
+
   return (
     <>
       <Head>
@@ -27,7 +37,7 @@ const SingleBlogPage = ({ blog }: BlogProps) => {
   );
 };
 
-export async function getStaticPaths() { 
+export async function getStaticPaths() {
   // ONLY when using getStaticProps in DYNAMIC page
   // fetch all possible (or some) ids (dynamic paths),
   const client = await MongoClient.connect(process.env.MONGO_URL!);
@@ -60,6 +70,15 @@ export const getStaticProps: GetStaticProps = async (context) => {
   if (slug !== '[object Object]') {
     const blog = await blogsCollection.findOne<IBlog>({ slug });
     client.close();
+
+    if (!blog) {
+      return {
+        props: {
+          blog: null
+        }
+      }
+    }
+
     delete blog?._id;
 
     return {
