@@ -67,6 +67,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const mongoUrl = process.env.MONGO_URL;
 
+  console.log({mongoUrl})
   if (!mongoUrl) {
     throw new Error('MongoDB URI is not defined');
   }
