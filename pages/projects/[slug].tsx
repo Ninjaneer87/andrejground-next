@@ -65,7 +65,13 @@ interface ParamsWithSlug extends ParsedUrlQuery {
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as ParamsWithSlug;
 
-  const client = await MongoClient.connect(process.env.MONGO_URL!);
+  const mongoUrl = process.env.MONGO_URL;
+
+  if (!mongoUrl) {
+    throw new Error('MongoDB URI is not defined');
+  }
+
+  const client = await MongoClient.connect(mongoUrl);
   const db = client.db();
   const projectsCollection = db.collection("projects");
 
