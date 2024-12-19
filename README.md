@@ -1,3 +1,9 @@
+## Update - Autumn 2024 - andrejground.com is now AndrejGround Blog
+
+Here's the [code](https://github.com/Ninjaneer87/andrejground-blog/), and the [link](https://andrejground.com/) to that project.
+
+# Legacy description below
+
 Welcome to the [AndrejGround](https://andrejground.com/), my portfolio website project.
 
 ## Short story about AndrejGround
@@ -15,6 +21,3 @@ New technologies and tools in this version: `Next JS(^12)` | `TypeScript` | `Rea
 
 AndrejGround is live at https://andrejground-next.vercel.app/
 
-## Update - Autumn 2024 - andrejground.com is now AndrejGround Blog
-
-Here's the [code](https://github.com/Ninjaneer87/andrejground-blog/), and the [link](https://andrejground.com/) to that project.
