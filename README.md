@@ -19,5 +19,5 @@ New technologies and tools in this version: `Next JS(^12)` | `TypeScript` | `Rea
 
 ## Hosting
 
-AndrejGround is live at https://andrejground-next.vercel.app/
+AndrejGround is still live at https://andrejground-next.vercel.app/
 
